@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BackgroundColor</key>
+	<string></string>
+	<key>BarButtonColor</key>
+	<string></string>
+	<key>BarTextColor</key>
+	<string></string>
+	<key>BarTintColor</key>
+	<string></string>
+	<key>HeaderBackgroundColor</key>
+	<string></string>
+	<key>HeaderTextColor</key>
+	<string></string>
+	<key>InconclusiveButtonColor</key>
+	<string></string>
+	<key>LinkColor</key>
+	<string></string>
+	<key>LoginButtonColor</key>
+	<string></string>
+	<key>LoginButtonTextColor</key>
+	<string></string>
+	<key>NegativeButtonColor</key>
+	<string></string>
+	<key>NegativeButtonTextColor</key>
+	<string></string>
+	<key>NeutralButtonColor</key>
+	<string></string>
+	<key>NeutralButtonTextColor</key>
+	<string></string>
+	<key>PositiveButtonColor</key>
+	<string></string>
+	<key>PositiveButtonTextColor</key>
+	<string></string>
+	<key>SignupButtonColor</key>
+	<string></string>
+	<key>SignupButtonTextColor</key>
+	<string></string>
+	<key>TabBarSelectedItemColor</key>
+	<string></string>
+	<key>TintColor</key>
+	<string></string>
+	<key>UnreadIndicatorColor</key>
+	<string></string>
+</dict>
+</plist>

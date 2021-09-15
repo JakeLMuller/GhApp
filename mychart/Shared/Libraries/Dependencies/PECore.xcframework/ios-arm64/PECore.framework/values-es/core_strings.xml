@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017-2021 Epic Systems Corporation
+  -->
+<!--@formatter:off-->
+<resources>
+  <!-- Generic Strings -->
+  <string name="wp_generic_servererror" context="Alert appears when a server error makes completing a required webservice call impossible.">Ocurrió un error en el servidor. Por favor inténtelo de nuevo más tarde.</string>
+  <string name="wp_generic_ok" context="Button used widely and generally. Closes a dialog when no action is possible" length="30 characters">Aceptar</string>
+  <string name="wp_generic_cancel" context="Button closes a dialog without taking any action. Can be found by attempting to cancel an appointment without canceling security if the department has a phone number">Cancelar</string>
+  <string name="wp_loadingdialog_general" context="Appears in a variety of places on the app when information is being loaded" length="32 characters">Cargando</string>
+  <string name="wp_generic_error" context="Error dialog title" length="30 characters">Error</string>
+  <string name="wp_generic_missingapplicationbrowser" context="used when MyChart wants to open a link to the browser but can't find a browser installed on the user's device">Intentamos abrir este vínculo, pero no pudimos encontrar una aplicación para abrirlo.</string>
+  <string name="wp_generic_show_more" context="String used to indicate there is more content or text to be displayed">Mostrar más</string>
+  <string name="wp_generic_go_to_settings" context="Button used to jump to settings to enable permissions or to change settings">Ir a Configuración</string>
+  <string name="wp_generic_save" context="Button used to save something">Guardar</string>
+  <string name="wp_generic_networkerror" context="Alert message when the app detects a lack of network connection while trying to complete a task">Asegúrese de que tiene una conexión a la red e inténtelo de nuevo.</string>
+  <string name="wp_generic_networkerrortitle" context="Alert title appears when the app detects a lack of network connection while trying to complete a task" length="20 characters">Error de conexión</string>
+  <string name="wp_generic_more_info" context="More information" length="20 characters">Más información</string>
+  <!-- Web View Strings -->
+  <string name="wp_webview_not_supported" context="Alert appears when the user tries to launch a web view activity that is not supported on mobile">Por favor, visite el sitio web para ver esta actividad.</string>
+  <!-- Date Strings -->
+  <string name="wp_today" context="Appears in a variety of places to indicate today">Hoy</string>
+  <string name="wp_tomorrow" context="Appears in a variety of places to indicate today">Mañana</string>
+  <!-- H2G Refresh Stings -->
+  <string name="wp_community_organization_last_refresh_date" context="The previous/last date the user updated the organization's community link. %1$@ is the date of the last update.">Actualizado %1$@</string>
+  <string name="wp_community_organization_out_of_date_missing" context="Text displayed when a DXR organization is missing its access/refresh date.">Información de actualizaciones no disponible</string>
+  <string name="wp_community_organization_up_to_date" context="For organizations with live links (External MyChart/Fhir), we show the refresh date as 'Up-to-date'">Actualizado</string>
+  <string name="wp_community_organization_out_of_date_warning" context="Text warning the user that some of their cached/DXR data may be out of date and need to be updated. %1$@ is the name of the data (e.g. allergies).">Sus %1$@ podrían no estar corrientes en cada cuenta vinculada. Toque aquí para actualizar.</string>
+  <string name="wp_community_organization_out_of_date_warning_testresult" context="Text warning the user that some of their cached/DXR data may be out of date and need to be updated. Used for test result only. %1$@ is the name of the data (e.g. allergies).">Sus %1$@ podrían no estar corrientes. Toque aquí para las %1$@ más corrientes.</string>
+  <string name="wp_community_organization_dxr_warning" context="Text warning users that some of their data may not be loaded. Tells user to visit their DXR organization's patient portal for the complete information. %1$@ is the name of the external organization">Es posible que no podamos mostrar todos los detalles. Llame a %1$@ o visite su portal de pacientes para más información.</string>
+  <string name="wp_community_data_is_updating" context="Appears in the Happy Together refresh banner when the patient has data is updating in the background.">Su información se está actualizando.</string>
+  <string name="wp_community_data_has_error" context="Appears in the Happy Together refresh banner when the patient has data failed updating.">Su información no se actualizó correctamente. Toque aquí para detalles.</string>
+  <!-- H2G Error Strings -->
+  <string name="wp_community_generic_connection_error" context="Text displayed in the H2G error popup which is shown when we fail to retrieve outside data from any of the organizations that the patient is connected to due to generic connection issues. %1$@ is the organization name.">No podemos descargar datos de %1$@ en este momento.</string>
+  <string name="wp_community_inactive_account_error" context="Text displayed in the H2G error popup which is shown when we fail to retrieve outside data from any of the organizations that the patient is connected to due to missing active MyChart account. %1$@ is the organization name.">Usted tiene que crear una cuenta en %1$@.</string>
+  <string name="wp_community_dismiss_error" context="Accessibility label for the X button used to dismiss the H2G error popup">Despida a este mensaje</string>
+  <string name="wp_community_tap_for_details_message" context="Tap for details message for h2g error banner.We seperate this from the original text because of accessibility issue.">Toque para ver detalles.</string>
+  <!-- H2G Strings -->
+  <string name="wp_community_outside_organization_label" context="Accessibility text for the tappable CE icon">Organizaciones externas</string>
+  <!-- HTML Strings -->
+  <string name="wp_core_imagecouldnotberetrieved" context="Alert text when an image could not be loaded">No se pudo cargar la imagen</string>
+  <!-- MyChart Web View Strings -->
+  <string name="wp_core_mychartweb_opennewapp" context="message appears when a user clicks on a link in a webview activity that would lead to a new app. Param 1 is the link being opened.">¿Desea abrir este enlace en otra app?\n%1$@</string>
+  <string name="wp_core_mychartweb_opennewapp_yes" context="alert button that opens a link in an external app">Continuar</string>
+  <string name="wp_core_mychartweb_opennewapp_no" context="alert button closes an alert without opening a link in an external app">Permanecer aquí</string>
+  <string name="wp_core_mychartweb_noapp" context="message appears when a user clicks on a link in a webview activity that would lead to a new app and the app failed to load.">No se pudo abrir la otra app.</string>
+  <string name="wp_core_mychartweb_download" context="message appears when a user clicks on a link in a webview activity that would download a file.">¿Quiere descargar este archivo a su dispositivo?</string>
+  <string name="wp_core_mychartweb_download_yes" context="alert button that downloads a file">Sí</string>
+  <string name="wp_core_mychartweb_download_no" context="alert button closes an alert without downloading a file">No</string>
+  <string name="wp_core_mychartweb_download_description" context="The description for a file downloaded">Descargo de %1$@</string>
+  <string name="wp_core_mychartweb_download_toast" context="Toast message after user started downloading a file from MyChart">Descargando el archivo…</string>
+  <string name="wp_core_mychartweb_close" context="alt-text for the 'close' button in a MyChart Web-based workflow">Cerrar</string>
+  <string name="wp_mychart_feature_to_browser_title" context="A title shown to the user if the feature is not supported in the app">Use esta función fuera de la aplicación</string>
+  <string name="wp_mychart_feature_to_browser_message" context="A message shown to tell the patient they can launch this feature outside the app">Hay que iniciar esta función fuera de la aplicación. ¿Desea continuar?</string>
+  <string name="wp_mychart_feature_to_browser_yes" context="Option to agree to launch a feature outside the application.  But only this time.">Sí, solamente esta vez</string>
+  <string name="wp_mychart_feature_to_browser_yes_always" context="Option to agree to launch a feature outside the application.  And to do this every time.">Sí, siempre iniciar fuera de la aplicación</string>
+  <string name="wp_mychart_feature_to_browser_no" context="Option to not agree to launch outside the application and instead stay in the app">No, permanecer aquí</string>
+  <string name="wp_mychart_custom_feature_external_launch_title" context="A title shown to the user when they are launching a feature that is about to take them out of the app">Ahora navegará fuera de la app.</string>
+  <string name="wp_mychart_custom_feature_external_launch_yes" context="Option to agree to launch a feature outside the application to open the browser.">Sí, continuar</string>
+  <string name="wp_mychart_custom_feature_external_launch_no" context="Option to not agree to launch outside the application to open the feature and instead stay in the app">No, permanecer aquí</string>
+  <!-- Care Companion -->
+  <string name="wp_todo_education_question_subject" context="Subject text for a message sent to provider when patient has a question about an education task.%1$@ is the title of the education task">Pregunta sobre \"%1$@\"</string>
+  <!-- File Chooser Strings -->
+  <string name="wp_core_filechooser_attachmenttitle" context="menu title for a dialog that allows the user to choose a file">Seleccione un archivo</string>
+  <string name="wp_core_filechooser_takenewphoto" context="menu option that lets the user take a photo with the device camera">Sacar una foto nueva</string>
+  <string name="wp_core_filechooser_choosephoto" context="menu option that lets the user choose an existing photo from the device">Seleccionar una foto existente</string>
+  <string name="wp_core_filechooser_takenewvideo" context="menu option that lets the user take a video with the device camera">Grabar un video nuevo</string>
+  <string name="wp_core_filechooser_choosevideo" context="menu option that lets the user choose an existing video from the device">Seleccionar un vídeo existente</string>
+  <string name="wp_core_filechooser_choosefile" context="menu option that lets the user choose an existing file from the device">Seleccionar un documento existente</string>
+  <string name="wp_core_filechooser_attachmenterror" context="Toast shown when there was an error uploading a document">No pudimos realizar la subida en este momento. Por favor intente de nuevo más tarde.</string>
+  <!-- Permissions Strings -->
+  <string name="wp_core_permissions_error_title" context="The error title when the user rejects the proper permissions to do something in the app.">¡Ups!</string>
+  <string name="wp_core_permissions_photo_take_error_message" context="The error message when the user rejects the proper permissions to take a photo.">Para tomar una foto, por favor permite que la aplicación acceda a su cámara.</string>
+  <string name="wp_core_permissions_photo_select_error_message" context="The error message when the user rejects the proper permissions to access storage when selecting a photo.">Para seleccionar una foto, por favor permite que la aplicación acceda a su almacenamiento.</string>
+  <string name="wp_core_permissions_video_take_error_message" context="The error message when the user rejects the proper permissions to take a video.">Para tomar un video, por favor permite que la aplicación acceda a su cámara y a su almacenamiento.</string>
+  <string name="wp_core_permissions_video_select_error_message" context="The error message when the user rejects the proper permissions to access storage when selecting a video.">Para seleccionar un video, por favor permite que la aplicación acceda a su almacenamiento.</string>
+  <string name="wp_core_permissions_file_select_error_message" context="The error message when the user rejects the proper permissions to access storage when selecting a file.">Para seleccionar un documento, por favor permite que la aplicación acceda a su almacenamiento.</string>
+  <string name="wp_core_permissions_set_permissions_button" context="The default yes button for requesting permissions.">Fijar permisos</string>
+  <string name="wp_core_permissions_nevermind_button" context="The default no button for requesting permissions.">Cancelar</string>
+  <!-- Unit Testing Strings -->
+  <string name="wp_test_string_with_params" context="This is a test string for unit testing.  Do not worry about translation.">%1$@\" y \"%2$@</string>
+  <plurals name="wp_test_string_with_plurals" context="This is a test string for unit testing.  Do not worry about translation.">
+    <item quantity="one">one(%1$@, %2$@)</item>
+    <item quantity="other">other(%1$@, %2$@)</item>
+  </plurals>
+  <!-- Inline Education Strings -->
+  <string name="wp_inline_education_view_diagnosis" context="Accessibility text for the Inline Education Infobutton">Botón para más información sobre este diagnóstico.</string>
+  <string name="wp_inline_education_view_medication" context="Accessibility text for the Inline Education Infobutton">Botón para más información sobre este medicamento.</string>
+  <string name="wp_inline_education_view_test_result" context="Accessibility text for the Inline Education Infobutton">Botón para más información sobre este resultado de examen.</string>
+  <string name="wp_inline_education_view_procedure" context="Accessibility text for the Inline Education Infobutton">Botón para más información sobre este procedimiento.</string>
+  <string name="wp_inline_education_view_allergy" context="Accessibility text for the Inline Education Infobutton">Botón para más información sobre esta alergia.</string>
+  <string name="wp_inline_education_view_immunization" context="Accessibility text for the Inline Education Infobutton">Botón para más información sobre esta inmunización.</string>
+  <!-- Tutorials Strings -->
+  <string name="wp_core_tutorials_close" context="text for the button that a user will tap to exit tutorials">Finalizar</string>
+  <string name="wp_core_tutorials_more_help" context="Text for a button in tutorials that is used to continue receiving tutorial info">Dime más</string>
+  <string name="wp_core_tutorials_back" context="Text for a button in tutorials that is used to go back a step">Regresar</string>
+  <string name="wp_core_tutorials_forward" context="Text for a button in tutorials that is used to go foward a step">Avanzar</string>
+  <string name="wp_core_tutorials_done_button_accessibility_label" context="Accessibility label for the 'done' button in a tutorial. This will be read by VoiceOver when the user reaches the button">Hecho</string>
+  <string name="wp_core_tutorials_done_button_accessibility_hint" context="Accessibility hint for the 'done' button in a tutorial. This explains what will happen when the button is tapped and will be read by VoiceOver after the accessibility label">Cierra el tutorial</string>
+  <string name="wp_core_tutorials_next_button_accessibility_label" context="Accessibility label for the 'next' button in a tutorial. This will be read by VoiceOver when the user reaches the button">Página siguiente</string>
+  <string name="wp_core_tutorials_next_button_accessibility_hint" context="Accessibility hint for the 'next' button in a tutorial. This explains what will happen when the button is tapped and will be read by VoiceOver after the accessibility label">Continúa a la página siguiente del tutorial</string>
+  <string name="wp_core_tutorials_previous_button_accessibility_label" context="Accessibility label for the 'previous' button in a tutorial. This will be read by VoiceOver when the user reaches the button">Página anterior</string>
+  <string name="wp_core_tutorials_previous_button_accessibility_hint" context="Accessibility hint for the 'previous' button in a tutorial. This explains what will happen when the button is tapped and will be read by VoiceOver after the accessibility label">Regresa a la página anterior del tutorial</string>
+  <string name="wp_core_tutorials_progress_accessibility_label" context="Accessibility label for the control that indicates the current page">Página %1$d de %2$d</string>
+  <!-- Camera Permission Strings -->
+  <string name="wp_core_camera_missing_permissions_title" context="Title for an alert that explains to the user that the application lacks sufficient permission to access the device's camera.">No se puede acceder a la cámara</string>
+  <string name="wp_core_camera_missing_permissions_message_ios" context="Alert message that hat explains to the user that the application lacks sufficient permission to access the device's camera. %1$@ is the application name (i.e. MyChart).">%1$@ no tiene permiso para acceder a su cámara. Para dar permiso a %1$@, cambie los ajustes de Cámara en Ajustes &gt; %1$@.</string>
+  <!-- Validation Strings -->
+  <string name="wp_core_validation_specialcharacters_title" context="Title for an alert that explains to the user that special characters cannot be entered as input.">Caracteres especiales no permitidos</string>
+  <string name="wp_core_validation_specialcharacters_message" context="Alert message that explains to the user that special characters cannot be entered as input.">No puede ingresar caracteres especiales aquí, como caracteres de ciertos idiomas o Emojis.</string>
+  <string name="wp_h2g_dismiss_content_description" context="Accessibility content description for a dismiss icon button">Despedir</string>
+  <!-- PDF Download Strings -->
+  <string name="wp_pdf_download_title" context="Error title on pop up when the user can not view the PDF in the app.">No se puede ver el archivo PDF en la app</string>
+  <string name="wp_pdf_download_message" context="Error message on pop up when the user can not view the PDF in the app.  %1$@ is the MyChart brand name">¿Quiere bajar el archivo PDF para ver con una aplicación externa? Después de bajarlo, no será protegido por %1$@. Otras apps en su dispositivo pueden tener acceso a este archivo.</string>
+  <string name="wp_pdf_yes_download" context="Button to download the file">Sí, descargar</string>
+  <string name="wp_pdf_no_permission" context="User did not give permissions to download the file">No se pudo bajar el archivo. Requiere autorización para bajar.</string>
+  <string name="wp_pdf_download_success" context="The PDF was downloaded successfully">PDF descargado</string>
+  <string name="wp_pdf_download_error" context="The PDF was not downloaded due to an error">Error al bajar PDF</string>
+  <!-- How To Videos -->
+  <string name="wp_how_to_video_header" context="Title used on the header of How To video cards">Vea para aprender</string>
+  <string name="wp_how_to_video_share_everywhere_title" context="Title of the How To video for Share Everywhere, which appears in a card on the Share Everywhere page">Share Everywhere</string>
+  <string name="wp_how_to_video_share_everywhere_description" context="Description of the How To video for Share Everywhere, which appears in a card on the Share Everywhere page">Aprenda a compartir su registro médico con un proveedor de atención que aún no tiene acceso.</string>
+  <string name="wp_how_to_video_video_visit_title" context="Title of the How To video for Video Visits, which appears in a card in appointment details for a video visit">Teleconsultas</string>
+  <string name="wp_how_to_video_video_visit_description" context="Description of the How To video for Video Visits, which appears in a card in appointment details for a video visit">Aprenda cómo completar el check-in y comenzar su teleconsulta.</string>
+  <string name="wp_how_to_video_thumbnail_accessibility" context="Description of the video thumbnail that will be read by screen readers">Haga clic para reproducir el video</string>
+  <string name="wp_how_to_see_more" context="Text for the button to expand the How To video card">Ver más</string>
+  <string name="wp_how_to_see_less" context="Text for the button to collapse the How To video card">Ver menos</string>
+  <string name="wp_how_to_close" context="Text for the button to close the popup containing the How To video">Cerrar</string>
+</resources>
+<!--@formatter:on-->

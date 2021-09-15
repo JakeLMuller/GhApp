@@ -1,0 +1,2288 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PECore
+import CommonCrypto
+import Foundation
+@_exported import PECore
+import Swift
+@_exported import UIKit
+import WebKit
+public protocol CacheableImageDataSource : PECore.ImageDataSource {
+}
+@objc public protocol PETestResultDetailComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func getTestResultDetailController(testResult: PECore.PETestResult, overrideUri: Swift.String, componentHost: PECore.PEComponentHostProtocol?, patientContext: PECore.PEPatientContext, encounterContext: PECore.PEEncounterContext?) -> UIKit.UIViewController
+  @objc func hasAccessToTestResultDetails() -> Swift.Bool
+}
+@objc public protocol PETestResult {
+  @objc var objectID: Swift.String? { get }
+  @objc var dat: Swift.String? { get }
+  @objc var organization: PECore.PEOrganizationInfoProtocol { get }
+  @objc var name: Swift.String? { get }
+}
+@_inheritsConvenienceInitializers @objc public class AlertUtils : ObjectiveC.NSObject {
+  @objc public class func makeAlertController(withContext context: PECore.PEOrganizationContext?, title: Swift.String?, message: Swift.String) -> UIKit.UIAlertController
+  @objc public class func makeAlertController(withTheme theme: PECore.PEThemeProtocol?, title: Swift.String?, message: Swift.String) -> UIKit.UIAlertController
+  @objc public class func makeAlertController(withTheme theme: PECore.PEThemeProtocol?, title: Swift.String?, message: Swift.String, alwaysInLTR: Swift.Bool) -> UIKit.UIAlertController
+  @objc public class func makeSpecialCharacterAlertController() -> UIKit.UIAlertController
+  @objc public class func defaultWebServiceErrorAlertController(handler: ((UIKit.UIAlertAction) -> Swift.Void)? = nil) -> UIKit.UIAlertController
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension UIAlertController {
+  @objc dynamic public func addButton(title: Swift.String, handler: ((UIKit.UIAlertAction) -> Swift.Void)? = nil)
+  @objc dynamic public func addOKButton(handler: ((UIKit.UIAlertAction) -> Swift.Void)? = nil)
+  @objc dynamic public func addPositiveButton(title: Swift.String, handler: ((UIKit.UIAlertAction) -> Swift.Void)? = nil)
+  @objc dynamic public func addNegativeButton(title: Swift.String, handler: ((UIKit.UIAlertAction) -> Swift.Void)? = nil)
+}
+@objc @_inheritsConvenienceInitializers public class AuditUtil : ObjectiveC.NSObject {
+  public enum E1MEntryType : Swift.String {
+    case documentDetailsDownloaded
+    case documentDetailsViewed
+    case activityOpenedInBrowser
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public class func createEntry(_ type: PECore.AuditUtil.E1MEntryType) -> PECore.AuditUtil.E1MAuditLogEntry
+  public class func writeEntryToE1M(_ entry: PECore.AuditUtil.E1MAuditLogEntry)
+  public class func writeEntriesToE1M(_ entries: [PECore.AuditUtil.E1MAuditLogEntry])
+  @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class E1MAuditLogEntry : ObjectiveC.NSObject, Swift.Encodable {
+    public func addMnemonic(name: Swift.String, value: Swift.String)
+    public func encode(to encoder: Swift.Encoder) throws
+    @objc deinit
+  }
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public enum PEComponentRequestControllerErrorCode : Swift.Int {
+  case unknown = -1
+  case noAccess = 1
+  case noData = 2
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public class WebService<T> where T : Swift.Decodable {
+  public var hasRefreshableOrganizationLink: Swift.Bool {
+    get
+  }
+  public init(urlTemplate: Swift.String, urlType: PECore.UrlType = .None, requestFormat: PECore.PERequestFormat = .defaultForCategory, responseFormat: PECore.PEResponseFormat = .Default, myChartNamespace: PECore.MyChartNamespaceEnum = .None, category: PECore.WebServiceCategory, tokenType: PECore.TokenType = .Default, params: [PECore.Parameterable] = [Parameterable](), headers: [PECore.Header] = [Header](), userContext: PECore.PEUserContext? = nil, patientContext: PECore.PEPatientContext? = nil, encounterContext: PECore.PEEncounterContext? = nil, session: Foundation.URLSession? = nil)
+  @discardableResult
+  public func onSuccess(_ successBlock: @escaping (T?) -> Swift.Void) -> PECore.WebService<T>
+  @discardableResult
+  public func onFailure(failureBlock: @escaping (PECore.PEError) -> Swift.Void) -> PECore.WebService<T>
+  public func run()
+  public var failedOrganizations: [PECore.PEOrganizationInfoProtocol]? {
+    get
+  }
+  public func addParamsWithSameNameAndValue(vals: Swift.String...)
+  public func addParams(params: PECore.Parameterable...)
+  public func addParams(params: [PECore.Parameterable])
+  @objc deinit
+}
+public struct AdjustedLocalDate {
+  public var date: Foundation.Date?
+}
+extension AdjustedLocalDate : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+extension AdjustedLocalDate : Swift.Encodable {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public class Provider : Swift.Codable {
+  public var ID: Swift.String
+  public var name: Swift.String
+  required public init(from decoder: Swift.Decoder) throws
+  public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc public protocol PEMessagingComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func hasAccessForSendingMedicalAdviceMessage(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func hasAccessForMOMessages(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func getMessageListViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc func getMessageDetailViewController(_ patientContext: PECore.PEPatientContext, forMessage messageID: Swift.String, myChartWebMessageIDKey: Swift.String, h2gLaunchFromLocalOrg: Swift.Bool, andIsEncrypted isEncrypted: Swift.Bool, forOrganization orgID: Swift.String) -> UIKit.UIViewController?
+  @objc func getComposeViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc func getComposeMedicalAdviceViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc func getComposeCustomerServiceViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc func getComposeBillingCustomerServiceViewController(_ patientContext: PECore.PEPatientContext, forAccount encryptedAccountID: Swift.String, withType encryptedBilligContext: Swift.String) -> UIKit.UIViewController?
+  @objc func getProviderMessageViewController(_ patientContext: PECore.PEPatientContext, forProvider provider: PECore.PEMessageProvider) -> UIKit.UIViewController?
+  @objc func getComposeMedicalAdviceWithSubjectViewController(_ patientContext: PECore.PEPatientContext, withSubject subject: Swift.String, forOrganization orgID: Swift.String) -> UIKit.UIViewController?
+  @objc func getComposeMedicalAdviceWithDCSIDViewController(_ patientContext: PECore.PEPatientContext, withDCSID dcsID: Swift.String) -> UIKit.UIViewController?
+}
+@objc public protocol PEMessageProvider {
+  @objc var ID: Swift.String { get }
+  @objc var name: Swift.String { get }
+  @objc var isPCP: Swift.Bool { get }
+  @objc var photoURL: Swift.String { get }
+  @objc var organization: PECore.PEOrganizationInfoProtocol { get }
+  @objc var isProviderIdEncrypted: Swift.Bool { get }
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable public class PEPulsingHeartView : UIKit.UIView {
+  @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
+  public func reloadAnimation()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc public protocol PECareTeamComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func hasAccessForCareTeam(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func getCareTeamViewController(_ patientContext: PECore.PEPatientContext, isPrimaryStandalone: Swift.Bool, withDelegate delegate: PECore.PECareTeamComponentDelegate?)
+  @objc func hasAccessForTreatmentTeam(_ encounterContext: PECore.PEEncounterContext) -> PECore.PEComponentAccessResult
+  @objc func getTreatmentTeamViewController(_ encounterContext: PECore.PEEncounterContext, componentHost: PECore.PEComponentHostProtocol, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+  @objc func getTreatmentTeamListViewController(_ encounterContext: PECore.PEEncounterContext, componentHost: PECore.PEComponentHostProtocol, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+  @objc func getFullscreenCareTeamViewController(_ patientContext: PECore.PEPatientContext, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+  @objc func hasAccessForProviderBio(_ encounterContext: PECore.PEEncounterContext) -> PECore.PEComponentAccessResult
+  @objc func getProviderBioViewController(_ encounterContext: PECore.PEEncounterContext, providerID: Swift.String) -> UIKit.UIViewController?
+}
+@objc public protocol PECareTeamComponentDelegate {
+  @objc func didGetCareTeamViewController(_ careTeamViewController: UIKit.UIViewController, withFailedOrgs failedOrgs: [PECore.PEOrganizationInfoProtocol]?)
+  @objc func didFailToGetCareTeamViewController(withError error: Foundation.NSError)
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PEUrlProvider : ObjectiveC.NSObject {
+  @objc public static let instance: PECore.PEUrlProvider
+  @objc public func setUrl(type: PECore.UrlType, url: Swift.String)
+  @objc public func getUrlString(type: PECore.UrlType) -> Swift.String?
+  @objc deinit
+}
+@objc public protocol InlineEducationSourceProtocol {
+  @objc func hasInlineEducationSource() -> Swift.Bool
+  @objc func getInlineEducationContext() -> PECore.InlineEducationType
+  @objc func getInlineEducationContextID() -> Swift.String
+  @objc func getInlineEducationSearchTerm() -> Swift.String
+}
+@objc public protocol PEMedicationsComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func hasAccessForOutpatientMedications(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func hasAccessForEncounterSpecificMedications(_ encounterContext: PECore.PEEncounterContext) -> PECore.PEComponentAccessResult
+  @objc func getMyChartNowMedicationsViewController(_ encounterContext: PECore.PEEncounterContext, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+}
+@_hasMissingDesignatedInitializers public class StringUtil {
+  public static func stringContainsOnlyAllowedCharacters(_ string: Swift.String) -> Swift.Bool
+  public static func unwrap(_ string: Swift.String?) -> Swift.String?
+  public static func isNullOrWhiteSpace(_ aString: Swift.String?) -> Swift.Bool
+  public static func byCompressingWhiteSpaces(_ string: Swift.String) -> Swift.String
+  public static func sanitizeAndroidString(_ str: Swift.String) -> Swift.String
+  public static func convertJavaUnicodeCharactersToSwiftUnicodeCharacters(_ inputString: Swift.String) -> Swift.String
+  public static func addLTRMarkers(_ inputString: Swift.String, locale: Foundation.Locale) -> Swift.String
+  public static func addRTLMarkers(_ inputString: Swift.String, locale: Foundation.Locale) -> Swift.String
+  public static func getFractionString(withNumerator numerator: Any, andDenominator denominator: Any) -> Swift.String
+  @discardableResult
+  public static func tryDecodeHTML(_ inputString: inout Swift.String) -> Swift.Bool
+  @objc deinit
+}
+@objc extension NSString {
+  @objc public static func isNullOrWhiteSpace(_ str: Swift.String?) -> Swift.Bool
+}
+@objc @_hasMissingDesignatedInitializers public class PEUserContext : PECore.PEOrganizationContext {
+  @objc public var hasProxySubjects: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public func getUser() -> PECore.PEUserProtocol?
+  @objc public func getPatients() -> [PECore.PEPatientProtocol]?
+  @objc public func getPersonList() -> [PECore.PEPersonProtocol]
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc public func isSameUser(as other: PECore.PEUserContext) -> Swift.Bool
+  @objc override dynamic public var hash: Swift.Int {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public enum CommunityUpdateContext : Swift.Int {
+  case ALLERGIES
+  case HEALTHISSUES
+  case APPOINTMENTS
+  case TESTRESULT
+  case MEDICATION
+  case MANAGEMYACCOUNT
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol PEH2GManageMyAccountAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func getManageMyAccountViewController(context: PECore.CommunityUpdateContext) -> UIKit.UIViewController?
+  @objc func setFeatureIsCurrentlyCheckingStatus(featureBit: Swift.String)
+  @objc func launchCommunityLoadingStatusRequest()
+  @objc func canAsynLoadingExternalData() -> Swift.Bool
+}
+@objc public protocol PETutorialHostProtocol {
+  @objc func tutorialIsAvailable(_ available: Swift.Bool)
+  @objc func showTutorialsAutomatically() -> Swift.Bool
+  @objc func didCompleteTutorial(_ tutorialId: Swift.String?)
+  @objc func isTutorialCompleted(_ tutorialId: Swift.String?) -> Swift.Bool
+  @objc func globalReplacementMap() -> Foundation.NSDictionary?
+}
+@objc public protocol PEQuestionnairesComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func hasAccessForPatientQuestionnaires(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func hasAccessForInpatientQuestionnaires(_ encounterContext: PECore.PEEncounterContext) -> PECore.PEComponentAccessResult
+  @objc func hasAccessForGeneralQuestionnaire(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func hasAccessForHistoryQuestionnaire(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func getPatientQuestionnairesViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc func getInpatientQuestionnairesViewController(_ encounterContext: PECore.PEEncounterContext, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+  @objc func getStartQuestionnaireViewController(_ patientContext: PECore.PEPatientContext, epicHttpLink: Swift.String) -> UIKit.UIViewController?
+  @objc func getQuestionnairesViewController(forQuestionnaire questionnaireID: Swift.String, andSeries seriesAnswerID: Swift.String, patientContext: PECore.PEPatientContext, completionDelegate: PECore.PEQuestionnaireCompletionDelegate?) -> UIKit.UIViewController?
+  @objc func getAppointmentQuestionnairesViewController(csn: Swift.String, patientContext: PECore.PEPatientContext, organization: PECore.PEOrganizationInfoProtocol?) -> UIKit.UIViewController
+  @objc func getHistoryAppointmentQuestionnairesViewController(csn: Swift.String, patientContext: PECore.PEPatientContext, organization: PECore.PEOrganizationInfoProtocol?) -> UIKit.UIViewController
+  @objc func getOldServerAppointmentQuestionnairesViewController(csn: Swift.String, patientContext: PECore.PEPatientContext, organization: PECore.PEOrganizationInfoProtocol?) -> UIKit.UIViewController
+  @objc func getQuestionnaireMessageTaskViewController(messageID: Swift.String, taskID: Swift.String, patientContext: PECore.PEPatientContext, organization: PECore.PEOrganizationInfoProtocol?) -> UIKit.UIViewController
+  @objc func getHistoryQuestionnaireMessageTaskViewController(messageID: Swift.String, taskID: Swift.String, patientContext: PECore.PEPatientContext, organization: PECore.PEOrganizationInfoProtocol?) -> UIKit.UIViewController
+  @objc func getGeneralQuestionnaireViewController(patientContext: PECore.PEPatientContext, parameters: [Swift.String : Swift.String]) -> UIKit.UIViewController
+  @objc func getHistoryQuestionnaireViewController(patientContext: PECore.PEPatientContext, parameters: [Swift.String : Swift.String]) -> UIKit.UIViewController
+}
+@objc public protocol PEQuestionnaireCompletionDelegate {
+  @objc func questionnaireCompleted()
+}
+public enum CenteredMessageTextViewStyle {
+  case Clear
+  case GreyedOut
+  public static func == (a: PECore.CenteredMessageTextViewStyle, b: PECore.CenteredMessageTextViewStyle) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@objc @_inheritsConvenienceInitializers public class LoadingIndicatorView : UIKit.UIView {
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  public class func getNewLoadingIndicator(_ view: UIKit.UIView) -> PECore.LoadingIndicatorView
+  @objc override dynamic public func didMoveToSuperview()
+  public func setTextMode(_ b: Swift.Bool)
+  public func showMessage(_ style: PECore.CenteredMessageTextViewStyle, _ msg: Swift.String?, _ isTxtMode: Swift.Bool)
+  public func hide(_ animated: Swift.Bool)
+  public func hide()
+  public func removeLoadingText()
+  @objc deinit
+}
+@objc public enum PEComponentAPIKey : Swift.Int {
+  case shareEverywhere = 0
+  case toDo
+  case appointments
+  case questionnaires
+  case trackMyHealth
+  case toDoBridging
+  case myChartNow
+  case careTeam
+  case education
+  case problemList
+  case problemListBridging
+  case happeningSoon
+  case medications
+  case medicationsBridging
+  case testResults
+  case testResultDetail
+  case H2GOrgPopup
+  case dateUtilBridging
+  case homePage
+  case application
+  case deepLinkManager
+  case authentication
+  case manageMyAccount
+  case preventiveCare
+  case myChartRef
+  case messages
+  case upcomingOrders
+  case scheduling
+  case nativeMessages
+  case infectionControl
+  case continuingCare
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class InlineEducationView : UIKit.UIImageView {
+  @objc public func setInlineEducationSource(source: PECore.InlineEducationSourceProtocol!, componentHost: PECore.PEComponentHostProtocol?, patientContext: PECore.PEPatientContext?, encounterContext: PECore.PEEncounterContext?, hostVC: UIKit.UIViewController?, onShowLoadingIndicator: @escaping (() -> Swift.Void), onHideLoadingIndicator: @escaping (() -> Swift.Void)) -> Swift.Bool
+  @objc public func onInlineEducationViewClick()
+  @objc override dynamic public init(image: UIKit.UIImage?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
+  @objc public func getAccessibilityString() -> Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class PEPatientContext : PECore.PEUserContext {
+  @objc public func getPatient() -> PECore.PEPatientProtocol?
+  @objc public func getEncounters() -> [PECore.PEEncounterProtocol]?
+  @objc public func isPatientProxy() -> Swift.Bool
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc public func isSamePatient(as other: PECore.PEPatientContext) -> Swift.Bool
+  @objc override dynamic public var hash: Swift.Int {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public enum PEAlertType : Swift.Int {
+  case unknown = 0
+  case healthReminders = 100
+  case tasks = 2000
+  case taskChanges = 2001
+  case newInpatientLab = 62
+  case newOutpatientLab = 61
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class ImageUtil {
+  public static func rescaleImage(image: UIKit.UIImage, targetSize: CoreGraphics.CGSize) -> UIKit.UIImage
+  public static func rescaleImage(image: UIKit.UIImage, targetHeight: CoreGraphics.CGFloat) -> UIKit.UIImage
+  public static func rescaleImage(image: UIKit.UIImage, targetWidth: CoreGraphics.CGFloat) -> UIKit.UIImage
+  public static func image(fromText text: Swift.String, withSize size: CoreGraphics.CGSize, backgroundColor: UIKit.UIColor, andForegroundColor foregroundColor: UIKit.UIColor) -> UIKit.UIImage?
+  public static func backgroundImage(fromColor color: UIKit.UIColor) -> UIKit.UIImage?
+  public static func grayscaleImage(fromImage image: UIKit.UIImage) -> UIKit.UIImage
+  @objc deinit
+}
+@objc extension UIImage {
+  @objc public static func brandedImageNamed(_ brandedName: Swift.String, defaultBundle: Foundation.Bundle = Bundle.main) -> UIKit.UIImage?
+  @objc convenience dynamic public init?(brandedName: Swift.String, defaultBundle: Foundation.Bundle = Bundle.main)
+}
+@objc public protocol PEMyChartRefComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func getApplicationKeys() -> [Swift.String]
+  @objc func setDefaultPersonWprId(for userId: Swift.String, newDefaultWprId: Swift.String?)
+  @objc func getDefaultPersonWprId(for userId: Swift.String) -> Swift.String?
+  @objc func getAvailableSecondaryLoginMethodsToSetUp() -> Swift.Int
+  @objc(setPreventSecondaryLoginAlert:) func setPreventSecondaryLoginAlert(preventAlert: Swift.Bool)
+  @objc func getPreventSecondaryLoginAlert() -> Swift.Bool
+  @objc func getMonitoredAppointmentCSN() -> Swift.String
+  @objc func hasAccessForAppleWatchRedesign(_ context: PECore.PEUserContext) -> PECore.PEComponentAccessResult
+  @objc func incrementLoginCounter()
+  @objc func setAppReviewCardDismiss(dismissed: Swift.Bool)
+  @objc func shouldDisplayAppReviewCard() -> Swift.Bool
+}
+public struct PESecondaryLoginMethod : Swift.OptionSet {
+  public let rawValue: Swift.Int
+  public init(rawValue: Swift.Int)
+  public static let passcode: PECore.PESecondaryLoginMethod
+  public static let touchId: PECore.PESecondaryLoginMethod
+  public static let faceId: PECore.PESecondaryLoginMethod
+  public typealias Element = PECore.PESecondaryLoginMethod
+  public typealias ArrayLiteralElement = PECore.PESecondaryLoginMethod
+  public typealias RawValue = Swift.Int
+}
+@objc public protocol PEH2GOrgPopupComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func getH2GErrorPopupViewController(forPEH2GFailedOrgsList failedOrgsList: [PECore.PEOrganizationInfoProtocol], withTitle title: Swift.String) -> UIKit.UIViewController
+  @objc func getH2GErrorPopupViewController(forPEH2GFailedOrgsList failedOrgsList: [PECore.PEOrganizationInfoProtocol], withTitle title: Swift.String, shouldShowOrgErrorText: Swift.Bool) -> UIKit.UIViewController
+  @objc func getH2GOrgPopupViewController(forPEH2GOrgsList orgList: [PECore.PEOrganizationInfoProtocol], withTitle title: Swift.String, shouldShowUpToDateString: Swift.Bool) -> UIKit.UIViewController
+}
+@objc public protocol PEMyChartNowComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func getMyChartNowActivitiesForPatientContext(_ patientContext: PECore.PEPatientContext, delegate: PECore.PEMyChartNowComponentDelegate!)
+  @objc func onPatientContextChanged()
+  @objc func hasAccessForMyChartNow(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func getMyChartNowFullscreenViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc func getMyChartNowWidgetViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc func getMyChartNowClassicViewController(_ patientContext: PECore.PEPatientContext, componentHost: PECore.PEComponentHostProtocol?) -> UIKit.UIViewController?
+  @objc func getMyChartNowDeepLinkController(_ person: PECore.PEPersonProtocol?, userInfo: Foundation.NSDictionary?) -> UIKit.UIViewController?
+  @objc func getMyChartNowSwitcherView(_ encounterContext: PECore.PEEncounterContext, _ activityDescriptor: Swift.String, _ delegate: PECore.PEMyChartNowSwitcherDelegate) -> UIKit.UIView & PECore.PEMyChartNowSwitcherProtocol
+  @objc func getMyChartNowIcon(_ myChartNowContextID: Swift.String) -> UIKit.UIImage
+  @objc func getMyChartNowPatientTabAccessibilityLabel(_ myChartNowContextID: Swift.String) -> Swift.String
+  @objc func getMyChartNowOtherActivityListTitle(_ myChartNowContextID: Swift.String) -> Swift.String
+  @objc func getMyChartNowHasShownForCurrPatient() -> Swift.Bool
+  @objc func setMyChartNowHasShownForCurrPatient(_ hasShown: Swift.Bool)
+  @objc func getTitleForMyChartNowActivity(_ patientContext: PECore.PEPatientContext, _ activityDescriptor: Swift.String, onTitleValueRetrieved: @escaping (Swift.String?) -> Swift.Void)
+  @objc func getMyChartContext(patientContext: PECore.PEPatientContext, onComplete: @escaping (PECore.PEEncounterProtocol?) -> Swift.Void, onError: @escaping () -> Swift.Void)
+  @objc func getMyChartNowFeedTheme(myChartNowContextID: Swift.String) -> PECore.PEMyChartNowItemFeedThemeProtocol?
+  @objc func getMyChartNowAvailableContexts() -> [Swift.String]
+  @objc func invalidateFeatureBadge(encounterContext: PECore.PEEncounterContext, featureID: Swift.String)
+}
+@objc public protocol PEMyChartNowComponentDelegate : AnyObject {
+  @objc func didGetMyChartNowActivities(_ availableFeatures: [Swift.String]?)
+  @objc func didGetMyChartNowActivitiesError(_ errorMessage: Swift.String?)
+}
+@objc public protocol PEMyChartNowWidgette : AnyObject {
+  @objc func didTapHeader()
+}
+@objc public protocol PEMyChartNowSwitcherDelegate : AnyObject {
+  @objc func didSwitchContext(_ context: PECore.PEMyChartNowSwitcherContext)
+}
+@objc public enum PEMyChartNowSwitcherContext : Swift.Int {
+  case Patient = 1
+  case Encounter = 2
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol PEMyChartNowSwitcherProtocol {
+  @objc var currentContext: PECore.PEMyChartNowSwitcherContext { get }
+}
+@objc public protocol PEMyChartNowItemFeedThemeProtocol {
+  @objc func getStartBackgroundImage() -> UIKit.UIImage?
+  @objc func getEndBackgroundImage() -> UIKit.UIImage?
+  @objc func getHeaderBackgroundColor() -> UIKit.UIColor
+  @objc func getHeaderForegroundColor() -> UIKit.UIColor
+  @objc func getHeaderTextColor() -> UIKit.UIColor
+  @objc func getStartDateIcon() -> UIKit.UIImage?
+  @objc func getLocationIcon() -> UIKit.UIImage?
+  @objc func getEndDateIcon() -> UIKit.UIImage?
+}
+@objc public enum PEMyChartNowSharedAnimationElementViewTag : Swift.Int {
+  case ActivityBackground = 96000
+  case NavigationBar = 96001
+  case HeaderBackground = 96002
+  case HeaderStartImage = 96003
+  case HeaderEndImage = 96004
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class UnreadIndicatorView : UIKit.UIView {
+  @objc public enum UnreadIndicatorStyle : Swift.Int {
+    case unknown
+    case billingStatement
+    case labResult
+    case imagingResult
+    case otherResult
+    case procedureResult
+    case visitAVS
+    case visitNote
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc dynamic public init()
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func setStyle(_ style: PECore.UnreadIndicatorView.UnreadIndicatorStyle)
+  @objc public func setUnread(_ isUnread: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ProviderImageView : UIKit.UIImageView {
+  public func setProviderImageSource(_ source: PECore.ProviderImageDataSource, withName name: Swift.String, andPatientContext context: PECore.PEPatientContext?, andBackgroundColor color: UIKit.UIColor? = nil, andBorderColor borderColor: UIKit.UIColor? = nil, andBorderWidth borderWidth: CoreGraphics.CGFloat = 0.5)
+  public func canLoadProviderImage(withSource source: PECore.ProviderImageDataSource, andPatientContext context: PECore.PEPatientContext?) -> Swift.Bool
+  @objc override dynamic public init(image: UIKit.UIImage?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
+  @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+extension ProviderImageView : PECore.ImageLoaderDelegate {
+  @objc dynamic public func didLoadImage(_ image: UIKit.UIImage, forSource source: PECore.ImageDataSource)
+  @objc dynamic public func didFailToLoadImage(forSource source: PECore.ImageDataSource)
+}
+public protocol PEObservable : AnyObject {
+  func removeObserver(_ observer: PECore.PEObserver)
+}
+@objc public protocol PELocaleInfo {
+  @objc func getFormatterLocale() -> Foundation.Locale
+  @objc func getLanguageLocale() -> Foundation.Locale
+  @objc(getPatternFromDateFormatTemplate:) func getDatePattern(from dateFormatTemplate: Swift.String) -> Swift.String?
+}
+extension Locale {
+  public static var formatterLocale: Foundation.Locale {
+    get
+  }
+  public static var languageLocale: Foundation.Locale {
+    get
+  }
+  public static func getDatePattern(from dateFormatTemplate: Swift.String) -> Swift.String?
+  public func getString(delimeter: Swift.String = "-", includeVariant: Swift.Bool = false) -> Swift.String
+  public static var isOrderMonthWeekday: Swift.Bool {
+    get
+  }
+  public func isArabicLocale() -> Swift.Bool
+}
+@objc public protocol PEUserProtocol : PECore.PEPersonProtocol {
+  @objc func getPatient() -> PECore.PEPatientProtocol?
+  @objc func hasSecurityPoint(feature: Swift.String) -> Swift.Bool
+  @objc func getToken(_ tokenType: PECore.TokenType) -> Swift.String
+  @objc func setToken(_ token: Swift.String, forType: PECore.TokenType)
+  @objc func getLocaleString() -> Swift.String
+  @objc func getDeviceID() -> Swift.String
+  @objc func getAppID() -> Swift.String
+  @objc func isTimeout() -> Swift.Bool
+}
+public struct GetMyChartUrlResponse : Swift.Codable {
+  public var allowedHosts: [Swift.String]?
+  public var redirectURL: Swift.String?
+  public var shouldLaunchOutsideApp: Swift.Bool
+  public func generateDirectUrlRequest() -> Foundation.URLRequest?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension UIColor {
+  @objc public static let subtleTextColor: UIKit.UIColor
+  @objc public static let slightlySubtleTextColor: UIKit.UIColor
+  @objc public static let errorTextColor: UIKit.UIColor
+  @objc public static let disabledButtonColor: UIKit.UIColor
+  @objc public static let badgeColor: UIKit.UIColor
+  @objc public static let moneyTextColor: UIKit.UIColor
+  @objc public static let dividerColor: UIKit.UIColor
+  @objc public static let bannerBorderColor: UIKit.UIColor
+  @objc public static let tabBarItemColor: UIKit.UIColor
+  @objc public static let tabBarColor: UIKit.UIColor?
+  convenience public init?(hexString: Swift.String)
+  convenience public init?(rgbaString: Swift.String)
+  public func blendColor(_ color: UIKit.UIColor?, alpha: CoreGraphics.CGFloat) -> UIKit.UIColor?
+  public func getContrastingTextColor() -> UIKit.UIColor
+  public func getRGBA() -> (red: CoreGraphics.CGFloat, green: CoreGraphics.CGFloat, blue: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat)
+  public func getHexString() -> Swift.String
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PEContextProvider : ObjectiveC.NSObject {
+  @objc public class func get() -> PECore.PEContextProvider
+  @objc public func getContext() -> PECore.PEOrganizationContext?
+  @objc public func getContexts(_ organization: PECore.PEOrganizationProtocol?) -> [PECore.PEUserContext]?
+  @objc public func getContext(_ organization: PECore.PEOrganizationProtocol?, _ user: PECore.PEUserProtocol?) -> PECore.PEUserContext?
+  @objc public func getContext(_ organization: PECore.PEOrganizationProtocol?, _ user: PECore.PEUserProtocol?, _ patient: PECore.PEPatientProtocol?) -> PECore.PEPatientContext?
+  @objc public func getContexts(_ organization: PECore.PEOrganizationProtocol?, _ user: PECore.PEUserProtocol?) -> [PECore.PEPatientContext]?
+  @objc public func getContext(_ organization: PECore.PEOrganizationProtocol?, _ user: PECore.PEUserProtocol?, _ patient: PECore.PEPatientProtocol?, _ encounter: PECore.PEEncounterProtocol?) -> PECore.PEEncounterContext?
+  @objc public func getContext(_ organization: PECore.PEOrganizationProtocol?, _ user: PECore.PEUserProtocol?, _ patient: PECore.PEPatientProtocol?, encounterIdentifier: Swift.String?) -> PECore.PEEncounterContext?
+  @objc public func getContexts(_ organization: PECore.PEOrganizationProtocol?, _ user: PECore.PEUserProtocol?, _ patient: PECore.PEPatientProtocol?) -> [PECore.PEEncounterContext]?
+  @objc public func updateOrganization(_ organization: PECore.PEOrganizationProtocol?)
+  @objc public func updateUser(_ organization: PECore.PEOrganizationProtocol?, _ users: [PECore.PEUserProtocol]?)
+  @objc public func updatePatients(_ organization: PECore.PEOrganizationProtocol?, _ user: PECore.PEUserProtocol?, _ patients: [PECore.PEPatientProtocol]?)
+  @objc public func updateEncounters(_ organization: PECore.PEOrganizationProtocol?, _ user: PECore.PEUserProtocol?, _ patient: PECore.PEPatientProtocol?, _ encounters: [PECore.PEEncounterProtocol]?)
+  @objc public func clearContext()
+  @objc public func getEncounter(_ organizationIdentifer: Swift.String?, _ userIdentifier: Swift.String?, _ patientIdentifier: Swift.String?, _ encounterIdentifier: Swift.String?) -> PECore.PEEncounterProtocol?
+  @objc deinit
+}
+@objc public protocol PEHappeningSoonComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func hasAccessForHappeningSoon(_ encounterContext: PECore.PEEncounterContext) -> PECore.PEComponentAccessResult
+  @objc func getHappeningSoonTimelineWidgetteViewController(_ encounterContext: PECore.PEEncounterContext, componentHost: PECore.PEComponentHostProtocol) -> UIKit.UIViewController?
+}
+@objc public protocol PEHostableComponentViewController {
+  @objc func setComponentHost(_ componentHost: PECore.PEComponentHostProtocol)
+  @objc optional func shouldHideComponentHostPatientInformation() -> Swift.Bool
+  @objc optional func getLeftBarButtonItem() -> UIKit.UIBarButtonItem?
+  @objc optional func getRightBarButtonItem() -> UIKit.UIBarButtonItem?
+}
+@_hasMissingDesignatedInitializers @objc public class PETutorialController : ObjectiveC.NSObject {
+  @objc public static func initialize(tutorialHost: PECore.PETutorialHostProtocol?)
+  @objc public static func loadTutorialFromJson(bundle: Foundation.Bundle, fileName: Swift.String, patientContext: PECore.PEPatientContext?) -> PECore.PETutorialUIModel?
+  @objc public static func loadTutorialFromJson(bundle: Foundation.Bundle, fileName: Swift.String, patientContext: PECore.PEPatientContext?, replacementMap: Foundation.NSDictionary?) -> PECore.PETutorialUIModel?
+  @objc public static func showCurrentTutorial()
+  @objc public static func registerTutorial(tutorialUIModel: PECore.PETutorialUIModel?)
+  @objc public static func unregisterTutorial(tutorialUIModel: PECore.PETutorialUIModel?)
+  public static func refreshTutorialAvailability()
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public protocol PEPatientIndexProtocol {
+  @objc func getPatientIndex() -> Swift.Int
+}
+@_hasMissingDesignatedInitializers public class HtmlUtil {
+  public static let contentWrapperClassName: Swift.String
+  public static let metaJavascriptInjection: Swift.String
+  public static let imageLoadingJavascriptInjection: Swift.String
+  public static let imagesLoadedMessageName: Swift.String
+  public static let refreshTableScrollingButtonsInjectionScript: Swift.String
+  public static func prepareHtmlForInlineWebViews(_ html: Swift.String, interfaceRTL: Swift.Bool = false) -> Swift.String
+  public static func containsImages(html: Swift.String) -> Swift.Bool
+  @objc deinit
+}
+@objc public protocol PEPreventiveCareComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func hasAccessForPreventiveCare(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func getPreventiveCareViewController(userContext: PECore.PEUserContext, patientContext: PECore.PEPatientContext) -> PECore.MyChartWebViewController?
+}
+public class PEChangeObservable<ValueType> {
+  public var value: ValueType {
+    get
+  }
+  public init(_ value: ValueType)
+  public func setValue(_ value: ValueType)
+  public func bind<ObserverType>(_ observer: ObserverType) -> PECore.PEChangeBinding<ValueType, ObserverType> where ObserverType : PECore.PEObserver
+  public func removeObserver(_ observer: PECore.PEObserver)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class PEDelegated<OutputType> {
+  public var callback: ((OutputType) -> Swift.Void)? {
+    get
+  }
+  public func delegate<Object>(to object: Object, with callback: @escaping (Object, OutputType) -> Swift.Void) where Object : AnyObject
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class PEEventDelegated {
+  public var callback: (() -> ())? {
+    get
+  }
+  public func delegate<Object>(to object: Object, with callback: @escaping (Object) -> Swift.Void) where Object : AnyObject
+  @objc deinit
+}
+@objc public protocol ImageDataSource {
+  @objc var imageURL: Swift.String { get }
+}
+@_hasMissingDesignatedInitializers @objc public class PEEncounterContext : PECore.PEPatientContext {
+  @objc public func getEncounter() -> PECore.PEEncounterProtocol?
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc public func isSameEncounter(as other: PECore.PEEncounterContext) -> Swift.Bool
+  @objc override dynamic public var hash: Swift.Int {
+    @objc get
+  }
+  @objc deinit
+}
+public class GenericWebListener : PECore.WebSessionCallbackProtocol {
+  public init(readyBlock: @escaping () -> Swift.Void)
+  @objc public func onWebSessionReady()
+  @objc deinit
+}
+extension NSNotification.Name {
+  public static let forceBadgeUpdate: Foundation.Notification.Name
+  public static let alertsReloaded: Foundation.Notification.Name
+  public static let mcnBadgeInvalidated: Foundation.Notification.Name
+  public static let toDoReminderTimeChanged: Foundation.Notification.Name
+  public static let careCompanionGeneric: Foundation.Notification.Name
+  public static let creditCardPaymentFinished: Foundation.Notification.Name
+  public static let echeckinClosed: Foundation.Notification.Name
+  public static let questionnairesComplete: Foundation.Notification.Name
+  public static let fdiLinksLoaded: Foundation.Notification.Name
+  public static let forcedLogout: Foundation.Notification.Name
+  public static let communityConnectionUpdated: Foundation.Notification.Name
+  public static let refreshFutureAppointments: Foundation.Notification.Name
+  public static let newAppointmentScheduled: Foundation.Notification.Name
+  public static let appointmentDirectlyCancelled: Foundation.Notification.Name
+  public static let appointmentCancellationRequestSent: Foundation.Notification.Name
+  public static let rescheduleComplete: Foundation.Notification.Name
+  public static let communityMedicationsRefill: Foundation.Notification.Name
+  public static let personalPreferencesUpdated: Foundation.Notification.Name
+  public static let appointmentArrivalSettingChanged: Foundation.Notification.Name
+  public static let appointmentArrivalMonitoredAppointmentChanged: Foundation.Notification.Name
+  public static let appointmentArrivalStatusChanged: Foundation.Notification.Name
+  public static let careTeamWidgetNeedReloaded: Foundation.Notification.Name
+  public static let contactPreferencesUpdated: Foundation.Notification.Name
+  public static let javascriptCallback: Foundation.Notification.Name
+  public static let refreshWebView: Foundation.Notification.Name
+}
+@objc extension NSNotification {
+  @objc public static var refreshWebView: Foundation.NSString {
+    @objc get
+  }
+  @objc public static var reloadComponentPaneHostedViewController: Foundation.NSString {
+    @objc get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class PETutorialViewController : UIKit.UIViewController {
+  public var tutorialModel: PECore.PETutorialUIModel?
+  public var isForced: Swift.Bool
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @objc override dynamic public func accessibilityPerformEscape() -> Swift.Bool
+  @objc override dynamic public func viewWillLayoutSubviews()
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc public protocol PEAuthenticationComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func getViewControllerForTwoFactorAuthentication(withContext userContext: PECore.PEUserContext, destinationStringArray: [Swift.String], canTrustDevice: Swift.Bool, completionHandler: ((Swift.Bool, Swift.Bool) -> Swift.Void)?) -> UIKit.UIViewController?
+  @objc func getViewControllerForTwoFactorEnrollment(withContext userContext: PECore.PEUserContext, twoFactorInformation: PECore.TwoFactorInformationProtocol, completionHandler: ((Swift.Bool, Swift.Bool) -> Swift.Void)?) -> UIKit.UIViewController?
+  @objc func supportsTwoFactorOptIn(withContext userContext: PECore.PEUserContext) -> Swift.Bool
+  @objc func loadTwoFactorInformation(withContext userContext: PECore.PEUserContext, completionHandler: @escaping (((PECore.TwoFactorInformationProtocol)?) -> Swift.Void), errorHandler: @escaping ((PECore.PEError) -> Swift.Void))
+  @objc func getViewControllerForTwoFactorOptIn(withContext userContext: PECore.PEUserContext, twoFactorInformation: PECore.TwoFactorInformationProtocol, completionHandler: ((Swift.Bool, Swift.Bool) -> Swift.Void)?) -> UIKit.UIViewController?
+  @objc func getViewControllerForTwoFactorOnboarding(withContext userContext: PECore.PEUserContext) -> UIKit.UIViewController?
+}
+@objc public protocol TwoFactorInformationProtocol {
+  @objc var allowOptIn: Swift.Bool { get }
+  @objc var isOptedIn: Swift.Bool { get }
+}
+@_hasMissingDesignatedInitializers public class PEChangeBinding<ValueType, ObserverType> where ObserverType : PECore.PEObserver {
+  @discardableResult
+  public func onChange(_ callback: @escaping (ObserverType, (oldValue: ValueType?, newValue: ValueType)) -> Swift.Void) -> Self
+  public func fire()
+  @objc deinit
+}
+public protocol ProviderImageDataSource : PECore.CacheableImageDataSource {
+  var providerId: Swift.String { get }
+  var isProviderIdEncrypted: Swift.Bool { get }
+  var hasImageOnBlob: Swift.Bool { get }
+  var organization: PECore.PEOrganizationInfoProtocol { get }
+}
+@objc public protocol PEShareEverywhereComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func hasAccessForShareEverywhere(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func getShareEverywhereViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+}
+public class PEEventObservable {
+  public init()
+  public func bind<ObserverType>(_ observer: ObserverType) -> PECore.PEEventBinding<ObserverType> where ObserverType : PECore.PEObserver
+  public func fire()
+  public func removeObserver(_ observer: PECore.PEObserver)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class UiUtil {
+  public static func isLabelTruncated(_ label: UIKit.UILabel) -> Swift.Bool
+  @objc deinit
+}
+@objc extension UIViewController {
+  @objc dynamic open func showNavigationBar(_ shouldShow: Swift.Bool)
+  @objc dynamic open func dismissToLoginController(_ loginViewController: UIKit.UIViewController)
+  @objc dynamic open func getLoginViewController() -> UIKit.UIViewController?
+}
+@objc public protocol PEEncounterProtocol {
+  @objc func getIdentifier() -> Swift.String
+  @objc func getNowContext() -> Swift.String
+  @objc func getWebServiceUrl(_ urlType: PECore.UrlType) -> Swift.String
+  @objc func getUniversalIdentifier() -> Swift.String
+  @objc func getAlerts(patient: PECore.PEPatientProtocol) -> [PECore.PEEncounterAlertProtocol]
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @IBDesignable public class VideoCardView : PECore.SelfLoadingView {
+  public static let SHARE_EVERYWHERE_KEY: Swift.String
+  public static let VIDEO_VISIT_KEY: Swift.String
+  public static let ONBOARDING_KEY: Swift.String
+  public var userContext: PECore.PEUserContext?
+  public func setupContext(videoResponse: PECore.VideoResponse?) -> Swift.Bool
+  public func applyTheme(_ userContext: PECore.PEUserContext)
+  @objc deinit
+}
+@objc public protocol PEContinuingCareComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func hasAccessForContinuingCare(_ encounterContext: PECore.PEEncounterContext) -> PECore.PEComponentAccessResult
+  @objc func getContinuingCareViewController(_ encounterContext: PECore.PEEncounterContext, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+  @objc func getOpenListViewController(_ encounterContext: PECore.PEEncounterContext, epicHttpLink: Swift.String) -> UIKit.UIViewController?
+}
+@objc public protocol PEAppointmentsComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func getECheckInViewController(forCSN csn: Swift.String) -> UIKit.UIViewController?
+  @objc func getFutureAppointmentViewController(forCSN csn: Swift.String) -> UIKit.UIViewController?
+  @objc func getWebSchedulingViewController(forProvider provider: PECore.PEAppointmentProvider) -> UIKit.UIViewController?
+  @objc func getWebSchedulingViewController(forProvider provider: PECore.PEAppointmentProvider, wrapInNavigator: Swift.Bool) -> UIKit.UIViewController?
+  @objc func getWebSchedulingViewController(reasonForVisit: Swift.String, hmTopicId: Swift.String, wrapInNavigator: Swift.Bool) -> UIKit.UIViewController?
+  @objc func getVideoVisitSchedulingViewController(reasonForVisitID: Swift.String) -> UIKit.UIViewController?
+  @objc func hasAccessToWebScheduling() -> Swift.Bool
+  @objc func initiateHelloPatient()
+}
+@objc public protocol PEAppointmentProvider {
+  @objc var ID: Swift.String { get }
+  @objc var canDirectSchedule: Swift.Bool { get }
+  @objc var getPEOrganization: PECore.PEOrganizationInfoProtocol { get }
+}
+@objc public enum TokenType : Swift.Int {
+  case Default
+  case Bedside
+  case MyChart
+  case OAuth2
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol PEProblemListComponentBridgingAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func getHealthIssuesViewController() -> UIKit.UIViewController?
+}
+public typealias Header = (Swift.String, Swift.String)
+public protocol Parameterable {
+  func encodedData() -> Foundation.Data?
+  func valueAsString() -> Swift.String
+  func getKey() -> Swift.String
+}
+public struct Parameter<T> : PECore.Parameterable where T : Swift.Encodable {
+  public init(_ key: Swift.String, _ value: T)
+  public func getKey() -> Swift.String
+  public func valueAsString() -> Swift.String
+  public func encodedData() -> Foundation.Data?
+}
+@objc public protocol PETrackMyHealthComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func getTrackMyHealthViewController() -> UIKit.UIViewController?
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class TokenProvider : ObjectiveC.NSObject {
+  public static let instance: PECore.TokenProvider
+  public func setToken(type: PECore.TokenType, token: Swift.String)
+  public func removeToken(for type: PECore.TokenType)
+  public func getToken(type: PECore.TokenType) -> Swift.String?
+  public func getAuthHeader(type: PECore.TokenType) -> Swift.String?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class VideoResponseViewModel : ObjectiveC.NSObject {
+  public static func loadVideoLink(_ userContext: PECore.PEUserContext, videoName: Swift.String, successHandler: @escaping (PECore.VideoResponse) -> Swift.Void, failureHandler: @escaping (PECore.PEError) -> Swift.Void)
+  public static func logVideoView(videoName: Swift.String)
+  public static func setVideoHandled(videoName: Swift.String)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public protocol PEUpcomingOrdersComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func hasAccessForUpcomingOrders(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func getUpcomingOrdersViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController
+}
+@objc public protocol PETestResultsComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc static var licenseDenyTestResults: Swift.String { get }
+  @objc static var testResultViewedNotification: Swift.String { get }
+  @objc static var organizationLinkUpdatedNotification: Swift.String { get }
+  @objc static var communityRefreshBannerNeedUpdate: Swift.String { get }
+  @objc static var communityNotificationRefreshBannerUpdateKey: Swift.String { get }
+  @objc func hasAccessForTestResults(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func hasAccessForOutpatientTestResults(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func getTestResultsViewController(_ patientContext: PECore.PEPatientContext, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+}
+extension URL {
+  public static let AppleSMSURLScheme: Swift.String
+  public static let ApplePhoneURLScheme: Swift.String
+  public static let AppleMailURLScheme: Swift.String
+  public static let AppleMapsURLSchemeModern: Swift.String
+  public static let AppleMapsURLSchemeOld: Swift.String
+  public static func urlEncode(string: Swift.String?) -> Swift.String?
+  public func containsQueryParameter(withKey key: Swift.String) -> Swift.Bool
+  public func getQueryParameter(forKey key: Swift.String) -> Swift.String?
+  public func isNetworkURL() -> Swift.Bool
+  public func isDefaultAppleUrl() -> Swift.Bool
+  public func isEmbeddedYoutube() -> Swift.Bool
+  public func isHostInAllowedList(allowedHosts: [Swift.String]) -> Swift.Bool
+}
+@objc public protocol PEComponentAPIProtocol {
+}
+@objc public protocol PEPatientProtocol : PECore.PEPersonProtocol {
+  @objc func getWPRID() -> Swift.String
+  @objc func hasSecurityPoint(_ feature: Swift.String) -> Swift.Bool
+  @objc func getIsInED() -> Swift.Bool
+  @objc func getIsAdmitted() -> Swift.Bool
+  @objc func getAlerts() -> [PECore.PEAlertProtocol]
+  @objc func getNowContext() -> Swift.String
+  @objc func setNowContext(_ nowContextId: Swift.String)
+}
+@objc public protocol PEEducationComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func hasAccessForOutpatientEducation(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func hasAccessForInpatientEducation(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func getInpatientEducationTitlesViewController(_ encounterContext: PECore.PEEncounterContext, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+  @objc func getOutpatientEducationTitlesViewController(_ patientContext: PECore.PEPatientContext, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+  @objc func getEducationPointViewController(userContext: PECore.PEUserContext, patientContext: PECore.PEPatientContext, pointID: Swift.String, educationTitle: Swift.String, completionDelegate: PECore.PEEducationPointCompletionDelegate?, shouldLaunchMedicalAdviceMessageComposer: Swift.Bool, buttonStyle: PECore.PEEducationButtonStyle, pointStatus: Foundation.NSNumber?, educationKey: Swift.String) -> PECore.MyChartWebViewController?
+}
+@objc public enum PEEducationButtonStyle : Swift.Int {
+  case none = 0
+  case completion = 1
+  case toggle = 2
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol PEEducationPointCompletionDelegate {
+  @objc func educationPointCompleted(withStatus status: PECore.PEEducationPointCompletedStatus)
+  @objc optional func userDidNavigateAwayFromPoint()
+  @objc optional func userDidNavigateBackToPoint()
+}
+@objc public enum PEEducationPointCompletedStatus : Swift.Int {
+  case unread = 0
+  case read = 1
+  case done = 2
+  case hidden = 3
+  case question = 4
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol H2GErrorBannerViewDelegate : AnyObject {
+  @objc func didTapH2GBanner(popupComponent: PECore.PEH2GOrgPopupComponentAPIProtocol)
+  @objc optional func didCloseH2GBanner()
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable public class H2GErrorBannerView : UIKit.UIView {
+  @objc @IBOutlet weak public var textLabel: UIKit.UILabel!
+  weak public var delegate: PECore.H2GErrorBannerViewDelegate?
+  @objc override dynamic public var isHidden: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public func prepareForInterfaceBuilder()
+  @objc deinit
+}
+extension H2GErrorBannerView : UIKit.UIGestureRecognizerDelegate {
+  @objc override dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
+public struct VideoResponse : Swift.Decodable {
+  public var videoURL: Swift.String
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class PEArrayBinding<ElementType, ObserverType> where ObserverType : PECore.PEObserver {
+  @discardableResult
+  public func onChange(_ callback: @escaping (ObserverType, (oldArray: [ElementType]?, newArray: [ElementType])) -> Swift.Void) -> Self
+  @discardableResult
+  public func onInsert(_ callback: @escaping (ObserverType, (array: [ElementType], insertedRows: Swift.Range<Swift.Int>)) -> Swift.Void) -> Self
+  @discardableResult
+  public func onDelete(_ callback: @escaping (ObserverType, (array: [ElementType], deletedRows: Swift.Range<Swift.Int>)) -> Swift.Void) -> Self
+  @discardableResult
+  public func onReplace(_ callback: @escaping (ObserverType, (array: [ElementType], deletedRows: Swift.Range<Swift.Int>, insertedRows: Swift.Range<Swift.Int>)) -> Swift.Void) -> Self
+  public func fire()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PELocalizedStrings : ObjectiveC.NSObject {
+  @objc public class func initStrings(_ locale: PECore.LocalizedLocale)
+  @objc public class func handleLocaleChange(_ locale: PECore.LocalizedLocale)
+  @objc public class func getString(_ key: Swift.String) -> Swift.String
+  @objc public class func getString(_ key: Swift.String, _ locale: PECore.LocalizedLocale) -> Swift.String
+  @objc public class func getString(_ key: Swift.String, _ locale: PECore.LocalizedLocale, _ bundle: Foundation.Bundle?) -> Swift.String
+  public class func getString(_ key: Swift.String, _ params: Swift.String...) -> Swift.String
+  @objc public class func getString(_ key: Swift.String, paramArray: [Swift.String]) -> Swift.String
+  public class func getString(_ key: Swift.String, _ locale: PECore.LocalizedLocale, _ params: Swift.String...) -> Swift.String
+  @objc public class func getString(_ key: Swift.String, _ locale: PECore.LocalizedLocale, paramArray: [Swift.String]) -> Swift.String
+  public class func getString(_ key: Swift.String, _ locale: PECore.LocalizedLocale, _ bundle: Foundation.Bundle?, _ params: Swift.String...) -> Swift.String
+  public class func getString(_ key: Swift.String, _ bundle: Foundation.Bundle, paramArray: [Swift.String]) -> Swift.String
+  @objc public class func getString(_ key: Swift.String, _ locale: PECore.LocalizedLocale, _ bundle: Foundation.Bundle?, paramArray: [Swift.String]) -> Swift.String
+  @objc public class func getPluralString(_ key: Swift.String, _ count: Swift.Int) -> Swift.String
+  @objc public class func getPluralString(_ key: Swift.String, _ count: Swift.Int, _ locale: PECore.LocalizedLocale) -> Swift.String
+  @objc public class func getPluralString(_ key: Swift.String, _ count: Swift.Int, _ locale: PECore.LocalizedLocale, _ bundle: Foundation.Bundle?) -> Swift.String
+  public class func getPluralString(_ key: Swift.String, _ count: Swift.Int, _ params: Swift.String...) -> Swift.String
+  @objc public class func getPluralString(_ key: Swift.String, _ count: Swift.Int, paramArray: [Swift.String]) -> Swift.String
+  public class func getPluralString(_ key: Swift.String, _ count: Swift.Int, _ locale: PECore.LocalizedLocale, _ params: Swift.String...) -> Swift.String
+  @objc public class func getPluralString(_ key: Swift.String, _ count: Swift.Int, _ locale: PECore.LocalizedLocale, paramArray: [Swift.String]) -> Swift.String
+  public class func getPluralString(_ key: Swift.String, _ count: Swift.Int, _ locale: PECore.LocalizedLocale, _ bundle: Foundation.Bundle?, _ params: Swift.String...) -> Swift.String
+  @objc public class func getPluralString(_ key: Swift.String, _ count: Swift.Int, _ locale: PECore.LocalizedLocale, _ bundle: Foundation.Bundle?, paramArray: [Swift.String]) -> Swift.String
+  @objc public class func initLocalizedLocale(from nsLocale: Foundation.NSLocale) -> PECore.LocalizedLocale
+  @objc public class func initLocalizedLocaleHelper(languageCode: Swift.String, regionCode: Swift.String) -> PECore.LocalizedLocale
+  @objc deinit
+}
+@objc public enum LocalizedLocale : Swift.Int, Swift.RawRepresentable {
+  case English
+  case Gibberish
+  case Arabic
+  case Danish
+  case German
+  case EnglishUK
+  case Spanish
+  case Finnish
+  case French
+  case Dutch
+  case Swedish
+  case EnglishSG
+  case EnglishAU
+  case FrenchBE
+  case GermanCH
+  public typealias RawValue = Swift.String
+  public var rawValue: PECore.LocalizedLocale.RawValue {
+    get
+  }
+  public static func initHelper(languageCode: Swift.String, regionCode: Swift.String) -> PECore.LocalizedLocale
+  public init?(rawValue: PECore.LocalizedLocale.RawValue)
+  public var isRightToLeftLocale: Swift.Bool {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class TextUtil {
+  public static func size(forText text: Swift.String, withFont font: UIKit.UIFont, maxSize: CoreGraphics.CGSize, andLineBreakMode lineBreakMode: UIKit.NSLineBreakMode = .byWordWrapping) -> CoreGraphics.CGSize
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class PEEventBinding<ObserverType> where ObserverType : PECore.PEObserver {
+  public func onEvent(_ callback: @escaping (ObserverType) -> Swift.Void)
+  @objc deinit
+}
+public protocol MyChartWebViewNavigationDelegateDelegateProtocol : AnyObject {
+  func shouldOverrideUrlLoadingInMyChart(url: Foundation.URL?, isMyChartSite: Swift.Bool) -> Swift.Bool
+  func onMyChartError()
+  func onHttpError()
+  func onTimeout()
+  func launchEpicHttpInMyChart(url: Foundation.URL?)
+  func launchInExternalBrowser(url: Foundation.URL?)
+  func launchInExternalApp(url: Foundation.URL?)
+  func onMyChartLoginRedirect()
+  func onPageCommitVisible()
+  func onPageStarted(url: Foundation.URL)
+  func onPageFinished(url: Foundation.URL)
+  func stopLoading()
+  func logoutAndClose()
+}
+@objc public class MyChartWebViewNavigationDelegate : ObjectiveC.NSObject, WebKit.WKNavigationDelegate {
+  public enum Destination {
+    case myChartWebSite
+    case otherAllowedWebsite
+    case disallowedWebsite
+    case externalApp
+    case loginRedirect
+    case error
+    case epicHttp
+    public static func == (a: PECore.MyChartWebViewNavigationDelegate.Destination, b: PECore.MyChartWebViewNavigationDelegate.Destination) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public init(navigationDelegate del: PECore.MyChartWebViewNavigationDelegateDelegateProtocol)
+  @objc public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+  @objc public func webView(_ webView: WebKit.WKWebView, didStartProvisionalNavigation navigation: WebKit.WKNavigation!)
+  @objc public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  @objc public func webView(_ webView: WebKit.WKWebView, didCommit: WebKit.WKNavigation!)
+  @objc public func webView(_ webView: WebKit.WKWebView, didFail navigation: WebKit.WKNavigation!, withError error: Swift.Error)
+  public func setMyChartHost(host: Swift.String?)
+  public func getMyChartHost() -> Swift.String
+  public func setAllowedHosts(hosts: [Swift.String]?)
+  public func getAllowedHosts() -> [Swift.String]?
+  public func whereIsThisTakingMe(url: Foundation.URL) -> PECore.MyChartWebViewNavigationDelegate.Destination
+  public func stopTimer()
+  public func testIsMyChartHomePage(url: Foundation.URL) -> Swift.Bool
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc public class WebSessionManager : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+  @objc public class func onUserLogInSetUpSession(_ userContext: PECore.PEUserContext, _ patientContext: PECore.PEPatientContext?)
+  @objc public class func onUserLogoutCleanUpSession()
+  @objc public class func onPatientContextChanged(_ userContext: PECore.PEUserContext, _ patientContext: PECore.PEPatientContext?)
+  @objc public class func hasSessionSetUp() -> Swift.Bool
+  @objc public class func canUseDirectUrl(_ userContext: PECore.PEUserContext, _ patientContext: PECore.PEPatientContext?) -> Swift.Bool
+  public class func canUseDirectUrl(_ userContext: PECore.PEUserContext, _ patientContext: PECore.PEPatientContext?, _ isExternal: Swift.Bool = false) -> Swift.Bool
+  @objc public class func getSessionUserContext() -> PECore.PEUserContext?
+  @objc public class func getSessionPatientContext() -> PECore.PEPatientContext?
+  @objc public class func hasJumpTokenLock() -> Swift.Bool
+  @objc public class func prepareForWebViewLaunch(_ listener: PECore.WebSessionCallbackProtocol)
+  @objc public class func addWebSessionQueueCompleteListener(_ listener: PECore.WebSessionCallbackProtocol, keepHardReference: Swift.Bool)
+  @objc public class func addWebSessionQueueCompleteListener(_ listener: PECore.WebSessionCallbackProtocol, keepHardReference: Swift.Bool, shouldTimeOut: Swift.Bool)
+  @objc public class func startJumpTokenLaunchLock()
+  @objc public class func endJumpTokenLaunchLock()
+  @objc public class func maintainCurrentSessionSetup(_ userContext: PECore.PEUserContext, _ patientContext: PECore.PEPatientContext?)
+  @objc public class func onPrepareForWebSessionUse(_ userContext: PECore.PEUserContext, _ patientContext: PECore.PEPatientContext?)
+  @objc public class func isDirectUrlSupported(_ organizationContext: PECore.PEOrganizationContext) -> Swift.Bool
+  @objc public class func onClientLogoutStarted()
+  public class func DONOTUSEdebugSetSessionSetFor(_ userContext: PECore.PEUserContext?, _ patientContext: PECore.PEPatientContext?)
+  public class func getDebugStatusForManager() -> Swift.String
+  public class func DONOTUSEdebugSetKeepAlive(_ time: Swift.Double)
+  public class func DONOTUSEdebugSetNoCache()
+  public class func DONOTUSEdebugClearLogoutRequest()
+}
+@objc public protocol WebSessionCallbackProtocol {
+  @objc func onWebSessionReady()
+}
+public class PEArrayObservable<ElementType> : Swift.Collection {
+  public var value: [ElementType] {
+    get
+  }
+  public init(_ array: [ElementType])
+  public func setArray(_ array: [ElementType])
+  public func bind<ObserverType>(_ observer: ObserverType) -> PECore.PEArrayBinding<ElementType, ObserverType> where ObserverType : PECore.PEObserver
+  public func removeObserver(_ observer: PECore.PEObserver)
+  public subscript(position: Swift.Int) -> ElementType {
+    get
+    set
+  }
+  public func insert(_ newElement: ElementType, at i: Swift.Int)
+  public func insert(contentsOf array: [ElementType], at i: Swift.Int)
+  public func append(_ newElement: ElementType)
+  public func append(contentsOf array: [ElementType])
+  public func remove(at i: Swift.Int)
+  public func removeSubrange(_ bounds: Swift.Range<Swift.Int>)
+  public func removeLast() -> ElementType
+  public func removeFirst() -> ElementType
+  public func removeAll()
+  public func replaceSubrange(_ range: Swift.Range<Swift.Int>, with array: [ElementType])
+  public var last: ElementType? {
+    get
+  }
+  public var first: ElementType? {
+    get
+  }
+  public var isEmpty: Swift.Bool {
+    get
+  }
+  public var startIndex: Swift.Array<ElementType>.Index {
+    get
+  }
+  public var endIndex: Swift.Array<ElementType>.Index {
+    get
+  }
+  public var count: Swift.Int {
+    get
+  }
+  public func index(after i: Swift.Int) -> Swift.Int
+  public func makeIterator() -> Swift.IndexingIterator<Swift.Array<ElementType>>
+  @objc deinit
+  public typealias Element = ElementType
+  public typealias Index = Swift.Array<ElementType>.Index
+  public typealias Iterator = Swift.IndexingIterator<Swift.Array<ElementType>>
+  public typealias SubSequence = Swift.Slice<PECore.PEArrayObservable<ElementType>>
+  public typealias Indices = Swift.DefaultIndices<PECore.PEArrayObservable<ElementType>>
+}
+public enum ButtonStyle {
+  case PositiveAction
+  case NegativeAction
+  case NegativeSecondaryAction
+  case NeutralLight
+  case NeutralDark
+  public static func == (a: PECore.ButtonStyle, b: PECore.ButtonStyle) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@objc @_inheritsConvenienceInitializers public class BottomButton : UIKit.UIButton {
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public func awakeFromNib()
+  @objc override dynamic public var isHighlighted: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  public func setTitle(_ title: Swift.String?)
+  public func setStyle(_ style: PECore.ButtonStyle, forTheme theme: PECore.PEThemeProtocol)
+  public func showLoading()
+  public func hideLoading()
+  @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public enum NavigationType : Swift.Int {
+  case newWorkflow
+  case drilldown
+  case replacement
+  case informationPopover
+  case alert
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol PEComponentHostProtocol {
+  @objc func handleWebServiceTaskFailed() -> Swift.Bool
+  @objc func handleWebServiceTaskFailedAndClose() -> Swift.Bool
+  @objc @discardableResult
+  func launchViewController(_ viewController: UIKit.UIViewController, as navigationType: PECore.NavigationType) -> Swift.Bool
+  @objc @discardableResult
+  func launchViewController(_ viewController: UIKit.UIViewController, as navigationType: PECore.NavigationType, from originView: UIKit.UIView) -> Swift.Bool
+  @objc @discardableResult
+  func launchViewController(_ viewController: UIKit.UIViewController, as navigationType: PECore.NavigationType, withSharedElements sharedElements: [PECore.PEComponentHostSharedAnimationElementProtocol], andBoundingElement boundingElement: PECore.PEComponentHostSharedAnimationElementProtocol?) -> Swift.Bool
+  @objc func wrapViewController(_ viewController: UIKit.UIViewController) -> UIKit.UIViewController
+  @objc func wrapViewController(_ viewController: UIKit.UIViewController, inNavigationController: Swift.Bool) -> UIKit.UIViewController
+  @objc func wrapViewController(_ viewController: UIKit.UIViewController, inNavigationController: Swift.Bool, showImageOnTheRight: Swift.Bool) -> UIKit.UIViewController
+  @objc func dismissViewController(_ viewController: UIKit.UIViewController)
+}
+@objc public protocol PEComponentHostPopupProtocol : PECore.PEComponentHostProtocol {
+  @objc func disableCloseButton()
+  @objc func reenableCloseButton()
+}
+@objc public protocol PEComponentHostSharedAnimationElementProtocol {
+  @objc var fromView: UIKit.UIView { get }
+  @objc var toViewTag: Swift.Int { get }
+}
+public class PEEventInfoObservable<EventInfoType> {
+  public init()
+  public func bind<ObserverType>(_ observer: ObserverType) -> PECore.PEEventInfoBinding<EventInfoType, ObserverType> where ObserverType : PECore.PEObserver
+  public func fire(sending eventInfo: EventInfoType)
+  public func removeObserver(_ observer: PECore.PEObserver)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @IBDesignable public class SelfLoadingView : UIKit.UIView {
+  @objc override dynamic public func prepareForInterfaceBuilder()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class PEEventInfoBinding<EventInfoType, ObserverType> where ObserverType : PECore.PEObserver {
+  public func onEvent(_ callback: @escaping (ObserverType, EventInfoType) -> Swift.Void)
+  @objc deinit
+}
+@objc public protocol CommunityDataRefreshViewDelegate : AnyObject {
+  @objc func didTapRefreshBanner()
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable public class CommunityDataRefreshView : UIKit.UIView {
+  @objc @IBOutlet weak public var iconView: UIKit.UIImageView!
+  @objc @IBOutlet weak public var textLabel: UIKit.UILabel!
+  weak public var delegate: PECore.CommunityDataRefreshViewDelegate?
+  @objc public var isSetup: Swift.Bool
+  @objc override dynamic public var isHidden: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  weak public var heightConstraint: UIKit.NSLayoutConstraint?
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public func prepareForInterfaceBuilder()
+  @objc public func setupBanner(delegate: PECore.CommunityDataRefreshViewDelegate)
+  @objc public func updateBannerText(title: Swift.String, status: PECore.CommunityDataRefreshView.CommunityDataRefreshStatus)
+  @objc public func updateBannerText(title: Swift.String, text: Swift.String, status: PECore.CommunityDataRefreshView.CommunityDataRefreshStatus)
+  @objc public enum CommunityDataRefreshStatus : Swift.Int {
+    case NORMAL
+    case LOADING
+    case ERROR
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc deinit
+}
+@objc @IBDesignable open class PersonImageView : UIKit.UIImageView {
+  @objc @IBInspectable public var borderWidth: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic open var intrinsicContentSize: CoreGraphics.CGSize {
+    @objc get
+  }
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic open func layoutSubviews()
+  public func createView()
+  public func setPerson(_ person: PECore.PEPersonProtocol)
+  public func setPerson(_ person: PECore.PEPersonProtocol, borderColor: CoreGraphics.CGColor)
+  @objc deinit
+  @objc override dynamic public init(image: UIKit.UIImage?)
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
+}
+@objc public enum UrlType : Swift.Int {
+  case Interconnect
+  case WebBlob
+  case None
+  case OAuth2
+  case MyChartWebsite
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class MyChartWebArgs : ObjectiveC.NSObject {
+  final public let userContext: PECore.PEUserContext
+  final public let patientContext: PECore.PEPatientContext?
+  final public let organization: PECore.PEOrganizationInfoProtocol?
+  @objc convenience public init(userContext: PECore.PEUserContext, patientContext: PECore.PEPatientContext?, mode: Swift.String, parameters: [PECore.MyChartWebParameter]?)
+  @objc public init(userContext: PECore.PEUserContext, patientContext: PECore.PEPatientContext?, mode: Swift.String, parameters: [PECore.MyChartWebParameter]?, organization: PECore.PEOrganizationInfoProtocol?)
+  @objc public init(baseArgs: PECore.MyChartWebArgs, parameters: [PECore.MyChartWebParameter]?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class Toast : UIKit.UIView {
+  @objc public enum ToastDuration : Swift.Int, Swift.RawRepresentable {
+    public typealias RawValue = Foundation.TimeInterval
+    case short
+    case long
+    public var rawValue: Foundation.TimeInterval {
+      get
+    }
+    public init?(rawValue: PECore.Toast.ToastDuration.RawValue)
+  }
+  @objc public static func makeError(withText text: Swift.String, duration: PECore.Toast.ToastDuration) -> PECore.Toast?
+  @objc public static func make(withText text: Swift.String, duration: PECore.Toast.ToastDuration) -> PECore.Toast?
+  @discardableResult
+  @objc public func show() -> PECore.Toast
+  @objc public func showInFrontOfKeyboard()
+  @objc public func onAnnouncementDidFinishNotification(_ callback: @escaping (() -> ()))
+  @objc public func hide()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@_inheritsConvenienceInitializers @objc public class ImageLoader : ObjectiveC.NSObject {
+  public static func canLoadImage(withSource source: PECore.ImageDataSource, andPatientContext context: PECore.PEPatientContext? = nil) -> Swift.Bool
+  @objc public static func loadImage(withSource source: PECore.ImageDataSource, delegate: PECore.ImageLoaderDelegate, andPatientContext context: PECore.PEPatientContext? = nil)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public protocol PEMedicationsComponentBridgingAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func getMedicationsViewController(rxID: Swift.String?) -> UIKit.UIViewController?
+  @objc func getMedicationsViewControllerForMCNOutPatient() -> UIKit.UIViewController?
+  @objc func getMedicationsViewControllerForRefill(rxID: Swift.String?) -> UIKit.UIViewController?
+  @objc func shouldDisableOutpatientMeds() -> Swift.Bool
+}
+@objc public class MyChartWebParameter : ObjectiveC.NSObject, Swift.Codable {
+  @objc public init(_ name: Swift.String, _ value: Swift.String)
+  @objc override dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc public protocol WebActivityListener {
+  @objc func onActivity()
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class PEComponentAPIProvider : ObjectiveC.NSObject {
+  @objc public class func getComponentAPIProvider() -> PECore.PEComponentAPIProvider
+  @objc public func register(_ componentKey: PECore.PEComponentAPIKey, _ component: PECore.PEComponentAPIProtocol) throws
+  @objc public func get(_ componentType: PECore.PEComponentAPIKey) -> PECore.PEComponentAPIProtocol?
+  @objc deinit
+}
+public enum ComponentAPIProviderError : Swift.Error {
+  case registerError(reason: Swift.String)
+}
+@objc extension Bundle {
+  @objc public static var PECore: Foundation.Bundle {
+    @objc get
+  }
+}
+extension UIImage {
+  convenience public init?(named name: Swift.String, in bundle: Foundation.Bundle)
+}
+@objc public protocol PEHomePageComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func getHomePage(for context: PECore.PEUserContext, with overlay: PECore.HomepageOverlayType, presetPerson selectedPerson: PECore.PEPersonProtocol?) -> UIKit.UIViewController
+  @objc func getHomePageFeed(for context: PECore.PEUserContext) -> UIKit.UIViewController
+  @objc func setHealthFeedContext(_ feed: UIKit.UIViewController, person: PECore.PEPersonProtocol)
+  @objc func hasAccessForHomePage(_ context: PECore.PEUserContext) -> PECore.PEComponentAccessResult
+  @objc func invalidateFeed()
+  @objc func getPersonalizeShortcutsViewController(forUserContext userContext: PECore.PEUserContext, andPatientContext patientContext: PECore.PEPatientContext) -> UIKit.UIViewController
+  @objc func hasAccessForPersonalizeShortcuts(_ context: PECore.PEUserContext) -> PECore.PEComponentAccessResult
+  @objc func getPersonalizeShortcutsActivityTitle(_ userContext: PECore.PEUserContext, _ patientContext: PECore.PEPatientContext?) -> Swift.String
+  @objc func notifyReloadMenu()
+  @objc func setAppleWatchCardDismissmal(_ userContext: PECore.PEUserContext, _ isDismissed: Swift.Bool)
+  @objc func preloadMenu(completion: @escaping ((Swift.Bool, PECore.PEError) -> Swift.Void))
+}
+@objc public enum HomepageOverlayType : Swift.Int {
+  case none = 0
+  case useDefaultLogic
+  case proxySplashScreen
+  case onboardingScreen
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class HttpHeaderFieldsManager : ObjectiveC.NSObject {
+  @objc public class func getInstance() -> PECore.HttpHeaderFieldsManager
+  @objc public func setHttpHeaderField(_ field: Swift.String, withValue value: Swift.String) -> Swift.Bool
+  @objc public func removeHttpHeaderField(_ field: Swift.String)
+  @objc public func removeAllHttpHeaderFields()
+  @objc public func getAllHttpHeaderFields() -> [Swift.String : Swift.String]
+  @objc public func isHttpHeaderFieldAllowed(_ field: Swift.String) -> Swift.Bool
+  @objc deinit
+  @objc override dynamic public init()
+}
+open class Category : Swift.Codable {
+  public var value: Swift.String
+  public var title: Swift.String
+  public var abbreviation: Swift.String
+  public init()
+  open func encode(to encoder: Swift.Encoder) throws
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class URLSessionManager : ObjectiveC.NSObject, Foundation.URLSessionDelegate, Foundation.URLSessionTaskDelegate {
+  @objc public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, willPerformHTTPRedirection response: Foundation.HTTPURLResponse, newRequest request: Foundation.URLRequest, completionHandler: @escaping (Foundation.URLRequest?) -> Swift.Void)
+  @objc deinit
+}
+public class WebUrl : Swift.Codable {
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc public protocol ImageLoaderDelegate : AnyObject {
+  @objc func didLoadImage(_ image: UIKit.UIImage, forSource source: PECore.ImageDataSource)
+  @objc func didFailToLoadImage(forSource source: PECore.ImageDataSource)
+}
+@_hasMissingDesignatedInitializers @objc public class WebServiceCategory : ObjectiveC.NSObject {
+  @objc public var namespace: Swift.String?
+  @objc public var requestFormat: PECore.PERequestFormat
+  @objc public var responseFormat: PECore.PEResponseFormat
+  @objc public var tokenType: PECore.TokenType
+  @objc public var urlType: PECore.UrlType
+  public static let MyChartMobile: PECore.WebServiceCategory
+  public static let MyChartMobileGET: PECore.WebServiceCategory
+  public static let MyChartWebsite: PECore.WebServiceCategory
+  public static let Bedside: PECore.WebServiceCategory
+  public static let BedsideTV: PECore.WebServiceCategory
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class EmbeddedVideoViewController : UIKit.UIViewController {
+  public var videoURL: Swift.String!
+  public var userContext: PECore.PEUserContext?
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+}
+@objc public protocol PEToDoComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func hasAccessForToDo(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func getToDoViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc func hasAccessForToDoChanges(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func hasAccessForToDoChangeDetails(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func getToDoChangesViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc func getToDoViewControllerDeepLink(_ patientContext: PECore.PEPatientContext, ltkID: Swift.String, ltkInst: Swift.String) -> UIKit.UIViewController?
+  @objc func getToDoOverdueViewControllerDeepLink(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc func getToDoChangeDetailsWebViewController(_ patientContext: PECore.PEPatientContext, changeId: Swift.String, changeDAT: Swift.String, isEncrypted: Swift.Bool) -> UIKit.UIViewController?
+  @objc func markChangeAsViewed(_ patientContext: PECore.PEPatientContext, changeId: Swift.String, changeDAT: Swift.String, isEncrypted: Swift.Bool)
+  @objc func getLinkTaskDetailWebViewController(_ patientContext: PECore.PEPatientContext, ltkId: Swift.String, ltkInstant: Swift.String, delegate: PECore.PELinkTaskCompletionDelegate) -> UIKit.UIViewController?
+}
+@objc public protocol PELinkTaskCompletionDelegate {
+  @objc func linkTaskCompleted()
+  @objc func linkTaskSkipped()
+}
+@objc public enum PEErrorType : Swift.Int {
+  case URLComposition
+  case PatientIndexNotFound
+  case RequestParsing
+  case ResponseParsing
+  case WebSecurity
+  case WebClient
+  case WebClientUnauthorized
+  case WebClientConnection
+  case WebClientBadRequest
+  case WebServer
+  case Timeout
+  case NetworkNotAvailable
+  case Unknown
+  public func getName() -> Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class PEError : ObjectiveC.NSObject, Swift.Error {
+  convenience public init(_ errorType: PECore.PEErrorType, _ description: Swift.String? = nil, _ sourceError: Swift.Error? = nil)
+  public init(errorType: PECore.PEErrorType, customDescription: Swift.String? = nil, sourceError: Swift.Error?)
+  @objc public func getMessage() -> Swift.String
+  @objc public func getSourceError() -> Swift.Error?
+  public static func from(_ error: Swift.Error) -> PECore.PEError
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension UIView {
+  @objc @IBInspectable dynamic public var tutorialViewID: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc dynamic public func addAndFill(withSubview view: UIKit.UIView)
+  public func adjustContentInsetsForKeyboard(withNotification notification: Foundation.Notification)
+}
+@objc public enum InlineEducationType : Swift.Int, Swift.Codable {
+  case Diagnoses = 1
+  case Medications = 2
+  case Procedures = 3
+  case LabResults = 4
+  case Allergies = 5
+  case Immunizations = 6
+  case Keyword_Diagnoses = 7
+  case Keyword_LabResults = 8
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class InlineEducationContextProvider : ObjectiveC.NSObject {
+  public static let FEATURE_ALLERGY_CONTENT: Swift.String
+  public static let FEATURE_ICD_DETAILS: Swift.String
+  public static let FEATURE_IMMUNIZATION_CONTENT: Swift.String
+  public static let FEATURE_CPT_DETAILS: Swift.String
+  public static let FEATURE_KEYWORD_SEARCH: Swift.String
+  @objc public static func getInstance() -> PECore.InlineEducationContextProvider
+  @objc public func setAvailableContexts(for contextIds: Foundation.NSMutableArray)
+  @objc public func isContextAvailable(for educationType: PECore.InlineEducationType) -> Swift.Bool
+  @objc public class func hasSecurityPointForContext(educationType: PECore.InlineEducationType, patient: PECore.PEPatientProtocol?) -> Swift.Bool
+  @objc public static func resetContextState()
+  @objc deinit
+}
+@objc public enum PESupportedFeature : Swift.Int {
+  case Unknown = 0
+  case ShareEverywhere = 1
+  case MyC3NotificationSettings = 2
+  case HealthAdvisoriesSorted = 3
+  case ToDo = 5
+  case MyC3Personalization = 6
+  case MarkHMTopicComplete = 7
+  case HappyTogether = 8
+  case HomePage = 9
+  case ProblemList = 10
+  case ProviderPhotos = 11
+  case MyC3TimeZoneCustomization = 12
+  case HappeningSoon = 13
+  case TestResults = 14
+  case MobileOptimizedWeb = 15
+  case ClinicalInfo = 16
+  case TreatmentTeam = 17
+  case CareTeamScheduling = 18
+  case EncounterMedications = 19
+  case MODirectUrl = 20
+  case NPPMobileOptimizedWeb = 21
+  case Education = 22
+  case TwoFactorOptIn = 23
+  case HMScheduling = 24
+  case PatientCreatedTasks = 25
+  case ToDoProgress = 26
+  case HappyTogetherActions = 27
+  case MyC3TaskTypeNotifications = 28
+  case MyC3PushNotificationDeepLink = 29
+  case TreatmentTeam2019 = 30
+  case GenericMoJump = 31
+  case PanelAppointments = 32
+  case MOMessages = 33
+  case ExploreMoreAuditing = 34
+  case MOShortcutPersonalization = 35
+  case CovidStatus = 36
+  case BrandingPathsLookup = 37
+  case MOToDoChangeDetails = 38
+  case ToDoPersistentQuestionnaires = 39
+  case ToDoPatientCreatedTaskSecurityPoints = 40
+  case UpcomingOrders = 41
+  case AppleWatchRedesign = 42
+  case HPRemoveFunIcons = 43
+  case HowToVideos = 44
+  case LaunchPreventiveCareForHealthMaint = 47
+  case MOPersonalInformation = 46
+  case EMMIEducation = 52
+  case CovidPDF = 51
+  case MOImmunizations = 49
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum MyChartNamespaceEnum : Swift.String {
+  case None
+  case Mychart_2010
+  case Mychart_2011
+  case Mychart_2012
+  case Mychart_2013
+  case Mychart_2014
+  case Mychart_2015
+  case Mychart_2016
+  case Mychart_2017
+  case Mychart_2018
+  case Mychart_2019
+  case Mychart_2020
+  case Mychart_2021
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class WebViewConfigManager : ObjectiveC.NSObject {
+  @objc public class func getSharedConfiguration() -> WebKit.WKWebViewConfiguration
+  @objc public class func setSharedConfiguration(_ newConfig: WebKit.WKWebViewConfiguration?)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public enum PEOrganizationCustomString : Swift.Int {
+  case shareEverywhereAdditionalText = 1
+  case listSeparatorPrimary = 2
+  case testResultsPreText = 3
+  case testResultsPostText = 4
+  case doctorsCommentHeader = 5
+  case medicationsHospitalAdmissionBannerText = 6
+  case medicationsHospitalAdmissionBannerProxyText = 7
+  case testResults = 8
+  case shareEverywhere = 9
+  case toDo = 10
+  case medications = 11
+  case questionnaires = 12
+  case eVisitName = 13
+  case messages = 14
+  case eCheckIn = 15
+  case switchPatients = 17
+  case selectPatientToView = 18
+  case selectPatientToViewAccessibility = 19
+  case emergencyPhoneNumber = 20
+  case covidScreeningStatusLowRisk = 21
+  case covidScreeningStatusMediumRisk = 22
+  case covidScreeningStatusHighRisk = 23
+  case covidPastScreeningStatusLowRisk = 24
+  case covidPastScreeningStatusMediumRisk = 25
+  case covidPastScreeningStatusHighRisk = 26
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol PEOrganizationProtocol {
+  @objc func getIdentifier() -> Swift.String
+  @objc func getMyChartBrandName() -> Swift.String
+  @objc func getWebsiteName() -> Swift.String
+  @objc func getBrandLogo(useDarkLogo: Swift.Bool) -> UIKit.UIImage
+  @objc(getBrandHeaderFor:) func getBrandHeader(for delegate: PECore.ImageLoaderDelegate)
+  @objc func getBaseImageUrlPath() -> Swift.String?
+  @objc func getTheme() -> PECore.PEThemeProtocol
+  @objc func isFeatureAvailable(_ supportedFeature: PECore.PESupportedFeature) -> Swift.Bool
+  @objc func getAllowedHosts() -> [Swift.String]
+  @objc func getCustomString(_ customString: PECore.PEOrganizationCustomString, _ defaultValue: Swift.String?) -> Swift.String?
+  @objc func getCustomString(_ customString: PECore.PEOrganizationCustomString, _ defaultValue: Swift.String?, _ parameters: [Swift.String : Swift.String]) -> Swift.String?
+  @objc func getSamlLoginCookiesToPersist() -> Swift.Array<Swift.String>?
+  @objc func getSamlLoginDomainForCookiesToPersist() -> Swift.String?
+}
+@_inheritsConvenienceInitializers @objc open class PEOrganizationInfo : ObjectiveC.NSObject, Swift.Decodable, PECore.PEOrganizationInfoProtocol, PECore.ImageDataSource {
+  @objc public var organizationId: Swift.String
+  @objc public var isExternal: Swift.Bool
+  @objc public var logoUrl: Swift.String
+  @objc public var organizationName: Swift.String
+  @objc public var linkStatus: Swift.Int
+  @objc public var organizationLinkType: PECore.ExternalOrganizationLinkType
+  @objc public var lastRefreshDate: Foundation.Date?
+  @objc public var imageURL: Swift.String
+  @objc override required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  public init(orgInfoProtocol: PECore.PEOrganizationInfoProtocol)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class EncryptionUtil : ObjectiveC.NSObject {
+  @objc public static var derivedKeyMethod1: Foundation.Data
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension Data {
+  public func toSHA1() -> Foundation.Data
+}
+extension String {
+  public func fromAES128(key: Foundation.Data) -> Swift.String
+  public func toAES128(key: Foundation.Data) -> Swift.String
+}
+@objc extension NSData {
+  @objc dynamic public func toSHA1() -> Foundation.NSData
+}
+@objc extension NSString {
+  @objc dynamic public func fromAES128String(key: Foundation.Data) -> Foundation.NSString
+  @objc dynamic public func toAES128String(key: Foundation.Data) -> Foundation.NSString
+}
+@objc public enum PEBrandedColor : Swift.Int {
+  case unknown
+  case personColor1
+  case personColor2
+  case personColor3
+  case personColor4
+  case personColor5
+  case personColor6
+  case personColor7
+  case personTextColor1
+  case personTextColor2
+  case personTextColor3
+  case personTextColor4
+  case personTextColor5
+  case personTextColor6
+  case personTextColor7
+  case backgroundColor
+  case barButtonColor
+  case barTintColor
+  case barTextColor
+  case headerBackgroundColor
+  case headerTextColor
+  case inconclusiveButtonColor
+  case informationalBackgroundColor
+  case linkColor
+  case loginButtonColor
+  case loginButtonTextColor
+  case negativeBackgroundColor
+  case negativeButtonColor
+  case negativeButtonTextColor
+  case negativeTextColor
+  case neutralButtonColor
+  case neutralButtonTextColor
+  case positiveBackgroundColor
+  case positiveButtonColor
+  case positiveButtonTextColor
+  case signupButtonColor
+  case signupButtonTextColor
+  case tabBarSelectedItemColor
+  case tintColor
+  case unreadIndicatorColor
+  case unreadIndicatorDotColor
+  case warningBackgroundColor
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol PEThemeProtocol {
+  @objc func getBrandedColor(_ color: PECore.PEBrandedColor) -> UIKit.UIColor
+  @objc func shouldTurnOffToDoTheme() -> Swift.Bool
+  @objc func shouldUseTitleCaseForTestResults() -> Swift.Bool
+  @objc func shouldSuppressHomepageOnboarding() -> Swift.Bool
+}
+@objc public class MyChartWebViewUIDelegate : ObjectiveC.NSObject, WebKit.WKUIDelegate {
+  public init(viewController: PECore.MyChartWebViewController)
+  @objc public func webView(_ webView: WebKit.WKWebView, createWebViewWith configuration: WebKit.WKWebViewConfiguration, for navigationAction: WebKit.WKNavigationAction, windowFeatures: WebKit.WKWindowFeatures) -> WebKit.WKWebView?
+  @objc deinit
+  @objc override dynamic public init()
+}
+public struct GetLoginTokenResponse : Swift.Codable {
+  public var redirectURL: Swift.String?
+  public var allowedHosts: [Swift.String]?
+  public var shouldLaunchOutsideApp: Swift.Bool {
+    get
+  }
+  public func generateUrlRequest() -> Foundation.URLRequest?
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc public class DirectUrlArgs : ObjectiveC.NSObject {
+  @objc convenience public init(directUrl: Swift.String, allowedHosts: Swift.Array<Swift.String>)
+  @objc public init(directUrl: Swift.String, allowedHosts: Swift.Array<Swift.String>, myChartHost: Swift.String?)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable public class CardView : UIKit.UIView {
+  @objc public enum CardType : Swift.Int {
+    case Normal
+    case TopHalf
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  public func setCardType(_ cardType: PECore.CardView.CardType)
+  @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
+  @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class SectionHeaderView : UIKit.UIView {
+  public static let headerLabelHPadding: CoreGraphics.CGFloat
+  public static let headerLabelBottomPadding: CoreGraphics.CGFloat
+  public static let headerLabelTopPadding: CoreGraphics.CGFloat
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  public func setTitle(_ title: Swift.String, accessibilityLabel: Swift.String?, lineBreakMode: UIKit.NSLineBreakMode, bottomPadding: CoreGraphics.CGFloat?)
+  public func setTitle(_ title: Swift.String)
+  public func setTitle(_ title: Swift.String, accessibilityLabel: Swift.String?)
+  public func setTitle(_ title: Swift.String, lineBreakMode: UIKit.NSLineBreakMode)
+  public func setTitle(_ title: Swift.String, accessibilityLabel: Swift.String?, lineBreakMode: UIKit.NSLineBreakMode)
+  @objc deinit
+}
+@objc public protocol PESchedulingComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func getScheduleWebViewControllerWithHMScheduleAppointment(reasonForVisit: Swift.String, hmTopicId: Swift.String, dontEncryptTopic: Swift.Bool) -> UIKit.UIViewController
+  @objc func getTicketSchedulingViewController(ticket tktId: Swift.String) -> UIKit.UINavigationController
+}
+@objc public enum PEComponentAccessResult : Swift.Int {
+  case AccessAllowed = 1
+  case NotAuthenticated = 2
+  case MissingServerUpdate = 3
+  case MissingSecurity = 4
+  case MissingAppPermissions = 5
+  case UserDisabledSetting = 6
+  case Deprecated = 7
+  case UnknownError = 8
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol PEEncounterAlertProtocol : PECore.PEAlertProtocol {
+  @objc func getEncounterAlertCount() -> Swift.Int
+  @objc func getEncounterCsn() -> Swift.String
+}
+extension Array where Element : PECore.PEEncounterAlertProtocol {
+  public func badgeCountForType(_ alertType: PECore.PEAlertType?) -> Swift.Int
+}
+@objc public protocol PEAlertProtocol {
+  @objc func getCount() -> Swift.Int
+  @objc func getType() -> PECore.PEAlertType
+}
+extension Array where Element : PECore.PEAlertProtocol {
+  public func badgeCountForType(_ alertTypes: Swift.Array<PECore.PEAlertType>) -> Swift.Int
+}
+@_hasMissingDesignatedInitializers public class DeviceUtil {
+  public static func getName() -> Swift.String
+  @objc public static func getID() -> Swift.String
+  public static func getModel() -> Swift.String
+  @objc deinit
+}
+@objc public protocol PEPersonProtocol : ObjectiveC.NSObjectProtocol {
+  @objc func getIdentifier() -> Swift.String
+  @objc func getNickname() -> Swift.String?
+  @objc(getNicknamePreferingRefusalName:) func getNickname(preferRefusalName: Swift.Bool) -> Swift.String?
+  @objc func getFullname() -> Swift.String?
+  @objc func getColor() -> UIKit.UIColor
+  @objc func getTextColor() -> UIKit.UIColor
+  @objc func getPhoto() -> UIKit.UIImage
+  @objc(getPhotoUsingFallback:) func getPhoto(useFallback: Swift.Bool) -> UIKit.UIImage?
+  @objc func getWebServiceUrl(_ urlType: PECore.UrlType) -> Swift.String
+  @objc(updateNickname:) func update(nickname: Swift.String?)
+  @objc(updateColorIndex:) func update(colorIndex: Swift.Int)
+  @objc(updatePhoto:) func update(photo: UIKit.UIImage?)
+}
+@objc public class GifAnimationView : UIKit.UIView {
+  public func load(bundle: Foundation.Bundle!, resource: Swift.String!)
+  public func hide()
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+}
+@_inheritsConvenienceInitializers @objc public class MyChartWebViewController : UIKit.UIViewController {
+  @objc public enum ButtonStyle : Swift.Int {
+    case none = 0
+    case close
+    case finishLater
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public static let h2gOrganizationIdKey: Swift.String
+  public static let kWPKeyLaunchH2GFromLocalOrg: Swift.String
+  public static let kWPKeyEpicHttp: Swift.String
+  public var webView: WebKit.WKWebView?
+  weak public var componentHost: PECore.PEComponentHostProtocol?
+  @objc public static func newInstance(webViewArgs: PECore.MyChartWebArgs?) -> PECore.MyChartWebViewController
+  @objc public static func newInstance(webViewArgs: PECore.MyChartWebArgs?, manager: PECore.MyChartWebViewControllerManager?, title: Swift.String?, buttonStyle: PECore.MyChartWebViewController.ButtonStyle, showBackButton: Swift.Bool = true, queryParameters: [Swift.String : Swift.String]? = nil) -> PECore.MyChartWebViewController
+  @objc public static func newInstance(webViewArgs: PECore.MyChartWebArgs?, manager: PECore.MyChartWebViewControllerManager?, title: Swift.String?, buttonStyle: PECore.MyChartWebViewController.ButtonStyle, showBackButton: Swift.Bool = true, queryParameters: [Swift.String : Swift.String]? = nil, shouldRefreshAlertsAndHomePageFeed: Swift.Bool = false) -> PECore.MyChartWebViewController
+  @objc public static func newInstance(directUrlArgs: PECore.DirectUrlArgs) -> PECore.MyChartWebViewController
+  @objc public static func newInstance(directUrlArgs: PECore.DirectUrlArgs, manager: PECore.MyChartWebViewControllerManager?, title: Swift.String?, buttonStyle: PECore.MyChartWebViewController.ButtonStyle, showBackButton: Swift.Bool = true) -> PECore.MyChartWebViewController
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
+  public func launchPage(args newArgs: PECore.MyChartWebArgs)
+  public func getArgs() -> PECore.MyChartWebArgs?
+  public func setManager(manager newManager: PECore.MyChartWebViewControllerManager)
+  public func getAllowedHosts() -> [Swift.String]?
+  public func getComponentHost() -> PECore.PEComponentHostProtocol?
+  public func runJavascript(javaScript: Swift.String, listener: @escaping ((Swift.String) -> ()))
+  @objc public func setRefreshNotification()
+  @objc public func reload()
+  public func stopLoading()
+  public func logoutAndClose()
+  public func showLoadingView()
+  public func hideLoadingView()
+  @objc public func didReceiveNotifications(_ notification: Foundation.Notification)
+  public func clearCookies()
+  @objc public func cancelAndCloseWithoutBackNavigation()
+  @objc public func didTapBackButton()
+  @objc public func didTapCloseButton()
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension MyChartWebViewController : PECore.MyChartJavascriptProtocol {
+  @objc dynamic public func onJavascriptRequestsClose()
+  @objc dynamic public func resetIdleTimer()
+  @objc dynamic public func setWebViewTitle(newTitle: Swift.String)
+  @objc dynamic public func disableCloseButton()
+  @objc dynamic public func reenableCloseButton()
+}
+extension MyChartWebViewController : PECore.MyChartWebViewNavigationDelegateDelegateProtocol {
+  @objc dynamic public func handleBackNavigation()
+  @objc dynamic public func canClose() -> Swift.Bool
+  public func shouldOverrideUrlLoadingInMyChart(url: Foundation.URL?, isMyChartSite isMyChartWebsite: Swift.Bool) -> Swift.Bool
+  public func onPageStarted(url: Foundation.URL)
+  public func onPageFinished(url: Foundation.URL)
+  public func onPageCommitVisible()
+  public func onHttpError()
+  public func onTimeout()
+  public func onMyChartError()
+  public func launchEpicHttpInMyChart(url: Foundation.URL?)
+  public func launchInExternalBrowser(url: Foundation.URL?)
+  @objc public static func promptUserWithLaunchOutsideAlert(rootVC: UIKit.UIViewController, onLaunch: @escaping () -> (), onClose: @escaping () -> ())
+  public func launchInExternalApp(url: Foundation.URL?)
+  public func onMyChartLoginRedirect()
+}
+extension MyChartWebViewController : PECore.ImageLoaderDelegate {
+  @objc dynamic public func didLoadImage(_ image: UIKit.UIImage, forSource source: PECore.ImageDataSource)
+  @objc dynamic public func didFailToLoadImage(forSource source: PECore.ImageDataSource)
+}
+@objc extension MyChartWebViewController : PECore.PEHostableComponentViewController {
+  @objc dynamic public func setComponentHost(_ host: PECore.PEComponentHostProtocol)
+  @objc dynamic public func getLeftBarButtonItem() -> UIKit.UIBarButtonItem?
+  @objc dynamic public func getRightBarButtonItem() -> UIKit.UIBarButtonItem?
+}
+extension MyChartWebViewController : WebKit.WKScriptMessageHandler {
+  @objc dynamic public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
+}
+extension MyChartWebViewController : PECore.WebActivityListener {
+  @objc dynamic public func onActivity()
+}
+@objc public protocol PEDeepLinkComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @discardableResult
+  @objc func launchActivity(for url: Swift.String, andFor person: PECore.PEPersonProtocol, orgId: Swift.String?, into navigationController: UIKit.UINavigationController) -> Swift.Bool
+  @objc func getDeepLinkActionDelegate() -> PECore.PEDeepLinkActionDelegate?
+  @objc func constructEpicHttpDeepLinkUrl(feature: Swift.String, queryParams: [Swift.String : Swift.String]?) -> Swift.String
+  @objc func getViewControllerForActivity(deepLink: Swift.String) -> UIKit.UIViewController?
+}
+@objc public protocol PEDeepLinkActionDelegate {
+  @objc(didInvokeDeepLink:) func didInvokeDeepLink(params: [Swift.String : Swift.String]) -> Swift.Bool
+}
+@objc public protocol PENativeMessagesComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func getNativeProviderMessageViewController(provider: PECore.PEMessageProvider) -> UIKit.UIViewController?
+}
+@objc public class AnimatedImageView : UIKit.UIView {
+  public var webView: WebKit.WKWebView!
+  public var imageView: UIKit.UIImageView!
+  public var activeSubview: UIKit.UIView!
+  @objc public var tintColorHex: Swift.String?
+  @objc convenience public init(imageNamed resource: Swift.String, in bundle: Foundation.Bundle, tintColor tint: Swift.String?)
+  @objc dynamic public init()
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public func setImage(withName resource: Swift.String, in bundle: Foundation.Bundle)
+  public func setImage(withName resource: Swift.String, in bundle: Foundation.Bundle, withTintHex tintHex: Swift.String?)
+  public func setImage(_ image: UIKit.UIImage)
+  @objc public func clearImage()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+}
+@objc public enum ExternalOrganizationLinkType : Swift.Int {
+  case Undefined = 0
+  case MyChart = 1
+  case Fhir = 2
+  case Dxr = 3
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol PEOrganizationInfoProtocol {
+  @objc var organizationId: Swift.String { get }
+  @objc var isExternal: Swift.Bool { get }
+  @objc var logoUrl: Swift.String { get }
+  @objc var organizationName: Swift.String { get }
+  @objc var linkStatus: Swift.Int { get }
+  @objc var organizationLinkType: PECore.ExternalOrganizationLinkType { get }
+  @objc var lastRefreshDate: Foundation.Date? { get }
+}
+@_inheritsConvenienceInitializers @objc public class CookieAllowListManager : ObjectiveC.NSObject {
+  @objc public class func getInstance() -> PECore.CookieAllowListManager
+  @objc public func addCookieToAllowList(cookieName: Swift.String)
+  @objc public func removeCookieFromAllowList(cookieName: Swift.String)
+  @objc public func clearAllCookiesFromAllowList()
+  @objc public func getCookiesInAllowList() -> Swift.Set<Swift.String>
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public enum PEResponseFormat : Swift.Int {
+  case Default
+  case JSON
+  case JSONWrappedBedside
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol PEApplicationComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func logout()
+  @objc func switchCurrentPerson(_ person: PECore.PEPersonProtocol)
+  @objc optional func invalidateAlertsForPatient()
+  @objc func isInternalBuild() -> Swift.Bool
+  @objc optional func toggleLanguageOverride()
+  @objc func isBrandedApp() -> Swift.Bool
+  @objc optional func shouldEnableLogoutButton() -> Swift.Bool
+  @objc func getCurrentLocaleInfo() -> PECore.PELocaleInfo
+  @objc func isFullyAuthenticated() -> Swift.Bool
+  @objc optional func getAppleWatchState() -> PECore.PEAppleWatchState
+  @objc optional func resetIdleTimer()
+  @objc func startIdleTimer()
+  @objc func stopIdleTimer()
+  @objc func getCurrentUserContext() -> PECore.PEUserContext?
+  @objc func getCurrentPatientContext() -> PECore.PEPatientContext?
+}
+@objc public enum PEAppleWatchState : Swift.Int {
+  case notLinkable
+  case unlinked
+  case linkedToThisOrg
+  case linkedToAnotherOrg
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class PEOrganizationContext : ObjectiveC.NSObject {
+  @objc public func getUsers() -> [PECore.PEUserProtocol]?
+  @objc public func getOrganization() -> PECore.PEOrganizationProtocol?
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc override dynamic public var hash: Swift.Int {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol PEObserver : AnyObject {
+  func clearBindings()
+}
+extension PEObserver {
+  public func clearBindings()
+}
+@_hasMissingDesignatedInitializers public class MathUtil {
+  public static func degreesToRadians(_ degrees: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
+  @objc deinit
+}
+@objc public protocol PEToDoComponentBridgingAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func getQuestionnaireIDFromTask(withID taskID: Swift.String, atInstant taskInstant: Swift.String, andQuestionnaireIDs questionnaireIDs: [Swift.String], withSeriesID seriesID: Swift.String) -> Swift.String
+  @objc func getMarkHealthAdvisoryCompleteViewController(forTopic topicID: Swift.String, named name: Swift.String, withStatusText statusText: Swift.String, andDetailText detailText: Swift.String, completionDelegate: PECore.PEHealthAdvisoryCompletionDelegate?) -> UIKit.UIViewController?
+}
+@objc public protocol PEHealthAdvisoryCompletionDelegate {
+  @objc func healthAdvisoryMarkedComplete(withCompletionDate completionDate: Foundation.Date)
+}
+@objc @_inheritsConvenienceInitializers open class MyChartWebViewControllerManager : ObjectiveC.NSObject {
+  open func getNotificationsToObserve() -> [Foundation.Notification]?
+  open func onReceiveNotifications(_ viewController: PECore.MyChartWebViewController, notificationName: Swift.String)
+  open func onMyChartRequestsClose(_ viewController: PECore.MyChartWebViewController)
+  open func onMyChartError(_ viewController: PECore.MyChartWebViewController)
+  open func onHttpError(_ viewController: PECore.MyChartWebViewController)
+  open func onEpicHttpRequest(_ viewController: PECore.MyChartWebViewController, url: Foundation.URL?)
+  open func shouldOverrideAllowedPageLoad(_ viewController: PECore.MyChartWebViewController, url: Foundation.URL, isMyChartWebsite: Swift.Bool) -> Swift.Bool
+  open func onPageStarted(_ viewController: PECore.MyChartWebViewController, url: Foundation.URL)
+  open func onPageFinished(_ viewController: PECore.MyChartWebViewController)
+  open func onViewDidLoad(_ controller: PECore.MyChartWebViewController)
+  open func onViewWillAppear(_ controller: PECore.MyChartWebViewController)
+  open func onViewWillDisappear(_ controller: PECore.MyChartWebViewController)
+  open func onViewDidAppear(_ controller: PECore.MyChartWebViewController)
+  open func onViewDidDisappear(_ controller: PECore.MyChartWebViewController)
+  open func onFallbackToJumpToken(_ viewController: PECore.MyChartWebViewController)
+  open func onWorkflowComplete(_ viewController: PECore.MyChartWebViewController)
+  open func onWorkflowCompleteAndClose(_ viewController: PECore.MyChartWebViewController)
+  open func showLoadingView(_ viewController: PECore.MyChartWebViewController)
+  open func hideLoadingView(_ viewController: PECore.MyChartWebViewController)
+  open func allowLaunchOutsideApp() -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class WebSessionWebServiceAPI {
+  public class func getLoginToken(args: PECore.MyChartWebArgs, peOrganization: PECore.PEOrganizationInfo? = nil, useH2GMyChartFullSiteAccessToken: Swift.Bool = false, usePinchToZoomTokenType: Swift.Bool = false) -> PECore.WebService<PECore.GetLoginTokenResponse>?
+  public class func getMyChartUrl(args: PECore.MyChartWebArgs) -> PECore.WebService<PECore.GetMyChartUrlResponse>?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class ValidateUtil : ObjectiveC.NSObject {
+  @objc public static func isValidEmail(_ email: Swift.String?) -> Swift.Bool
+  @objc deinit
+  @objc override dynamic public init()
+}
+public struct LossyCodableArray<E> : Swift.Codable where E : Swift.Decodable, E : Swift.Encodable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension LossyCodableArray : Swift.Collection {
+  public typealias Index = Swift.Int
+  public typealias Element = E
+  public var startIndex: PECore.LossyCodableArray<E>.Index {
+    get
+  }
+  public var endIndex: PECore.LossyCodableArray<E>.Index {
+    get
+  }
+  public subscript(index: PECore.LossyCodableArray<E>.Index) -> PECore.LossyCodableArray<E>.Element {
+    get
+    set(newValue)
+  }
+  public func index(after i: Swift.Int) -> Swift.Int
+  public typealias Iterator = Swift.IndexingIterator<PECore.LossyCodableArray<E>>
+  public typealias SubSequence = Swift.Slice<PECore.LossyCodableArray<E>>
+  public typealias Indices = Swift.DefaultIndices<PECore.LossyCodableArray<E>>
+}
+@objc public class ProgressArcView : UIKit.UIView {
+  @objc @IBInspectable public var baseColor: UIKit.UIColor!
+  @objc @IBInspectable public var progressColor: UIKit.UIColor!
+  public func update(withProgress progress: CoreGraphics.CGFloat)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+}
+@_inheritsConvenienceInitializers @objc public class DateUtil : ObjectiveC.NSObject {
+  @objc public enum DateFormatStyle : Swift.Int {
+    case shortHour
+    case shortHoursMinutes
+    case shortMonthDateYear
+    case shortMonthDateYearHoursMinutes
+    case mediumMonthDate
+    case mediumMonthDateYear
+    case longMonthDate
+    case longDayMonthDate
+    case longMonthDateYear
+    case day
+    case serverDate
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public static func isToday(_ date: Foundation.Date) -> Swift.Bool
+  public static func isYesterday(_ date: Foundation.Date) -> Swift.Bool
+  public static func isTomorrow(_ date: Foundation.Date) -> Swift.Bool
+  public static func getToday() -> Foundation.Date
+  public static func getDayMonthYear(fromDate date: Foundation.Date) -> Foundation.Date
+  public static func getUTCTimeZoneCalendar() -> Foundation.Calendar
+  public static func getUTCTimeZone() -> Foundation.TimeZone
+  public static func dayDifferenceFromToday(to date: Foundation.Date) -> Swift.Int?
+  public static func getDateString(fromDate date: Foundation.Date?) -> Swift.String
+  @objc public static func getDateString(fromDate date: Foundation.Date?, dateStyle style: PECore.DateUtil.DateFormatStyle) -> Swift.String
+  @objc public static func getDateString(fromDate date: Foundation.Date?, dateStyle style: PECore.DateUtil.DateFormatStyle, timeZone: Foundation.TimeZone? = nil) -> Swift.String
+  @objc public static func getDateString(fromDate date: Foundation.Date, dateStyle style: PECore.DateUtil.DateFormatStyle, timeZone: Foundation.TimeZone? = nil, locale: Foundation.Locale) -> Swift.String
+  @objc public static func getDate(fromString dateString: Swift.String?, dateStyle style: PECore.DateUtil.DateFormatStyle) -> Foundation.Date?
+  public static func getTimeString(fromDate date: Foundation.Date?) -> Swift.String
+  public static func getDaysSinceDate(_ pastDate: Foundation.Date) -> Swift.Int
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class UserAgentProvider : ObjectiveC.NSObject {
+  public var userAgentPrefix: Swift.String {
+    get
+  }
+  @objc public static var instance: PECore.UserAgentProvider!
+  @objc public func setUserAgentPrefix(prefix: Swift.String)
+  @objc public func setUserAgentAppVersion(appVersion: Swift.String)
+  @objc public static func getLibraryVersion() -> Swift.String
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc public class PETutorialUIModel : ObjectiveC.NSObject, Swift.Codable {
+  @objc deinit
+  @objc override dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc public protocol MyChartJavascriptProtocol {
+  @objc func onJavascriptRequestsClose()
+  @objc func resetIdleTimer()
+  @objc func disableCloseButton()
+  @objc func reenableCloseButton()
+  @objc func setWebViewTitle(newTitle: Swift.String)
+}
+@objc @_hasMissingDesignatedInitializers public class MyChartJavascriptManager : ObjectiveC.NSObject {
+  public static let jsMessageCloseWindow: Swift.String
+  public static let jsMessageWebViewIsActive: Swift.String
+  public static let jsMessageDisplayToast: Swift.String
+  public static let jsMessageDisableCloseButton: Swift.String
+  public static let jsMessageReenableCloseButton: Swift.String
+  public static let jsMessageSetWebViewTitle: Swift.String
+  public typealias boolCallback = (Swift.Bool) -> ()
+  public typealias stringCallback = (Swift.String) -> ()
+  public func runJavascript(javascript: Swift.String, callback: ((Swift.String?) -> ())?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class PETutorialStepUIModel : Swift.Codable {
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public protocol ProgressBarProtocol : AnyObject {
+  func progressBarIsFull()
+}
+@objc @_inheritsConvenienceInitializers public class ProgressBar : UIKit.UIView {
+  weak public var delegate: PECore.ProgressBarProtocol?
+  public static func make() -> PECore.ProgressBar?
+  public func addToView(_ view: UIKit.UIView)
+  public func setBackgroundBarColor(_ color: UIKit.UIColor)
+  public func setCompletionBarColor(_ color: UIKit.UIColor)
+  public func setEmptyBarColor(_ color: UIKit.UIColor)
+  public func reset()
+  public func setCompletionPercentage(_ completionPercentage: CoreGraphics.CGFloat)
+  public func animate()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc public protocol PEInfectionControlComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func hasAccessForCovidStatus(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func getCovidStatusController(_ patientContext: PECore.PEPatientContext, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+}
+@_inheritsConvenienceInitializers @objc public class MyChartUserContentController : WebKit.WKUserContentController {
+  @objc override dynamic public func add(_ scriptMessageHandler: WebKit.WKScriptMessageHandler, name: Swift.String)
+  @objc override dynamic public init()
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc public protocol PEProblemListComponentAPIProtocol : PECore.PEComponentAPIProtocol {
+  @objc func hasAccessForOutpatientProblemList(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc func hasAccessForEncounterSpecificProblemList(_ encounterContext: PECore.PEEncounterContext) -> PECore.PEComponentAccessResult
+  @objc func getProblemListViewController(_ encounterContext: PECore.PEEncounterContext, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+}
+@objc public enum PERequestFormat : Swift.Int {
+  case defaultForCategory
+  case get
+  case jsonPost
+  case jsonGet
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension PECore.AuditUtil.E1MEntryType : Swift.Equatable {}
+extension PECore.AuditUtil.E1MEntryType : Swift.Hashable {}
+extension PECore.AuditUtil.E1MEntryType : Swift.RawRepresentable {}
+extension PECore.PEComponentRequestControllerErrorCode : Swift.Equatable {}
+extension PECore.PEComponentRequestControllerErrorCode : Swift.Hashable {}
+extension PECore.PEComponentRequestControllerErrorCode : Swift.RawRepresentable {}
+extension PECore.CommunityUpdateContext : Swift.Equatable {}
+extension PECore.CommunityUpdateContext : Swift.Hashable {}
+extension PECore.CommunityUpdateContext : Swift.RawRepresentable {}
+extension PECore.CenteredMessageTextViewStyle : Swift.Equatable {}
+extension PECore.CenteredMessageTextViewStyle : Swift.Hashable {}
+extension PECore.PEComponentAPIKey : Swift.Equatable {}
+extension PECore.PEComponentAPIKey : Swift.Hashable {}
+extension PECore.PEComponentAPIKey : Swift.RawRepresentable {}
+extension PECore.PEAlertType : Swift.Equatable {}
+extension PECore.PEAlertType : Swift.Hashable {}
+extension PECore.PEAlertType : Swift.RawRepresentable {}
+extension PECore.PEMyChartNowSwitcherContext : Swift.Equatable {}
+extension PECore.PEMyChartNowSwitcherContext : Swift.Hashable {}
+extension PECore.PEMyChartNowSwitcherContext : Swift.RawRepresentable {}
+extension PECore.PEMyChartNowSharedAnimationElementViewTag : Swift.Equatable {}
+extension PECore.PEMyChartNowSharedAnimationElementViewTag : Swift.Hashable {}
+extension PECore.PEMyChartNowSharedAnimationElementViewTag : Swift.RawRepresentable {}
+extension PECore.UnreadIndicatorView.UnreadIndicatorStyle : Swift.Equatable {}
+extension PECore.UnreadIndicatorView.UnreadIndicatorStyle : Swift.Hashable {}
+extension PECore.UnreadIndicatorView.UnreadIndicatorStyle : Swift.RawRepresentable {}
+extension PECore.PEChangeObservable : PECore.PEObservable {}
+extension PECore.PEEventObservable : PECore.PEObservable {}
+extension PECore.TokenType : Swift.Equatable {}
+extension PECore.TokenType : Swift.Hashable {}
+extension PECore.TokenType : Swift.RawRepresentable {}
+extension PECore.PEEducationButtonStyle : Swift.Equatable {}
+extension PECore.PEEducationButtonStyle : Swift.Hashable {}
+extension PECore.PEEducationButtonStyle : Swift.RawRepresentable {}
+extension PECore.PEEducationPointCompletedStatus : Swift.Equatable {}
+extension PECore.PEEducationPointCompletedStatus : Swift.Hashable {}
+extension PECore.PEEducationPointCompletedStatus : Swift.RawRepresentable {}
+extension PECore.LocalizedLocale : Swift.Equatable {}
+extension PECore.LocalizedLocale : Swift.Hashable {}
+extension PECore.MyChartWebViewNavigationDelegate.Destination : Swift.Equatable {}
+extension PECore.MyChartWebViewNavigationDelegate.Destination : Swift.Hashable {}
+extension PECore.PEArrayObservable : PECore.PEObservable {}
+extension PECore.ButtonStyle : Swift.Equatable {}
+extension PECore.ButtonStyle : Swift.Hashable {}
+extension PECore.NavigationType : Swift.Equatable {}
+extension PECore.NavigationType : Swift.Hashable {}
+extension PECore.NavigationType : Swift.RawRepresentable {}
+extension PECore.PEEventInfoObservable : PECore.PEObservable {}
+extension PECore.CommunityDataRefreshView.CommunityDataRefreshStatus : Swift.Equatable {}
+extension PECore.CommunityDataRefreshView.CommunityDataRefreshStatus : Swift.Hashable {}
+extension PECore.CommunityDataRefreshView.CommunityDataRefreshStatus : Swift.RawRepresentable {}
+extension PECore.UrlType : Swift.Equatable {}
+extension PECore.UrlType : Swift.Hashable {}
+extension PECore.UrlType : Swift.RawRepresentable {}
+extension PECore.Toast.ToastDuration : Swift.Equatable {}
+extension PECore.Toast.ToastDuration : Swift.Hashable {}
+extension PECore.HomepageOverlayType : Swift.Equatable {}
+extension PECore.HomepageOverlayType : Swift.Hashable {}
+extension PECore.HomepageOverlayType : Swift.RawRepresentable {}
+extension PECore.PEErrorType : Swift.Equatable {}
+extension PECore.PEErrorType : Swift.Hashable {}
+extension PECore.PEErrorType : Swift.RawRepresentable {}
+extension PECore.InlineEducationType : Swift.Equatable {}
+extension PECore.InlineEducationType : Swift.Hashable {}
+extension PECore.InlineEducationType : Swift.RawRepresentable {}
+extension PECore.PESupportedFeature : Swift.Equatable {}
+extension PECore.PESupportedFeature : Swift.Hashable {}
+extension PECore.PESupportedFeature : Swift.RawRepresentable {}
+extension PECore.MyChartNamespaceEnum : Swift.Equatable {}
+extension PECore.MyChartNamespaceEnum : Swift.Hashable {}
+extension PECore.MyChartNamespaceEnum : Swift.RawRepresentable {}
+extension PECore.PEOrganizationCustomString : Swift.Equatable {}
+extension PECore.PEOrganizationCustomString : Swift.Hashable {}
+extension PECore.PEOrganizationCustomString : Swift.RawRepresentable {}
+extension PECore.PEBrandedColor : Swift.Equatable {}
+extension PECore.PEBrandedColor : Swift.Hashable {}
+extension PECore.PEBrandedColor : Swift.RawRepresentable {}
+extension PECore.CardView.CardType : Swift.Equatable {}
+extension PECore.CardView.CardType : Swift.Hashable {}
+extension PECore.CardView.CardType : Swift.RawRepresentable {}
+extension PECore.PEComponentAccessResult : Swift.Equatable {}
+extension PECore.PEComponentAccessResult : Swift.Hashable {}
+extension PECore.PEComponentAccessResult : Swift.RawRepresentable {}
+extension PECore.MyChartWebViewController.ButtonStyle : Swift.Equatable {}
+extension PECore.MyChartWebViewController.ButtonStyle : Swift.Hashable {}
+extension PECore.MyChartWebViewController.ButtonStyle : Swift.RawRepresentable {}
+extension PECore.ExternalOrganizationLinkType : Swift.Equatable {}
+extension PECore.ExternalOrganizationLinkType : Swift.Hashable {}
+extension PECore.ExternalOrganizationLinkType : Swift.RawRepresentable {}
+extension PECore.PEResponseFormat : Swift.Equatable {}
+extension PECore.PEResponseFormat : Swift.Hashable {}
+extension PECore.PEResponseFormat : Swift.RawRepresentable {}
+extension PECore.PEAppleWatchState : Swift.Equatable {}
+extension PECore.PEAppleWatchState : Swift.Hashable {}
+extension PECore.PEAppleWatchState : Swift.RawRepresentable {}
+extension PECore.DateUtil.DateFormatStyle : Swift.Equatable {}
+extension PECore.DateUtil.DateFormatStyle : Swift.Hashable {}
+extension PECore.DateUtil.DateFormatStyle : Swift.RawRepresentable {}
+extension PECore.PERequestFormat : Swift.Equatable {}
+extension PECore.PERequestFormat : Swift.Hashable {}
+extension PECore.PERequestFormat : Swift.RawRepresentable {}

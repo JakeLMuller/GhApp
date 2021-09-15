@@ -1,0 +1,11 @@
+framework module Education {
+  umbrella header "Education.h"
+
+  export *
+  module * { export * }
+}
+
+module Education.Swift {
+    header "Education-Swift.h"
+    requires objc
+}

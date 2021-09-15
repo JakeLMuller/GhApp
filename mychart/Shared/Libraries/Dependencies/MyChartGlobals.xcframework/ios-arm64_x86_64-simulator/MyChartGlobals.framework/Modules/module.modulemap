@@ -1,0 +1,11 @@
+framework module MyChartGlobals {
+  umbrella header "MyChartGlobals.h"
+
+  export *
+  module * { export * }
+}
+
+module MyChartGlobals.Swift {
+    header "MyChartGlobals-Swift.h"
+    requires objc
+}

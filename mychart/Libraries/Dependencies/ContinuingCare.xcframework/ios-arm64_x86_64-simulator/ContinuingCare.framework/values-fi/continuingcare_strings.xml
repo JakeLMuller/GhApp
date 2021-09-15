@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="wp_continuingcare_activity_title" context="Title for the Continuing Care activity">Jatkohoito</string>
+  <string name="wp_continuingcare_tutorial_overview" context="Tutorial text introducing the continuing care activity to the patient. %%CONTINUINGCARE is replaced with the name of the activity.">%%CONTINUINGCARE-toiminnolla voit tarkastella hoitoa tarjoavia palveluntuottajia uloskirjauksen jälkeen ja valita omat ensisijaiset palveluntuottajasi.</string>
+  <string name="wp_continuingcare_tutorial_overview_proxy" context="Tutorial text introducing the continuing care activity to the patient proxy. %%CONTINUINGCARE is replaced with the name of the activity. %%PATNAME is replaced with the name of the patient">%%CONTINUINGCARE-toiminnolla voit tarkastella hoitoa tarjoavia palveluntuottajia uloskirjauksen jälkeen ja valita henkilön %%PATNAME ensisijaiset palveluntuottajat.</string>
+  <string name="wp_continuingcare_tutorial_overview_2" context="Tutorial text explaining more about the workings of continuing care to the patient.">Tarkasta nämä hoitovaihtoehdot ja merkitse ensisijaiset valintasi. Ongelmatilanteissa ota yhteyttä tapauksen hallinnoijaan.</string>
+  <string name="wp_continuingcare_tutorial_overview_2_proxy" context="Tutorial text explaining more about the workings of continuing care to the patient proxy. %%PATNAME is replaced with the name of the patient">Tarkasta nämä hoitovaihtoehdot ja merkitse henkilön %% PATNAME ensisijaiset valinnat. Ongelmatilanteissa ota yhteyttä henkilön %% PATNAME tapauksen hallinnoijaan.</string>
+</resources>

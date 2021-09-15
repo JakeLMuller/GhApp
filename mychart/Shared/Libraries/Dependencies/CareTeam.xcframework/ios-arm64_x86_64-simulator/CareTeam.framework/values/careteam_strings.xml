@@ -1,0 +1,163 @@
+<!--
+  ~ Copyright © 2018-2021 Epic Systems Corporation
+  -->
+<!--@formatter:off-->
+<resources>
+
+    <string name="wp_care_team_activity_title" context="Title for Care Team activity, where patients can see care team members involved in their care">Care Team and Recent Providers</string>
+
+    <string name="wp_treatment_team_activity_title" context="Title for Treatment Team activity, where patients can see who is taking care of them during their hospital stay">Treatment Team</string>
+
+    <string name="wp_care_team_widget_see_all_label" context="Title for button by which patients can access the full list of their treatment team members">See all</string>
+
+    <string name="wp_care_team_widget_manage_all_label" context="Title for button by which patients can access the full list of their care team members">Manage all</string>
+
+    <string name="wp_care_team_list_no_members" context="Label indicating that there are no members on the patient's care team.">No members to show</string>
+
+    <string name="wp_care_team_list_providers_added_via_rtls_header" context="Section header that displays in the inpatient treatment team list, above the section of providers who were added to the list because they have visited the patient, not because they were on the treatment team.">Others who have visited you</string>
+
+    <string name="wp_care_team_list_providers_added_via_rtls_header_proxy" context="Section header that displays in the inpatient treatment team list, above the section of providers who were added to the list because they have visited the patient, not because they were on the treatment team. %1$@ is the patient's name">Others who have visited %1$@</string>
+    
+    <string name="wp_care_team_list_providers_currently_in_room_header_proxy" context="Section header that displays in the inpatient treatment team list, above the section of providers who are currently in the patient's room. %1$@ is the patient's name">In %1$@\'s room right now</string>
+    
+    <string name="wp_care_team_list_providers_currently_in_room_header" context="Section header that displays in the inpatient treatment team list, above the section of providers who are currently in the patient's room.">In your room right now</string>
+    
+    <string name="wp_care_team_list_providers_standard_care_team_header_proxy" context="Section header that displays in the inpatient treatment team list, above the section of providers who are on the patient's treatment team. %1$@ is the patient's name">On %1$@\'s team</string>
+    
+    <string name="wp_care_team_list_providers_standard_care_team_header" context="Section header that displays in the inpatient treatment team list, above the section of providers who are on the patient's treatment team. %1$@ is the patient's name">On your team</string>
+    
+    <string name="wp_care_team_item_about_me_label" context="This label appears below the provider card in a display that shows the picture, name, and role of the provider. It is intended to encourage the user to tap on the card to learn more about the provider.">About me</string>
+    
+    <string name="wp_care_team_item_see_more_label" context="This label appears below the provider card in a display that shows the picture, name, and role of the provider. It is intended to encourage the user to tap on the card to perform more actions. Only shows in an outpatient context.">See more</string>
+
+    <string name="wp_care_team_close_accessibility" context="Accessibility label for the background button that is hidden behind a popup to allow the user to dismiss the pop-up">Dismiss pop-up</string>
+
+    <string name="wp_care_team_close_button_title" context="Label for the button by which patients can exit out of a popup">Close</string>
+
+    <string name="wp_care_team_back_button_title" context="Label for the back button by which patients can return to the list of care team members">Back</string>
+
+    <string name="wp_care_team_error_update_provider_status" context="The toast message indicates user tries to update a provider status and an error occurs.">An error occurred when updating the provider\'s status.</string>
+
+    <string name="wp_care_team_success_update_provider_status" context="The toast message indicates user tries to update a provider status and succeeds.">You have successfully updated the provider\'s status.</string>
+
+    <string name="wp_care_team_sorting_button_accessibility" context="Accessibility label for right bar button by which patients can access a popup with filtering and sorting options for their list of care team members">Options</string>
+    
+    <string name="wp_care_team_sorting_sort_by_accessibility_hint" context="Accessibility hint for popup label that says Sort By, telling the user that they will need to scroll down to hear and select an option">Scroll down to choose a sorting option from a list</string>
+
+    <string name="wp_care_team_sorting_sort_by_label" context="Label for selector which allows patients to sort care team members in order by name, role, etc.">Sort by:</string>
+
+    <string name="wp_care_team_sorting_name_option" context="Title for selection indicating that care team members should be sorted by name">Name</string>
+
+    <string name="wp_care_team_sorting_role_option" context="Title for selection indicating that care team members should be sorted by their role in the patient's care">Role</string>
+
+    <string name="wp_care_team_sorting_recency_option" context="Title for selection indicating that care team members should be sorted by how recently they were added to the patient's care team">New</string>
+
+    <string name="wp_care_team_sorting_relevance_option" context="Title for selection indicating that care team members should be sorted by their relevance to the patient">Relevance</string>
+
+    <string name="wp_care_team_sorting_most_recently_visited_option" context="Title for selection indicating that care team members should be sorted by how recently they visited the patient">Last visit</string>
+    
+    <string name="wp_care_team_sorting_specialty_option" context="Title for selection indicating that care team members should be sorted by their specialty in the patient's care">Specialty</string>
+
+    <string name="wp_care_team_sorting_filter_inactive_label" context="Label for switch allowing patient's to show inactive (i.e. not currently assigned to treat the patient) members in the list of treatment team members">Show inactive members</string>
+
+    <string name="wp_care_team_sorting_filter_hidden_label" context="Label for switch allowing patient's to show hidden (i.e. patients hide them before) providers in the list of care team providers">Show hidden providers</string>
+
+    <string name="wp_care_team_roles_pcp" context="Role title for the care team member that is the patient's primary care provider">Primary Care Provider</string>
+
+    <string name="wp_care_team_roles_attending" context="Role title for a treatment team member that serves as this patient's attending provider">Attending Provider</string>
+
+    <string name="wp_care_team_roles_admitting" context="Role title for a treatment team member that was this patient's admitting provider">Admitting Provider</string>
+
+    <string name="wp_care_team_roles_default" context="Default role title for a treatment team member that has no other specific roles in this patient's care">Care Team Member</string>
+
+    <string name="wp_care_team_member_featured_accessibility"
+        context="Accessibility value indicating that the selected member is a featured (i.e. important) member of the patient's treatment team.">Point Person</string>
+
+    <string name="wp_care_team_member_inactive_accessibility" context="Accessibility value indicating that the selected member is an inactive (i.e. not currently assigned to treat the patient) member of the patient's treatment team.">Inactive</string>
+
+    <string name="wp_care_team_member_external_accessibility" context="Accessibility value indicating that the selected care team member is part of an external organization.">From an external organization</string>
+
+    <string name="wp_care_team_provider_hidden_accessibility" context="Accessibility value indicating that the selected care team provider is hidden in the list.">This provider is hidden</string>
+
+    <string name="wp_care_team_member_show_bio_accessibility" context="Accessibility hint indicating that the patient can open a brief description of this member of their treatment team">Read biography</string>
+
+    <string name="wp_care_team_toggle_on_accessibility" context="Accessibility message announced after users turn the toggle on.">On</string>
+
+    <string name="wp_care_team_toggle_off_accessibility" context="Accessibility message announced after users turn the toggle off.">Off</string>
+
+    <string name="wp_care_team_checkbox_checked_accessibility" context="Accessibility message announced after users check the check box.">Checked</string>
+
+    <string name="wp_care_team_checkbox_not_checked_accessibility" context="Accessibility message announced after users uncheck the check box.">Not checked</string>
+
+    <string name="wp_care_team_popup_send_message" context="Label for a button on the care team info popup. Clicking on this button will take the user to an activity by which they can send a message to the selected care team member.">Send a Message</string>
+
+    <string name="wp_care_team_popup_schedule_appointment" context="Label for a button on the care team info popup. Clicking on this button will take the user to an activity by which they can schedule an appointment with the selected care team member.">Schedule an Appointment</string>
+
+    <string name="wp_care_team_popup_hide_provider" context="Label for a button on the care team info popup. Clicking on this button will hide this provider in the list.">Hide Provider</string>
+
+    <string name="wp_care_team_popup_unhide_provider" context="Label for a button on the care team info popup. Clicking on this button will unhide this provider in the list.">Unhide Provider</string>
+
+    <string name="wp_care_team_popup_cant_hide_provider" context="Label for a text on the care team info popup. It will show up when the provider is external and indicate users can't hide this provider">Log in to this organization to hide this provider</string>
+
+    <string name="wp_care_team_popup_cant_hide_provider_with_org_name" context="Label for a text on the care team info popup. It will show up when the provider is external and indicate users can't hide this provider in a particular organization. %1$@ is the organization name.">Log in to %1$@ to hide this provider</string>
+
+    <string name="wp_care_team_popup_cant_unhide_provider" context="Label for a text on the care team info popup. It will show up when the provider is external and indicate users can't unhide this provider">Log in to this organization to unhide this provider</string>
+
+    <string name="wp_care_team_popup_cant_unhide_provider_with_org_name" context="Label for a text on the care team info popup. It will show up when the provider is external and indicate users can't unhide this provider in a particular organization. %1$@ is the organization name.">Log in to %1$@ to unhide this provider</string>
+
+    <string name="wp_care_team_popup_org_not_support_hide_provider" context="Label for a text on the care team info popup. It will show up when the provider is external and the provider's home org doesn't support hiding providers">This organization doesn\'t support hiding providers</string>
+
+    <string name="wp_care_team_popup_org_not_support_hide_provider_with_org_name" context="Label for a text on the care team info popup. It will show up when the provider is external and the provider's home org doesn't support hiding providers in a particular organization. %1$@ is the organization name.">%1$@ doesn\'t support hiding providers</string>
+
+    <string name="wp_care_team_popup_request_appointment" context="Label for a button on the care team info popup. Clicking on this button will take the user to an activity by which they can request an appointment with the selected care team member.">Request an Appointment</string>
+    
+    <string name="wp_care_team_bio_no_bio_text" context="String that displays in a care team member's biography section if they have not yet chosen to share any additional information about themselves for display.">This provider has not yet shared additional information.</string>
+
+    <string name="wp_care_team_bio_member_today" context="Appears below a treatment team member's name and photo to describe to the patient that this member was just assigned to their treatment team today">Started caring for you today.</string>
+
+    <string name="wp_care_team_bio_member_today_proxy" context="Appears below a treatment team member's name and photo to describe to the patient that this member was just assigned to their treatment team today. %1$@ is the patient's name.">Started caring for %1$@ today.</string>
+
+    <string name="wp_care_team_bio_member_since" context="Appears below a treatment team member's name and photo to describe to the patient how long this member has been on their treatment team. %1$@ is an absolute date representing when the treatment team member was assigned to the patient's team (e.g. October 3rd).">Caring for you since %1$@.</string>
+
+    <string name="wp_care_team_bio_member_since_proxy" context="Appears below a treatment team member's name and photo to describe to the patient how long this member has been on their treatment team. %1$@ is an absolute date representing when the treatment team member was assigned to the patient's team (e.g. October 3rd). %2$@ is the patient's name.">Caring for %2$@ since %1$@.</string>
+
+    <string name="wp_care_team_bio_member_past" context="Appears below a treatment team member's name and photo to when the member is no longer active in the patient's care.">Took care of you earlier in your hospital stay.</string>
+
+    <string name="wp_care_team_bio_member_past_proxy" context="Appears below a treatment team member's name and photo to when the member is no longer active in the patient's care. %1$@ is the patient's name.">Took care of %1$@ earlier in their hospital stay.</string>
+
+    <string name="wp_care_team_bio_last_in_room_today" context="Appears below a treatment team member's name and photo to describe when the provider last visited the patient in their room. This string is used if the visit was today. %1$@ is the time of the provider's visit to the patient's room.">Last visited you today at %1$@.</string>
+
+    <string name="wp_care_team_bio_last_in_room_yesterday" context="Appears below a treatment team member's name and photo to describe when the provider last visited the patient in their room. This string is used if the visit was yesterday. %1$@ is the time of the provider's visit to the patient's room.">Last visited you yesterday at %1$@.</string>
+
+    <string name="wp_care_team_bio_last_in_room_date" context="Appears below a treatment team member's name and photo to describe when the provider last visited the patient in their room. This string is used if the visit was some date in the past, not today or yesterday. %1$@ is the date (long format: En-US Nov 23, 1937) of the provider's visit to the patient's room. %2$@ is the time of the provider's visit to the patient's room.">Last visited you on %1$@ at %2$@.</string>
+
+    <string name="wp_care_team_bio_last_in_room_today_proxy" context="Appears below a treatment team member's name and photo to describe when the provider last visited the patient in their room. This string is used if the visit was today. %1$@ is the patient's name. %2$@ is the time of the provider's visit to the patient's room.">Last visited %1$@ today at %2$@.</string>
+
+    <string name="wp_care_team_bio_last_in_room_yesterday_proxy" context="Appears below a treatment team member's name and photo to describe when the provider last visited the patient in their room. This string is used if the visit was yesterday. %1$@ is the patient's name. %2$@ is the time of the provider's visit to the patient's room.">Last visited %1$@ yesterday at %2$@.</string>
+
+    <string name="wp_care_team_bio_last_in_room_date_proxy" context="Appears below a treatment team member's name and photo to describe when the provider last visited the patient in their room. This string is used if the visit was some date in the past, not today or yesterday. %1$@ is the patient's name. %2$@ is the date (long format: En-US Nov 23, 1937) of the provider's visit to the patient's room. %3$@ is the time of the provider's visit to the patient's room.">Last visited %1$@ on %2$@ at %3$@.</string>
+
+    <string name="wp_care_team_bio_featured_label" context="Label indicating that the selected member is a featured (i.e. important) member of the patient's treatment team.">Point Person</string>
+
+    <string name="wp_care_team_bio_about_me_label" context="Label appearing above a treatment team member's personal description of themself">About Me</string>
+
+    <string name="wp_care_team_bio_role_description_label" context="Label appearing above a description of a treatment team member's role in the patient's care">My Role in Your Care</string>
+
+    <string name="wp_care_team_bio_role_description_label_proxy" context="Label appearing above a description of a treatment team member's role in the patient's care. %1$@ is the patient's name.">My Role in %1$@\'s Care</string>
+
+    <string name="wp_careteam_retrieval_error_popup_title" context="Title of the popup that displays the external organizations that we did not receive careteam provider data from (see STR_CT_H2G_ERROR_POPUP_TITLE)">Care Team may be incomplete:</string>
+
+    <string name="wp_careteam_retrieval_error_banner_text" context="Title of the error banner informing the user that there has been an error retrieving provider information from external organizations, and therefore the displayed list of providers may be incomplete">Care team may be incomplete</string>
+
+    <string name="wp_care_team_tutorial_overview" context="Tutorial text introducing the patient to the care team activity. %%CARETEAM is replaced with the name of the activity.">%%CARETEAM shows the providers who are responsible for your care. Tapping on a provider\'s photo will show you more about them.</string>
+
+    <string name="wp_care_team_tutorial_overview_proxy" context="Tutorial text introducing the patient to the care team activity. %%CARETEAM is replaced with the name of the activity. %%PATNAME is replaced with the name of the patient">%%CARETEAM shows the providers who are responsible for %%PATNAME\'s care. Tapping on a provider\'s photo will show you more about them.</string>
+
+    <string name="wp_care_team_tutorial_controls" context="Tutorial text teaching the patient how to navigate the care team activity">You can swipe the screen up to see more care team members (if available).</string>
+
+    <string name="wp_care_team_tutorial_details" context="Tutorial text explaining to the patient that providers no longer on the care team will have their photo grayed out and will be at the end of the list">Providers who are no longer on your team can be seen by selecting Show inactive members.</string>
+
+    <string name="wp_care_team_tutorial_details_proxy" context="Tutorial text explaining to the patient that providers no longer on the care team will have their photo grayed out and will be at the end of the list. %%PATNAME is replaced with the name of the patient">Providers who are no longer on %%PATNAME\'s team can be seen by selecting Show inactive members.</string>
+</resources>
+
+<!--@formatter:on-->

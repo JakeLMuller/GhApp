@@ -1,0 +1,11 @@
+framework module MyChartNow {
+  umbrella header "MyChartNow.h"
+
+  export *
+  module * { export * }
+}
+
+module MyChartNow.Swift {
+    header "MyChartNow-Swift.h"
+    requires objc
+}

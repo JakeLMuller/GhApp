@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017-2021 Epic Systems Corporation
+  -->
+<!--@formatter:off-->
+<resources>
+  <!-- Generic Strings -->
+  <string name="wp_generic_servererror" context="Alert appears when a server error makes completing a required webservice call impossible.">Ett fel har uppstått på servern. Försök senare.</string>
+  <string name="wp_generic_ok" context="Button used widely and generally. Closes a dialog when no action is possible" length="30 characters">OK</string>
+  <string name="wp_generic_cancel" context="Button closes a dialog without taking any action. Can be found by attempting to cancel an appointment without canceling security if the department has a phone number">Avbryt</string>
+  <string name="wp_loadingdialog_general" context="Appears in a variety of places on the app when information is being loaded" length="32 characters">Läser in</string>
+  <string name="wp_generic_error" context="Error dialog title" length="30 characters">Fel</string>
+  <string name="wp_generic_missingapplicationbrowser" context="used when MyChart wants to open a link to the browser but can't find a browser installed on the user's device">Det gick inte att öppna den här länken, men kunde inte hitta ett program för att öppna den.</string>
+  <string name="wp_generic_show_more" context="String used to indicate there is more content or text to be displayed">Visa fler</string>
+  <string name="wp_generic_go_to_settings" context="Button used to jump to settings to enable permissions or to change settings">Gå till inställningar</string>
+  <string name="wp_generic_save" context="Button used to save something">Spara</string>
+  <string name="wp_generic_networkerror" context="Alert message when the app detects a lack of network connection while trying to complete a task">Se till att du har en nätverksanslutning och försök igen.</string>
+  <string name="wp_generic_networkerrortitle" context="Alert title appears when the app detects a lack of network connection while trying to complete a task" length="20 characters">Anslutningsfel</string>
+  <string name="wp_generic_more_info" context="More information" length="20 characters">Mer information</string>
+  <!-- Web View Strings -->
+  <string name="wp_webview_not_supported" context="Alert appears when the user tries to launch a web view activity that is not supported on mobile">Gå till webbsidan för att se denna aktivitet.</string>
+  <!-- Date Strings -->
+  <string name="wp_today" context="Appears in a variety of places to indicate today">Idag</string>
+  <string name="wp_tomorrow" context="Appears in a variety of places to indicate today">Imorgon</string>
+  <!-- H2G Refresh Stings -->
+  <string name="wp_community_organization_last_refresh_date" context="The previous/last date the user updated the organization's community link. %1$@ is the date of the last update.">Uppdaterat den %1$@</string>
+  <string name="wp_community_organization_out_of_date_missing" context="Text displayed when a DXR organization is missing its access/refresh date.">Uppdaterinsinformation ej tillgänglig</string>
+  <string name="wp_community_organization_up_to_date" context="For organizations with live links (External MyChart/Fhir), we show the refresh date as 'Up-to-date'">Ingen betalning som förfaller</string>
+  <string name="wp_community_organization_out_of_date_warning" context="Text warning the user that some of their cached/DXR data may be out of date and need to be updated. %1$@ is the name of the data (e.g. allergies).">Dina %1$@ är kanske inte aktuella för varje länkat konto. Trycka här för att uppdatera.</string>
+  <string name="wp_community_organization_out_of_date_warning_testresult" context="Text warning the user that some of their cached/DXR data may be out of date and need to be updated. Used for test result only. %1$@ is the name of the data (e.g. allergies).">Dina %1$@ är kanske inte aktuella. Trycka här för att se de senaste %1$@.</string>
+  <string name="wp_community_organization_dxr_warning" context="Text warning users that some of their data may not be loaded. Tells user to visit their DXR organization's patient portal for the complete information. %1$@ is the name of the external organization">Alla detaljer kanske inte kan visas. Ring till %1$@ eller besök patientportalen för mer information.</string>
+  <string name="wp_community_data_is_updating" context="Appears in the Happy Together refresh banner when the patient has data is updating in the background.">Dina uppgifter uppdateras.</string>
+  <string name="wp_community_data_has_error" context="Appears in the Happy Together refresh banner when the patient has data failed updating.">Det gick inte att uppdatera dina uppgifter. Tryck för mer information.</string>
+  <!-- H2G Error Strings -->
+  <string name="wp_community_generic_connection_error" context="Text displayed in the H2G error popup which is shown when we fail to retrieve outside data from any of the organizations that the patient is connected to due to generic connection issues. %1$@ is the organization name.">Vi har problem med att ta emot data från %1$@ just nu.</string>
+  <string name="wp_community_inactive_account_error" context="Text displayed in the H2G error popup which is shown when we fail to retrieve outside data from any of the organizations that the patient is connected to due to missing active MyChart account. %1$@ is the organization name.">Du måste registrera dig för ett konto på %1$@.</string>
+  <string name="wp_community_dismiss_error" context="Accessibility label for the X button used to dismiss the H2G error popup">Avvisa detta meddelande</string>
+  <string name="wp_community_tap_for_details_message" context="Tap for details message for h2g error banner.We seperate this from the original text because of accessibility issue.">Tryck för mer information.</string>
+  <!-- H2G Strings -->
+  <string name="wp_community_outside_organization_label" context="Accessibility text for the tappable CE icon">Externa organisationer</string>
+  <!-- HTML Strings -->
+  <string name="wp_core_imagecouldnotberetrieved" context="Alert text when an image could not be loaded">Det gick inte att läsa in bilden</string>
+  <!-- MyChart Web View Strings -->
+  <string name="wp_core_mychartweb_opennewapp" context="message appears when a user clicks on a link in a webview activity that would lead to a new app. Param 1 is the link being opened.">Vill du öppna denna länk i en annan app?\n%1$@</string>
+  <string name="wp_core_mychartweb_opennewapp_yes" context="alert button that opens a link in an external app">Fortsätt</string>
+  <string name="wp_core_mychartweb_opennewapp_no" context="alert button closes an alert without opening a link in an external app">Stanna kvar här</string>
+  <string name="wp_core_mychartweb_noapp" context="message appears when a user clicks on a link in a webview activity that would lead to a new app and the app failed to load.">Det gick inte att starta den andra appen.</string>
+  <string name="wp_core_mychartweb_download" context="message appears when a user clicks on a link in a webview activity that would download a file.">Vill du hämta den här filen till din enhet?</string>
+  <string name="wp_core_mychartweb_download_yes" context="alert button that downloads a file">Ja</string>
+  <string name="wp_core_mychartweb_download_no" context="alert button closes an alert without downloading a file">Nej</string>
+  <string name="wp_core_mychartweb_download_description" context="The description for a file downloaded">Hämta från %1$@</string>
+  <string name="wp_core_mychartweb_download_toast" context="Toast message after user started downloading a file from MyChart">Läser in filen…</string>
+  <string name="wp_core_mychartweb_close" context="alt-text for the 'close' button in a MyChart Web-based workflow">Stäng</string>
+  <string name="wp_mychart_feature_to_browser_title" context="A title shown to the user if the feature is not supported in the app">Använd den här funktionen utanför appen</string>
+  <string name="wp_mychart_feature_to_browser_message" context="A message shown to tell the patient they can launch this feature outside the app">Denna funktion måste startas utanför appen. Vill du fortsätta?</string>
+  <string name="wp_mychart_feature_to_browser_yes" context="Option to agree to launch a feature outside the application.  But only this time.">Ja, bara den här gången</string>
+  <string name="wp_mychart_feature_to_browser_yes_always" context="Option to agree to launch a feature outside the application.  And to do this every time.">Ja, starta alltid utanför appen</string>
+  <string name="wp_mychart_feature_to_browser_no" context="Option to not agree to launch outside the application and instead stay in the app">Nej, stanna kvar här</string>
+  <string name="wp_mychart_custom_feature_external_launch_title" context="A title shown to the user when they are launching a feature that is about to take them out of the app">Du lämnar appen.</string>
+  <string name="wp_mychart_custom_feature_external_launch_yes" context="Option to agree to launch a feature outside the application to open the browser.">Ja, fortsätt</string>
+  <string name="wp_mychart_custom_feature_external_launch_no" context="Option to not agree to launch outside the application to open the feature and instead stay in the app">Nej, stanna kvar här</string>
+  <!-- Care Companion -->
+  <string name="wp_todo_education_question_subject" context="Subject text for a message sent to provider when patient has a question about an education task.%1$@ is the title of the education task">Fråga angående \"%1$@\"</string>
+  <!-- File Chooser Strings -->
+  <string name="wp_core_filechooser_attachmenttitle" context="menu title for a dialog that allows the user to choose a file">Välj en fil</string>
+  <string name="wp_core_filechooser_takenewphoto" context="menu option that lets the user take a photo with the device camera">Ta ett nytt foto</string>
+  <string name="wp_core_filechooser_choosephoto" context="menu option that lets the user choose an existing photo from the device">Välj befintligt foto</string>
+  <string name="wp_core_filechooser_takenewvideo" context="menu option that lets the user take a video with the device camera">Spela in en ny video</string>
+  <string name="wp_core_filechooser_choosevideo" context="menu option that lets the user choose an existing video from the device">Välj befintligt video</string>
+  <string name="wp_core_filechooser_choosefile" context="menu option that lets the user choose an existing file from the device">Välj befintligt dokument</string>
+  <string name="wp_core_filechooser_attachmenterror" context="Toast shown when there was an error uploading a document">Uppladdning gick inte att utföra just nu. Försök igen senare.</string>
+  <!-- Permissions Strings -->
+  <string name="wp_core_permissions_error_title" context="The error title when the user rejects the proper permissions to do something in the app.">Hoppsan!</string>
+  <string name="wp_core_permissions_photo_take_error_message" context="The error message when the user rejects the proper permissions to take a photo.">Tillåta appen att komma åt din kamera för att ta ett foto.</string>
+  <string name="wp_core_permissions_photo_select_error_message" context="The error message when the user rejects the proper permissions to access storage when selecting a photo.">Tillåta appen att komma åt din lagring för att välja ett foto.</string>
+  <string name="wp_core_permissions_video_take_error_message" context="The error message when the user rejects the proper permissions to take a video.">Tillåta appen att komma åt din kamera och lagring för att ta en video.</string>
+  <string name="wp_core_permissions_video_select_error_message" context="The error message when the user rejects the proper permissions to access storage when selecting a video.">Tillåta appen att komma åt din lagring för att välja en video.</string>
+  <string name="wp_core_permissions_file_select_error_message" context="The error message when the user rejects the proper permissions to access storage when selecting a file.">Tillåta appen att komma åt din lagring för att välja en dokument.</string>
+  <string name="wp_core_permissions_set_permissions_button" context="The default yes button for requesting permissions.">Ange behörigheter</string>
+  <string name="wp_core_permissions_nevermind_button" context="The default no button for requesting permissions.">Glöm det</string>
+  <!-- Unit Testing Strings -->
+  <string name="wp_test_string_with_params" context="This is a test string for unit testing.  Do not worry about translation.">%1$@\" och \"%2$@</string>
+  <plurals name="wp_test_string_with_plurals" context="This is a test string for unit testing.  Do not worry about translation.">
+    <item quantity="one">one(%1$@, %2$@)</item>
+    <item quantity="other">other(%1$@, %2$@)</item>
+  </plurals>
+  <!-- Inline Education Strings -->
+  <string name="wp_inline_education_view_diagnosis" context="Accessibility text for the Inline Education Infobutton">Ytterligare information om den här diagnos-knappen.</string>
+  <string name="wp_inline_education_view_medication" context="Accessibility text for the Inline Education Infobutton">Ytterligare information om den här läkemedel-knappen.</string>
+  <string name="wp_inline_education_view_test_result" context="Accessibility text for the Inline Education Infobutton">Ytterligare information om den här provsvar-knappen.</string>
+  <string name="wp_inline_education_view_procedure" context="Accessibility text for the Inline Education Infobutton">Ytterligare information om den här undersökning/behandling-knappen.</string>
+  <string name="wp_inline_education_view_allergy" context="Accessibility text for the Inline Education Infobutton">Ytterligare information om den här allergi-knappen.</string>
+  <string name="wp_inline_education_view_immunization" context="Accessibility text for the Inline Education Infobutton">Ytterligare information om den här vaccinering-knappen.</string>
+  <!-- Tutorials Strings -->
+  <string name="wp_core_tutorials_close" context="text for the button that a user will tap to exit tutorials">Klart</string>
+  <string name="wp_core_tutorials_more_help" context="Text for a button in tutorials that is used to continue receiving tutorial info">Berätta mer!</string>
+  <string name="wp_core_tutorials_back" context="Text for a button in tutorials that is used to go back a step">Tillbaka</string>
+  <string name="wp_core_tutorials_forward" context="Text for a button in tutorials that is used to go foward a step">Framåt</string>
+  <string name="wp_core_tutorials_done_button_accessibility_label" context="Accessibility label for the 'done' button in a tutorial. This will be read by VoiceOver when the user reaches the button">Klart</string>
+  <string name="wp_core_tutorials_done_button_accessibility_hint" context="Accessibility hint for the 'done' button in a tutorial. This explains what will happen when the button is tapped and will be read by VoiceOver after the accessibility label">Stänger självstudien</string>
+  <string name="wp_core_tutorials_next_button_accessibility_label" context="Accessibility label for the 'next' button in a tutorial. This will be read by VoiceOver when the user reaches the button">Nästa sida</string>
+  <string name="wp_core_tutorials_next_button_accessibility_hint" context="Accessibility hint for the 'next' button in a tutorial. This explains what will happen when the button is tapped and will be read by VoiceOver after the accessibility label">Går till nästa sida i självstudien</string>
+  <string name="wp_core_tutorials_previous_button_accessibility_label" context="Accessibility label for the 'previous' button in a tutorial. This will be read by VoiceOver when the user reaches the button">Föregående sida</string>
+  <string name="wp_core_tutorials_previous_button_accessibility_hint" context="Accessibility hint for the 'previous' button in a tutorial. This explains what will happen when the button is tapped and will be read by VoiceOver after the accessibility label">Återvänder till den föregående självstudiesidan</string>
+  <string name="wp_core_tutorials_progress_accessibility_label" context="Accessibility label for the control that indicates the current page">Sida %1$d av %2$d</string>
+  <!-- Camera Permission Strings -->
+  <string name="wp_core_camera_missing_permissions_title" context="Title for an alert that explains to the user that the application lacks sufficient permission to access the device's camera.">Kan inte komma åt kameran</string>
+  <string name="wp_core_camera_missing_permissions_message_ios" context="Alert message that hat explains to the user that the application lacks sufficient permission to access the device's camera. %1$@ is the application name (i.e. MyChart).">%1$@ har inte tillstånd att komma åt din kamera. För att bevijla %1$@ tillstånd ger åtkomst till din kamera i Inställningar &gt; %1$@.</string>
+  <!-- Validation Strings -->
+  <string name="wp_core_validation_specialcharacters_title" context="Title for an alert that explains to the user that special characters cannot be entered as input.">Specialtecken tillåts inte</string>
+  <string name="wp_core_validation_specialcharacters_message" context="Alert message that explains to the user that special characters cannot be entered as input.">Du får inte ange specialtecken här, inklusive tecken från vissa språk eller emojis.</string>
+  <string name="wp_h2g_dismiss_content_description" context="Accessibility content description for a dismiss icon button">Avvisa</string>
+  <!-- PDF Download Strings -->
+  <string name="wp_pdf_download_title" context="Error title on pop up when the user can not view the PDF in the app.">Det går inte att visa PDF-filer i appen</string>
+  <string name="wp_pdf_download_message" context="Error message on pop up when the user can not view the PDF in the app.  %1$@ is the MyChart brand name">Vill du hämta PDF-filen för att visa den med en extern app? När du har hämtat filen kommer den inte lࣺängre att skyddas av %1$@. Andra appar på enheten kan ha tillgång till den här filen.</string>
+  <string name="wp_pdf_yes_download" context="Button to download the file">Ja, hämta</string>
+  <string name="wp_pdf_no_permission" context="User did not give permissions to download the file">Det går inte att hämta filen. Filbehörighet krävs.</string>
+  <string name="wp_pdf_download_success" context="The PDF was downloaded successfully">PDF har hämtats</string>
+  <string name="wp_pdf_download_error" context="The PDF was not downloaded due to an error">Fel vid hämtning av PDF</string>
+  <!-- How To Videos -->
+  <string name="wp_how_to_video_header" context="Title used on the header of How To video cards">Titta för att lära</string>
+  <string name="wp_how_to_video_share_everywhere_title" context="Title of the How To video for Share Everywhere, which appears in a card on the Share Everywhere page">Share Everywhere</string>
+  <string name="wp_how_to_video_share_everywhere_description" context="Description of the How To video for Share Everywhere, which appears in a card on the Share Everywhere page">Lär dig hur du delar din journal med en vårdperson som inte redan har tillgång.</string>
+  <string name="wp_how_to_video_video_visit_title" context="Title of the How To video for Video Visits, which appears in a card in appointment details for a video visit">Videobesök</string>
+  <string name="wp_how_to_video_video_visit_description" context="Description of the How To video for Video Visits, which appears in a card in appointment details for a video visit">Lär dig hur du slutför incheckningen och startar ditt videobesök.</string>
+  <string name="wp_how_to_video_thumbnail_accessibility" context="Description of the video thumbnail that will be read by screen readers">Klicka för att spela videon</string>
+  <string name="wp_how_to_see_more" context="Text for the button to expand the How To video card">Visa mer</string>
+  <string name="wp_how_to_see_less" context="Text for the button to collapse the How To video card">Visa mindre</string>
+  <string name="wp_how_to_close" context="Text for the button to close the popup containing the How To video">Stäng</string>
+</resources>
+<!--@formatter:on-->

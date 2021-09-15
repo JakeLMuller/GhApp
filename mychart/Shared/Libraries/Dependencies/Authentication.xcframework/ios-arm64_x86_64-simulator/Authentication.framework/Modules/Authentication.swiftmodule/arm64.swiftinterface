@@ -1,0 +1,96 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Authentication
+@_exported import Authentication
+import Foundation
+import PECore
+import Swift
+public enum TwoFactorWorkflow {
+  case Unknown
+  case LoginWithoutDeliverySelection
+  case Login
+  case OptIn
+  case OptOut
+  case Enrollment
+  public func isPostLoginWorkflow() -> Swift.Bool
+  public static func == (a: Authentication.TwoFactorWorkflow, b: Authentication.TwoFactorWorkflow) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@objc public enum WPEncryptionMethod : Swift.Int {
+  case noEncryption = 1
+  case aes128 = 2
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class SessionTicket : ObjectiveC.NSObject {
+  @objc public var value: Swift.String {
+    get
+  }
+  @objc public var encryptionMethod: Authentication.WPEncryptionMethod {
+    get
+  }
+  @objc(initWithTicket:andEncryptionMethod:) convenience public init?(ticket: Swift.String?, encryptionMethod: Authentication.WPEncryptionMethod = .aes128)
+  required public init(ticket: Swift.String, encryptionMethod: Authentication.WPEncryptionMethod = .aes128)
+  @objc public func updateTicket(_ newTicket: Swift.String)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers public class AuthenticationWebServiceAPI {
+  @objc deinit
+}
+extension AuthenticationWebServiceAPI {
+  public static func requestSecondaryLogin<T>(token: Swift.String, deviceId: Swift.String, websiteName: Swift.String, username: Swift.String, screenWidth: Swift.Int, screenHeight: Swift.Int, serverUrl: Swift.String? = nil, appId: Swift.String) -> PECore.WebService<T> where T : Authentication.AuthenticateResponse, T : Swift.Decodable
+}
+public protocol AuthenticateResponse {
+  var statusCode: Swift.Int { get }
+  var accountId: Swift.String { get }
+  var displayName: Swift.String { get }
+  var photo: UIKit.UIImage? { get }
+  var username: Swift.String { get }
+  var homeUrl: Swift.String { get }
+  var ticket: Authentication.SessionTicket? { get }
+  var ticketTimeout: Swift.Double { get }
+}
+public class TwoFactorInformation : Swift.Codable, PECore.TwoFactorInformationProtocol {
+  @objc public var allowOptIn: Swift.Bool
+  @objc public var isOptedIn: Swift.Bool
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc @_hasMissingDesignatedInitializers public class TwoFactorEnrollmentNavigationController : UIKit.UINavigationController {
+  @objc deinit
+  @available(iOS 5.0, *)
+  @objc override dynamic public init(navigationBarClass: Swift.AnyClass?, toolbarClass: Swift.AnyClass?)
+  @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+}
+@_hasMissingDesignatedInitializers public class TwoFactorUtilities {
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class TwoFactorAuthenticationNavigationController : UIKit.UINavigationController {
+  @objc deinit
+  @available(iOS 5.0, *)
+  @objc override dynamic public init(navigationBarClass: Swift.AnyClass?, toolbarClass: Swift.AnyClass?)
+  @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+}
+@_inheritsConvenienceInitializers @objc public class PEAuthenticationComponentAPI : ObjectiveC.NSObject, PECore.PEAuthenticationComponentAPIProtocol {
+  @objc public func getViewControllerForTwoFactorAuthentication(withContext userContext: PECore.PEUserContext, destinationStringArray: [Swift.String], canTrustDevice: Swift.Bool, completionHandler: ((Swift.Bool, Swift.Bool) -> Swift.Void)?) -> UIKit.UIViewController?
+  @objc public func getViewControllerForTwoFactorEnrollment(withContext userContext: PECore.PEUserContext, twoFactorInformation: PECore.TwoFactorInformationProtocol, completionHandler: ((Swift.Bool, Swift.Bool) -> Swift.Void)?) -> UIKit.UIViewController?
+  @objc public func supportsTwoFactorOptIn(withContext userContext: PECore.PEUserContext) -> Swift.Bool
+  @objc public func loadTwoFactorInformation(withContext userContext: PECore.PEUserContext, completionHandler: @escaping ((PECore.TwoFactorInformationProtocol?) -> Swift.Void), errorHandler: @escaping ((PECore.PEError) -> Swift.Void))
+  @objc public func getViewControllerForTwoFactorOptIn(withContext userContext: PECore.PEUserContext, twoFactorInformation: PECore.TwoFactorInformationProtocol, completionHandler: ((Swift.Bool, Swift.Bool) -> Swift.Void)?) -> UIKit.UIViewController?
+  @objc public func getViewControllerForTwoFactorOnboarding(withContext userContext: PECore.PEUserContext) -> UIKit.UIViewController?
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension Authentication.TwoFactorWorkflow : Swift.Equatable {}
+extension Authentication.TwoFactorWorkflow : Swift.Hashable {}
+extension Authentication.WPEncryptionMethod : Swift.Equatable {}
+extension Authentication.WPEncryptionMethod : Swift.Hashable {}
+extension Authentication.WPEncryptionMethod : Swift.RawRepresentable {}

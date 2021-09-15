@@ -1,0 +1,11 @@
+framework module MyChartLibrary {
+  umbrella header "MyChartLibrary.h"
+
+  export *
+  module * { export * }
+}
+
+module MyChartLibrary.Swift {
+    header "MyChartLibrary-Swift.h"
+    requires objc
+}

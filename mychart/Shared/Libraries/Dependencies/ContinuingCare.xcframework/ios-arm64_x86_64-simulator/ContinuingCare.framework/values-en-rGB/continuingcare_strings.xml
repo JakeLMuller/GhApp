@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="wp_continuingcare_activity_title" context="Title for the Continuing Care activity">Continuing Care</string>
+  <string name="wp_continuingcare_tutorial_overview" context="Tutorial text introducing the continuing care activity to the patient. %%CONTINUINGCARE is replaced with the name of the activity.">%%CONTINUINGCARE allows you to review providers offering care after discharge and select your preferred providers.</string>
+  <string name="wp_continuingcare_tutorial_overview_proxy" context="Tutorial text introducing the continuing care activity to the patient proxy. %%CONTINUINGCARE is replaced with the name of the activity. %%PATNAME is replaced with the name of the patient">%%CONTINUINGCARE allows you to review providers offering care after discharge and select %%PATNAME\'s preferred providers.</string>
+  <string name="wp_continuingcare_tutorial_overview_2" context="Tutorial text explaining more about the workings of continuing care to the patient.">Review these care options and mark your preferences. If you run into trouble while reviewing this list, reach out to your case manager.</string>
+  <string name="wp_continuingcare_tutorial_overview_2_proxy" context="Tutorial text explaining more about the workings of continuing care to the patient proxy. %%PATNAME is replaced with the name of the patient">Review these care options and mark %%PATNAME\'s preferences. If you run into trouble while reviewing this list, reach out to %%PATNAME\'s case manager.</string>
+</resources>

@@ -1,0 +1,22 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Messaging
+import Foundation
+@_exported import Messaging
+import PECore
+import Swift
+@_inheritsConvenienceInitializers @objc public class PEMessagingComponentAPI : ObjectiveC.NSObject, PECore.PEMessagingComponentAPIProtocol {
+  @objc public func hasAccessForSendingMedicalAdviceMessage(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc public func hasAccessForMOMessages(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc public func getMessageListViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc public func getMessageDetailViewController(_ patientContext: PECore.PEPatientContext, forMessage messageID: Swift.String, myChartWebMessageIDKey: Swift.String, h2gLaunchFromLocalOrg: Swift.Bool, andIsEncrypted isEncrypted: Swift.Bool, forOrganization orgID: Swift.String) -> UIKit.UIViewController?
+  @objc public func getComposeViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc public func getComposeMedicalAdviceViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc public func getComposeCustomerServiceViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc public func getComposeBillingCustomerServiceViewController(_ patientContext: PECore.PEPatientContext, forAccount encryptedAccountID: Swift.String, withType encryptedBilligContext: Swift.String) -> UIKit.UIViewController?
+  @objc public func getProviderMessageViewController(_ patientContext: PECore.PEPatientContext, forProvider provider: PECore.PEMessageProvider) -> UIKit.UIViewController?
+  @objc public func getComposeMedicalAdviceWithSubjectViewController(_ patientContext: PECore.PEPatientContext, withSubject subject: Swift.String, forOrganization orgID: Swift.String) -> UIKit.UIViewController?
+  @objc public func getComposeMedicalAdviceWithDCSIDViewController(_ patientContext: PECore.PEPatientContext, withDCSID dcsID: Swift.String) -> UIKit.UIViewController?
+  @objc deinit
+  @objc override dynamic public init()
+}

@@ -1,0 +1,11 @@
+framework module PreventiveCare {
+  umbrella header "PreventiveCare.h"
+
+  export *
+  module * { export * }
+}
+
+module PreventiveCare.Swift {
+    header "PreventiveCare-Swift.h"
+    requires objc
+}

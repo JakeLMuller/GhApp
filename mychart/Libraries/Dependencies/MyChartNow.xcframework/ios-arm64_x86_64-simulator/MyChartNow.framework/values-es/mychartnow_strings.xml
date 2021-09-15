@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2018-2021 Epic Systems Corporation
+  -->
+<!--@formatter:off-->
+<resources>
+  <string name="wp_now_activity_name_problems" context="Default label for the problem list menu option in the MyChartNow menu. Health issues is the patient-friendly term we are using for problems.">Asuntos médicos</string>
+  <string name="wp_now_activity_name_medications" context="Default label for the medication list menu option in the MyChartNow menu">Medicamentos</string>
+  <string name="wp_now_activity_name_schedule" context="Default label for the inpatient schedule menu option in the MyChartNow menu">Próximos eventos</string>
+  <string name="wp_now_activity_name_care_team" context="Default label for the care/treatment team menu option in the MyChartNow menu">Cuidándole a usted</string>
+  <string name="wp_now_activity_name_care_team_proxy" context="Default label for the care/treatment team menu option in the MyChartNow menu for a proxy, where %1$@ is the patient's name">Cuidándole a %1$@</string>
+  <string name="wp_now_activity_name_care_team_proxy_no_name" context="Default label for the care/treatment team menu option in the MyChartNow menu for a proxy with no name set">Equipo de tratamiento</string>
+  <string name="wp_now_activity_name_results" context="Default label for the test results menu option in the MyChartNow menu">Resultados de exámenes</string>
+  <string name="wp_now_activity_name_education" context="Default label for the patient education menu option in the MyChartNow menu">Educación</string>
+  <string name="wp_now_activity_name_questionnaires" context="Default label for the questionnaires menu option in the MyChartNow menu">Cuestionarios</string>
+  <string name="wp_now_activity_name_continuing_care" context="Default label for the continuing care menu option in the MyChartNow menu">Cuidados continuos</string>
+  <string name="wp_now_activity_name_custom" context="Default label for a custom menu option in the MyChartNow menu.">Actividad personal</string>
+  <string name="wp_now_inpatient_patient_tab_acc_label" context="Accessibility label included in the patient tab label to let the user know this patient is admitted">Ingresado actualmente.</string>
+  <string name="wp_now_inpatient_activities_header" context="Header label that appears above the list of activities available within an Inpatient MyChartNow context">Durante su visita</string>
+  <string name="wp_now_inpatient_activities_header_proxy" context="Header label that appears above the list of activities available within an Inpatient MyChartNow context for a proxy. %1$@ - the patient's name">Durante la visita de %1$@</string>
+  <string name="wp_now_inpatient_activities_header_proxy_no_name" context="Header label that appears above the list of activities available within an Inpatient MyChartNow context for a proxy with no name set">Durante la visita</string>
+  <string name="wp_now_inpatient_other_activities_header" context="Header label that appears above the list of activities normally available outside of an Inpatient MyChart Now context. Used to distinguish activities useful from within the hospital from those useful outside the hopsital.">Fuera del hospital</string>
+  <string name="wp_now_context_inpatient_generic_error" context="Error message that is displayed when there is a problem loading the details of a MyChart Now inpatient admission">Ocurrió un error al cargar los detalles de la admisión</string>
+  <string name="wp_now_admitted" context="Describes the date that a patient was admitted to the hospital.">Llegó el</string>
+  <string name="wp_now_close" context="Label for button which will close this activity.">Inicio</string>
+  <string name="wp_now_back_home" context="Label for button which will close this activity and return the user to the home page.">Regresar a la página de inicio</string>
+  <string name="wp_now_home_desc" context="Tells the user, who is an admitted patient, what will happen if they tap the Go to Home Page button. %1$@ is the organization's MyChart branded name.">Para ver otra información además de su hospitalización, vaya a su página de inicio de %1$@.</string>
+  <string name="wp_now_home_desc_proxy" context="Tells the user, who is a proxy to an admitted patient, what will happen if they tap the Go to Home Page button. %1$@ is the organization's MyChart branded name. %2$@ is the name of the admitted patient.">Para ver otra información además de la hospitalización de %2$@, vaya a su página de inicio de %1$@.</string>
+  <string name="wp_now_home_desc_proxy_no_name" context="Tells the user, who is a proxy to an admitted patient whose name cannot be determined, what will happen if they tap the Go to Home Page button. %1$@ is the organization's MyChart branded name.">Para ver otra información además de esta hospitalización, vaya a su página de inicio de %1$@.</string>
+  <string name="wp_now_est_discharge" context="Describes the date that a patient is expected to be discharged the hospital.">Alta esperada</string>
+  <string name="wp_now_est_discharge_acc_label" context="Accessibility label that describes the date that a patient is expected to be discharged the hospital.">Alta esperada</string>
+  <string name="wp_now_encounter_short_description_inpatient" context="Default header for an inpatient MyChartNow context">Su visita en el hospital</string>
+  <string name="wp_now_encounter_short_description_inpatient_proxy_no_name" context="Default header for an inpatient MyChartNow context for a proxy whose name cannot be determined">Visita en el hospital</string>
+  <string name="wp_now_encounter_short_description_inpatient_proxy" context="Default header for an inpatient MyChartNow context for a proxy. %1$@ - the proxy's name">Visita en el hospital de %1$@</string>
+  <string name="wp_now_welcome_greeting_no_patient" context="Default welcome message greetimg for an inpatient MyChartNow context without a patient name">¡Hola!</string>
+  <string name="wp_now_welcome_greeting" context="Default welcome message greetimg for an inpatient MyChart now context with a patient. %1$@ - The patient's name">¡Hola, %1$@!</string>
+  <string name="wp_now_welcome_header_no_location" context="Default welcome message for an inpatient MyChart now context with no location.">Bienvenido/a</string>
+  <string name="wp_now_welcome_header" context="Default welcome message for an inpatient MyChart now context with and location. %1$@ - The location name of the hospital">Bienvenido a %1$@.</string>
+  <string name="wp_now_welcome_button_label" context="Default button label for a MyChartNow welcome/onboarding message.">Ok, ¡entendido!</string>
+  <string name="wp_now_welcome_button_acc_hint" context="Accessibility hint letting a VoiceOver user know that this button will dismiss the welcome text.">Despide a este mensaje.</string>
+  <string name="wp_now_activity_button_unread_acc_label" context="Accessibility label letting a VoiceOver user know which activity this button will launch and that there is new content in the activity. %1$@ - The name of the activity">%1$@, new information</string>
+  <string name="wp_now_activity_button_acc_label_classic" context="Accessibility label letting a VoiceOver user know which activity this button will launch and the number of new alerts. %1$@ - The name of the activity, %2$@ - The number of new alerts">%1$@, %2$@ new</string>
+  <string name="wp_now_problem_label_one_problem_name" context="Info label on the MyChart Now homescreen header to show the reason for this admission when there is a principal problem. This label can be tapped on to go to the problem list. %1$@ is the problem name.">Está aquí para %1$@</string>
+  <string name="wp_now_problem_label_one_problem_nonprincipal_name" context="Info label on the MyChart Now homescreen header to show the reason for this admission when there is only 1 problem but not principal. This label can be tapped on to go to the problem list. %1$@ is the problem name.">Estamos tratando %1$@</string>
+  <string name="wp_now_problem_label_one_problem_name_proxy" context="Info label on the MyChart Now homescreen header to show the reason for this admission when there is either a principal problem or only 1 problem. This label can be tapped on to go to the problem list. %1$@ is the patient's name. %2$@ is the problem name.">%1$@ está aquí para %2$@</string>
+  <plurals name="wp_now_problem_label_multiple_problems" context="Info label on the MyChart Now homescreen header to show the reason for this admission when there is no principal problem but multiple other problems. This label can be tapped on to go to the problem list. Health issues is the patient-friendly term we are using for problems. %1$@ is number of problems.">
+    <item quantity="one">(y %1$@ otro asunto médico)</item>
+    <item quantity="other">(y %1$@ otros asuntos médicos)</item>
+  </plurals>
+  <string name="wp_now_problem_button_label" context="Title of the button that takes the patient to an activity where they can learn more about their problems and health issues. Will be all-caps when displayed.">Aprender más</string>
+  <string name="wp_now_problem_button_acc_hint" context="Accessibility hint letting a VoiceOver user know that this button will launch the problems list. Health issues is the patient-friendly term we are using for problems.">Ver sus asuntos médicos.</string>
+  <string name="wp_now_problem_button_acc_hint_proxy" context="Accessibility hint letting a VoiceOver user know that this button will launch the problems list when viewing as a proxy. Health issues is the patient-friendly term we are using for problems. %1$@ is the patient's name">Ver los asuntos médicos de %1$@.</string>
+  <!-- Switcher tab labels -->
+  <string name="wp_now_tab_label_default_inpatient" context="Label for the tab used to switch to a patient's inpatient information.">Hospital</string>
+  <string name="wp_now_tab_label_care_team_inpatient" context="Label for the tab used to switch to a patient's hospital care team.">Equipo de atención hospitalario</string>
+  <string name="wp_now_tab_label_problems_list_inpatient" context="Label for the tab used to switch to a patient's hospital health issues.">Asuntos hospitalarios</string>
+  <string name="wp_now_tab_label_medications_inpatient" context="Label for the tab used to switch to a patient's hospital medications within the Medications activity. The other alternative in this tab is outpatient medications with the label Home Medications">Medicamentos en el hospital</string>
+  <string name="wp_now_tab_label_test_results_inpatient" context="Label for the tab used to switch to a patient's hospital lab results">Resultados de hospital</string>
+  <string name="wp_now_tab_label_default_no_context" context="Label for the tab used to switch to a patient's information.">Paciente</string>
+  <string name="wp_now_tab_label_care_team_no_context" context="Label for the tab used to switch to a patient's outpatient care team.">Equipo ambulatorio</string>
+  <string name="wp_now_tab_label_problems_list_no_context" context="Label for the tab used to switch to a patient's general problem list.">Todos los problemas</string>
+  <string name="wp_now_tab_label_medications_no_context" context="Label for the tab used to switch to a patient's outpatient medications within the Medications activity. The other alternative in this tab is hopsital medications with the label Hospital Medications">Medicamentos en casa</string>
+  <string name="wp_now_tab_label_test_results_no_context" context="Label for the tab used to switch to a list of all of the patient's test results">Todos resultados</string>
+  <string name="wp_now_tab_acc_label" context="Accessibility label letting a VoiceOver user know which context this button will launch and the number of new alerts. %1$@ - The name of the context, %2$@ - The number of new alerts">%1$@, %2$@ nuevo(s)</string>
+  <string name="wp_now_tab_acc_hint" context="Accessibility hint for switching to a tab in a MyChart Now context. %1$@ = The tab label">Cambia a %1$@</string>
+</resources>
+<!--@formatter:on-->

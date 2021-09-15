@@ -1,0 +1,11 @@
+framework module ProblemList {
+  umbrella header "ProblemList.h"
+
+  export *
+  module * { export * }
+}
+
+module ProblemList.Swift {
+    header "ProblemList-Swift.h"
+    requires objc
+}

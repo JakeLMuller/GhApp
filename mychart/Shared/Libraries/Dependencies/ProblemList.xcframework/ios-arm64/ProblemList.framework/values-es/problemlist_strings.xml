@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="wp_problem_list_header_title_only_other_problems" context="The section header title in the problem list for when there is only a list of non-principal problems displayed">Estamos tratando...</string>
+  <string name="wp_problem_list_header_title_principal_problem" context="The section header title in the problem list for the principal problem">Está aquí para...</string>
+  <string name="wp_problem_list_header_title_principal_problem_proxy" context="The section header title in the problem list for the principal problem. %1$@ is the patient's name">%1$@ está aquí para...</string>
+  <string name="wp_problem_list_header_title_other_problems" context="The section header title in the problem list for the other problems when there is also a principal problem shown">También tratamos...</string>
+  <string name="wp_problem_list_activity_title" context="The patient-friendly title for the hospital problem list, displayed in the navigation bar at the top of the view">Asuntos médicos</string>
+  <string name="wp_problem_list_no_problems_show_message" context="The patient-friendly message that is displayed when there are no problems">No hay ningún asunto médico que mostrar</string>
+</resources>

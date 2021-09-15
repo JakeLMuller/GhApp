@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017-2020 Epic Systems Corporation
+  -->
+<resources>
+  <!-- Share Everywhere -->
+  <string name="wp_share_everywhere_title" context="Title for Share Everywhere springboard button, which launches the Share Everywhere activity and title for Share Everywhere activity.">Share Everywhere</string>
+  <string name="wp_share_everywhere_description_title" context="Title for the description of the Share Everywhere activity, which explains how the feature works to end users.">Compartir su expediente médico</string>
+  <string name="wp_share_everywhere_description_text" context="Text for the description of the Share Everywhere activity, which explains how the feature works to end users. %1$@ is the brand name of the portal.">Conceder acceso limitado y por vez única a la información de salud que puede ver en %1$@, la cual incluye:</string>
+  <string name="wp_share_everywhere_medications_label" context="Label for medications, in the context of being available via Share Everywhere.">Medicamentos</string>
+  <string name="wp_share_everywhere_health_issues_label" context="Label for health issues, in the context of being available via Share Everywhere.">Asuntos médicos</string>
+  <string name="wp_share_everywhere_allergies_label" context="Label for allergies, in the context of being available via Share Everywhere.">Alergias</string>
+  <string name="wp_share_everywhere_immunizations_label" context="Label for immunizations, in the context of being available via Share Everywhere.">Vacunas</string>
+  <string name="wp_share_everywhere_write_note_label" context="Label for the ability to write a note to the patient's chart, in the context of being available via Share Everywhere.">La persona que accede a su expediente médico también podrá enviar un comentario a su equipo de atención.</string>
+  <string name="wp_share_everywhere_request_token_button_title" context="Title for button to request a share token for Share Everywhere.">Pedir código de compartir</string>
+  <string name="wp_share_everywhere_active_token_title" context="Title for Share Everywhere token card, which contains an active Share Token and instructions on how to use it.">¡Ahora puede compartir su expediente!</string>
+  <string name="wp_share_everywhere_active_token_instructions" context="Instructions for using an active Share Token. %1$@ is the name of the person who's accessing the record. %2$@ is the website URL where the Token can be exchanged.">%1$@ ahora puede visitar %2$@ e ingresar el código de compartir por abajo para ver su expediente.</string>
+  <string name="wp_share_everywhere_dismiss_token_button_title" context="Title for button to dismiss a Share Token for Share Everywhere.">Despedir código de compartir</string>
+  <string name="wp_share_everywhere_token_expiration" context="Label indicating how much time remains until the active Share Token expires.">El código de compartir caducará en %1$@</string>
+  <string name="wp_share_everywhere_alert_title" context="Title for Share Everywhere request alert, which prompts the user for more info before requesting a new Share Token.">¿Quién accede a mi expediente médico?</string>
+  <string name="wp_share_everywhere_alert_message" context="Message for Share Everywhere request alert, which prompts the user for more info before requesting a new Share Token.">Ingrese el nombre de la persona que accederá a su expediente médico.</string>
+  <string name="wp_share_everywhere_alert_edittext_hint" context="Placeholder text for the name that the user must enter when requesting a new Share Token.">Nombre</string>
+  <string name="wp_share_everywhere_alert_button_request" context="Title for the button on the Share Everywhere request alert that completes the request for a new Share Token.">Pedir</string>
+  <string name="wp_share_everywhere_alert_button_cancel" context="Title for the button on the Share Everywhere request alert that cancels the request.">Cancelar</string>
+</resources>

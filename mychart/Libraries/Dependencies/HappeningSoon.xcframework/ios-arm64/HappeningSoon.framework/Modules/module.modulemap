@@ -1,0 +1,11 @@
+framework module HappeningSoon {
+  umbrella header "HappeningSoon.h"
+
+  export *
+  module * { export * }
+}
+
+module HappeningSoon.Swift {
+    header "HappeningSoon-Swift.h"
+    requires objc
+}

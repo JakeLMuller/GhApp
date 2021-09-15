@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2018-2020 Epic Systems Corporation
+  -->
+<resources>
+  <!-- Education -->
+  <string name="wp_education_titles_activity_title" context="Title for the header of the Education home screen where patients can see education titles assigned to them.">Education</string>
+  <string name="wp_education_titles_section_header_InProgress" context="Title for the (IN PROGRESS) Section's header of the Education home screen where patients can see education titles. Should be uppercase.">IN PROGRESS</string>
+  <string name="wp_education_titles_section_header_Complete" context="Title for the (COMPLETED) Section's header of the Education home screen where patients can see education titles. Should be uppercase.">COMPLETED</string>
+  <string name="wp_education_title_completed" context="Indicates that a title was finished.">Completed %1$@</string>
+  <string name="wp_education_chapter_section_header_other_topics" context="Title for the Other Topics chapter in a book's table of contents. OTHER TOPICS is the chapter name for pages which are associated directly with an education title but with no education topic to act as a chapter.">Other Topics</string>
+  <string name="wp_education_table_of_contents_title" context="Title for the header of the table of contents screen which is like an index for the book, a book being made of an education title with education points as pages and education topics as sections where patients can see education titles assigned to them.">Table Of Contents</string>
+  <string name="wp_education_table_of_contents_button" context="Button text for a menu bar button that opens the table of contents">Contents</string>
+  <string name="wp_education_web_forward_button" context="Button text for a menu bar button that goes forward to a web page">Go forward</string>
+  <string name="wp_education_web_back_button" context="Button text for a menu bar button that goes back to a previously visited web page">Go back</string>
+  <string name="wp_education_web_launch_external_button" context="Button text for a menu button that launches the current web page in an external browser (e.g. Chrome)">Open in External Browser</string>
+  <string name="wp_education_web_questions_title" context="Title for alert that shows for patient education quesitons.">Questions?</string>
+  <string name="wp_education_web_questions_message" context="Message for alert that tells user to call their clinic for education questions.">Please contact your practice to speak with someone directly.</string>
+  <string name="wp_education_generic_close_button_voiceOver_text" context="VoiceOver title for a generic close button indicating that the screen will be closed, used on the table of contents screen's top left to let the user return to a book for example.">Close</string>
+  <string name="wp_education_book_navigation_previous_page_voiceOver_text" context="Voice over text for the previous page button on an Education Book screen that lets patients navigate left or right (or through a slider) between pages (Education Points) in the book">Previous Page</string>
+  <string name="wp_education_book_navigation_next_page_voiceOver_text" context="Voice over text for the next page button on an Education Book screen that lets patients navigate left or right (or through a slider) between pages (Education Points) in the book">Next Page</string>
+  <string name="wp_education_title_assigned_date_label" context="Appears below an education title's name. The param is the localized date for when the education title was initially assigned to the patient.">Assigned %1$@</string>
+  <string name="wp_education_book_navigation_current_page_number_label" context="Display and Voice over text for the page slider's current position on an Education Book screen that lets patients navigate left or right (or through a slider) between pages (Education Points) in the book">Page %1$@ of %2$@</string>
+  <string name="wp_education_no_education_available" context="This text is displayed on the Education home page if the patient has no education to view.">You don\'t have any education to view right now.</string>
+  <string name="wp_education_percentage_understood_voiceOver_text" context="Voiceover text for the percentage completion / understood label for an education title in the table of contents. %1$@ would be the percentage, example 50% or 25%">%1$@ understood</string>
+  <string name="wp_education_your_response_I_understand_voiceOver_text" context="Voiceover text for the status of an education point / page in the table of contents which is marked as I Understand.">Your response: I understand</string>
+  <string name="wp_education_your_response_I_have_questions_voiceOver_text" context="Voiceover text for the status of an education point / page in the table of contents which is marked as I have questions.">Your response: I have questions</string>
+  <string name="wp_education_your_response_no_response_voiceOver_text" context="Voiceover text for the status of an education point / page in the table of contents to which the user has never responded">You have not responded</string>
+</resources>

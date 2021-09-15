@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="wp_questionnaires_activity_title" context="Title for the Questionnaires activity">استبيانات</string>
+  <string name="wp_questionnaires_tutorial_overview" context="Tutorial text introducing the questionnaires (A Few Questions) activity to the patient. %%QUESTIONNAIRES is replaced with the name of the activity.">يتيح لك %%QUESTIONNAIRES مشاركة المزيد من المعلومات مع مقدمي رعايتك. إذا واجهت مشكلة أثناء ملء الاستبيان، فتواصل مع فريق رعايتك.</string>
+  <string name="wp_questionnaires_tutorial_overview_proxy" context="Tutorial text introducing the questionnaires (A Few Questions) activity to the patient proxy. %%QUESTIONNAIRES is replaced with the name of the activity. %%PATNAME is replaced with the name of the patient">يتيح لك %%QUESTIONNAIRES مشاركة المزيد من المعلومات مع مقدمي رعايتك. إذا واجهت مشكلة أثناء ملء الاستبيان، فتواصل مع فريق رعاية %%PATNAME.</string>
+  <string name="wp_questionnaires_tutorial_overview_2" context="Tutorial text explaining more about the workings of questionnaires to the patient.">بعد إكمالك الاستبيان، سيكون مرئياً لفريق رعايتك على الفور. إذا أرسلت استبياناً ولكنك تريد الرجوع وتغيير إجاباتك، فتواصل مع فريق رعايتك.</string>
+  <string name="wp_questionnaires_tutorial_overview_2_proxy" context="Tutorial text explaining more about the workings of questionnaires to the patient proxy. %%PATNAME is replaced with the name of the patient">بعد إكمالك الاستبيان، سيكون مرئياً عند فريق رعاية %%PATNAME على الفور. إذا أرسلت استبياناً ولكنك تريد الرجوع وتغيير إجاباتك، فتواصل مع فريق رعاية %%PATNAME.</string>
+  <string name="wp_questionnaires_tutorial_mfq" context="Tutorial text explaining that some questionnaires are expected to be answered more than once">يمكن الإجابة على بعض الاستبيانات عدة مرات أثناء إقامتك.</string>
+  <string name="wp_questionnaires_tutorial_mfq_proxy" context="Tutorial text explaining that some questionnaires are expected to be answered more than once. %%PATNAME is replaced with the name of the patient">يمكن الإجابة على بعض الاستبيانات عدة مرات أثناء إقامة %%PATNAME.</string>
+</resources>

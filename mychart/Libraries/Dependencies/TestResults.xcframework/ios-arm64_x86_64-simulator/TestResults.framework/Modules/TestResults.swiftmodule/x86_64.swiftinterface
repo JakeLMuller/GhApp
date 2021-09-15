@@ -1,0 +1,34 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name TestResults
+import Foundation
+import PECore
+import Swift
+@_exported import TestResults
+import UIKit
+public struct IncrementalLoadingTracker : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class PETestResultsComponentAPI : ObjectiveC.NSObject, PECore.PETestResultsComponentAPIProtocol {
+  @objc public static var licenseDenyTestResults: Swift.String {
+    @objc get
+  }
+  @objc public static var testResultViewedNotification: Swift.String {
+    @objc get
+  }
+  @objc public static var organizationLinkUpdatedNotification: Swift.String {
+    @objc get
+  }
+  @objc public static var communityRefreshBannerNeedUpdate: Swift.String {
+    @objc get
+  }
+  @objc public static var communityNotificationRefreshBannerUpdateKey: Swift.String {
+    @objc get
+  }
+  @objc public func hasAccessForTestResults(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc public func hasAccessForOutpatientTestResults(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc public func getTestResultsViewController(_ encounterContext: PECore.PEPatientContext, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+  @objc deinit
+  @objc override dynamic public init()
+}

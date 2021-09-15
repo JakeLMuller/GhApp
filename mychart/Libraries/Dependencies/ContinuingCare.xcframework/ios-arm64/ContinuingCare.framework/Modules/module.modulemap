@@ -1,0 +1,11 @@
+framework module ContinuingCare {
+  umbrella header "ContinuingCare.h"
+
+  export *
+  module * { export * }
+}
+
+module ContinuingCare.Swift {
+    header "ContinuingCare-Swift.h"
+    requires objc
+}

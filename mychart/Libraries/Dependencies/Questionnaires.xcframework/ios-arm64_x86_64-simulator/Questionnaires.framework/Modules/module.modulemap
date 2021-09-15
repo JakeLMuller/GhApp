@@ -1,0 +1,11 @@
+framework module Questionnaires {
+  umbrella header "Questionnaires.h"
+
+  export *
+  module * { export * }
+}
+
+module Questionnaires.Swift {
+    header "Questionnaires-Swift.h"
+    requires objc
+}

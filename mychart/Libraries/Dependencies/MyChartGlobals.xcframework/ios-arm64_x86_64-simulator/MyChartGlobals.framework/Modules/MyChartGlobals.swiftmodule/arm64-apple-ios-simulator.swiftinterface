@@ -1,0 +1,126 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MyChartGlobals
+@_exported import MyChartGlobals
+import Swift
+@objc public enum WPAPIAppointmentArrivalFeatureStatus : Swift.Int {
+  case disabled = 1
+  case onboardingNotShown
+  case missingSetupRequirement
+  case enabled
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol WPAPICreateMyChartURLDelegate : AnyObject {
+  @objc func createdURLRequest(_ urlRequest: Foundation.URLRequest, allowedHosts: [Swift.String])
+  @objc func urlCreationFailed(_ errorMessage: Swift.String)
+}
+@objc public enum WPAPIRequestControllerErrorCode : Swift.Int {
+  case unknown = -1
+  case noAccess = 1
+  case noData = 2
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum WPAPISetPushNotificationsStatusResult : Swift.Int {
+  case turnedOn
+  case failedToTurnOn
+  case turnedOff
+  case failedToTurnOff
+  case notSupported
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum WPAPIPushNotificationsStatus : Swift.Int {
+  case on = 1
+  case off
+  case notSupported
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum WPAPINewFeatureKey : Swift.Int {
+  case happyTogether = 0
+  case familyAccess
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum WPAPIAppointmentSelfArrivalMechanism : Swift.Int {
+  case geolocation = 1
+  case bluetoothBeacons
+  case userInitiated
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum WPAuthenticationStatus : Swift.Int {
+  case notAuthenticated = 0
+  case limitedAuthentication = 1
+  case fullyAuthenticated = 2
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol WPAPIPushNotificationsDelegate : AnyObject {
+  @objc(setPushNotificationsReturnedWithStatus:) func setPushNotificationsReturned(with status: MyChartGlobals.WPAPISetPushNotificationsStatusResult)
+  @objc(pushNotificationsReturnedWithStatus:) func pushNotificationsReturned(with status: MyChartGlobals.WPAPIPushNotificationsStatus)
+}
+@objc public enum WPAPIAccessResult : Swift.Int {
+  case accessAllowed = 1
+  case notAuthenticated
+  case missingServerUpdate
+  case missingSecurity
+  case missingAppPermissions
+  case userDisabledSetting
+  case deprecated
+  case deviceVersionNotSupported
+  case unknown
+  case menusNotLoaded
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension MyChartGlobals.WPAPIAppointmentArrivalFeatureStatus : Swift.Equatable {}
+extension MyChartGlobals.WPAPIAppointmentArrivalFeatureStatus : Swift.Hashable {}
+extension MyChartGlobals.WPAPIAppointmentArrivalFeatureStatus : Swift.RawRepresentable {}
+extension MyChartGlobals.WPAPIRequestControllerErrorCode : Swift.Equatable {}
+extension MyChartGlobals.WPAPIRequestControllerErrorCode : Swift.Hashable {}
+extension MyChartGlobals.WPAPIRequestControllerErrorCode : Swift.RawRepresentable {}
+extension MyChartGlobals.WPAPISetPushNotificationsStatusResult : Swift.Equatable {}
+extension MyChartGlobals.WPAPISetPushNotificationsStatusResult : Swift.Hashable {}
+extension MyChartGlobals.WPAPISetPushNotificationsStatusResult : Swift.RawRepresentable {}
+extension MyChartGlobals.WPAPIPushNotificationsStatus : Swift.Equatable {}
+extension MyChartGlobals.WPAPIPushNotificationsStatus : Swift.Hashable {}
+extension MyChartGlobals.WPAPIPushNotificationsStatus : Swift.RawRepresentable {}
+extension MyChartGlobals.WPAPINewFeatureKey : Swift.Equatable {}
+extension MyChartGlobals.WPAPINewFeatureKey : Swift.Hashable {}
+extension MyChartGlobals.WPAPINewFeatureKey : Swift.RawRepresentable {}
+extension MyChartGlobals.WPAPIAppointmentSelfArrivalMechanism : Swift.Equatable {}
+extension MyChartGlobals.WPAPIAppointmentSelfArrivalMechanism : Swift.Hashable {}
+extension MyChartGlobals.WPAPIAppointmentSelfArrivalMechanism : Swift.RawRepresentable {}
+extension MyChartGlobals.WPAuthenticationStatus : Swift.Equatable {}
+extension MyChartGlobals.WPAuthenticationStatus : Swift.Hashable {}
+extension MyChartGlobals.WPAuthenticationStatus : Swift.RawRepresentable {}
+extension MyChartGlobals.WPAPIAccessResult : Swift.Equatable {}
+extension MyChartGlobals.WPAPIAccessResult : Swift.Hashable {}
+extension MyChartGlobals.WPAPIAccessResult : Swift.RawRepresentable {}

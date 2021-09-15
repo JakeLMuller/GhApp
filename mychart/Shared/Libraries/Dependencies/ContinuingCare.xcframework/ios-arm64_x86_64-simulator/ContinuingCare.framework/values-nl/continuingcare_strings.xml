@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="wp_continuingcare_activity_title" context="Title for the Continuing Care activity">Vervolgzorg</string>
+  <string name="wp_continuingcare_tutorial_overview" context="Tutorial text introducing the continuing care activity to the patient. %%CONTINUINGCARE is replaced with the name of the activity.">%%CONTINUINGCARE stelt u in staat om zorgverleners die zorg verlenen te beoordelen na ontslag en uw voorkeurszorgverleners te selecteren.</string>
+  <string name="wp_continuingcare_tutorial_overview_proxy" context="Tutorial text introducing the continuing care activity to the patient proxy. %%CONTINUINGCARE is replaced with the name of the activity. %%PATNAME is replaced with the name of the patient">%%CONTINUINGCARE stelt u in staat om zorgverleners die zorg verlenen te beoordelen na ontslag en de voorkeurszorgverleners van %%PATNAME te selecteren.</string>
+  <string name="wp_continuingcare_tutorial_overview_2" context="Tutorial text explaining more about the workings of continuing care to the patient.">Deze zorgopties beoordelen en uw voorkeuren aangeven. Neem contact op met uw casemanager als u tegen problemen aanloopt bij het beoordelen van deze lijst.</string>
+  <string name="wp_continuingcare_tutorial_overview_2_proxy" context="Tutorial text explaining more about the workings of continuing care to the patient proxy. %%PATNAME is replaced with the name of the patient">Deze zorgopties beoordelen en de voorkeuren van %%PATNAME aangeven. Neem contact op met de casemanager van %%PATNAME als u tegen problemen aanloopt bij het beoordelen van deze lijst.</string>
+</resources>

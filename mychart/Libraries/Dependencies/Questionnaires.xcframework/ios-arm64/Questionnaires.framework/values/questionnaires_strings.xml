@@ -1,0 +1,16 @@
+<resources>
+    <string name="wp_questionnaires_activity_title"
+        context="Title for the Questionnaires activity">Questionnaires</string>
+    <string name="wp_questionnaires_tutorial_overview"
+        context="Tutorial text introducing the questionnaires (A Few Questions) activity to the patient. %%QUESTIONNAIRES is replaced with the name of the activity.">%%QUESTIONNAIRES lets you share more information with your providers. If you run into trouble while filling out a questionnaire, reach out to your care team.</string>
+    <string name="wp_questionnaires_tutorial_overview_proxy"
+        context="Tutorial text introducing the questionnaires (A Few Questions) activity to the patient proxy. %%QUESTIONNAIRES is replaced with the name of the activity. %%PATNAME is replaced with the name of the patient">%%QUESTIONNAIRES lets you share more information with %%PATNAME\'s providers. If you run into trouble while filling out a questionnaire, reach out to %%PATNAME\'s care team.</string>
+    <string name="wp_questionnaires_tutorial_overview_2"
+        context="Tutorial text explaining more about the workings of questionnaires to the patient.">After you complete a questionnaire, it will be visible to your care team right away. If you submit a questionnaire but want to go back and change your answers, reach out to your care team.</string>
+    <string name="wp_questionnaires_tutorial_overview_2_proxy"
+        context="Tutorial text explaining more about the workings of questionnaires to the patient proxy. %%PATNAME is replaced with the name of the patient">After you complete a questionnaire, it will be visible to %%PATNAME\'s care team right away. If you submit a questionnaire but want to go back and change your answers, reach out to %%PATNAME\'s care team.</string>
+    <string name="wp_questionnaires_tutorial_mfq"
+        context="Tutorial text explaining that some questionnaires are expected to be answered more than once">Some questionnaires can be answered multiple times during your stay.</string>
+    <string name="wp_questionnaires_tutorial_mfq_proxy"
+        context="Tutorial text explaining that some questionnaires are expected to be answered more than once. %%PATNAME is replaced with the name of the patient">Some questionnaires can be answered multiple times during %%PATNAME\'s stay.</string>
+</resources>

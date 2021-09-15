@@ -1,0 +1,1432 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ToDo
+import Foundation
+import PECore
+import Swift
+@_exported import ToDo
+import UIKit
+@objc @_inheritsConvenienceInitializers public class TimeZoneTableViewCell : UIKit.UITableViewCell {
+  @objc override dynamic public func awakeFromNib()
+  @objc override dynamic public func prepareForReuse()
+  public func setupViews(using timeZoneInfo: ToDo.TimeZoneInfo)
+  public func showSelectedIcon()
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class MedicationBucketHeaderView : UIKit.UIView {
+  public func set(bucketLabelText text: Swift.String)
+  public func set(dateLabelText text: Swift.String)
+  @objc override dynamic public func awakeFromNib()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public protocol MedicationBucketCompletionDelegate : AnyObject {
+  func didDocumentOnMedication()
+}
+@objc @_inheritsConvenienceInitializers public class MedicationBucketToDoListViewController : ToDo.ToDoListViewController, ToDo.ToDoListBottomButtonViewProtocol {
+  public func didTapBottomButton()
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidLayoutSubviews()
+  @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public enum TaskContentType : Swift.Int {
+  case overall
+  case generic
+  case medication
+  case flowsheet
+  case education
+  case questionnaire
+  case appointment
+  case link
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum ApptModality : Swift.Int {
+  case unknown
+  case videoVisit
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public class Task : Swift.Codable {
+  public var ID: Swift.String
+  public var taskInstances: [ToDo.TaskInstance]?
+  public var title: Swift.String
+  public var description: Swift.String?
+  public var frequencyID: Swift.String?
+  public var docType: PECore.Category?
+  public var questionnaireSeries: ToDo.QuestionnaireSeries?
+  public var educationPoint: ToDo.EducationPoint?
+  public var medication: ToDo.Medication?
+  public var flowsheetRows: [ToDo.FlowsheetInfo]?
+  public var isFlowsheetThresholdTask: Swift.Bool?
+  public var startInstant: Foundation.Date?
+  public var occurrences: Swift.Int?
+  public var episodeID: Swift.String?
+  public var isPatientCreated: Swift.Bool?
+  public var apptModality: PECore.Category?
+  public var rfvID: Swift.String?
+  public func getContentType() -> ToDo.TaskContentType
+  public func getApptModality() -> ToDo.ApptModality
+  public init()
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public class HealthAdvisoryToDo : ToDo.ToDoProtocol {
+  public var isDisplayedInBucket: Swift.Bool
+  public var patientContext: PECore.PEPatientContext!
+  public init(withHealthAdvisory healthAdvisory: ToDo.HealthAdvisory)
+  public func getTitle() -> Swift.String
+  public func getDescription() -> Swift.String
+  public func getDueInstant() -> Foundation.Date
+  public func getDueTimeString() -> Swift.String
+  public func getCompletionStatus() -> ToDo.CompletionStatus?
+  public func setCompletionStatus(_ completionStatus: ToDo.CompletionStatus)
+  public func isActionable() -> Swift.Bool
+  public func checkIfCanRequestAppointment() -> Swift.Bool
+  public func checkIfCanScheduleAppointment() -> Swift.Bool
+  public func checkIfCanMarkAsComplete() -> Swift.Bool
+  public func getScheduleReasonForVisit() -> Swift.String
+  public func getWatermarkImage() -> UIKit.UIImage?
+  public func shouldShowConfirmAction() -> Swift.Bool
+  public func shouldShowCancelAction() -> Swift.Bool
+  public func getTopicID() -> Swift.String
+  public func getHealthAdvisoryStatus() -> ToDo.HealthAdvisoryTopicStatus
+  public func getAdvisoryStatusText() -> Swift.String
+  public func getAdvisoryDetailText() -> Swift.String
+  public func updateEnteredDate(_ date: Foundation.Date)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class HealthAdvisoryDisplayManager {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class PEToDoComponentAPI : ObjectiveC.NSObject, PECore.PEToDoComponentAPIProtocol {
+  public static let bundle: Foundation.Bundle
+  @objc public func hasAccessForToDo(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc public func getToDoViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc public func getToDoViewControllerDeepLink(_ patientContext: PECore.PEPatientContext, ltkID: Swift.String = "", ltkInst: Swift.String = "") -> UIKit.UIViewController?
+  @objc public func getToDoOverdueViewControllerDeepLink(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc public func hasAccessForToDoChanges(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc public func hasAccessForToDoChangeDetails(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc public func getToDoChangesViewController(_ patientContext: PECore.PEPatientContext) -> UIKit.UIViewController?
+  @objc public func getToDoChangeDetailsWebViewController(_ patientContext: PECore.PEPatientContext, changeId: Swift.String, changeDAT: Swift.String, isEncrypted: Swift.Bool = false) -> UIKit.UIViewController?
+  @objc public func markChangeAsViewed(_ patientContext: PECore.PEPatientContext, changeId: Swift.String, changeDAT: Swift.String, isEncrypted: Swift.Bool = false)
+  @objc public func getLinkTaskDetailWebViewController(_ patientContext: PECore.PEPatientContext, ltkId: Swift.String, ltkInstant: Swift.String, delegate taskCompletionDelegate: PECore.PELinkTaskCompletionDelegate) -> UIKit.UIViewController?
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers public class PersistentTasks {
+  public func update(withTasks tasks: [ToDo.Task])
+  public func getQuestionnaireTasks() -> [ToDo.Task]
+  public func getQuestionnaireTasks(ofType type: ToDo.PersistentQuestionnaireSeriesType) -> [ToDo.Task]
+  public func hasQuestionnaireTask(ofType type: ToDo.PersistentQuestionnaireSeriesType) -> Swift.Bool
+  public func numQuestionnaireTasks(ofType type: ToDo.PersistentQuestionnaireSeriesType) -> Swift.Int
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class ToDoListTableViewCell : UIKit.UITableViewCell {
+  public func load(withToDo toDo: ToDo.ToDoProtocol, hideFromAccessibility: Swift.Bool = false)
+  public func setAsLoading()
+  public func handleConfirmAction()
+  public func handleCancelAction()
+  public func handleUndoAction()
+  @objc override dynamic public func prepareForReuse()
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class ToDoProgressTableViewCell : UIKit.UITableViewCell, PECore.ProgressBarProtocol {
+  @objc override dynamic public func prepareForReuse()
+  public func setup(withProgress progress: ToDo.TaskTypeProgress, andNumberDueToday numberDueToday: Swift.Int)
+  public func update(withProgress progress: ToDo.TaskTypeProgress, andNumberDueToday numberDueToday: Swift.Int)
+  public func progressBarIsFull()
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public class EscalationProvider : Swift.Codable, PECore.PEMessageProvider, PECore.ProviderImageDataSource {
+  @objc public var name: Swift.String
+  @objc public var photoURL: Swift.String
+  @objc public var ID: Swift.String
+  public var canMessage: Swift.Bool
+  @objc public var isPCP: Swift.Bool
+  public var hasImageOnBlob: Swift.Bool
+  public var orgInfo: [ToDo.EscalationProvider.OrganizationInfo]
+  public var specialties: [ToDo.EscalationProvider.Specialty]
+  public var departments: [ToDo.EscalationProvider.Department]
+  public var providerRoles: [ToDo.EscalationProvider.RoleInfo]
+  public var providerIdEncrypted: Swift.Bool
+  required public init(from decoder: Swift.Decoder) throws
+  public init(providerId: Swift.String)
+  @objc public var imageURL: Swift.String {
+    @objc get
+  }
+  @objc public var organization: PECore.PEOrganizationInfoProtocol {
+    @objc get
+  }
+  public var providerId: Swift.String {
+    get
+  }
+  @objc public var isProviderIdEncrypted: Swift.Bool {
+    @objc get
+  }
+  public func getProviderType() -> Swift.String
+  public func getProviderSpecialty() -> Swift.String?
+  public struct Department : Swift.Codable {
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+  public struct Specialty : Swift.Codable {
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+  public struct RoleInfo : Swift.Codable {
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+  public struct PCPType : Swift.Codable {
+    public var pcpGeneral: Swift.String
+    public var name: Swift.String
+    public var value: Swift.String
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+  public struct Relationship : Swift.Codable {
+    public var value: Swift.String
+    public var title: Swift.String
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+  @_hasMissingDesignatedInitializers public class OrganizationInfo : Swift.Codable, PECore.PEOrganizationInfoProtocol {
+    @objc public var linkStatus: Swift.Int
+    @objc public var isExternal: Swift.Bool
+    @objc public var organizationName: Swift.String
+    @objc public var organizationId: Swift.String
+    @objc public var logoUrl: Swift.String
+    @objc public var organizationLinkType: PECore.ExternalOrganizationLinkType
+    @objc public var lastRefreshDate: Foundation.Date?
+    @objc deinit
+    required public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class ToDoChangeDetailViewController : UIKit.UIViewController {
+  public func set(withToDoChange toDoChange: ToDo.ToDoChange, andPatientContext patientContext: PECore.PEPatientContext)
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public protocol ToDosViewControllerProtocol : AnyObject {
+  func launchViewController(_ viewController: UIKit.UIViewController)
+  func triggerBadgeRefresh()
+  func triggerToDoChangeReload()
+  func setNeedsReload()
+  func flagToDoProgressForReload()
+  func getTaskNameDictionary() -> Swift.Dictionary<Swift.String, [Swift.String]>
+  func getNotificationTimeZone() -> Foundation.TimeZone
+  func setNotificationTimeZone(timeZone: Foundation.TimeZone)
+  func getNavigationController() -> UIKit.UINavigationController?
+}
+@objc @_hasMissingDesignatedInitializers public class ToDosViewController : UIKit.UIViewController, ToDo.ToDosViewControllerProtocol, ToDo.FlagForReloadProtocol {
+  public func getNavigationController() -> UIKit.UINavigationController?
+  public var needsReload: Swift.Bool
+  @objc public func reload()
+  public func updateTodaysAnimations(_ didChangeOccurToday: Swift.Bool)
+  public func launchViewController(_ viewController: UIKit.UIViewController)
+  public func setNeedsReload()
+  public func getTaskNameDictionary() -> Swift.Dictionary<Swift.String, [Swift.String]>
+  public func triggerBadgeRefresh()
+  public func triggerToDoChangeReload()
+  public func flagToDoProgressForReload()
+  public func getNotificationTimeZone() -> Foundation.TimeZone
+  public func setNotificationTimeZone(timeZone: Foundation.TimeZone)
+  public func setDeepLinkingInfo(deepLinkTaskID: Swift.String, deepLinkTaskInst: Swift.String)
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidLayoutSubviews()
+  @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+}
+@_hasMissingDesignatedInitializers public class ThemeUtil {
+  public class func getTheme() -> ToDo.ThemeUtil
+  public class func updateTheme()
+  public class func setOrganizationInfo(_ org: PECore.PEOrganizationProtocol!)
+  public func boldColor() -> UIKit.UIColor
+  public func softColor() -> UIKit.UIColor
+  public func backgroundColor() -> UIKit.UIColor
+  public func headerBaseAnimation() -> Swift.String
+  public func headerFeatureAnimation() -> Swift.String
+  public func footerImage() -> UIKit.UIImage?
+  public func footerFeatureAnimation() -> Swift.String
+  @objc deinit
+}
+public class TaskToDo : ToDo.ToDoProtocol {
+  public var isDisplayedInBucket: Swift.Bool
+  public var patientContext: PECore.PEPatientContext!
+  public var notificationTimeZone: Foundation.TimeZone
+  public var serverTimeZone: Foundation.TimeZone
+  public init(withTask task: ToDo.Task, andTaskInstance taskInstance: ToDo.TaskInstance)
+  public func getTask() -> ToDo.Task
+  public func getTaskInstance() -> ToDo.TaskInstance
+  public func getTitle() -> Swift.String
+  public func getSubtitle() -> Swift.String?
+  public func getDescription() -> Swift.String
+  public func getDueInstant() -> Foundation.Date
+  public func getDueDateString() -> Swift.String
+  public func isBucketTask() -> Swift.Bool
+  public func getDueTimeString() -> Swift.String
+  public func getTimeOfDayImage() -> UIKit.UIImage?
+  public func getWatermarkImage() -> UIKit.UIImage?
+  public func isActionable() -> Swift.Bool
+  public func isOverdue() -> Swift.Bool
+  public func shouldShowConfirmAction() -> Swift.Bool
+  public func shouldShowCancelAction() -> Swift.Bool
+  public func shouldShowUndoAction() -> Swift.Bool
+  public func getCompletionStatus() -> ToDo.CompletionStatus?
+  public func setCompletionStatus(_ completionStatus: ToDo.CompletionStatus)
+  public func setEducationPointStatus(_ pointStatus: ToDo.EducationPointStatus)
+  public func getEducationPointID() -> Swift.String?
+  public func getQuestionnaireID() -> Swift.String?
+  public func getQuestionnaireSeriesID() -> Swift.String?
+  public func getTimeOfDayDue() -> ToDo.TimeOfDay?
+  public func getUniqueTaskID() -> Swift.String
+  public func isFlowsheetThresholdTask() -> Swift.Bool
+  public func getFlowsheetProgress() -> Swift.String?
+  public func getFlowsheetThreshold() -> Swift.String?
+  public func getFlowsheetUnit() -> Swift.String?
+  public func getEpisodeID() -> Swift.String?
+  public func getAppointmentModality() -> ToDo.ApptModality?
+  public func getReasonForVisit() -> Swift.String?
+  @objc deinit
+}
+public protocol FlagForReloadProtocol {
+  var needsReload: Swift.Bool { get set }
+  mutating func flagForReload()
+}
+extension FlagForReloadProtocol {
+  public mutating func flagForReload()
+}
+public class TaskTypeProgress : Swift.Codable {
+  public init(_ contentType: ToDo.TaskContentType, _ complete: Swift.Int, _ total: Swift.Int)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public protocol BucketCellDelegateProtocol : AnyObject {
+  func requestResize()
+}
+@objc @_inheritsConvenienceInitializers public class BucketTableViewCell : UIKit.UITableViewCell {
+  weak public var delegate: ToDo.BucketCellDelegateProtocol?
+  @objc override dynamic public func awakeFromNib()
+  public func setupViews(using viewModel: ToDo.ReminderGroupsViewModel, and notificationGroup: ToDo.NotificationGroup, includeTimeZoneOffset: Swift.Bool)
+  public func setupViewsForSaving()
+  @objc public func groupDescriptionLabelTapped()
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class NotificationTimeZoneLinkCell : UIKit.UITableViewCell {
+  public func setLabels(_ timeZoneInfo: ToDo.TimeZoneInfo)
+  public func startLoading()
+  public func stopLoading()
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public class NotificationSetting : Swift.Codable {
+  convenience public init()
+  public init(_ isLegacy: Swift.Bool)
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class BackgroundAnimationsViewController : UIKit.UIViewController {
+  public func showAnimations()
+  public func hideAnimations()
+  public func hide()
+  public func show()
+  @objc override dynamic public func viewDidLoad()
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class ToDoListHeaderView : UIKit.UIView {
+  public func set(headerImage image: UIKit.UIImage)
+  public func set(headerTitle title: Swift.String)
+  @objc override dynamic public func awakeFromNib()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class NotificationControlViewController : UIKit.UITableViewController {
+  @objc override dynamic public func viewDidLoad()
+  public static func makeInstance(patientContext: PECore.PEPatientContext, delegate: ToDo.ToDosViewControllerProtocol?) -> ToDo.NotificationControlViewController
+  @objc deinit
+  @objc override dynamic public init(style: UIKit.UITableView.Style)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension NotificationControlViewController : ToDo.NotificationControlViewModelProtocol {
+  public func notificationSettingsDidLoad()
+  public func notificationSettingsDidLoadFailed()
+  public func notificationSettingsDidSaved(onViews affectedViewOptions: [ToDo.NotificationControlViewModel.ViewOption])
+  public func notificationSettingsDidSavedFailed(onViews affectedViewOptions: [ToDo.NotificationControlViewModel.ViewOption])
+}
+extension NotificationControlViewController {
+  @objc override dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, titleForHeaderInSection section: Swift.Int) -> Swift.String?
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, titleForFooterInSection section: Swift.Int) -> Swift.String?
+}
+extension NotificationControlViewController {
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, willDisplay cell: UIKit.UITableViewCell, forRowAt indexPath: Foundation.IndexPath)
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+}
+public struct TimeZoneList : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public protocol ToDoListBottomButtonViewProtocol : AnyObject {
+  func didTapBottomButton()
+}
+@objc @_inheritsConvenienceInitializers public class ToDoListBottomButtonView : UIKit.UIView {
+  public func set(buttonText text: Swift.String)
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class PatientCreatedTaskEditorViewController : UIKit.UIViewController, UIKit.UITextFieldDelegate, UIKit.UITextViewDelegate, UIKit.UIPickerViewDelegate, UIKit.UIPickerViewDataSource, UIKit.UIGestureRecognizerDelegate {
+  public var patientContext: PECore.PEPatientContext!
+  public static func makeInstance(patientContext: PECore.PEPatientContext, taskDisplayManagerToLoad: ToDo.PatientCreatedTaskDisplayManager?, onSuccess: (() -> Swift.Void)?, timeZone: Foundation.TimeZone?) -> ToDo.PatientCreatedTaskEditorViewController
+  @objc override dynamic public func viewDidLoad()
+  @objc public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @objc public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @objc public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @objc public func textViewDidBeginEditing(_ textView: UIKit.UITextView)
+  @objc public func textView(_ textView: UIKit.UITextView, shouldChangeTextIn range: Foundation.NSRange, replacementText text: Swift.String) -> Swift.Bool
+  @objc public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @objc public func numberOfComponents(in pickerView: UIKit.UIPickerView) -> Swift.Int
+  @objc public func pickerView(_ pickerView: UIKit.UIPickerView, numberOfRowsInComponent component: Swift.Int) -> Swift.Int
+  @objc public func pickerView(_ pickerView: UIKit.UIPickerView, titleForRow row: Swift.Int, forComponent component: Swift.Int) -> Swift.String?
+  @objc public func pickerView(_ pickerView: UIKit.UIPickerView, didSelectRow row: Swift.Int, inComponent component: Swift.Int)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class InProgressHeaderView : UIKit.UIView {
+  public func update(withProgress progress: CoreGraphics.CGFloat?)
+  @objc override dynamic public func awakeFromNib()
+  public func setupWithTitleLabel()
+  public func setupWithSegmentedControl(_ titles: [Swift.String])
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class TodayFinishedHeaderView : UIKit.UIView {
+  public func setText(forTodayCompletionStatus status: ToDo.CompletionStatus)
+  @objc override dynamic public func awakeFromNib()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class ReminderGroupListViewController : UIKit.UIViewController {
+  @objc override dynamic public func viewDidLoad()
+  public static func makeInstance(patientContext: PECore.PEPatientContext, delegate: ToDo.ToDosViewControllerProtocol?) -> ToDo.ReminderGroupListViewController
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension ReminderGroupListViewController : ToDo.ReminderGroupsViewModelProtocol {
+  public func reminderGroupsDidLoad(success: Swift.Bool)
+  public func timePutRequestFinished(for index: Swift.Int?, success: Swift.Bool)
+  public func timeZoneAlertPutRequestFinished()
+  public func timeZoneChangePutRequestFinished()
+  public func timeZoneUpdateSuccess(newTimeZone: Foundation.TimeZone)
+}
+extension ReminderGroupListViewController : UIKit.UITableViewDataSource {
+  @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, viewForHeaderInSection section: Swift.Int) -> UIKit.UIView?
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, titleForFooterInSection section: Swift.Int) -> Swift.String?
+}
+extension ReminderGroupListViewController : UIKit.UITableViewDelegate {
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+}
+extension ReminderGroupListViewController : ToDo.BucketCellDelegateProtocol {
+  public func requestResize()
+}
+public class PatientCreatedTaskDisplayManager {
+  public init(withTask task: ToDo.PatientCreatedTask)
+  public init()
+  public func getTask() -> ToDo.PatientCreatedTask
+  public func getTaskCopy() -> ToDo.PatientCreatedTask
+  public func getID() -> Swift.String
+  public func getTitle() -> Swift.String
+  public func setTitle(_ newTitle: Swift.String?)
+  public func getDescription() -> Swift.String
+  public func setDescription(_ newDescription: Swift.String?)
+  public func isNextDueInstanceValid() -> Swift.Bool
+  public func getNextDueInstanceString() -> Swift.String
+  public func setNextDueInstance(_ nextDueInstance: Foundation.Date)
+  public func getStartInstant() -> Foundation.Date?
+  public func getDueTime() -> Foundation.Date
+  public func getDueTimeString() -> Swift.String
+  public func setDueTime(_ newTime: Foundation.Date)
+  public func getRecurrenceInDays() -> Swift.Int
+  public func setRecurrenceInDays(_ newRecurrenceInDays: Swift.Int)
+  public func isWeeklyRecurrence() -> Swift.Bool
+  public func setOccurrence(occurrences: Swift.Int)
+  public func isOnceTask() -> Swift.Bool
+  public func setStartDate(startDate: Foundation.Date)
+  @objc deinit
+}
+public enum CompletionStatus {
+  case incomplete
+  case complete
+  case skipped
+  public static func == (a: ToDo.CompletionStatus, b: ToDo.CompletionStatus) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public protocol ToDoProtocol {
+  var isDisplayedInBucket: Swift.Bool { get set }
+  var patientContext: PECore.PEPatientContext! { get set }
+  func getTitle() -> Swift.String
+  func getSubtitle() -> Swift.String?
+  func getDescription() -> Swift.String
+  func getDueInstant() -> Foundation.Date
+  func getDueTimeString() -> Swift.String
+  func getTimeOfDayDue() -> ToDo.TimeOfDay?
+  func getCompletionStatus() -> ToDo.CompletionStatus?
+  func setCompletionStatus(_ completionStatus: ToDo.CompletionStatus)
+  func getTimeOfDayImage() -> UIKit.UIImage?
+  func getWatermarkImage() -> UIKit.UIImage?
+  func isActionable() -> Swift.Bool
+  func isOverdue() -> Swift.Bool
+  func shouldShowConfirmAction() -> Swift.Bool
+  func shouldShowCancelAction() -> Swift.Bool
+  func shouldShowUndoAction() -> Swift.Bool
+}
+extension ToDoProtocol {
+  public func getSubtitle() -> Swift.String?
+  public func getTimeOfDayDue() -> ToDo.TimeOfDay?
+  public func getTimeOfDayImage() -> UIKit.UIImage?
+  public func getWatermarkImage() -> UIKit.UIImage?
+  public func shouldShowConfirmAction() -> Swift.Bool
+  public func shouldShowCancelAction() -> Swift.Bool
+  public func shouldShowUndoAction() -> Swift.Bool
+  public func isOverdue() -> Swift.Bool
+  public func setCompletionStatus(_ completionStatus: ToDo.CompletionStatus)
+}
+@objc @_inheritsConvenienceInitializers public class ToDoDatePickerPopupViewController : UIKit.UIViewController {
+  public static func makeInstance(datePickerMode: UIKit.UIDatePicker.Mode?, dateToSet: Foundation.Date?, timeZone: Foundation.TimeZone?, onConfirm: ((Foundation.Date) -> Swift.Void)?) -> ToDo.ToDoDatePickerPopupViewController
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidLayoutSubviews()
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension ToDoDatePickerPopupViewController : UIKit.UITableViewDataSource {
+  @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+}
+extension ToDoDatePickerPopupViewController : UIKit.UITableViewDelegate {
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+}
+public class ToDoChange : Swift.Codable {
+  public var viewedByUser: Swift.Bool
+  public var changeID: Swift.String
+  public var changeDAT: Swift.String
+  public var changeInstant: Foundation.Date
+  public var changeReason: [Swift.String]
+  public var changeActions: [ToDo.ToDoChangeAction]
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public enum TimeOfDay : Swift.Int {
+  case morning
+  case midday
+  case evening
+  case bedtime
+  case byEndOfDay
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class NotificationGroup : PECore.Category {
+  public var personalizedTime: Foundation.TimeInterval?
+  public var defaultTime: Foundation.TimeInterval?
+  public var tasksWithThisGroup: [ToDo.Task]?
+  public func getNotificationTime() -> Foundation.TimeInterval?
+  override public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public enum ToDoChangeActionType : Swift.Int, Swift.Codable {
+  case ToDoChangeActionTypeTasksAdded
+  case ToDoChangeActionTypeMessageSent
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public class ToDoChangeAction : Swift.Codable {
+  public var changeActionType: ToDo.ToDoChangeActionType
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class ToDoListFooterTextView : UIKit.UIView {
+  public func set(footerText text: Swift.String)
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public enum ToDoFeatures : Swift.String {
+  case viewTasks
+  case editTasks
+  case manageTaskReminderTimes
+  case viewPatientCreatedTasks
+  case actOnPatientCreatedTasks
+  case viewAppointments
+  case viewAppointmentDetails
+  case eCheckIn
+  case viewMessages
+  case viewHealthReminders
+  case completeHealthReminders
+  case healthReminderSchedule
+  case makeAppointment
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class Appointment : Swift.Codable {
+  public var barcodeKey: Swift.String
+  public var CSN: Swift.String
+  public var date: Foundation.Date
+  public var eCheckInStatus: ToDo.ECheckInStatus?
+  public var isTelemedicine: Swift.Bool
+  public var isOnDemandVideoVisit: Swift.Bool
+  public var isTimeTBD: Swift.Bool
+  public var department: ToDo.Department
+  public var providers: [ToDo.Provider]
+  public var visitType: ToDo.VisitType
+  public var componentAppointments: [ToDo.Appointment]
+  public var eVisit: ToDo.EVisit?
+  public var isSurgery: Swift.Bool
+  public var primaryProvider: ToDo.Provider?
+  public var showOnlyArrivalTime: Swift.Bool
+  public var arrivalDate: Foundation.Date?
+  required public init(from decoder: Swift.Decoder) throws
+  public func IsShowOnlyArrivalTime() -> Swift.Bool
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public enum ECheckInStatus : Swift.Int, Swift.Codable {
+  case unknown
+  case notOffered
+  case notYetAvailable
+  case notStarted
+  case inProgress
+  case completed
+  case notNeeded
+  case notCompleted
+  case filtered
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public class MedicationBucketToDo : ToDo.ToDoProtocol {
+  public var isDisplayedInBucket: Swift.Bool
+  public var patientContext: PECore.PEPatientContext!
+  public var medications: [ToDo.ToDoProtocol]
+  public var baseMedication: ToDo.ToDoProtocol
+  public var taskInfo: [Swift.String : Swift.String]
+  public init(withMedication medication: ToDo.ToDoProtocol)
+  convenience public init(withMedication medication: ToDo.ToDoProtocol, taskID: Swift.String, taskInst: Swift.String)
+  convenience public init(withMedication medication: ToDo.ToDoProtocol, taskInfo: [Swift.String : Swift.String])
+  public func addMedication(_ medication: ToDo.ToDoProtocol)
+  public func addMedication(_ medication: ToDo.ToDoProtocol, taskID: Swift.String, taskInst: Swift.String)
+  public func addMedication(_ medication: ToDo.ToDoProtocol, taskInfo: [Swift.String : Swift.String])
+  public func getCompletionStatus() -> ToDo.CompletionStatus?
+  public func getTitle() -> Swift.String
+  public func getDueInstant() -> Foundation.Date
+  public func getDueTimeString() -> Swift.String
+  public func getDueDateString() -> Swift.String
+  public func isActionable() -> Swift.Bool
+  public func getDescription() -> Swift.String
+  public func getTimeOfDayImage() -> UIKit.UIImage?
+  public func getTimeOfDayDue() -> ToDo.TimeOfDay?
+  public func getDoneCount() -> Swift.Int
+  public func getRemainingCount() -> Swift.Int
+  public func getTotalCount() -> Swift.Int
+  public func getWatermarkImage() -> UIKit.UIImage?
+  public func getAsDictionary() -> Swift.Dictionary<Foundation.Date, [ToDo.ToDoProtocol]>
+  @objc deinit
+}
+public class FrequencyInfo : Swift.Codable {
+  public var type: Swift.Int
+  public var recurrenceInDays: Swift.Int!
+  public var dueTime: Foundation.TimeInterval!
+  public init()
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct TimeZoneInfo {
+  public func equals(_ timeZoneInfo: ToDo.TimeZoneInfo) -> Swift.Bool
+}
+public protocol ToDoTabBarViewControllerProtocol : AnyObject {
+  func reloadToDoChanges()
+}
+@objc @_inheritsConvenienceInitializers public class ToDoTabBarViewController : UIKit.UITabBarController {
+  public func openToChangesTab()
+  public func showBackgroundAnimationsViewController()
+  public func reloadAlerts()
+  public func reloadToDoChanges()
+  public func flagToDosForReload()
+  public func flagToDoChangesForReload()
+  public func flagToDoProgressForReload()
+  public func didReloadToDoChanges()
+  public func setDeepLinkingInfo(deepLinkTaskID: Swift.String, deepLinkTaskInst: Swift.String)
+  public func setOverdueDeepLink()
+  public func shouldShowFinishedTasks() -> Swift.Bool
+  public func isPersonalizationEnabled() -> Swift.Bool
+  public func flagAllForReload()
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidLayoutSubviews()
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@_inheritsConvenienceInitializers public class ToDoChangeActionMessageSent : ToDo.ToDoChangeAction {
+  public var singleRecipientInfoAvailable: Swift.Bool
+  public var providerContacted: ToDo.EscalationProvider?
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class PatientCreatedTaskTableViewCell : UIKit.UITableViewCell {
+  public func loadTaskDisplayManager(_ taskManager: ToDo.PatientCreatedTaskDisplayManager)
+  public func getTaskDisplayManager() -> ToDo.PatientCreatedTaskDisplayManager
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public class AppointmentToDo : ToDo.ToDoProtocol {
+  public var isDisplayedInBucket: Swift.Bool
+  public var patientContext: PECore.PEPatientContext!
+  public var serverTimeZone: Foundation.TimeZone
+  public init(fromAppointment appointment: ToDo.Appointment)
+  public func getTitle() -> Swift.String
+  public func getDescription() -> Swift.String
+  public func getProviderName() -> Swift.String
+  public func getDueInstant() -> Foundation.Date
+  public func getDueTimeString() -> Swift.String
+  public func getBackgroundImage() -> UIKit.UIImage?
+  public func getWatermarkImage() -> UIKit.UIImage?
+  public func getCompletionStatus() -> ToDo.CompletionStatus?
+  public func setCompletionStatus(_ completionStatus: ToDo.CompletionStatus)
+  public func isActionable() -> Swift.Bool
+  public func isOverdue() -> Swift.Bool
+  public func shouldShowConfirmAction() -> Swift.Bool
+  public func getCSN() -> Swift.String
+  public func getCSNForECheckin() -> Swift.String
+  public func shouldLinkToMessages() -> Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class FlowsheetInfo : Swift.Codable {
+  public var flowsheetID: Swift.String
+  public var flowsheetType: Swift.String
+  public var flowsheetThreshold: Swift.String
+  public var flowsheetUnit: Swift.String
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers public class ProgressDisplayManager {
+  public static func getCompletionPercentage(from progressItem: ToDo.TaskTypeProgress) -> CoreGraphics.CGFloat
+  public static func getProgressLabelString(from progressItem: ToDo.TaskTypeProgress) -> Swift.String
+  public static func getProgressLabelAccessibilityString(from progressItem: ToDo.TaskTypeProgress) -> Swift.String
+  public static func getContentType(from progressItem: ToDo.TaskTypeProgress) -> ToDo.TaskContentType
+  public static func getTotalTasks(from progressItem: ToDo.TaskTypeProgress) -> Swift.Int
+  public static func getContentName(from progressItem: ToDo.TaskTypeProgress) -> Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ToDoChangeDisplayManager {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Medication : Swift.Codable {
+  public var ID: Swift.String
+  public var name: Swift.String
+  public var patientFriendlyName: [ToDo.PatientFriendlyName]?
+  public var productName: Swift.String
+  public var instructions: Swift.String
+  public var simpleGenericMedID: Swift.String?
+  public var simpleGenericMedName: Swift.String?
+  public var shortName: Swift.String?
+  public var isAnticoagOrder: Swift.Bool?
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers public class PatientFriendlyName : Swift.Codable {
+  public var text: Swift.String
+  public var caption: Swift.String
+  public var captionType: Swift.String
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers public class VisitType : Swift.Codable {
+  public var name: Swift.String
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class EVisit : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var hasUnreadResponse: Swift.Bool
+  @objc public var hasResponsibleProvider: Swift.Bool
+  @objc public var hasAnyResponse: Swift.Bool
+  @objc public var reasonForVisit: Swift.String
+  @objc public var reasonForVisitId: Swift.String
+  @objc public var hasDeletedResponse: Swift.Bool
+  @objc public var isProviderInitiated: Swift.Bool
+  @objc public func GetEVisitStatus(isECheckInComplete: Swift.Bool) -> ToDo.EVisitStatus
+  @objc(setXMLValue:forKey:) public func setXMLValue(value: Any, forKey: Swift.String)
+  @objc deinit
+  @objc override dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc public enum EVisitStatus : Swift.Int, Swift.Codable {
+  case NEW_MESSAGE = 0
+  case UNDER_REVIEW = 1
+  case NOT_YET_SUBMITTED = 2
+  case SUBMITTED = 3
+  case READ_MESSAGE = 4
+  case DELETED_RESPONSE = 5
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class ToDoListViewController : UIKit.UIViewController, UIKit.UITableViewDelegate, UIKit.UITableViewDataSource, PECore.PEEducationPointCompletionDelegate, PECore.PEQuestionnaireCompletionDelegate, PECore.PEHealthAdvisoryCompletionDelegate, ToDo.MedicationBucketCompletionDelegate, PECore.PELinkTaskCompletionDelegate {
+  public func set(headerView: UIKit.UIView?)
+  public func set(footerView: UIKit.UIView?)
+  public func set(toDos: [Foundation.Date : [ToDo.ToDoProtocol]]?)
+  public func refreshToDoListTableView()
+  public func hideToDoListTableView()
+  @objc public func educationPointCompleted(withStatus status: PECore.PEEducationPointCompletedStatus)
+  @objc public func linkTaskCompleted()
+  @objc public func linkTaskSkipped()
+  @objc public func questionnaireCompleted()
+  @objc public func healthAdvisoryMarkedComplete(withCompletionDate completionDate: Foundation.Date)
+  public func didDocumentOnMedication()
+  public func deepLink(_ taskID: Swift.String, _ taskInst: Swift.String)
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidLayoutSubviews()
+  @objc public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @objc public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @objc public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @objc public func tableView(_ tableView: UIKit.UITableView, heightForHeaderInSection section: Swift.Int) -> CoreGraphics.CGFloat
+  @objc public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @objc public func tableView(_ tableView: UIKit.UITableView, viewForHeaderInSection section: Swift.Int) -> UIKit.UIView?
+  @objc public func tableView(_ tableView: UIKit.UITableView, willDisplay cell: UIKit.UITableViewCell, forRowAt indexPath: Foundation.IndexPath)
+  @objc public func tableView(_ tableView: UIKit.UITableView, willDisplayHeaderView view: UIKit.UIView, forSection section: Swift.Int)
+  @objc public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+  @objc public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @objc public func scrollViewDidEndScrollingAnimation(_ scrollView: UIKit.UIScrollView)
+  public func queueUpdateToDoStatusRequest(withToDo toDo: ToDo.TaskToDo, atIndexPath indexPath: Foundation.IndexPath, educationStatus: ToDo.EducationPointStatus? = nil, andStatus status: ToDo.CompletionStatus)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class ToDoProgressTableViewController : UIKit.UITableViewController, ToDo.FlagForReloadProtocol {
+  public var needsReload: Swift.Bool
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidLayoutSubviews()
+  @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  public func reload()
+  @objc deinit
+  @objc override dynamic public init(style: UIKit.UITableView.Style)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+}
+@objc @_hasMissingDesignatedInitializers public class ToDoChangesViewController : UIKit.UITableViewController, ToDo.FlagForReloadProtocol {
+  public var needsReload: Swift.Bool
+  @objc public func reload()
+  public func didChangeOccurToday() -> Swift.Bool
+  @objc override dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, estimatedHeightForHeaderInSection section: Swift.Int) -> CoreGraphics.CGFloat
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, viewForHeaderInSection section: Swift.Int) -> UIKit.UIView?
+  @objc override dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillLayoutSubviews()
+  @objc deinit
+  @objc override dynamic public init(style: UIKit.UITableView.Style)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+}
+@objc @_inheritsConvenienceInitializers public class ToDoChangeListTableViewCell : UIKit.UITableViewCell {
+  public func load(withToDoChange change: ToDo.ToDoChange, andOwner owner: UIKit.UIViewController, andUnreadIndicatorColor unreadIndicatorColor: UIKit.UIColor?)
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc public protocol PEToDoPatientProtocol {
+  @objc func getIsCareCompanionEnrolled() -> Swift.Bool
+}
+public class Provider : Swift.Codable {
+  public var ID: Swift.String
+  public var name: Swift.String
+  public var department: ToDo.Department
+  public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public class SimpleGenericMedicationGroupToDo : ToDo.ToDoProtocol {
+  public var isDisplayedInBucket: Swift.Bool
+  public var patientContext: PECore.PEPatientContext!
+  public var medications: [ToDo.MedicationToDo]
+  public var baseMedication: ToDo.MedicationToDo
+  public var taskInfo: [Swift.String : Swift.String]
+  public init(withMedication medication: ToDo.MedicationToDo)
+  public func addMedication(_ medication: ToDo.MedicationToDo)
+  public func getMedications() -> [ToDo.MedicationToDo]
+  public func getTitle() -> Swift.String
+  public func getSubtitle() -> Swift.String?
+  public func getDueInstant() -> Foundation.Date
+  public func getDueTimeString() -> Swift.String
+  public func getDueDateString() -> Swift.String
+  public func isActionable() -> Swift.Bool
+  public func getMedBucketID() -> Swift.String?
+  public func getTimeOfDayImage() -> UIKit.UIImage?
+  public func getTimeOfDayDue() -> ToDo.TimeOfDay?
+  public func getWatermarkImage() -> UIKit.UIImage?
+  public func getDescription() -> Swift.String
+  public func getCompletionStatus() -> ToDo.CompletionStatus?
+  public func setCompletionStatus(_ completionStatus: ToDo.CompletionStatus)
+  public func shouldShowConfirmAction() -> Swift.Bool
+  public func shouldShowCancelAction() -> Swift.Bool
+  public func shouldShowUndoAction() -> Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class MedicationGroupDisplayManager {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class PatientCreatedTaskListViewController : UIKit.UIViewController, UIKit.UITableViewDelegate, UIKit.UITableViewDataSource {
+  public var patientContext: PECore.PEPatientContext!
+  weak public var delegate: ToDo.ToDosViewControllerProtocol?
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @objc public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @objc public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  public func showToast(withMessage message: Swift.String)
+  @objc public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+  public func didTapEdit(onTaskCell cell: ToDo.PatientCreatedTaskTableViewCell)
+  public func didTapDelete(onTaskCell cell: ToDo.PatientCreatedTaskTableViewCell)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class NotificationControlTableViewCell : UIKit.UITableViewCell {
+  public func setupViews(for viewType: ToDo.NotificationControlTableViewCell.CellType, using viewModel: ToDo.NotificationControlViewModel)
+  public func showSavingState()
+  public func showDisabledState()
+  @objc override dynamic public func prepareForReuse()
+  public func selectionTypeAction()
+  public func getSwitchValue() -> Swift.Bool
+  public func setupViews(using viewModel: ToDo.ReminderGroupsViewModel)
+  public enum CellType : Swift.Int {
+    case pushNotificationSwitch
+    case timeZoneDifferenceAlertSwitch
+    case whenTasksAreDue
+    case dailyDigest
+    case dailyDigestDetails
+    case reminderGroups
+    case generalTaskSwitch
+    case educationTaskSwitch
+    case medicationTaskSwitch
+    case questionnaireTaskSwitch
+    case flowsheetTaskSwitch
+    case appointmentTaskSwitch
+    case none
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public enum HealthAdvisoryTopicStatus : Swift.Int {
+  case overdue
+  case due
+  case dueSoon
+  case postponed
+  case notDue
+  case addressed
+  case satisfied
+  case agedOut
+  case excluded
+  case pending
+  case unknown
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class HealthAdvisory : Swift.Codable {
+  public var topicId: Swift.String
+  public var name: Swift.String
+  public var lastDoneDate: Foundation.Date?
+  public var dueDate: Foundation.Date?
+  public var postponedDate: Foundation.Date?
+  public var status: Swift.String
+  public var statusText: Swift.String
+  public var dueDateOverride: Swift.String
+  public var updateInfo: ToDo.HealthAdvisoryUpdateInfo
+  public var hasScheduledOrder: Swift.Bool?
+  public var scheduleReasonForVisitId: Swift.String?
+  public var scheduledAppointmentDate: Foundation.Date?
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public class MedicationToDo : ToDo.TaskToDo {
+  public init(withTaskToDo toDo: ToDo.TaskToDo)
+  override public func getTitle() -> Swift.String
+  override public func getSubtitle() -> Swift.String?
+  override public func getDescription() -> Swift.String
+  override public func isActionable() -> Swift.Bool
+  public func getShortName() -> Swift.String
+  public func getMDLName() -> Swift.String
+  public func getMedGroupID() -> Swift.String?
+  public func getMedBucketID() -> Swift.String?
+  public func getMedBucketTitle() -> Swift.String?
+  public func isAntiCoag() -> Swift.Bool?
+  public func getFrequency() -> Swift.String?
+  override public init(withTask task: ToDo.Task, andTaskInstance taskInstance: ToDo.TaskInstance)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class MedicationDisplayManager {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class ToDoChangeListTableViewCellRow : UIKit.UIView {
+  public func updateRow(withTitle title: Swift.String, andDescription description: Swift.String, andImage image: UIKit.UIImage?, andTintColor tintColor: UIKit.UIColor)
+  public func getChangeActionImage(action: ToDo.ToDoChangeAction) -> UIKit.UIImage?
+  public func getTaskImage(task: ToDo.Task) -> UIKit.UIImage?
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public class Department : Swift.Codable {
+  public var id: Swift.String
+  public var name: Swift.String
+  public var address: Swift.String
+  public var timezone: Swift.String
+  public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class ToDoListLinksFooterView : UIKit.UIView {
+  public func setup(withOverdueToDos overdueToDos: Swift.Dictionary<Foundation.Date, [ToDo.ToDoProtocol]>?, andFutureToDos futureToDos: Swift.Dictionary<Foundation.Date, [ToDo.ToDoProtocol]>?)
+  @objc override dynamic public func awakeFromNib()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@_hasMissingDesignatedInitializers public class TaskInstance : Swift.Codable {
+  public var scheduledInstant: Swift.String
+  public var dueInstant: Foundation.Date
+  public var isActionable: Swift.Bool
+  public var notificationGroup: ToDo.NotificationGroup?
+  public var groupID: Swift.String?
+  public var progressValue: Swift.String?
+  public var apptCSN: Swift.String?
+  public var assignedQnrID: Swift.String?
+  public func setCompletionStatus(_ status: ToDo.CompletionStatus)
+  public func getCompletionStatus() -> ToDo.CompletionStatus?
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class ProviderContactCardView : UIKit.UIView, PECore.ImageLoaderDelegate {
+  public func updateView(forProvider provider: ToDo.EscalationProvider, andPatient patientContext: PECore.PEPatientContext)
+  @objc public func didLoadImage(_ image: UIKit.UIImage, forSource source: PECore.ImageDataSource)
+  @objc public func didFailToLoadImage(forSource source: PECore.ImageDataSource)
+  @objc override dynamic public func layoutSubviews()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class ToDoPopupButtonCell : UIKit.UITableViewCell {
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public protocol ToDoBottomSheetViewControllerProtocol : AnyObject {
+  func didHideBottomSheet()
+  func didToggleShowFinishedTasksSwitch(withValue value: Swift.Bool)
+  func launchManageToDoRemindersViewController()
+  func launchPatientCreatedTaskEditor()
+  func launchPatientCreatedTaskListViewController()
+  func launchPersistentQuestionnaire(ofType type: ToDo.PersistentQuestionnaireSeriesType)
+}
+@objc @_inheritsConvenienceInitializers public class ToDoListDateSectionHeaderView : UIKit.UIView {
+  public func set(textForDate date: Foundation.Date)
+  public func set(textColor: UIKit.UIColor)
+  public func set(backgroundColor: UIKit.UIColor)
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class ToDoUtil : ObjectiveC.NSObject {
+  public static func getImage(named name: Swift.String) -> UIKit.UIImage?
+  public static func getDisplayNameForTimeZone(_ timezone: Foundation.TimeZone) -> Swift.String
+  public static func getWatermarkImage(contentType: ToDo.TaskContentType) -> UIKit.UIImage?
+  public static func hasSecurityToEditOwnReminderSettings(_ patientContext: PECore.PEPatientContext) -> Swift.Bool
+  public static func parseUtcDateToString(_ date: Foundation.Date) -> Swift.String
+  public static func parseStringToUtcDate(_ dateString: Swift.String) -> Foundation.Date
+  public static func stripTime(fromDate: Foundation.Date, fromCalendar: Foundation.Calendar?) -> Foundation.Date
+  public static func getFlowsheetDeepLinkingURLPrefix() -> Swift.String
+  public static func hasAccessToPersistentQuestionnaires(_ patientContext: PECore.PEPatientContext) -> Swift.Bool
+  public static func hasSecurityToActOnTask(_ task: ToDo.Task, _ patientContext: PECore.PEPatientContext) -> Swift.Bool
+  public static func hasSecurityToViewPatientCreatedTasks(_ patientContext: PECore.PEPatientContext) -> Swift.Bool
+  public static func hasSecurityToActOnPatientCreatedTasks(_ patientContext: PECore.PEPatientContext) -> Swift.Bool
+  public static func hasSecurityToManagePatientCreatedTasks(_ patientContext: PECore.PEPatientContext) -> Swift.Bool
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension Dictionary where Value == [ToDo.ToDoProtocol] {
+  public mutating func addToArrayValue(_ arrayElement: ToDo.ToDoProtocol, forArrayKey key: Swift.Dictionary<Key, Value>.Key)
+}
+extension Dictionary where Value == [Swift.String] {
+  public mutating func addToArrayValue(_ arrayElement: Swift.String, forArrayKey key: Swift.Dictionary<Key, Value>.Key)
+}
+extension KeyedDecodingContainer {
+  public func decodeIntoArray<ArrayItem>(forKey key: Swift.KeyedDecodingContainer<K>.Key) throws -> [ArrayItem] where ArrayItem : Swift.Decodable
+}
+extension UISwitch {
+  public func toggleSwitchValue()
+}
+extension NSObject {
+  public func addAccessibilityTrait(_ trait: UIKit.UIAccessibilityTraits)
+  public func removeAccessibilityTrait(_ trait: UIKit.UIAccessibilityTraits)
+}
+extension CGFloat {
+  public static func areFloatsDifferent(_ value1: CoreGraphics.CGFloat, _ value2: CoreGraphics.CGFloat, tolerance: CoreGraphics.CGFloat) -> Swift.Bool
+}
+extension UIView {
+  public func calculateNewHeight() -> CoreGraphics.CGFloat?
+}
+extension UITableView {
+  public func resizeHeaderView()
+}
+extension PEPatientContext {
+  public func getProxyPatientName() -> Swift.String?
+}
+@objc @_inheritsConvenienceInitializers public class TimeZoneSelectionViewController : UIKit.UIViewController {
+  @objc override dynamic public func viewDidLoad()
+  public static func makeInstance(patientContext: PECore.PEPatientContext, timeZoneOverride: ToDo.TimeZoneInfo) -> ToDo.TimeZoneSelectionViewController
+  public func attachCompletionHandler(_ handler: @escaping ((ToDo.TimeZoneInfo) -> Swift.Void))
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension TimeZoneSelectionViewController : UIKit.UISearchBarDelegate {
+  @objc dynamic public func searchBar(_ searchBar: UIKit.UISearchBar, textDidChange searchText: Swift.String)
+  @objc dynamic public func searchBarSearchButtonClicked(_ searchBar: UIKit.UISearchBar)
+}
+extension TimeZoneSelectionViewController : UIKit.UITableViewDataSource {
+  @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, viewForHeaderInSection section: Swift.Int) -> UIKit.UIView?
+}
+extension TimeZoneSelectionViewController : UIKit.UITableViewDelegate {
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForHeaderInSection section: Swift.Int) -> CoreGraphics.CGFloat
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+}
+@objc @_inheritsConvenienceInitializers public class TodaysToDoListViewController : ToDo.ToDoListViewController {
+  public func setup()
+  public func setupForNoTasks()
+  public func refreshListView()
+  override public func refreshToDoListTableView()
+  public func showBackgroundAnimations(_ didChangeOccurToday: Swift.Bool)
+  override public func didDocumentOnMedication()
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class ToDoLoadingIndicatorView : UIKit.UIView {
+  public func show()
+  public func hide()
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+public enum PersistentQuestionnaireSeriesType : Swift.Int {
+  case general
+  case symptomCheckIn
+  case invalid
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class QuestionnaireSeries : Swift.Codable {
+  public var seriesAnswerID: Swift.String
+  public var questionnaireIDs: [Swift.String]
+  public var persistentQuestionnaireType: PECore.Category?
+  public func getPersistentQuestionnaireTypeEnum() -> ToDo.PersistentQuestionnaireSeriesType?
+  public func getQuestionnaireId(forTaskId taskId: Swift.String, atInstant taskInstant: Swift.String) -> Swift.String?
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public class ToDoWebViewControllerManager : PECore.MyChartWebViewControllerManager {
+  public init(patientContext: PECore.PEPatientContext? = nil, taskCompletionDelegate: PECore.PELinkTaskCompletionDelegate? = nil)
+  override public func shouldOverrideAllowedPageLoad(_ viewController: PECore.MyChartWebViewController, url: Foundation.URL, isMyChartWebsite: Swift.Bool) -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol ReminderGroupsViewModelProtocol : AnyObject {
+  func reminderGroupsDidLoad(success: Swift.Bool)
+  func timePutRequestFinished(for index: Swift.Int?, success: Swift.Bool)
+  func timeZoneChangePutRequestFinished()
+  func timeZoneAlertPutRequestFinished()
+  func timeZoneUpdateSuccess(newTimeZone: Foundation.TimeZone)
+}
+@_hasMissingDesignatedInitializers public class ReminderGroupsViewModel {
+  weak public var delegate: ToDo.ReminderGroupsViewModelProtocol?
+  public var patientContext: PECore.PEPatientContext!
+  public var taskNameDictionary: [Swift.String : [Swift.String]]
+  public func loadReminderGroups()
+  public func putPersonalizedTime(group: ToDo.NotificationGroup, time: Foundation.Date)
+  public func putTimeZoneAlertSetting(alertWhenTimeZoneDiffers: Swift.Bool)
+  public func putNotificationTimeZoneSetting(newTimeZone: ToDo.TimeZoneInfo)
+  public func getNotificationGroup(index: Swift.Int) -> ToDo.NotificationGroup?
+  public func getNotificationGroupCount() -> Swift.Int
+  public func getTimeOfDay(group: ToDo.NotificationGroup) -> ToDo.TimeOfDay?
+  public func getNumberOfTasks(group: ToDo.NotificationGroup) -> Swift.Int
+  public func getTaskList(group: ToDo.NotificationGroup) -> Swift.String?
+  public func getTime(group: ToDo.NotificationGroup, includeTimeZoneOffset: Swift.Bool = false) -> Foundation.Date
+  public func getTimeString(group: ToDo.NotificationGroup, includeTimeZoneOffset: Swift.Bool = false) -> Swift.String
+  public func shouldAlertWhenTimeZoneDiffers() -> Swift.Bool
+  public func getTimeZoneOverride() -> ToDo.TimeZoneInfo
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class HealthAdvisoryUpdateInfo : Swift.Codable {
+  public var canMarkComplete: Swift.Bool
+  public var isUpdatePending: Swift.Bool
+  public var enteredDateISO: Foundation.Date?
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers public class ToDoChangeActionTasksAdded : ToDo.ToDoChangeAction {
+  public var tasksAdded: [ToDo.Task]
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class ToDoChangeListHeaderView : UIKit.UIView {
+  public func setText(text: Swift.String)
+  @objc override dynamic public func awakeFromNib()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@_hasMissingDesignatedInitializers public class EducationPoint : Swift.Codable {
+  public var pointID: Swift.String
+  public var status: PECore.Category
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public enum EducationPointStatus : Swift.Int {
+  case understood
+  case hasQuestions
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+}
+public protocol NotificationControlViewModelProtocol : AnyObject {
+  func notificationSettingsDidLoad()
+  func notificationSettingsDidLoadFailed()
+  func notificationSettingsDidSaved(onViews affectedViewOptions: [ToDo.NotificationControlViewModel.ViewOption])
+  func notificationSettingsDidSavedFailed(onViews affectedViewOptions: [ToDo.NotificationControlViewModel.ViewOption])
+}
+@_hasMissingDesignatedInitializers public class NotificationControlViewModel {
+  public var patientContext: PECore.PEPatientContext!
+  weak public var delegate: ToDo.NotificationControlViewModelProtocol?
+  public enum LoadStatus : Swift.Int {
+    case unknown
+    case error
+    case notStarted
+    case inProgress
+    case completed
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum ViewOption : Swift.Int {
+    case masterSwitch
+    case whenTasksDue
+    case dailyDigest
+    case taskTypeGeneral
+    case taskTypeEducation
+    case taskTypeMedication
+    case taskTypeQuestionnaire
+    case taskTypeFlowsheet
+    case taskTypeAppointment
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public func loadNotificationSettings()
+  public func saveNotificationSettings(onViews affectedViewOptions: [ToDo.NotificationControlViewModel.ViewOption], _ receiveDailyDigest: Swift.Bool, _ dailyDigestTimeUTC: Foundation.Date, _ receiveGeneralTaskReminders: Swift.Bool, _ receiveMedicationTaskReminders: Swift.Bool, _ receiveQuestionnaireTaskReminders: Swift.Bool, _ receiveFlowsheetTaskReminders: Swift.Bool, _ receiveEducationTaskReminders: Swift.Bool, _ receiveAppointmentTaskReminders: Swift.Bool)
+  public func isProcessing(viewOption: ToDo.NotificationControlViewModel.ViewOption) -> Swift.Bool
+  public func isAnyReminderSupported() -> Swift.Bool
+  public func isAnyTaskTypeReminderSupported() -> Swift.Bool
+  public func isReceiveAnyReminders() -> Swift.Bool
+  public func canChangeAnyReminders() -> Swift.Bool
+  public func canChangeAllSupportedReminders() -> Swift.Bool
+  public func isDailyDigestSupported() -> Swift.Bool
+  public func canChangeDailyDigest() -> Swift.Bool
+  public func isReceiveDailyDigest() -> Swift.Bool
+  public func getDailyDigestLocalTimeString() -> Swift.String
+  public func getDailyDigestUTCTime() -> Foundation.Date
+  public func isGeneralTaskReminderSupported() -> Swift.Bool
+  public func canChangeGeneralTaskReminder() -> Swift.Bool
+  public func isReceiveGeneralTaskReminders() -> Swift.Bool
+  public func isMedicationTaskReminderSupported() -> Swift.Bool
+  public func canChangeMedicationTaskReminder() -> Swift.Bool
+  public func isReceiveMedicationTaskReminders() -> Swift.Bool
+  public func isQuestionnaireTaskReminderSupported() -> Swift.Bool
+  public func canChangeQuestionnaireTaskReminder() -> Swift.Bool
+  public func isReceiveQuestionnaireTaskReminders() -> Swift.Bool
+  public func isFlowsheetTaskReminderSupported() -> Swift.Bool
+  public func canChangeFlowsheetTaskReminder() -> Swift.Bool
+  public func isReceiveFlowsheetTaskReminders() -> Swift.Bool
+  public func isEducationTaskReminderSupported() -> Swift.Bool
+  public func canChangeEducationTaskReminder() -> Swift.Bool
+  public func isReceiveEducationTaskReminders() -> Swift.Bool
+  public func isAppointmentTaskReminderSupported() -> Swift.Bool
+  public func canChangeAppointmentTaskReminder() -> Swift.Bool
+  public func isReceiveAppointmentTaskReminders() -> Swift.Bool
+  public func getPatientProxyName() -> Swift.String?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class PatientCreatedTask : ToDo.Task, Foundation.NSCopying {
+  public var frequencyInfo: ToDo.FrequencyInfo!
+  public var nextDueDate: Foundation.Date!
+  required public init(from decoder: Swift.Decoder) throws
+  override public init()
+  override public func encode(to encoder: Swift.Encoder) throws
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc deinit
+}
+extension ToDo.TaskContentType : Swift.Equatable {}
+extension ToDo.TaskContentType : Swift.Hashable {}
+extension ToDo.TaskContentType : Swift.RawRepresentable {}
+extension ToDo.ApptModality : Swift.Equatable {}
+extension ToDo.ApptModality : Swift.Hashable {}
+extension ToDo.ApptModality : Swift.RawRepresentable {}
+extension ToDo.CompletionStatus : Swift.Equatable {}
+extension ToDo.CompletionStatus : Swift.Hashable {}
+extension ToDo.TimeOfDay : Swift.Equatable {}
+extension ToDo.TimeOfDay : Swift.Hashable {}
+extension ToDo.TimeOfDay : Swift.RawRepresentable {}
+extension ToDo.ToDoChangeActionType : Swift.Equatable {}
+extension ToDo.ToDoChangeActionType : Swift.Hashable {}
+extension ToDo.ToDoChangeActionType : Swift.RawRepresentable {}
+extension ToDo.ToDoFeatures : Swift.Equatable {}
+extension ToDo.ToDoFeatures : Swift.Hashable {}
+extension ToDo.ToDoFeatures : Swift.RawRepresentable {}
+extension ToDo.ECheckInStatus : Swift.Equatable {}
+extension ToDo.ECheckInStatus : Swift.Hashable {}
+extension ToDo.ECheckInStatus : Swift.RawRepresentable {}
+extension ToDo.EVisitStatus : Swift.Equatable {}
+extension ToDo.EVisitStatus : Swift.Hashable {}
+extension ToDo.EVisitStatus : Swift.RawRepresentable {}
+extension ToDo.NotificationControlTableViewCell.CellType : Swift.Equatable {}
+extension ToDo.NotificationControlTableViewCell.CellType : Swift.Hashable {}
+extension ToDo.NotificationControlTableViewCell.CellType : Swift.RawRepresentable {}
+extension ToDo.HealthAdvisoryTopicStatus : Swift.Equatable {}
+extension ToDo.HealthAdvisoryTopicStatus : Swift.Hashable {}
+extension ToDo.HealthAdvisoryTopicStatus : Swift.RawRepresentable {}
+extension ToDo.PersistentQuestionnaireSeriesType : Swift.Equatable {}
+extension ToDo.PersistentQuestionnaireSeriesType : Swift.Hashable {}
+extension ToDo.PersistentQuestionnaireSeriesType : Swift.RawRepresentable {}
+extension ToDo.EducationPointStatus : Swift.Equatable {}
+extension ToDo.EducationPointStatus : Swift.Hashable {}
+extension ToDo.EducationPointStatus : Swift.RawRepresentable {}
+extension ToDo.NotificationControlViewModel.LoadStatus : Swift.Equatable {}
+extension ToDo.NotificationControlViewModel.LoadStatus : Swift.Hashable {}
+extension ToDo.NotificationControlViewModel.LoadStatus : Swift.RawRepresentable {}
+extension ToDo.NotificationControlViewModel.ViewOption : Swift.Equatable {}
+extension ToDo.NotificationControlViewModel.ViewOption : Swift.Hashable {}
+extension ToDo.NotificationControlViewModel.ViewOption : Swift.RawRepresentable {}

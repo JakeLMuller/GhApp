@@ -1,0 +1,11 @@
+framework module PECore {
+  umbrella header "PECore.h"
+
+  export *
+  module * { export * }
+}
+
+module PECore.Swift {
+    header "PECore-Swift.h"
+    requires objc
+}

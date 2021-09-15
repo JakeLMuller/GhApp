@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2018-2020 Epic Systems Corporation
+  -->
+<resources>
+  <!-- Event types -->
+  <string name="wp_happening_soon_medications" context="Used as the name for a medication administration event on a patient's schedule">Medicamentos</string>
+  <!-- Labels for timeline sections -->
+  <string name="wp_happening_soon_section_name_yesterday" context="Used as a 'section' label for the portion patient's schedule that happened yesterday. Any translation over ~14 characters may be truncated">ayer</string>
+  <string name="wp_happening_soon_section_name_earlier_today" context="Used as a 'section' label for the portion patient's schedule that happened earlier today. Any translation over ~14 characters may be truncated">Hace unas horas hoy</string>
+  <string name="wp_happening_soon_section_name_later_today" context="Used as a 'section' label for the portion patient's schedule that will still happen today. Any translation over ~14 characters may be truncated">Más tarde</string>
+  <string name="wp_happening_soon_section_name_tomorrow" context="Used as a 'section' label for the portion patient's schedule that will happen tomorrow. Any translation over ~14 characters may be truncated">Mañana</string>
+  <!-- Strings for displaying event times -->
+  <string name="wp_happening_soon_time_exact" context="Displays for an event that starts at an exact time and has no available end time. %1$@ is the time the event starts, like '10:00 a.m.'">A la(s) %1$@</string>
+  <string name="wp_happening_soon_time_nearby" context="Displays for an event that starts at an approximate time and has no available end time. %1$@ is the rough time the event starts, like '10 a.m.'">alrededor de la(s) %1$@</string>
+  <string name="wp_happening_soon_time_morning" context="Used to describe when an event occurred, if it occurred or will occur in the morning and we're only allowed to share the time of day">Por la mañana</string>
+  <string name="wp_happening_soon_time_afternoon" context="Used to describe when an event occurred, if it occurred or will occur in the afternoon and we're only allowed to share the time of day">Por la tarde</string>
+  <string name="wp_happening_soon_time_evening" context="Used to describe when an event occurred, if it occurred or will occur in the evening and we're only allowed to share the time of day">Al atardecer</string>
+  <string name="wp_happening_soon_time_night" context="Used to describe when an event occurred, if it occurred or will occur at night and we're only allowed to share the time of day">En la noche</string>
+  <string name="wp_happening_soon_time_yesterday" context="Used to describe when an event occurred, if it occurred yesterday and we're only allowed to share the day">ayer</string>
+  <string name="wp_happening_soon_time_today" context="Used to describe when an event occurred, if it occurred or will occur today and we're only allowed to share the day">Hoy</string>
+  <string name="wp_happening_soon_time_tomorrow" context="Used to describe when an event occurred, if it will occur tomorrow and we're only allowed to share the day">Mañana</string>
+  <!-- Time span strings -->
+  <string name="wp_happening_soon_timespan_exact" context="Formats an event's start and end times when we want to show exactly when the event starts and ends. %1$@ is the event's exact start time, and %2$@ is the event's exact end time, both formatted like '10:15 AM'">%1$@ hasta %2$@</string>
+  <plurals name="wp_happening_soon_timespan_nearby_hours" context="Formats an event's approximate start time and approximate duration, when the duration is expressed in hours. The plural key is the number of hours. %1$@ is the approximate start time (like '10 a.m.'), and %2$@ is the number of hours.">
+    <item quantity="one">Comienza alrededor de la(s) %1$@, por alrededor de una hora.</item>
+    <item quantity="other">Comienza alrededor de la(s) %1$@, por alrededor de %2$@ horas.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_nearby_minutes" context="Formats an event's approximate start time and approximate duration, when the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the approximate start time (like '10 a.m.'), and %2$@ is the number of minutes.">
+    <item quantity="one">Comienza alrededor de la(s) %1$@, por alrededor de un minuto.</item>
+    <item quantity="other">Comienza alrededor de la(s) %1$@, por alrededor de %2$@ minutos.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_morning_hours" context="Formats an event's time of day and approximate duration, when the event takes place in the morning and the duration is expressed in hours. The plural key is the number of hours. %1$@ is the number of hours.">
+    <item quantity="one">En la mañana por alrededor de una hora.</item>
+    <item quantity="other">En la mañana por %1$@ horas.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_afternoon_hours" context="Formats an event's time of day and approximate duration, when the event takes place in the afternoon and the duration is expressed in hours. The plural key is the number of hours. %1$@ is the number of hours.">
+    <item quantity="one">Por la tarde por aproximadamente una hora.</item>
+    <item quantity="other">Por la tarde por aproximadamente %1$@ horas.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_evening_hours" context="Formats an event's time of day and approximate duration, when the event takes place in the evening and the duration is expressed in hours. The plural key is the number of hours. %1$@ is the number of hours.">
+    <item quantity="one">En la tarde por una hora.</item>
+    <item quantity="other">Por la tarde por aproximadamente %1$@ horas.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_night_hours" context="Formats an event's time of day and approximate duration, when the event takes place at night and the duration is expressed in hours. The plural key is the number of hours. %1$@ is the number of hours.">
+    <item quantity="one">Por la noche, por aproximadamente una hora.</item>
+    <item quantity="other">Por la noche, por aproximadamente %1$@ horas.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_morning_minutes" context="Formats an event's time of day and approximate duration, when the event takes place in the morning and the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the number of minutes.">
+    <item quantity="one">En la mañana por alrededor de un minuto.</item>
+    <item quantity="other">En la mañana por %1$@ minutos.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_afternoon_minutes" context="Formats an event's time of day and approximate duration, when the event takes place in the afternoon and the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the number of minutes.">
+    <item quantity="one">Por la tarde por aproximadamente un minuto.</item>
+    <item quantity="other">Por la tarde por aproximadamente %1$@ minutos.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_evening_minutes" context="Formats an event's time of day and approximate duration, when the event takes place in the evening and the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the number of minutes.">
+    <item quantity="one">En la tarde por un minuto. </item>
+    <item quantity="other">Por la tarde por aproximadamente %1$@ minutos.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_night_minutes" context="Formats an event's time of day and approximate duration, when the event takes place at night and the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the number of minutes.">
+    <item quantity="one">Por la noche, por aproximadamente un minuto.</item>
+    <item quantity="other">Por la noche, por aproximadamente %1$@ minutos.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_durationonly_hours" context="Formats an event's approximate duration, when the duration is expressed in hours. The plural key is the number of hours. %1$@ is the number of hours.">
+    <item quantity="one">Acerca de una hora.</item>
+    <item quantity="other">%1$@ horas más o menos.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_durationonly_minutes" context="Formats an event's approximate duration, when the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the number of minutes.">
+    <item quantity="one">Acerca de un minuto.</item>
+    <item quantity="other">Acerca de %1$@ minutos.</item>
+  </plurals>
+  <!-- Details view strings -->
+  <string name="wp_happening_soon_details_view_title" context="Title of the activity that displays when the user clicks on an event from the timeline.">Detalles del evento</string>
+  <!-- Tasks -->
+  <string name="wp_happening_soon_task_details_documented_by" context="Label for the provider who documented this task. %1$@ will be replaced with the provider's name">Anotado por %1$@</string>
+  <string name="wp_happening_soon_task_details_completed" context="Status for a nursing task that has been completed. %1$@ is the time it was completed.">Completado a la(s) %1$@</string>
+  <string name="wp_happening_soon_task_details_skipped" context="Status for a nursing task that has been skipped.">Saltado</string>
+  <string name="wp_happening_soon_task_details_canceled" context="Status for a nursing task that has been canceled.">Cancelado</string>
+  <string name="wp_happening_soon_task_details_frequency" context="Tells the user how often a task is repeated. %1$@ is the frequency (from the server), like 'once' or 'every 2 hours' or '4 times a day'. It works great in English as 'This Event occurs ___.', but you can switch it to 'Frequency: ___' in another language if the grammar doesn't work out.">Este evento se produce %1$@.</string>
+  <!-- Appointments/surgeries -->
+  <string name="wp_happening_soon_appointment_details_procedures" context="Displayed above a list of procedures that make up an inpatient appointment or surgery">¿Qué va a pasar?</string>
+  <string name="wp_happening_soon_appointment_details_providers" context="Displayed above a list of providers who will be involved in an inpatient appointment or surgery">¿Con quién?</string>
+  <string name="wp_happening_soon_appointment_details_instructions" context="Displayed above patient instructions for an inpatient appointment or surgery">¿Qué debería saber?</string>
+  <!-- Medication administrations -->
+  <string name="wp_happening_soon_medications_ordered_by" context="Label for the provider that ordered this medication. %1$@ will be replaced with the provider's name">Autorizado por %1$@</string>
+  <string name="wp_happening_soon_acc_medication_status" context="Accessibility label for the status of a medication. %1$@ will be replaced with the current status of a medication administration, like Due or Complete">Estado: %1$@</string>
+  <string name="wp_happening_soon_medication_status_set_by" context="Accessibility label for the provider who set the current status of a medication. %1$@ will be replaced with the provider's name">Estado marcado por %1$@</string>
+  <string name="wp_happening_soon_medication_completed" context="Tells the user when a medication was given. %1$@ = the completing action. Could be 'given', 'new bag', 'restarted', etc. %2$@ = the time the med was given">%1$@ a la(s) %2$@</string>
+  <string name="wp_happening_soon_medication_completed_with_day" context="Tells the user when a medication was given, if it was given on a day that wasn't the day it was due. %1$@ = the completing action. Could be 'given', 'new bag', 'restarted', etc. %2$@ = the time the med was given. %3$@ = the day it was given. Could be 'today', 'tomorrow', '11/12/2018', etc.">%1$@ %3$@, a la(s) %2$@</string>
+  <string name="wp_happening_soon_medication_not_given_with_reason" context="Tells the user that a medication was not given. %1$@ = how the med was not given - 'Skipped', 'Held', etc. %2$@ = the reason the med was not given - 'Patient refused', 'Patient asleep', etc.">%1$@ (%2$@)</string>
+  <string name="wp_happening_soon_medications_linked_and" context="Labels a group of linked medications using the 'and' linkage type - i.e., all of them will be given together">TODO lo siguiente</string>
+  <string name="wp_happening_soon_medications_linked_or" context="Labels a group of linked medications using the 'or' linkage type - i.e., only one of them will be given">UNO de lo siguiente</string>
+  <string name="wp_happening_soon_medications_hidden_multi" context="Header that indicates that medications are hidden from only some proxies">Medicamentos con este icono están ocultados de algunos familiares y amigos.</string>
+  <string name="wp_happening_soon_medications_hidden_all" context="Header that indicates that medications are hidden from all proxies">Medicamentos con este icono están ocultados de familiares y amigos.</string>
+  <string name="wp_happening_soon_medications_hidden_header" context="Header for the list of proxies that the medications may be hidden from">Ocultado de</string>
+  <string name="wp_happening_soon_medications_hidden_accessibility_label" context="Appended to accessibility label for hidden medications">Ocultado</string>
+  <!-- Miscellaneous -->
+  <string name="wp_happening_soon_empty_schedule" context="Displayed to the user when there's nothing to display on the patient's schedule">No hay ningún evento programado que mostrar.</string>
+  <string name="wp_happening_soon_error_message" context="Displayed to the user when we fail at displaying the patient's schedule.">Hubo un error al cargar el horario.</string>
+</resources>

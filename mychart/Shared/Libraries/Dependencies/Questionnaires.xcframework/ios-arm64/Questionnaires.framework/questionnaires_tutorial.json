@@ -1,0 +1,20 @@
+{
+  "tutorialId": "questionnaires_tutorial",
+  "tutorialSteps": [
+	{
+	  "descriptionString": "wp_questionnaires_tutorial_overview",
+	  "descriptionStringProxy": "wp_questionnaires_tutorial_overview_proxy",
+	  "viewId": "wp_mychart_webview"
+	},
+	{
+	  "descriptionString": "wp_questionnaires_tutorial_overview_2",
+	  "descriptionStringProxy": "wp_questionnaires_tutorial_overview_2_proxy",
+	  "viewId": "wp_mychart_webview"
+	},
+	{
+	  "descriptionString": "wp_questionnaires_tutorial_mfq",
+	  "descriptionStringProxy": "wp_questionnaires_tutorial_mfq_proxy",
+	  "viewId": "wp_mychart_webview"
+	}
+  ]
+}

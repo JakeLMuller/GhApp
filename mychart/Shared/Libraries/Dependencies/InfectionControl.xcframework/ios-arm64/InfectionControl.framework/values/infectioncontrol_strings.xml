@@ -1,0 +1,191 @@
+<resources>
+    
+    <!-- Patient Info -->
+    <string name="wp_infection_control_dateofbirth_label"
+        context="Used to display the patient's date of birth. %1$@ is the patient's date of birth in medium date format, like 'May 16, 2019'">DOB: %1$@</string>
+    <string name="wp_infection_control_dateofbirth_accessibility_label"
+        context="Used to display the patient's date of birth. %1$@ is the patient's date of birth in medium date format, like 'May 16, 2019'">Date of birth: %1$@</string>
+    
+    <!-- Status Details -->
+    <string name="wp_infection_control_covid_status_row_collapsed_ax"
+        context="Accessibility only message that indicates the extra details of a covid sub statuses (test result, screening, vaccine) are collapsed.">Collapsed</string>
+    <string name="wp_infection_control_covid_status_row_expanded_ax"
+        context="Accessibility only message that indicates the extra details of a covid sub statuses (test result, screening, vaccine) are expanded.">Expanded</string>
+    
+    <!-- Testing Status: Unknown -->
+    <string name="wp_infection_control_covid_test_status_unknown"
+        context="Status displayed based on available test results, indicating that the patient has not yet been tested.">Not tested</string>
+    <string name="wp_infection_control_covid_test_status_unknown_subtext"
+        context="Used to add additional context for the unknown test result status">You have no COVID-19 tests on file.</string>
+    
+    <!-- Testing Status: Pending -->
+    <string name="wp_infection_control_covid_test_status_pending"
+        context="Status displayed based on available test results, indicating that a test has been ordered but not yet resulted/released.">Testing in progress</string>
+    <string name="wp_infection_control_covid_test_status_pending_subtext"
+        context="Used to add additional context for the pending test result status. %1$@ is the ordering provider of the test. %2$@ is the organization that ordered the test. %3$@ is the medium formatted date that the test was ordered, like 'May 16, 2019'.">Ordered by %1$@ at %2$@ on %3$@.</string>
+    
+    <!-- Testing Status: Virus Detected/Not Detected -->
+    <string name="wp_infection_control_covid_test_status_not_detected"
+        context="Status displayed based on available test results, indicating that virus that causes COVID-19 has NOT been detected.">Tested - Virus not detected</string>
+    <string name="wp_infection_control_covid_test_status_detected"
+        context="Status displayed based on available test results, indicating that virus that causes COVID-19 has been detected.">Tested - Virus detected</string>
+    <plurals name="wp_infection_control_covid_test_status_daysago"
+        context="Displayed below the status based on available test results to indicate how long ago a test was resulted. %1$@ is the number of days ago that the test was resulted, like '4">
+        <item quantity="one">(%1$@ day ago)</item>
+        <item quantity="other">(%1$@ days ago)</item>
+    </plurals>
+    <string name="wp_infection_control_covid_test_status_not_detected_subtext"
+        context="Used to add additional context for the 'not detected' test result status. %1$@ is the organization that completed the test. %2$@ is the medium formatted date that the test was resulted, like 'May 16, 2019'.">Performed at %1$@ on %2$@.</string>
+    <string name="wp_infection_control_covid_test_status_detected_subtext"
+        context="Used to add additional context for the 'detected' test result status. %1$@ is the organization that completed the test. %2$@ is the medium formatted date that the test was resulted, like 'May 16, 2019'.">Performed at %1$@ on %2$@.</string>
+    <string name="wp_infection_control_covid_hx_test_not_detected"
+        context="Status displayed for a past test result, indicating that virus that causes COVID-19 has NOT been detected.">Virus not detected</string>
+    <string name="wp_infection_control_covid_hx_test_detected"
+        context="Status displayed for a past test result, indicating that virus that causes COVID-19 has been detected.">Virus detected</string>
+    
+    <!-- Screening Status: Not Screened / No score (error) -->
+    <string name="wp_infection_control_covid_screening_status_not_screened"
+        context="Status displayed based on available questionnaire screenings, indicating that the patient has not answered a screening in the last 24 hrs.">No recent self-assessments</string>
+    <string name="wp_infection_control_covid_screening_status_not_screened_subtext"
+        context="Used to add additional context for the not-screened screening status.">You have no COVID-19 self-assessments from the last 24 hours on file.</string>
+    <string name="wp_infection_control_covid_screening_status_screened_no_score"
+        context="Status displayed based on available questionnaire screenings, indicating that the patient has answered a screening in the last 24 hrs, and no score was returned">Self-assessment complete - Failed to determine risk of infection</string>
+    <string name="wp_infection_control_covid_screening_status_screened_no_score_subtext"
+        context="Used to add additional context for the screened-no score screening status.">Contact your healthcare provider to discuss your answers and determine your risk of currently having COVID-19.</string>
+    
+    <!-- Screening Status: Non scored QNR -->
+    <string name="wp_infection_control_covid_screening_non_scored_nothing_reported"
+        context="Status displayed based on available COVID-19 questionnaire screenings, indicating that the patient has answered a non-scoring screening in the last 24 hrs, and no symptoms or exposure was reported. 'Complete' means the questionnaire screening was answered.">Self-assessment complete - No symptoms or exposure reported</string>
+    <string name="wp_infection_control_covid_screening_non_scored_nothing_reported_subtext"
+        context="Used to add additional context for the non-scored, nothing reported questionnaire screening status. 'Consult' means 'check with', and 'provider' refers to a health care provider (human).">Continue to follow public health COVID-19 recommendations, and consult a medical provider if you develop severe symptoms, become concerned about exposure to COVID-19, or have any concerns about your health.</string>
+    <string name="wp_infection_control_covid_screening_non_scored_symptoms_reported"
+        context="Status displayed based on available questionnaire screenings, indicating that the patient has answered a non-scoring screening in the last 24 hrs, and symptoms were reported. 'Complete' means the questionnaire screening was answered.">Self-assessment complete - One or more symptoms reported</string>
+    <string name="wp_infection_control_covid_screening_non_scored_symptoms_reported_subtext"
+        context="Used to add additional context for the non-scored, symptoms reported screening status. %1$@ is an emergency phone number. 'Consult' means 'check with', and 'provider' refers to a health care provider (human). ">Continue to monitor your symptoms. If you are concerned about your symptoms, consult your provider. If your symptoms are severe or become severe, call %1$@.</string>
+    <string name="wp_infection_control_covid_screening_non_scored_exposure_reported"
+        context="Status displayed based on available COVID-19 questionnaire screenings, indicating that the patient has answered a non-scoring screening in the last 24 hrs, and exposure was reported. 'Complete' means the questionnaire screening was answered.">Self-assessment complete - COVID-19 exposure reported</string>
+    <string name="wp_infection_control_covid_screening_non_scored_exposure_reported_subtext"
+        context="Used to add additional context for the non-scored, exposure reported screening status. %1$@ is an emergency phone number. 'Consult' means 'check with', and 'provider' refers to a health care provider (human).">If you are concerned about your COVID-19 exposure, consult your provider. If you develop severe symptoms, call %1$@.</string>
+    <string name="wp_infection_control_covid_screening_non_scored_symptoms_and_exposure_reported"
+        context="Status displayed based on available COVID-19 questionnaire screenings, indicating that the patient has answered a non-scoring screening in the last 24 hrs, and both symptoms and exposure was reported. 'Complete' means the questionnaire screening was answered.">Self-assessment complete - One or more symptoms and COVID-19 exposure reported</string>
+    <string name="wp_infection_control_covid_screening_non_scored_symptoms_and_exposure_reported_subtext"
+        context="Used to add additional context for the non-scored, both symptoms and exposure reported screening status. %1$@ is an emergency phone number. 'Consult' means 'check with', and 'provider' refers to a health care provider (human).">Continue to monitor your symptoms. If you are concerned about your symptoms or COVID-19 exposure, consult your provider. If symptoms are severe or become severe, call %1$@.</string>
+    <string name="wp_infection_control_covid_screening_non_scored_no_risk_questions"
+        context="Status displayed based on available COVID-19 questionnaire screenings, indicating that the patient has answered a non-scoring screening in the last 24 hrs that didn't have any risk questions. 'Complete' means the questionnaire screening was answered.">Self-assessment complete</string>
+    <string name="wp_infection_control_covid_screening_non_scored_no_risk_questions_subtext"
+        context="Used to add additional context for the non-scored, no risk questions screening status. %1$@ is the name of the header for resource links ('Helpful Resources' in English)">Continue to wear a mask and practice social distancing. View the %1$@ section to learn more about COVID-19.</string>
+    
+    <!-- Screening Status: Yes/No symptoms or contact reported -->
+    <string name="wp_infection_control_covid_screening_status_screened_high_risk"
+        context="Status displayed based on available questionnaire screenings, indicating that the patient has answered a screening in the last 24 hrs, and the patient has high risk.">Self-assessment complete - High risk of infection</string>
+    <string name="wp_infection_control_covid_screening_status_screened_low_risk"
+        context="Status displayed based on available questionnaire screenings, indicating that the patient has answered a screening in the last 24 hrs, and the patient has low risk.">Self-assessment complete - Low risk of infection</string>
+    <string name="wp_infection_control_covid_screening_status_screened_positive_test"
+        context="Status displayed based on available questionnaire screenings, indicating that the patient has answered a screening in the last 24 hrs, and the patient indicated they have had a positive test.">Self-assessment complete - Positive test reported</string>
+    <string name="wp_infection_control_covid_screening_status_screened_positive_test_subtext"
+        context="Used to add additional context for the 'positive test reported' screening status.">Your latest self-assessment reported a positive COVID-19 test result.</string>
+    <plurals name="wp_infection_control_covid_screening_status_screened_hours_ago"
+        context="Displayed next to the status based on available questionnaire screenings to indicate how long ago a screening was completed. %1$@ is the number of hours ago that the questionnaire was completed, like '4">
+        <item quantity="one">(%1$@ hour ago)</item>
+        <item quantity="other">(%1$@ hours ago)</item>
+    </plurals>
+    <string name="wp_infection_control_covid_screening_status_screened_zero_hours_ago"
+        context="Displayed next to the status based on available questionnaire screenings to indicate that a screening was completed less than an hour ago.">(under an hour ago)</string>
+    <string name="wp_infection_control_covid_screening_status_screened_action_label"
+        context="Button text that links the user to a new screening questionnaire">Start a new COVID-19 self-assessment</string>
+    <string name="wp_infection_control_covid_hx_screening_high_risk"
+        context="Status displayed for a past questionnaire screening, indicating that the screening determined the patient had high risk.">High risk self-assessment</string>
+    <string name="wp_infection_control_covid_hx_screening_low_risk"
+        context="Status displayed for a past questionnaire screening, indicating that the screening determined the patient had low risk.">Low risk self-assessment</string>
+    <string name="wp_infection_control_covid_hx_screening_positive_test"
+        context="Status displayed for a past questionnaire screening, indicating that the patient reported they had a positive test in their screening.">Positive test reported</string>
+    <string name="wp_infection_control_covid_hx_screening_no_score"
+        context="Status displayed for a past questionnaire screening, indicating that the screening was not able to determine a risk for the patient.">Failed to determine risk of infection</string>
+    <string name="wp_infection_control_covid_hx_screening_non_scored_nothing_reported"
+        context="Status displayed for a past non-scored questionnaire screening, indicating that the patient didn't report symptoms or exposure.">No symptoms or exposure reported</string>
+    <string name="wp_infection_control_covid_hx_screening_non_scored_symptoms_reported"
+        context="Status displayed for a past non-scored questionnaire screening, indicating that the patient reported symptoms.">One or more symptoms reported</string>
+    <string name="wp_infection_control_covid_hx_screening_non_scored_exposure_reported"
+        context="Status displayed for a past non-scored questionnaire screening, indicating that the patient reported exposure.">COVID-19 exposure reported</string>
+    <string name="wp_infection_control_covid_hx_screening_non_scored_symptoms_and_exposure_reported"
+        context="Status displayed for a past non-scored questionnaire screening, indicating that the patient reported symptoms and exposure.">One or more symptoms and COVID-19 exposure reported</string>
+    <string name="wp_infection_control_covid_hx_screening_non_scored_no_risk_questions"
+        context="Status displayed for a past non-scored questionnaire screening that did not have any risk questions. 'Complete' means the questionnaire screening was answered.">Self-assessment complete</string>
+    
+    <!-- Vaccine Status -->
+    <string name="wp_infection_control_covid_vaccine_status_not_started"
+        context="Status displayed based on administered vaccines, indicating that the patient has not had any.">No vaccine received</string>
+    <string name="wp_infection_control_covid_vaccine_status_not_started_subtext"
+        context="Subtext displayed based on administered vaccines, indicating that the patient has not had any.">No COVID-19 vaccines found.</string>
+    <string name="wp_infection_control_covid_vaccine_status_in_progress"
+        context="Status displayed based on administered vaccines, indicating that the patient has had some but not all required doses. %1$@ is the number of doses received. %2$@ is the total number of doses required.">%1$@ of %2$@ vaccines received</string>
+    <plurals name="wp_infection_control_covid_vaccine_status_in_progress_no_req_doses"
+        context="Status displayed based on administered vaccines, indicating that the patient has had some but not all required doses, and we don't know the number of required doses. %1$@ is the number of doses received.">
+        <item quantity="one">%1$@ vaccine received</item>
+        <item quantity="other">%1$@ vaccines received</item>
+    </plurals>
+    <string name="wp_infection_control_covid_vaccine_status_unknown"
+        context="Status displayed based on administered vaccines, indicating that the patient's status is unknown.">Vaccination status unknown</string>
+    <string name="wp_infection_control_covid_vaccine_status_unknown_subtext"
+        context="Subtext displayed based on administered vaccines, indicating that the patient's status is unknown.">COVID-19 vaccination status unknown.</string>
+    <string name="wp_infection_control_covid_vaccine_status_completed"
+        context="Status displayed based on administered vaccines, indicating that the patient has had all required doses. %1$@ is the number of doses received. %2$@ is the number of doses required">COVID-19 vaccination complete (%1$@ of %2$@)</string>
+    <string name="wp_infection_control_covid_vaccine_status_in_progress_subtitle_two_doses"
+        context="Subtitle displayed based on administered vaccines, indicating that the patient has their second and final dose upcoming. %1$@ is the date the vaccine dose is due in medium date format, like 'Dec 10, 2020'">2nd vaccine due on or after %1$@</string>
+    <string name="wp_infection_control_covid_vaccine_status_in_progress_subtitle"
+        context="Subtitle displayed based on administered vaccines, indicating that the patient has an upcoming dose due. %1$@ is the number of the dose. %2$@ is the date the vaccine is due in medium date format, like 'Dec 10, 2020'">Vaccine %1$@ due on or after %2$@</string>
+    <string name="wp_infection_control_covid_vaccine_status_incomplete_banner_text"
+        context="Warning banner text shown when a patient may have received one or more invalid vaccines on file, to explain why we're not showing any doses received. Provider in this context is a person.">Your COVID-19 vaccine information might be incomplete. Contact your provider for more information.</string>
+    
+    <!-- Vaccine dose subtext -->
+    <string name="wp_infection_control_covid_vaccine_status_dose_subtext_dose_date"
+        context="Part of subtext shown for an administered vaccine dose, which contains dose number and date information. %1$@ is the number of the dose (dose 1 is their first shot, etc). %2$@ is the medium formatted date that the vaccine was received, like 'Dec 16, 2019'">Dose %1$@ administered on %2$@</string>
+    <string name="wp_infection_control_covid_vaccine_status_dose_subtext_dose_date_without_dose_number"
+        context="Part of subtext shown for an administered vaccine dose, which contains date information. %1$@ is the medium formatted date that the vaccine was received, like 'Dec 16, 2019'">Dose administered on %1$@</string>
+    <string name="wp_infection_control_covid_vaccine_status_dose_subtext_name_label"
+        context="Part of subtext shown for an administered vaccine dose, which contains the label for name and dose information.">Name</string>
+    <string name="wp_infection_control_covid_vaccine_status_dose_subtext_manufacturer_label"
+        context="Part of subtext shown for an administered vaccine dose, which contains the label for vaccine manufacturer.">Manufacturer</string>
+    <string name="wp_infection_control_covid_vaccine_status_dose_subtext_lot_label"
+        context="Part of subtext shown for an administered vaccine dose, which contains the label for the vaccine lot number.">Lot #</string>
+    <string name="wp_infection_control_covid_vaccine_status_dose_subtext_location_label"
+        context="Part of subtext shown for an administered vaccine dose, which contains the label for the location the vaccine was administered.">Location</string>
+    <string name="wp_infection_control_covid_vaccine_status_dose_subtext_givenby_label"
+        context="Part of subtext shown for an administered vaccine dose, which contains the label for the provider that administered the vaccine.">Given by</string>
+    
+    <!-- History -->
+    <string name="wp_infection_control_covid_view_history_link"
+        context="Link that takes the user to a view of their historical statuses (past test results).">View history</string>
+    <string name="wp_infection_control_covid_hx_results_header"
+        context="Header shown before the list of historical test results.">Past COVID-19 Test Results</string>
+    <string name="wp_infection_control_covid_hx_results_notice"
+        context="Message shown after the list of historical results, indicating that not all results are included.">Only your five most recent COVID-19 tests are shown.</string>
+    <string name="wp_infection_control_covid_hx_results_view_all"
+        context="Link shown after the list of historical results, which takes the user to the test result list.">View all of your test results</string>
+    <string name="wp_infection_control_covid_hx_screenings_header"
+        context="Header shown before the list of historical questionnaire screenings.">Past COVID-19 Self-Assessments</string>
+    <string name="wp_infection_control_covid_hx_screenings_notice"
+        context="Message shown after the list of historical questionnaire screenings, indicating that not all screenings are included.">Only your five most recent COVID-19 self-assessments are shown. Self-assessments are from the past two weeks.</string>
+    
+    <!-- Resource Links -->
+    <string name="wp_infection_control_covid_links_header"
+        context="Used as a header for a list of links related to COVID-19">Helpful Resources</string>
+    <string name="wp_infection_control_covid_link_failed"
+        context="Message shown when a link fails to launch">Unable to open link</string>
+    <string name="wp_infection_control_covid_link_external_ax_notice"
+        context="Accessibility only text that lets the user know that a link opens outside of the app.">Opens externally</string>
+    
+    <!-- Org Information -->
+    <string name="wp_infection_control_information_from"
+        context="Title for happy together pop up about where your covid status information is coming from.">Information from:</string>
+    
+    <!-- Download vaccination record -->
+    <string name="wp_infection_control_download_record_button_text"
+        context="Text for the button to download a PDF record of the vaccination information">Download vaccination record</string>
+    <string name="wp_infection_control_download_record_in_progress"
+        context="Text for the button indicating to the user that the vaccination record download is in progress">Downloading vaccination record…</string>
+    <string name="wp_infection_control_download_taking_long"
+        context="Message shown to the user that the vaccination record download is taking long, and they should try later.">Generating your record is taking longer than expected. Please try again later.</string>
+    <string name="wp_infection_control_download_failed"
+        context="Message shown to the user that the vaccination record download failed, and they should try later.">Downloading your record failed. Please try again later.</string>
+</resources>

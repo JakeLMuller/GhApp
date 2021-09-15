@@ -1,0 +1,11 @@
+framework module InfectionControl {
+  umbrella header "InfectionControl.h"
+
+  export *
+  module * { export * }
+}
+
+module InfectionControl.Swift {
+    header "InfectionControl-Swift.h"
+    requires objc
+}

@@ -1,0 +1,27 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CareTeam
+@_exported import CareTeam
+import Foundation
+import PECore
+import Swift
+import UIKit
+@objc @_inheritsConvenienceInitializers public class PECareTeamComponentAPI : ObjectiveC.NSObject, PECore.PECareTeamComponentAPIProtocol {
+  @objc public func hasAccessForCareTeam(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc public func getCareTeamViewController(_ patientContext: PECore.PEPatientContext, isPrimaryStandalone: Swift.Bool, withDelegate delegate: PECore.PECareTeamComponentDelegate?)
+  @objc public func hasAccessForTreatmentTeam(_ encounterContext: PECore.PEEncounterContext) -> PECore.PEComponentAccessResult
+  @objc public func getTreatmentTeamViewController(_ encounterContext: PECore.PEEncounterContext, componentHost: PECore.PEComponentHostProtocol, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+  @objc public func getFullscreenCareTeamViewController(_ patientContext: PECore.PEPatientContext, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+  @objc public func getTreatmentTeamListViewController(_ encounterContext: PECore.PEEncounterContext, componentHost: PECore.PEComponentHostProtocol, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+  @objc public func hasAccessForProviderBio(_ encounterContext: PECore.PEEncounterContext) -> PECore.PEComponentAccessResult
+  @objc public func getProviderBioViewController(_ encounterContext: PECore.PEEncounterContext, providerID: Swift.String) -> UIKit.UIViewController?
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class PinImageView : UIKit.UIImageView {
+  @objc override dynamic public init(image: UIKit.UIImage?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
+  @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}

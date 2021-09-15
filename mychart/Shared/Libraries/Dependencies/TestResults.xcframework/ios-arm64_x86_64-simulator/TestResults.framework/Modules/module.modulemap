@@ -1,0 +1,11 @@
+framework module TestResults {
+  umbrella header "TestResults.h"
+
+  export *
+  module * { export * }
+}
+
+module TestResults.Swift {
+    header "TestResults-Swift.h"
+    requires objc
+}

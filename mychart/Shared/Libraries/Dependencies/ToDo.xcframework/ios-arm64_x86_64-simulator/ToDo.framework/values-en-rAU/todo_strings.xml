@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+ ~ (C) Copyright 2018-2021 Epic Systems Corporation
+ -->
+<resources>
+  <!-- General To Do Strings -->
+  <string name="wp_todo_tasks_title" context="Label on tab bar for the To Do list">Tasks</string>
+  <string name="wp_todo_changes_title" context="Label on tab bar for the To Do Changes list">Changes</string>
+  <string name="wp_todo_error_loading" context="Label in To Do list saying your to do tasks failed to load">There was an error loading your To Do tasks.</string>
+  <string name="wp_todo_title" context="Title for To Do activity">To Do</string>
+  <string name="wp_todo_empty" context="Message shown when user has nothing listed in To Do.">You have no new information on file</string>
+  <string name="wp_todo_service_puttask_failed" context="Toast message that is displayed when there are errors updating the status of a task.">Oops, unable to update your task.</string>
+  <string name="wp_todo_error_loading_time_zone" context="Label in To Do list saying your time zone settings failed to load">There was an error loading your time zone settings.</string>
+  <string name="wp_generic_done" context="Button used widely and generally. Select value and exit an activity or dialog" length="10 characters">Done</string>
+  <string name="wp_generic_cancel" context="Button closes a dialog without taking any action">Cancel</string>
+  <string name="wp_generic_cancel_task" context="VoiceOver text for canceling a task">Cancel %1$@</string>
+  <string name="wp_generic_confirm_task" context="VoiceOver text for confirming a task">Confirm %1$@</string>
+  <string name="wp_generic_undo_task" context="VoiceOver text for undoing a task">Undo %1$@</string>
+  <string name="wp_generic_not_actionable_accessibility" context="VoiceOver text indicate the current task is not actionable">Task not actionable.</string>
+  <string name="wp_todo_reload" context="Text to be displayed on button that forces a reload upon clicking">Reload</string>
+  <!-- Admission Snackbar Strings -->
+  <string name="wp_todo_ed_banner" context="Snackbar (banner) shown to patient in To Do activity when patient is in ED." length="90 characters">Your tasks may not apply in the emergency department. Ask your care team if you should complete these today.</string>
+  <string name="wp_todo_admission_banner" context="Snackbar (banner) shown to patient in To Do activity when patient is admitted." length="90 characters">Tasks are removed while you\'re in hospital. Ask your care team if you have questions.</string>
+  <!-- Reminder Bucket Strings -->
+  <string name="wp_todo_reminder_group_morning" context="Title of the released category. This is the category for Morning tasks. It is displayed at many places like         activity title, tasks list and personalization activity.">Morning</string>
+  <string name="wp_todo_reminder_group_midday" context="Title of the released category. This is the category for around Noon tasks. It is displayed at many places like activity title, tasks list and personalization activity.">Midday</string>
+  <string name="wp_todo_reminder_group_afternoon" context="Title of the released category. This is the category for Afternoon tasks. It is displayed at many place like activity title, tasks list and personalization activity.">Afternoon</string>
+  <string name="wp_todo_reminder_group_evening" context="Title of the released category. This is the category for Evening tasks. It is displayed at many places like         activity title, tasks list and personalization activity.">Evening</string>
+  <string name="wp_todo_reminder_group_bedtime" context="Title of the released category. This is the category for Bedtime tasks. It is displayed at many places like         activity title, tasks list and personalization activity.">Bedtime</string>
+  <string name="wp_todo_reminder_group_as_needed" context="Title of the released category. This is the category for As Needed tasks. It is displayed at many places like activity title, tasks list and personalization activity.">As Needed</string>
+  <string name="wp_todo_reminder_group_byendofday" context="Title of the released category. This is the category for Any Time tasks. It is displayed at many places like activity title, tasks list and personalization activity.">By Close of Day</string>
+  <string name="wp_todo_reminder_group_other" context="Title of the released category. This is the category for non specified time the day tasks. It is displayed at many places like activity title, tasks list and personalization activity.">Other</string>
+  <!-- Today Task List Header Strings -->
+  <string name="wp_todo_complete" context="Shows in today header under completion percentage for today">complete</string>
+  <string name="wp_todo_nice_work" context="Message shown when user has finished all tasks.">Nice Work!</string>
+  <string name="wp_todo_tasks_completed" context="Message shown when user has finished all tasks (details).">All tasks completed for today.</string>
+  <string name="wp_todo_thanks" context="Message shown when user has finished all tasks, but skipped one.">Thanks!</string>
+  <string name="wp_todo_no_more_tasks" context="Message shown when user has finished all tasks, but skipped one (details).">No more tasks for today.</string>
+  <string name="wp_todo_no_tasks_today" context="Message shown when user has no tasks for today.">No Tasks For Today</string>
+  <string name="wp_todo_progressArc_accessibilityText" context="Accessibility text for the progress arc that shows the percentage of finished tasks due today.">%1$@ percent completed</string>
+  <!-- Overdue/Future Tasks List Strings -->
+  <string name="wp_todo_overdue_task_list_header" context="Header text shown above a patients overdue task list.">Past Tasks</string>
+  <string name="wp_todo_future_task_list_header" context="Header text shown above a patients future task list.">Future Tasks</string>
+  <string name="wp_todo_overdue_task_list_link" context="Text link shown in to do jump a user to their overdue tasks list. In this case none of the overdue tasks in the list are actionable by the patient, eg. health maintenance, expired education, etc.">View Past Tasks</string>
+  <string name="wp_todo_overdue_task_list_link_with_actionable_tasks" context="Text link shown in to do jump a user to their overdue tasks list. %1$@ is the number of tasks in the overdue task list that the patient can take action on, eg. mark education as review, immunization as complete, etc.">View Past Tasks (%1$@)</string>
+  <string name="wp_todo_future_task_list_link" context="Text link shown in to do jump a user to their future tasks list.">View Future Tasks</string>
+  <!-- Education Task Strings -->
+  <string name="wp_todo_education_status_understanding" context="Indicated that the response to an education task was understanding of the material">Marked \"I understand\"</string>
+  <string name="wp_todo_education_status_questions" context="Indicated that the response to an education task was questions about the material">Marked \"I have questions\"</string>
+  <!-- Medication Task Strings -->
+  <string name="wp_todo_meds_common_name" context="Medication description when the med has a common name. Shown on generic medication tasks as a subtitle. %1$@ is the meds common name">Commonly known as: %1$@</string>
+  <string name="wp_todo_meds_generic_name" context="Medication description when the med has a generic name. Shown on generic medication tasks as a subtitle. %1$@ is the meds generic nameas.">Generic name: %1$@</string>
+  <string name="wp_todo_meds_anticoag_order_instructions" context="A warning message for anticoagulation orders because the instructions may differ, %1$@ is the original instructions">Take as directed by the anticoagulation clinic. Original instructions: %1$@</string>
+  <string name="wp_todo_meds_empty_names_default_title" context="In the case of bad build, it is possible for a medication to arrive to the client with an empty name. In this case, we want to display a configuration warning as the title.">This medication task is not configured correctly</string>
+  <string name="wp_todo_meds_empty_default_description" context="In the case of bad or broken build, it is possible for a medication to arrive to the client with an empty description. In this case, we want to instruct the patient on how to rectify this.">Contact your care team to remove or fix this task.</string>
+  <!-- Health Maintenance Task Strings -->
+  <string name="wp_todo_healthAdvisory_pending_update" context="Text shown after user marks a Health Advisory as completed, and the Health Advisory is currently pending">Pending Clinician Review</string>
+  <string name="wp_todo_healthAdvisory_not_due" context="The status text for a health advisory task that is not due">Not due</string>
+  <string name="wp_todo_healthAdvisory_not_due_until" context="The status text for a task that is not due until a date. %1$@ is the date the task is due.">Not due until %1$@</string>
+  <string name="wp_todo_healthAdvisory_not_due_yet" context="The status text for a health advisory task that is not yet due">Not due yet</string>
+  <string name="wp_todo_healthAdvisory_last_done_on" context="The status text for a task that was completed in the past. %1$@ is the completion date (long format: En-US Nov 23, 1937) that the task was done.">Last done on %1$@</string>
+  <string name="wp_todo_healthAdvisory_overdue_since" context="The status text for a task that is overdue since a date. %1$@ is the date the task became overdue.">Overdue since %1$@</string>
+  <string name="wp_todo_healthAdvisory_due_since" context="The status text for a task that has been due since a date. %1$@ is the date the task became due.">Due since %1$@</string>
+  <string name="wp_todo_healthAdvisory_due_on" context="The status text for a task that is due on a date. %1$@ is the date the task is due (long format: En-US Nov 23, 1937).">Due on %1$@</string>
+  <string name="wp_todo_healthAdvisory_due_soon" context="The status text for a task that is due soon.">Due soon</string>
+  <string name="wp_todo_healthAdvisory_completed" context="The status text for a task that has been completed.">Completed</string>
+  <string name="wp_todo_healthAdvisory_completed_on" context="The status text for a task that has been completed on a date. %1$@ is the date (long format: En-US Nov 23, 1937) the task was completed.">Completed on %1$@</string>
+  <string name="wp_todo_healthAdvisory_addressed" context="The status text for a task that has been addressed.">Addressed</string>
+  <string name="wp_todo_healthAdvisory_addressed_on" context="The status text for a task that has been addressed on a date. %1$@ is the date (long format: En-US Nov 23, 1937) the task was addressed.">Addressed on %1$@</string>
+  <string name="wp_todo_healthAdvisory_postponed" context="The status text for a task that has been postponed.">Postponed</string>
+  <string name="wp_todo_healthAdvisory_postponed_until" context="The status text for a task that has been postponed until a date. %1$@ is the date the task was postponed to.">Postponed until %1$@</string>
+  <string name="wp_todo_healthAdvisory_last_submitted" context="The status text for a pending health advisory task. %1$@ is the completion date that user submitted">Last submitted: %1$@</string>
+  <string name="wp_todo_hm_schedule_appt_accessibility" context="Accessibility Text read by voiceover stating the button is a appointment scheduling button">Schedule appointment</string>
+  <string name="wp_todo_healthAdvisory_schedule_button_title" context="The schedule button title string">Schedule</string>
+  <string name="wp_todo_healthAdvisory_mark_as_complete_button_title" context="The mark as complete button title string">Complete</string>
+  <string name="wp_todo_contact_clinic_for_hm_request_appointment" context="Alert message to request an appointment for the health advisory tasks.">Please contact the practice to request an appointment.</string>
+  <string name="wp_todo_healthAdvisory_scheduled_appointment_for" context="The status text for a task that is scheduled for a date. %1$@ is the date for that appointment.">Scheduled for %1$@</string>
+  <!-- To Do Changes Strings -->
+  <string name="wp_todo_changes_header" context="Label on top of To Do Changes list explaining the page">This page shows the last few changes to your tasks and notable actions.</string>
+  <string name="wp_todo_no_changes" context="Label in To Do Changes list saying you have not changes">There are no recent changes to your To Do tasks.</string>
+  <string name="wp_todo_error_loading_changes" context="Label in To Do Changes list saying your to do changes failed to load">There was an error loading your To Do Changes.</string>
+  <string name="wp_todo_change_task_added_title" context="Label for a Task Added item">New task added</string>
+  <string name="wp_todo_change_task_added_detail" context="Label for a Task Added detail item.  Bulleted item         Param 1 is the task name">• %1$@</string>
+  <string name="wp_todo_change_message_sent_title" context="Label for a message sent action item title when the message wasn't to a single recipient">Practice notified</string>
+  <string name="wp_todo_change_message_sent_recipient_default_title" context="Default name for a provider type/role if one is not found in title">Clinician</string>
+  <string name="wp_todo_change_message_sent_recipient_default_message" context="Default name for a provider type/role if one is not found in sentence">clinician</string>
+  <string name="wp_todo_change_message_sent_recipient_title" context="Label for a message sent action item title when the message was to a single recipient         Param 1 is the provider type/role">%1$@ notified</string>
+  <string name="wp_todo_change_message_sent_detail" context="Label for a message sent action detail item.  Bulleted item         Param 1 is the provider name">• %1$@</string>
+  <string name="wp_todo_changes_activity" context="Activity name for to do changes">To Do Changes</string>
+  <string name="wp_todo_changes_details_why_the_change" context="Why this change header in the todo change details activity">WHY THIS CHANGE?</string>
+  <string name="wp_todo_changes_details_next_steps" context="Next steps header in the todo change details activity">NEXT STEPS</string>
+  <string name="wp_todo_changes_details_task_changes" context="Message header to listing changes to to do tasks">The following changes have been made to your To Do tasks:</string>
+  <string name="wp_todo_changes_details_message_sent_clinic" context="Message header letting the patient know this change info was sent to their clinic">We\'ve sent this information to the practice. Please contact the practice if you have specific questions.</string>
+  <string name="wp_todo_changes_details_message_sent_recipient" context="Message header letting the patient know this change info was sent to a recipient         Param 1 is the recipient type/role">We\'ve sent this information to your %1$@. Please contact the practice if you have specific questions.</string>
+  <string name="wp_todo_change_provider_pcp" context="Appears as the provider type for general primary care providers in the care team details">General Practitioner</string>
+  <string name="wp_todo_change_accessibility_unread" context="Accessiblity text for the unread icon">You have not opened this item</string>
+  <string name="wp_todo_change_send_message" context="Button to send a message to the provider in the provider widget">Send a message</string>
+  <!-- Manage To Do Reminders Strings -->
+  <string name="wp_todo_reminders_help_text" context="Help text for To Do Reminders">These times control when you\'ll receive reminders.</string>
+  <string name="wp_todo_manage_reminders" context="Text that is displayed to user to launch the manage reminders activity. This is available as menu option from To Do activity.">Manage To Do Reminders</string>
+  <string name="wp_todo_personalize_group_task_section_title" context="This is the title of the list of all the tasks that the user has for a notification group.         This is displayed when the user launches the personalization activity for a group.">Affected Tasks</string>
+  <string name="wp_todo_manage_notification_groups_empty" context="This text is displayed to the user when he is in the personalize time activity for a group but there are no tasks         available for that group">You have no tasks with reminders you can change</string>
+  <string name="wp_todo_manage_notification_groups_no_access" context="Text which is displayed to the user if the user does not have security to view the patient's reminders.">You do not have access to manage this patient\'s To Do reminders</string>
+  <string name="wp_todo_save_menu" context="Text on the button which when pressed would cause the data to save in that activity.">Save</string>
+  <string name="wp_todo_personalize_save_failed" context="Message in toast to tell the user that the personalization time could not be saved and that the user can try again.">There was an error saving changes. Please try later.</string>
+  <string name="wp_todo_personalize_reminder_act_title" context="Title of the activity which configures To Do notification settings.">To Do Reminders</string>
+  <string name="wp_todo_personalize_reminder_schedule_act_title" context="Title of the activity which displays all the notification group.">Reminder Schedule</string>
+  <string name="wp_todo_personalize_notification_edit_text" context="Text in the label which appears near the personalized time suggesting user that he can edit this time">Edit</string>
+  <string name="wp_todo_personalize_service_load_notification_settings_failed" context="Toast message is displayed when there are errors in loading notification settings.">Unable to retrieve your settings</string>
+  <string name="wp_todo_personalize_service_save_notification_settings_failed" context="Toast message is displayed when there are errors in loading notification settings.">Unable to save your settings</string>
+  <string name="wp_todo_personalize_onoff_unable_to_load_settings" context="Label message is displayed when there are errors in loading notification settings.">Unable to load your settings. Please try again.</string>
+  <string name="wp_todo_personalize_onoff_no_security" context="Label message is displayed when user doesn't have security to modify notification settings.">You do not have security permission to edit these settings.</string>
+  <string name="wp_todo_personalize_onoff_send_me_reminders" context="Row title for the setting to receive reminders.">Send Me Task Reminders</string>
+  <string name="wp_todo_personalize_onoff_send_patient_reminders" context="Row title for the setting to receive reminders for a given patient.         Param 1: Patient Name">Send Me %1$@\'s Task Reminders</string>
+  <string name="wp_todo_personalize_onoff_reminder_off_helptext" context="Description explaining that the user is currently not receiving task notifications.">You are not currently receiving task reminders.</string>
+  <string name="wp_todo_personalize_onoff_reminder_off_helptext_patient" context="Description explaining that the user is currently not receiving task notifications for a given patient.         Param 1: Patient Name">You are currently not receiving %1$@\'s task reminders.</string>
+  <string name="wp_todo_personalize_frequency_section_title" context="Section title for frequency related settings for reminders.">How Often?</string>
+  <string name="wp_todo_personalize_frequency_when_my_tasks_due" context="Row title for the setting to receive reminders when tasks are due.">When My Tasks Are Due</string>
+  <string name="wp_todo_personalize_frequency_when_patient_tasks_due" context="Row title for the setting to receive reminders when tasks are due for a given patient.         Param 1: Patient Name">When %1$@\'s Tasks Are Due</string>
+  <string name="wp_todo_personalize_frequency_once_daily" context="Row title for the setting to receive reminders once per day.">Only Once Daily</string>
+  <string name="wp_todo_personalize_frequency_remind_me_at" context="Row title for the setting to set time when to receive daily reminder.">Remind Me At</string>
+  <string name="wp_todo_personalize_task_type_section_title" context="Section title for task type related settings for reminders.">Task Type</string>
+  <string name="wp_todo_personalize_task_type_general" context="Row title for the setting to receive reminders for general task.">General</string>
+  <string name="wp_todo_personalize_task_type_education" context="Row title for the setting to receive reminders for education task.">Education</string>
+  <string name="wp_todo_personalize_task_type_medications" context="Row title for the setting to receive reminders for medication task.">Medication</string>
+  <string name="wp_todo_personalize_task_type_questionnaires" context="Row title for the setting to receive reminders for questionnaire task.">Questionnaires</string>
+  <string name="wp_todo_personalize_task_type_flowsheet" context="Row title for the setting to receive reminders for flowsheet task.">Health Tracking</string>
+  <string name="wp_todo_personalize_task_type_appointments" context="Row title for the setting to receive reminders for appointment task.">Appointments</string>
+  <string name="wp_todo_personalize_notification_settings_helptext" context="Description explaining that the notification settings only apply to user's own devices.">This setting only applies to notifications on your mobile device. It will not affect others who have access to your account.</string>
+  <string name="wp_todo_personalize_notification_settings_helptext_patient" context="Description explaining that the notification settings only apply to user's own devices when viewing a patient's settings.         Param 1: Patient Name">This setting only applies to notifications on your mobile device. It will not affect %1$@ or others who have access to %1$@\'s account.</string>
+  <string name="wp_todo_personalize_schedule_manage_my_schedule" context="Row title for the link to open manage reminder schedule activity.">Manage Reminder Schedule</string>
+  <string name="wp_todo_personalize_schedule_manage_patient_schedule" context="Row title for the link to open manage reminder schedule activity of a given patient.         Param 1: Patient Name">Manage %1$@\'s Reminder Schedule</string>
+  <string name="wp_todo_personalize_schedule_helptext" context="Description explaining what manage reminder schedule means.">Change when reminders are sent for you and others who have access to your account.</string>
+  <string name="wp_todo_personalize_schedule_helptext_patient" context="Description explaining what manage reminder schedule means.         Param 1: Patient Name">Change when reminders are sent for %1$@, you, and others who have access to %1$@\'s account.</string>
+  <plurals name="wp_todo_personalize_schedule_bucket_description" context="Description saying how many tasks a patient has in a given time of day (e.g., morning, evening, etc.).                 Param 1: Task Count">
+    <item quantity="one">%1$@ task at this time</item>
+    <item quantity="other">%1$@ tasks at this time</item>
+  </plurals>
+  <string name="wp_todo_personalize_timepicker_cancel" context="Button closes a dialog without taking any action.">Cancel</string>
+  <string name="wp_todo_alert_timezone_diff_header" context="Header message on the time zone difference pop up">Update Time Zone?</string>
+  <string name="wp_todo_alert_timezone_diff" context="Alert text if user's time zone is different to the time zone set for scheduled reminders, Param 1 is the notification time zone name">Your device is now using \'%1$@\'. Do you want to update your reminder times to use this time zone?</string>
+  <string name="wp_todo_alert_timezone_diff_subject" context="Alert text if user's time zone is different to the time zone set for scheduled reminders, Param 1 is the notification time zone name, Param 2 is the patient's name">Your device is now using \'%1$@\'. Do you want to update %2$@\'s reminder times to use this time zone?</string>
+  <string name="wp_todo_alert_timezone_diff_toast" context="Toast text if user's time zone is different to the time zone set for scheduled reminders and user have no security to change it. Param 1 is the mobile phone's current time zone name, Param 2 is the notification time zone">Your device time is using \'%1$@\'. Your tasks\' due times are still displaying in \'%2$@\'.</string>
+  <string name="wp_todo_alert_timezone_diff_toast_subject" context="Toast text if user's time zone is different to the time zone set for scheduled reminders and user have no security to change it. Param 1 is the mobile phone's current time zone name, Param 2 is the patient's name, Param 3 is the notification time zone">Your device time is using \'%1$@\'. %2$@\'s tasks\' due times are still displaying in \'%3$@\'.</string>
+  <string name="wp_todo_alert_timezone_diff_update" context="Button text to update the notification time zone. Param 1 is the time zone we are going to use">Update to %1$@</string>
+  <string name="wp_todo_alert_timezone_diff_dismiss" context="Button test to continue on current time zone. Param 1 is the current time zone we are using">Keep Using %1$@</string>
+  <string name="wp_todo_service_puttimezone_failed" context="Toast message that is displayed when there are errors updating the time zone settings.">Oops, something went wrong. We were unable to update your time zone settings.</string>
+  <string name="wp_todo_service_puttimezone_notification_succeed" context="Toast message that is displayed when updating the notification time zone settings succeed. Param 1 is the patient's notification time zone">Task reminders have been updated to use the current time zone %1$@.</string>
+  <string name="wp_todo_title_notificationtimezone" context="Title of a row with contains the notification time zone">Time Zone</string>
+  <string name="wp_todo_toggle_alertwhentimezonediffers" context="Title of a row with a switch to turn on notifications for time zone changes.">Alert When Time Zone Changes</string>
+  <string name="wp_todo_toggle_alertwhentimezonediffers_subject" context="Title of a row with a switch to turn on notifications for a patient's time zone changes. %1$@ is patient's name.">Alert When %1$@\'s Time Zone Changes</string>
+  <string name="wp_todo_toggle_alertwhentimezonediffers_footer" context="Footer description for time zone alert onoff section.">Turn this setting on if you want to be notified when your notification time zone setting is different from the time zone setting on your device.</string>
+  <string name="wp_todo_toggle_alertwhentimezonediffers_footer_subject" context="Footer description for time zone alert onoff section. %1$@ is patient's name.">Turn this setting on if you want to be notified when %1$@\'s notification time zone setting is different from the time zone setting on your device.</string>
+  <string name="wp_todo_settings_footer_servicefailed" context="Footer description for when notification settings fail to save.">Unable to save your settings. Please try again later.</string>
+  <string name="wp_todo_timezoneselection_footer" context="Footer description for time zone selection section.">All task reminders will be sent based on the time zone you\'ve selected. Once daily reminders will be sent based on your local time zone.</string>
+  <string name="wp_todo_timezonelist_searchbar_placeholder" context="Ghost text for search bar.">Search</string>
+  <string name="wp_todo_timezonelist_header_current" context="Header message for the current time zone row">Your current location\'s time zone</string>
+  <string name="wp_todo_timezonelist_header_selected" context="Header message for the current selected time zone row">Your selected time zone</string>
+  <string name="wp_todo_timezonelist_header_selected_subject" context="Header message for the current selected time zone row. %1$@ is patient's name.">%1$@\'s selected time zone</string>
+  <string name="wp_todo_timezonelist_header_other" context="Header message for the section contains other available time zones">Other available time zones</string>
+  <string name="wp_todo_timezonelist_empty" context="Message shown when there are no available time zones to select from.">There are no available time zones to choose from.</string>
+  <string name="wp_todo_timezonelist_selected" context="Tooltip for check mark icon for a selected time zone.">Selected</string>
+  <string name="wp_todo_popup_close_accessibility" context="Accessibility label for the background button that is hidden behind a popup to allow the user to dismiss the pop-up">Dismiss pop-up</string>
+  <string name="wp_todo_popup_save" context="Text the button which confirms a user's selection">Save</string>
+  <!-- To Do List Options Strings -->
+  <string name="wp_todo_task_filter_options_finished" context="Checkbox option displayed to user to enable the visibility of finished tasks">Show finished tasks</string>
+  <string name="wp_todo_task_filter_options_finished_on_accessibilityText" context="Label read in voiceover mode describing setting to enable visibility of finished tasks when it is on">Show finished tasks, on.</string>
+  <string name="wp_todo_task_filter_options_finished_off_accessibilityText" context="Label read in voiceover mode describing setting to enable visibility of finished tasks when it is off">Show finished tasks, off.</string>
+  <string name="wp_todo_task_filter_option_menu" context="Menu option displayed to the user in To Do activity on top right">Options</string>
+  <string name="wp_todo_task_filter_options_hide_accessibilityText" context="Label read in voiceover mode describing a button that hides an options menu.">Hide options</string>
+  <!-- To Do Display Strings -->
+  <string name="wp_todo_overdue_label" context="Due date label for overdue task. %1$@ is for the due date, %2$@ is for the notification group, if any, if any">Due %1$@ %2$@</string>
+  <string name="wp_todo_reminder_group_overdue" context="Displayed in subtext for an overdue task         Param 1: Due Date">Due %1$@</string>
+  <string name="wp_todo_overdue_label_yesterday" context="Label that indicates an overdue task was due yesterday. %1$@ is for the notification group, if any">Due yesterday %1$@</string>
+  <string name="wp_todo_task_status_text" context="Due time of the task. %1$@ is time for the task instance.">By %1$@</string>
+  <string name="wp_todo_task_undo" context="Text for undo button for tasks in todo activity">Undo</string>
+  <string name="wp_todo_task_done" context="Text for done button for tasks in todo activity">Done</string>
+  <string name="wp_todo_task_not_done" context="Text for not done button for tasks in todo activity">Not done</string>
+  <string name="wp_todo_appointment_echeckin" context="Text for echeck-in button for appointments in todo activity">eCheck-in</string>
+  <string name="wp_todo_default_visit_string" context="The default title for a visit if the visit's name was otherwise blank">Visit</string>
+  <string name="wp_todo_appointment_panel_visit_title_two_component_appointments" context="The title displayed for a panel of appointments when the panel appointment itself does not have a display name. Instead, we construct the visit title name using the visit titles of the first two child visits in the panel. %1$@ is the visit title of the first child visit. %2$@ is the visit title of the second child visit.">%1$@ and %2$@</string>
+  <string name="wp_todo_appointment_panel_visit_title_more_than_two_component_appointments" context="The title displayed for a panel of appointments when the panel appointment itself does not have a display name. Instead, we construct the visit title name using the visit title of the first child visit and then displaying how many other child visits there are. %1$@ is the visit title of the first child visit. %2$@ is the number of the remaining visits in the panel appointment.">%1$@ and %2$@ other appointments</string>
+  <string name="wp_todo_task_flowsheet_threshold" context="Text displaying the flowsheet progress and threshold value in To Do list for a Flowsheet Threshold task. For example, if this is a step count flowsheet threshold task, then this string would appear as '325 / 5000', meaning patient has walked 325 steps out of 5000 steps so far. WARNING: The 2 placeholders MUST be present in translated string. %1$@ is a numeric value representing current progress. This value will always appear formatted differently (bigger font) than rest of the string. %2$@ is a numeric value representing threshold value. ">%1$@ / %2$@</string>
+  <string name="wp_todo_task_flowsheet_threshold_accessibility" context="Accessibility Text read by voiceover stating current progress value and threshold in To Do list for a Flowsheet Threshold task. %1$@ is the numeric progress value. %2$@ is numeric flowsheet threshold value.">current progress %1$@ out of %2$@</string>
+  <string name="wp_todo_task_flowsheet_nil_threshold_accessibility" context="Accessibility Text read by voiceover stating current progress or threshold value is nil or empty.">none</string>
+  <!-- Meds Coach Strings -->
+  <string name="wp_todo_medscoach_title" context="Title for Meds Coach Activity">Medication Reminders</string>
+  <string name="wp_todo_medscoach_medication_title" context="Title for the med grouping, %1$@ is the name of the notification group (e.g. morning)">%1$@</string>
+  <string name="wp_todo_medscoach_medication_subtitle_date" context="Subtitle text for the med grouping, used for by-end-of-day meds or meds with notification group without a time, %1$@ is for the date">%1$@</string>
+  <string name="wp_todo_medscoach_marknumtaken_button" context="Button text for the mark all as taken button, but show the actual number of meds that would be marked. %1$@ is the number of meds that will be marked">Mark (%1$@) taken</string>
+  <string name="wp_todo_medscoach_bucket_status_all_med_remains" context="Meds bucket status string for when no meds in the bucket is taken or skipped. %1$@ is the number of medications left">%1$@ remaining</string>
+  <string name="wp_todo_medscoach_bucket_status_no_med_taken" context="Meds bucket status string for when no meds were taken (all skipped)">No medication taken</string>
+  <string name="wp_todo_medscoach_bucket_status_all_med_taken" context="Meds bucket status string for when all meds were taken">All medication taken</string>
+  <string name="wp_todo_medscoach_bucket_status_all_meds_taken_and_nottaken" context="Meds bucket status string for when all meds are either taken or skipped. %1$@ is the number of medications taken, %2$@ is the number skipped">%1$@ taken, %2$@ not taken</string>
+  <string name="wp_todo_medscoach_bucket_status_all_meds_taken_and_remaining" context="Meds bucket status string for when all meds are either taken or still remains. %1$@ is the number of medications taken, %2$@ is the number remaining">%1$@ taken, %2$@ remaining</string>
+  <string name="wp_todo_medscoach_bucket_status_all_meds_nottaken_and_remaining" context="Meds bucket status string for when all meds are either not taken or still remains. %1$@ is the number of medications not taken, %2$@ is the number remaining">%1$@ not taken, %2$@ remaining</string>
+  <string name="wp_todo_medscoach_bucket_status_all_meds_taken_nottaken_and_remaining" context="Meds bucket status string for when all meds are taken, not taken, or remains. %1$@ is the number of medications taken, %2$@ is the number not taken, %3$@ is the number remaining">%1$@ taken, %2$@ not taken, %3$@ remaining</string>
+  <string name="wp_todo_medscoach_medsbucket_title" context="Title for meds bucket task">Take medication</string>
+  <string name="wp_todo_medscoach_footer_warning" context="Meds bucket warning string about potential incomplete med list">You might be taking other drugs that do not have reminders. Talk to your doctor if you are not sure which drugs to take.</string>
+  <string name="wp_todo_medsgroup_instruction" context="The instruction for a meds group task">Take as directed</string>
+  <string name="wp_todo_medsgroup_instruction_anticoag" context="The instruction for a meds group task when the task is for an anticoagulant order">Take as directed by the anticoagulation clinic</string>
+  <string name="wp_todo_medsgroup_title_reminder" context="The title for a group of med tasks that have different frequencies">Did you take your %1$@ today?</string>
+  <string name="wp_futureappointment_time_ondemand" context="appears as the time of the appointment for an on-demand video visit">Upcoming Video Visit</string>
+  <string name="wp_futureappointment_time_tbd" context="appears as the time of the appointment when the time is not yet determined">Time to be determined</string>
+  <string name="wp_futureappointment_show_arrival_time" context="Arrive by string for appointments. %1$@ is the arrival time.">Arrive by %1$@</string>
+  <string name="wp_futureappointment_show_start_time" context="Start by string for appointment. %1$@ is the start time.">Starts at %1$@</string>
+  <string name="wp_futureappointment_show_join_time" context="Join by string for a video visit. %1$@ is the start time of the video visit.">Join by %1$@</string>
+  <string name="wp_futureappointment_appointment_time_with_time_zone" context="Time string with time zone for appointments. %1$@ is the time. %2$@ is the time zone.">%1$@ %2$@</string>
+  <string name="wp_past_medication_instructions" context="appears when the medication is overdue.">Follow any directions your healthcare provider has given you about how to take these drugs if you\'ve missed a dose.</string>
+  <!-- To Do E-Visit Strings -->
+  <string name="wp_futureappointment_evisit_name" context="Default name to use for E-Visits.">E-Visit</string>
+  <string name="wp_futureappointment_time_evisit" context="appears as the time of the appointment for an E-Visit. %1$@ is the name for E-Visits.">In-Progress %1$@</string>
+  <string name="wp_todo_evisit_unread_response" context="appears as the display name of the appointment for an E-Visit that has an unread response from a provider. %1$@ is the name for E-Visits. %2$@ is the reason for E-Visit.">View your new message about your %1$@ for %2$@</string>
+  <string name="wp_todo_evisit_submitted" context="appears as the display name of the appointment for an E-Visit that has been submitted. %1$@ is the reason for E-Visit. %1$@ is the name for E-Visits. %2$@ is the reason for E-Visit.">View details about your %1$@ for %2$@</string>
+  <string name="wp_todo_evisit_not_submitted" context="appears as the display name of the appointment for an E-Visit that has not yet been submitted. %1$@ is the reason for E-Visit. %1$@ is the name for E-Visits. %2$@ is the reason for E-Visit.">Finish your %1$@ for %2$@</string>
+  <string name="wp_todo_evisit_pinit" context="appears as the display name of the appointment for an E-Visit that was ordered by a provider and has not yet been viewed. %1$@ is the reason for E-Visit. %1$@ is the name for E-Visits. %2$@ is the reason for E-Visit.">%1$@ for %2$@</string>
+  <!-- To Do Progress Strings -->
+  <string name="wp_todo_progress_title" context="Title for To Do Progress Activity">Progress</string>
+  <string name="wp_todo_progress_range_last_week" context="Button to show to do progress over the last week">Last 7 Days</string>
+  <string name="wp_todo_progress_range_last_month" context="Button to show to do progress over the last month">Last 30 Days</string>
+  <string name="wp_todo_progress_range_last_three_months" context="Button to show to do progress over the last three months">Last 90 Days</string>
+  <string name="wp_todo_progress_title_category_overall" context="Title for overall progress in to do">Overall</string>
+  <string name="wp_todo_progress_title_category_general" context="Title for generic task progress in to do">General</string>
+  <string name="wp_todo_progress_title_category_medications" context="Title for medication task progress in to do">Medication</string>
+  <string name="wp_todo_progress_title_category_flowsheets" context="Title for flowsheet task progress in to do">Health Tracking</string>
+  <string name="wp_todo_progress_title_category_education" context="Title for education task progress in to do">Education</string>
+  <string name="wp_todo_progress_title_category_questionnaires" context="Title for questionnaire task progress in to do">Questionnaires</string>
+  <string name="wp_todo_progress_title_category_appointments" context="Title for appointment task progress in to do">Appointments</string>
+  <string name="wp_todo_progress_subtitle_no_tasks" context="Subtitle for a to do progress category with no tasks">No Tasks</string>
+  <string name="wp_todo_progress_tasks_due_today" context="Label showing how many tasks in a particular category are due today. %1$@ is the number of tasks">%1$@ due today</string>
+  <string name="wp_todo_progress_completion_accessibility_label" context="Label showing how many tasks have been completed out of the total number assigned. Formatted nicer for screen readers. %1$@ is the number of tasks completed, %2$@ is the total number assigned">%1$@ out of %2$@</string>
+  <string name="wp_todo_progress_no_task_data_found" context="Toast message shown when no tasks data was loaded">No task data found</string>
+  <string name="wp_todo_progress_error_loading_task_data" context="Error message shown when task data could not be loaded">Error loading task data</string>
+  <!-- Patient-created Tasks Strings -->
+  <string name="wp_manage_todo_reminders_label_patientcreatedtasks" context="The label for the button to access management for patient created tasks">Manage Created Tasks</string>
+  <string name="wp_manage_todo_reminders_section_footer_patientcreatedtasks" context="Description for manage patient-created tasks activity">Edit or delete tasks you have created. Your care team will be able to see these tasks but cannot edit them.</string>
+  <string name="wp_todo_patientcreatedtasks" context="Title for patient-created tasks activity">Created Tasks</string>
+  <string name="wp_todo_patientcreatedtasks_empty" context="Message for the patient-created tasks activity which shows when the patient has zero created tasks.">You haven\'t made any tasks for yourself.</string>
+  <string name="wp_todo_patientcreatedtasks_proxy" context="Title for patient-created tasks activity.  %1$@ is the patient's name">%1$@\'s Created Tasks</string>
+  <string name="wp_todo_patientcreatedtasks_empty_proxy" context="Message for the patient-created tasks activity which shows when the patient proxy has zero created tasks. %1$@ is the proxy's name">%1$@ hasn\'t made any tasks for themself.</string>
+  <string name="wp_todo_patientcreatedtask_nextduedate" context="Label for the next due date on a patient created task. %1$@ is the date (long format: En-US Nov 23, 1937) a task is next due">Due next on %1$@</string>
+  <string name="wp_todo_patientcreatedtask_done" context="Label for the case when there is no instant for this task, in other words this task is finished or done.">Done</string>
+  <string name="wp_todo_patientcreatedtask_create" context="The label for a button which creates a task when pressed.">Create Task</string>
+  <string name="wp_todo_patientcreatedtask_delete_title" context="Delete alert message title">Delete Task?</string>
+  <string name="wp_todo_patientcreatedtask_delete_body" context="Delete alert message body. Asks the user to confirm if they want to delete a task. %1$@ is the name of the task">\"%1$@\" will be deleted.</string>
+  <string name="wp_todo_patientcreatedtask_delete_confirm" context="Delete alert option to confirming a task should be deleted when pressed">Delete</string>
+  <string name="wp_todo_patientcreatedtask_delete_cancel" context="Delete alert option to cancel deleting a task when pressed">Cancel</string>
+  <string name="wp_todo_patientcreatedtask_create_success" context="Message which appears when a task is successfully created">Task submitted</string>
+  <string name="wp_todo_patientcreatedtask_delete_success" context="Message which appears when a task is successfully deleted">Task deleted</string>
+  <string name="wp_todo_patientcreatedtask_delete_fail" context="Message which appears when a task fails to delete">Could not delete task</string>
+  <string name="wp_todo_patientcreatedtask_create_header" context="Header label for the navigation bar">Task Editor</string>
+  <string name="wp_todo_patientcreatedtask_create_name" context="Section label for entering a task name">Name</string>
+  <string name="wp_todo_patientcreatedtask_create_description" context="Section label for entering a task description">Description</string>
+  <string name="wp_todo_patientcreatedtask_create_when" context="Section label for entering what time a task will occur">When?</string>
+  <string name="wp_todo_patientcreatedtask_create_recurrence" context="Section label for entering how much time will there be until a task repeats">How Often?</string>
+  <string name="wp_todo_patientcreatedtask_create_time" context="Title label for selecting the task time">Time:</string>
+  <string name="wp_todo_patientcreatedtask_create_date" context="Title label for selecting the task date or start date">Date:</string>
+  <string name="wp_todo_patientcreatedtask_create_recurrence_label" context="Title label for selecting how long before the next task occurence">Repeat:</string>
+  <string name="wp_todo_patientcreatedtask_accessibility_edit" context="Accessibility text for the edit icon">Edit this task</string>
+  <string name="wp_todo_patientcreatedtask_accessibility_delete" context="Accessibility text for the delete icon">Delete this task</string>
+  <string name="wp_todo_patientcreatedtask_accessibility_when" context="Accessibility text for the when to send reminder input">When to send reminder?</string>
+  <string name="wp_todo_patientcreatedtask_create_no_recurrence" context="Title for the option to create a one off task. Such tasks dont repeat and can be also be seen as one time tasks.">Never</string>
+  <plurals name="wp_todo_patientcreatedtask_create_recurrence_days" context="Title for the option to define the amount of time before a task repeats in days">
+    <item quantity="one">Day</item>
+    <item quantity="other">Days</item>
+  </plurals>
+  <plurals name="wp_todo_patientcreatedtask_create_recurrence_weeks" context="Title for the option to define the amount of time before a task repeats in weeks">
+    <item quantity="one">Week</item>
+    <item quantity="other">Weeks</item>
+  </plurals>
+  <plurals name="wp_todo_patientcreatedtask_create_recurrence_selection_days" context="Complete phrase for the user's selection of time between task recurrence. %1$@ is the number of days         Param 1: Number of days">
+    <item quantity="one">Daily</item>
+    <item quantity="other">Every %1$@ Days</item>
+  </plurals>
+  <plurals name="wp_todo_patientcreatedtask_create_recurrence_selection_weeks" context="Complete phrase for the user's selection of time between task recurrence. %1$@ is the number of weeks         Param 1: Number of weeks">
+    <item quantity="one">Weekly</item>
+    <item quantity="other">Every %1$@ Weeks</item>
+  </plurals>
+  <string name="wp_todo_patientcreatedtask_create_save" context="Label for indicating changes will be saved when selected">Save Changes</string>
+  <string name="wp_todo_patientcreatedtask_create_submit" context="Title for the button to submit a task for creation">Submit</string>
+  <string name="wp_todo_patientcreatedtask_create_submit_error_name" context="Error message body shown when the name is too long. %1$@ is the maximum number of characters a name may hold">Name cannot exceed %1$@ characters</string>
+  <string name="wp_todo_patientcreatedtask_create_submit_error_description" context="Error message body shown when the description is too long. %1$@ is the maximum number of characters a description may hold.">Description cannot exceed %1$@ characters</string>
+  <string name="wp_todo_patientcreatedtask_create_submit_fail" context="Error message shown when the task submission request fails">Failed to submit task. Please try again later.</string>
+  <!-- DateTime picker, shared with MyChartRef -->
+  <string name="wp_datetimepicker_buttonLeaveUnspecified" context="Button label that would clear out the current selection" length="20">Leave Unspecified</string>
+  <!-- Empty/No Tasks Strings -->
+  <string name="wp_todo_empty_all_set" context="Text displayed to user when they do not have any tasks assigned to them/haven't created any of their own, letting them know they have nothing to complete">All set!</string>
+  <string name="wp_todo_empty_no_tasks" context="Text displayed to user when they do not have any tasks assigned to them/haven't created any of their own">No tasks to view at this time</string>
+  <string name="wp_todo_empty_create_task" context="Message instructing user how to create a task when they have nothing listed in To Do">Create your own tasks by tapping the More button below</string>
+  <!-- More Tab/Bottom Sheet Strings -->
+  <string name="wp_todo_more_tab_title" context="Label for the More tab on the bottom navigation bar">More</string>
+  <string name="wp_todo_bottomsheet_show_finished_tasks_header_text" context="Label of switch to toggle if finished tasks are visible/hidden">Show Finished Tasks</string>
+  <string name="wp_todo_bottomsheet_create_task_helper_text" context="Text to help a user understand the purpose of the Create Task link in the More menu">Add your own tasks to your to do list.</string>
+  <string name="wp_todo_bottomsheet_manage_reminders_helper_text" context="Text to help a user understand the purpose of the Manage To Do Reminders link in the More menu">Decide when and how you receive task reminders.</string>
+  <string name="wp_todo_bottomsheet_show_finished_tasks_helper_text" context="Text to help a user understand the purpose of the Show Finish Tasks switch in the More menu">View what you have already completed for the day.</string>
+  <string name="wp_todo_bottom_sheet_hide_accessibility_text" context="Label read in VoiceOver mode describing a button that hides the More tab menu.">Hide More menu</string>
+  <string name="wp_todo_bottom_sheet_toggle_accessibility_hint_text" context="Hint read in VoiceOver mode letting the user know they can double tap the screen to toggle a switch">Double tap to toggle</string>
+  <string name="wp_todo_bottom_sheet_answer_questionnaire_header_text" context="Header text on a link in the More menu that takes the user to an activity where they can answer their general persistent questionnaires">Answer a Questionnaire</string>
+  <string name="wp_todo_bottom_sheet_answer_questionnaire_helper_text" context="Text to help a user understand the purpose of the Answer a Questionnaire link the More menu">Complete your general questionnaires at any time.</string>
+  <string name="wp_todo_bottom_sheet_record_symptom_header_text" context="Header text on a link in the More menu that takes the user to an activity where they can answer their symptom check-in persistent questionnaires">Record a Symptom</string>
+  <string name="wp_todo_bottom_sheet_record_symptom_helper_text" context="Text to help a user understand the purpose of the Record a Symptom link the More menu">Complete your symptom check-in questionnaires at any time.</string>
+  <string name="wp_todo_questionnaire_submitted" context="Text that is displayed in a toast when the user completes a questionnaire through one of the ad hoc workflows from the More menu">Questionnaire successfully submitted</string>
+  <!-- Questionnaires List Strings -->
+  <string name="wp_todo_questionnaires_list_activity_title" context="Title of the activity that displays a list of questionnaire tasks for a user to pick from">To Do Questionnaires</string>
+  <string name="wp_todo_questionnaires_list_view_controller_title" context="Title of the view controller that displays a list of questionnaire tasks for a user to pick from">Questionnaires</string>
+  <string name="wp_todo_questionnaires_list_empty_text" context="Message displayed to the user when there are no questionnaire tasks to display">There are no questionnaires available to answer at this time</string>
+</resources>

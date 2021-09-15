@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2018-2020 Epic Systems Corporation
+  -->
+<resources>
+  <string name="wp_test_results_activity_title" context="Title for Test Results activity, where patients can see a list of test results">Résultats d\'analyses</string>
+  <string name="wp_test_results_no_data" context="Displays when there are no test results to view">Aucun résultat d\'analyse</string>
+  <string name="wp_test_results_no_ordering_provider" context="Message shown on test result summary as replacement for provider name when no provider is listed">Aucun prestataire émetteur</string>
+  <string name="wp_test_results_h2g_error" context="Error message shown in banner when an error was encountered while loading results from other organizations,%1$@ for tap for details string">Une erreur est survenue lors du chargement de vos résultats. Appuyer pour plus de détails.</string>
+  <string name="wp_test_results_h2g_error_popup_title" context="Title in error popup that is shown when an error was encountered while loading results from other organizations">Les résultats d\'analyses peuvent êtres incomplets</string>
+  <string name="wp_test_results_accessibility_name_date" context="Voiceover text for test result cell where %1$@ is the name of test result and %2$@ is the date it was resulted.">%1$@, %2$@</string>
+  <string name="wp_test_results_accessibility_abnormal" context="Text that would be prepended to the voice over for the cell if the test is abnormal. %1$@ is the test result name and date.">Anormal, %1$@</string>
+  <string name="wp_test_results_accessibility_unread" context="Text that would be prepended to the voice over for the cell if the test is unread. %1$@ is the test result name and date.">Non lu, %1$@</string>
+  <string name="wp_test_results_accessibility_ordering_provider" context="Voice over text for the cell with the ordering provider appended. %1$@ is the name of the test. %2$@ is the provider's name.">%1$@, prescrit(e) par %2$@</string>
+  <string name="wp_test_results_accessibility_cell_external" context="Appended voice over text for the cell with external organization info. %1$@ is the text of the test result. %2$@ is the external organization name.">%1$@, reçu de %2$@</string>
+  <string name="wp_test_results_accessibility_preview_text" context="Voice over text for the cell with external organization info appended. %1$@ is the text of the test result. %2$@ is the test results preview.">%1$@, %2$@</string>
+</resources>

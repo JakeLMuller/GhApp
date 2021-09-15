@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="wp_continuingcare_activity_title" context="Title for the Continuing Care activity">Fortsat behandling</string>
+  <string name="wp_continuingcare_tutorial_overview" context="Tutorial text introducing the continuing care activity to the patient. %%CONTINUINGCARE is replaced with the name of the activity.">%%CONTINUINGCARE giver dig mulighed for at gennemgå ressourcer, der tilbyder behandling efter udskrivning, og vælge dine foretrukne ressourcer.</string>
+  <string name="wp_continuingcare_tutorial_overview_proxy" context="Tutorial text introducing the continuing care activity to the patient proxy. %%CONTINUINGCARE is replaced with the name of the activity. %%PATNAME is replaced with the name of the patient">%%CONTINUINGCARE giver dig mulighed for at gennemgå ressourcer, der tilbyder behandling efter udskrivning, og vælge %%PATNAMEs foretrukne ressourcer.</string>
+  <string name="wp_continuingcare_tutorial_overview_2" context="Tutorial text explaining more about the workings of continuing care to the patient.">Gennemgå disse behandlingsmuligheder og markér dine præferencer. Hvis du løber ind i problemer under gennemgang af denne liste, skal du kontakte din forløbskoordinator.</string>
+  <string name="wp_continuingcare_tutorial_overview_2_proxy" context="Tutorial text explaining more about the workings of continuing care to the patient proxy. %%PATNAME is replaced with the name of the patient">Gennemgå disse behandlingsmuligheder og markér %%PATNAMEs præferencer. Hvis du løber ind i problemer, mens du gennemgår denne liste, skal du henvende dig til %%PATNAMEs forløbskoordinator.</string>
+</resources>

@@ -1,0 +1,11 @@
+framework module HomePage {
+  umbrella header "HomePage.h"
+
+  export *
+  module * { export * }
+}
+
+module HomePage.Swift {
+    header "HomePage-Swift.h"
+    requires objc
+}

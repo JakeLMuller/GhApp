@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2018-2020 Epic Systems Corporation
+  -->
+<resources>
+  <!-- Event types -->
+  <string name="wp_happening_soon_medications" context="Used as the name for a medication administration event on a patient's schedule">Läkemedel</string>
+  <!-- Labels for timeline sections -->
+  <string name="wp_happening_soon_section_name_yesterday" context="Used as a 'section' label for the portion patient's schedule that happened yesterday. Any translation over ~14 characters may be truncated">Igår</string>
+  <string name="wp_happening_soon_section_name_earlier_today" context="Used as a 'section' label for the portion patient's schedule that happened earlier today. Any translation over ~14 characters may be truncated">Tidigare idag</string>
+  <string name="wp_happening_soon_section_name_later_today" context="Used as a 'section' label for the portion patient's schedule that will still happen today. Any translation over ~14 characters may be truncated">Senare idag</string>
+  <string name="wp_happening_soon_section_name_tomorrow" context="Used as a 'section' label for the portion patient's schedule that will happen tomorrow. Any translation over ~14 characters may be truncated">Imorgon</string>
+  <!-- Strings for displaying event times -->
+  <string name="wp_happening_soon_time_exact" context="Displays for an event that starts at an exact time and has no available end time. %1$@ is the time the event starts, like '10:00 a.m.'">Kl. %1$@</string>
+  <string name="wp_happening_soon_time_nearby" context="Displays for an event that starts at an approximate time and has no available end time. %1$@ is the rough time the event starts, like '10 a.m.'">Cirka %1$@</string>
+  <string name="wp_happening_soon_time_morning" context="Used to describe when an event occurred, if it occurred or will occur in the morning and we're only allowed to share the time of day">Förmiddag</string>
+  <string name="wp_happening_soon_time_afternoon" context="Used to describe when an event occurred, if it occurred or will occur in the afternoon and we're only allowed to share the time of day">Eftermiddag</string>
+  <string name="wp_happening_soon_time_evening" context="Used to describe when an event occurred, if it occurred or will occur in the evening and we're only allowed to share the time of day">Kväll</string>
+  <string name="wp_happening_soon_time_night" context="Used to describe when an event occurred, if it occurred or will occur at night and we're only allowed to share the time of day">Natt</string>
+  <string name="wp_happening_soon_time_yesterday" context="Used to describe when an event occurred, if it occurred yesterday and we're only allowed to share the day">Igår</string>
+  <string name="wp_happening_soon_time_today" context="Used to describe when an event occurred, if it occurred or will occur today and we're only allowed to share the day">Idag</string>
+  <string name="wp_happening_soon_time_tomorrow" context="Used to describe when an event occurred, if it will occur tomorrow and we're only allowed to share the day">Imorgon</string>
+  <!-- Time span strings -->
+  <string name="wp_happening_soon_timespan_exact" context="Formats an event's start and end times when we want to show exactly when the event starts and ends. %1$@ is the event's exact start time, and %2$@ is the event's exact end time, both formatted like '10:15 AM'">%1$@ till %2$@</string>
+  <plurals name="wp_happening_soon_timespan_nearby_hours" context="Formats an event's approximate start time and approximate duration, when the duration is expressed in hours. The plural key is the number of hours. %1$@ is the approximate start time (like '10 a.m.'), and %2$@ is the number of hours.">
+    <item quantity="one">Börjar omkring %1$@. Pågår i ungefär en timme.</item>
+    <item quantity="other">Börjar omkring %1$@. Pågår i ungefär %2$@ timmar.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_nearby_minutes" context="Formats an event's approximate start time and approximate duration, when the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the approximate start time (like '10 a.m.'), and %2$@ is the number of minutes.">
+    <item quantity="one">Börjar omkring %1$@. Pågår i ungefär en minut.</item>
+    <item quantity="other">Börjar omkring %1$@. Pågår i ungefär %2$@ minuter.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_morning_hours" context="Formats an event's time of day and approximate duration, when the event takes place in the morning and the duration is expressed in hours. The plural key is the number of hours. %1$@ is the number of hours.">
+    <item quantity="one">På morgonen. Pågår i ungefär en timme.</item>
+    <item quantity="other">På morgonen. Pågår i ungefär {2} timmar.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_afternoon_hours" context="Formats an event's time of day and approximate duration, when the event takes place in the afternoon and the duration is expressed in hours. The plural key is the number of hours. %1$@ is the number of hours.">
+    <item quantity="one">På eftermiddagen. Pågår i ungefär en timme.</item>
+    <item quantity="other">På eftermiddagen. Pågår i ungefär {2} timmar.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_evening_hours" context="Formats an event's time of day and approximate duration, when the event takes place in the evening and the duration is expressed in hours. The plural key is the number of hours. %1$@ is the number of hours.">
+    <item quantity="one">På kvällen. Pågår i ungefär en timme.</item>
+    <item quantity="other">På kvällen. Pågår i ungefär {2} timmar.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_night_hours" context="Formats an event's time of day and approximate duration, when the event takes place at night and the duration is expressed in hours. The plural key is the number of hours. %1$@ is the number of hours.">
+    <item quantity="one">På natten. Pågår i ungefär en timme.</item>
+    <item quantity="other">På natten. Pågår i ungefär {2} timmar.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_morning_minutes" context="Formats an event's time of day and approximate duration, when the event takes place in the morning and the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the number of minutes.">
+    <item quantity="one">På morgonen. Pågår i ungefär en minut.</item>
+    <item quantity="other">På morgonen. Pågår i ungefär {2} minuter.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_afternoon_minutes" context="Formats an event's time of day and approximate duration, when the event takes place in the afternoon and the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the number of minutes.">
+    <item quantity="one">På eftermiddagen. Pågår i ungefär en minut.</item>
+    <item quantity="other">På eftermiddagen. Pågår i ungefär {2} minuter.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_evening_minutes" context="Formats an event's time of day and approximate duration, when the event takes place in the evening and the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the number of minutes.">
+    <item quantity="one">På kvällen. Pågår i ungefär en minut.</item>
+    <item quantity="other">På kvällen. Pågår i ungefär {2} minuter.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_night_minutes" context="Formats an event's time of day and approximate duration, when the event takes place at night and the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the number of minutes.">
+    <item quantity="one">På natten. Pågår i ungefär en minut.</item>
+    <item quantity="other">På natten. Pågår i ungefär {2} minuter.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_durationonly_hours" context="Formats an event's approximate duration, when the duration is expressed in hours. The plural key is the number of hours. %1$@ is the number of hours.">
+    <item quantity="one">Ungefär en timma.</item>
+    <item quantity="other">Ungefär %1$@ timmar.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_durationonly_minutes" context="Formats an event's approximate duration, when the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the number of minutes.">
+    <item quantity="one">Ungefär en minut.</item>
+    <item quantity="other">Ungefär %1$@ minuter.</item>
+  </plurals>
+  <!-- Details view strings -->
+  <string name="wp_happening_soon_details_view_title" context="Title of the activity that displays when the user clicks on an event from the timeline.">Händelse uppgifter</string>
+  <!-- Tasks -->
+  <string name="wp_happening_soon_task_details_documented_by" context="Label for the provider who documented this task. %1$@ will be replaced with the provider's name">Dokumenterad av %1$@</string>
+  <string name="wp_happening_soon_task_details_completed" context="Status for a nursing task that has been completed. %1$@ is the time it was completed.">Avslutad kl. %1$@</string>
+  <string name="wp_happening_soon_task_details_skipped" context="Status for a nursing task that has been skipped.">Förbigångna</string>
+  <string name="wp_happening_soon_task_details_canceled" context="Status for a nursing task that has been canceled.">Avbrutet</string>
+  <string name="wp_happening_soon_task_details_frequency" context="Tells the user how often a task is repeated. %1$@ is the frequency (from the server), like 'once' or 'every 2 hours' or '4 times a day'. It works great in English as 'This Event occurs ___.', but you can switch it to 'Frequency: ___' in another language if the grammar doesn't work out.">Denna händelse äger rum %1$@.</string>
+  <!-- Appointments/surgeries -->
+  <string name="wp_happening_soon_appointment_details_procedures" context="Displayed above a list of procedures that make up an inpatient appointment or surgery">Vad kommer att hända?</string>
+  <string name="wp_happening_soon_appointment_details_providers" context="Displayed above a list of providers who will be involved in an inpatient appointment or surgery">Hos vem?</string>
+  <string name="wp_happening_soon_appointment_details_instructions" context="Displayed above patient instructions for an inpatient appointment or surgery">Vad borde jag veta?</string>
+  <!-- Medication administrations -->
+  <string name="wp_happening_soon_medications_ordered_by" context="Label for the provider that ordered this medication. %1$@ will be replaced with the provider's name">Beställd av %1$@</string>
+  <string name="wp_happening_soon_acc_medication_status" context="Accessibility label for the status of a medication. %1$@ will be replaced with the current status of a medication administration, like Due or Complete">Status: %1$@</string>
+  <string name="wp_happening_soon_medication_status_set_by" context="Accessibility label for the provider who set the current status of a medication. %1$@ will be replaced with the provider's name">Status ställd av %1$@</string>
+  <string name="wp_happening_soon_medication_completed" context="Tells the user when a medication was given. %1$@ = the completing action. Could be 'given', 'new bag', 'restarted', etc. %2$@ = the time the med was given">%1$@ kl. %2$@</string>
+  <string name="wp_happening_soon_medication_completed_with_day" context="Tells the user when a medication was given, if it was given on a day that wasn't the day it was due. %1$@ = the completing action. Could be 'given', 'new bag', 'restarted', etc. %2$@ = the time the med was given. %3$@ = the day it was given. Could be 'today', 'tomorrow', '11/12/2018', etc.">%1$@ %3$@ kl.%2$@</string>
+  <string name="wp_happening_soon_medication_not_given_with_reason" context="Tells the user that a medication was not given. %1$@ = how the med was not given - 'Skipped', 'Held', etc. %2$@ = the reason the med was not given - 'Patient refused', 'Patient asleep', etc.">%1$@ (%2$@)</string>
+  <string name="wp_happening_soon_medications_linked_and" context="Labels a group of linked medications using the 'and' linkage type - i.e., all of them will be given together">ALLA från följande</string>
+  <string name="wp_happening_soon_medications_linked_or" context="Labels a group of linked medications using the 'or' linkage type - i.e., only one of them will be given">EN av följande</string>
+  <string name="wp_happening_soon_medications_hidden_multi" context="Header that indicates that medications are hidden from only some proxies">Läkemedel med den här ikonen döljs för vissa familjemedlemmar och vänner.</string>
+  <string name="wp_happening_soon_medications_hidden_all" context="Header that indicates that medications are hidden from all proxies">Läkemedel med den här ikonen döljs för familjemedlemmar och vänner.</string>
+  <string name="wp_happening_soon_medications_hidden_header" context="Header for the list of proxies that the medications may be hidden from">Dold för</string>
+  <string name="wp_happening_soon_medications_hidden_accessibility_label" context="Appended to accessibility label for hidden medications">Dold</string>
+  <!-- Miscellaneous -->
+  <string name="wp_happening_soon_empty_schedule" context="Displayed to the user when there's nothing to display on the patient's schedule">Det finns för närvarande inga schemalagda händelser att visa.</string>
+  <string name="wp_happening_soon_error_message" context="Displayed to the user when we fail at displaying the patient's schedule.">Ett fel uppstod under inläsning av schemat.</string>
+</resources>

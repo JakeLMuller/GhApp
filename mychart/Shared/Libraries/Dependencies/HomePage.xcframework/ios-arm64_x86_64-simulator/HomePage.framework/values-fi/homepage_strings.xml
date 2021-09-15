@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!--
+      ~ Copyright Â© 2019-2020 Epic Systems Corporation
+      -->
+  <string name="wp_home_menu_pull_to_dismiss" context="This is a message that slowly fades in when swiping down on a scrolling menu indicating that if the user scrolls down far enough, the menu will disappear and reveal the prior screen">Ohita vetämällä</string>
+  <string name="wp_home_menu_search_the_menu" context="This is a placeholder message in a search field (that disappears when entering the field) telling the user that the search can be used to filter down the list of menu options that are below the search box (as opposed to, say, searching everything about mychart)">Hae valikosta</string>
+  <string name="wp_home_menu_header_self" context="This is the header above the main mychart menu when the user has no proxy subjects">Oma valikko</string>
+  <string name="wp_home_menu_header_subject" context="This is the header above the main mychart menu when the user has proxy subjects, and %1$@ is the name of the currently selected person (user or subject) for whom we are seeing the menu">Henkilön %1$@ valikko</string>
+  <string name="wp_home_menu_cancel_menu" context="This is displayed next to the search bar to cancel the search or close the menu">Sulje</string>
+  <string name="wp_home_feed_button_reload" context="This is displayed on the error card's button in order to reload the feed">Lataa uudelleen</string>
+  <string name="wp_home_menu_search_no_results_found" context="This is displayed if the search has no results for menu">Ei tuloksia</string>
+  <string name="wp_home_menu" context="The button name for the menu">Valikko</string>
+  <string name="wp_home_header_logout" context="See STR_SPRING_POPDOWN_LOGOUT_TITLE; This is displayed as a button or table row indicating that tapping will log the user out and return to the login screen">Kirjaudu ulos</string>
+  <string name="wp_home_header_select_from_feature_options" context="This is displayed as a label above a table with rows of actionable menu options. These options can include Personalize, Settings, and Log out">Valitse seuraavista vaihtoehdoista:</string>
+  <string name="wp_home_header_select_an_account" context="This is displayed as a header label if the logged in user has no patient record, but does have access to patients as proxy subjects. The user's name/photo appears selectable alongside the other selectable proxy subject patients, so while we might otherwise typically say 'select a patient to view,' since the user herself isn't a patient, we use the word 'account' instead, referring to a mychart account">Valitse näytettävä tili:</string>
+  <string name="wp_home_header_select_a_patient" context="This is displayed as a header label if the logged in user is a patient and has proxy subjects as well. The user's name/photo appears selectable alongside the other selectable proxy subject patients, and this label indicates the user should chose among them">Valitse näytettävä potilas/asiakas:</string>
+  <string name="wp_home_header_switch_accounts" length="about 25 characters" context="Similiar to wp_home_header_select_an_account, this is displayed as a header label if the logged if the logged in user has no patient record, but does have access to patients as proxy subjects. The user's name/photo appears selectable alongside the other selectable proxy subject patients in a miniature form factor, and this label indicates that if the user taps the photos, they will be given a screen where they may switch to a different account.">Vaihda tiliä</string>
+  <string name="wp_home_header_switch_patients" length="about 25 characters" context="Similiar to wp_home_header_select_a_patient, this is displayed as a header label if the logged in user is a patient and has proxy subjects as well. The user's name/photo appears selectable alongside the other selectable proxy subject patients in a miniature form factor, and this label indicates that if the user taps the photos, they will be given a screen where they may switch to a different patient.">Vaihda henkilö</string>
+  <!-- Accessibility-->
+  <string name="wp_feed_explore_more_page_count" context="This text is read aloud before the voice over user begins swiping through the cards showing various new mychart features. %1$@ is the number of cards that are in the carouesel">%1$@ kohteen luettelo</string>
+  <string name="wp_feed_organization_name_hint" context="This is after the contents of an alert to indicate the information is coming from another organization via happy together. %1$@ is the default accessibility string and %2$@ is the org name">%1$@. Tiedot ovat organisaatiosta %2$@.</string>
+  <string name="wp_home_header_switch_accounts_accessibility" context="This is the equivalent of wp_home_header_switch_accounts that is read aloud from screen readers instead.">Napauta vaihtaaksesi tiliä tai valitaksesi muista tilivaihtoehdoista.</string>
+  <string name="wp_home_header_switch_patients_accessibility" context="This is the equivalent of wp_home_header_patients_accounts that is read aloud from screen readers instead. %1$@ will be either Switch Patients, Switch Persons, or similar action.">Napauta käyttääksesi %1$@ -toimintoa tai valitaksesi muista tilin toiminnoista.</string>
+  <string name="wp_homepage_accessibility_welcome" context="Accessibility Message after login.  Where %1$@ is the name of the user.  And %2$@ is the brand name.  Example brand names would be MyChart, MyHealth, Org Patient Portal.">Tervetuloa, %1$@. Kirjauduttu %2$@-portaaliin.</string>
+  <string name="wp_homepage_accessibility_menu_name" context="Accessibility Message when focusing on the menu as a whole.  Where %1$@ is the name of the user the menu is open for.">Käyttäjän %1$@ valikko</string>
+  <string name="wp_homepage_accessibility_clear_search" context="Accessibility Message when focusing on the clear search button.">Tyhjennä haku</string>
+  <string name="wp_homepage_accessibility_closed_menu" context="Accessibility Message after closing them menu pop up.">Valikko suljettu</string>
+  <string name="wp_homepage_accessibility_menu_group" context="Accessibility Message when focusing on a menu sub header.">%1$@, otsikko</string>
+  <string name="wp_homepage_accessibility_viewing_chart" context="Accessibility Message when focusing on a image showing whose chart you are viewing.">Näytettävä kertomus: %1$@</string>
+  <string name="wp_homepage_accessibility_menu_opening" context="Accessibility Message while opening the menu pop up.">Avataan valikkoa</string>
+  <string name="wp_homepage_accessibility_viewing_chart_actionable" context="Accessibility Message when focusing on a image showing whose chart you are viewing.  Tapping the image will show account options.">Näytetään henkilön %1$@ kertomus. Napauta valitaksesi tilivaihtoehdoista.</string>
+  <string name="wp_homepage_accessibility_select_patient_or_cancel" context="Accessibility Message instructing users to select from a list of patients or tap to go back to where they came from close the current window.  The text should closely resemble wp_home_header_select_patient">Valitse näytettävä potilas/asiakas tai peruuta napauttamalla kahdesti.</string>
+  <string name="wp_homepage_accessibility_select_account_or_cancel" context="Accessibility Message instructing users to select from a list of patients or tap to go back to where they came from close the current window.  The text should closely resemble wp_home_header_select_account">Valitse näytettävä tili tai peruuta napauttamalla kahdesti.</string>
+  <string name="wp_homepage_accessibility_select_option_or_cancel" context="Accessibility Message instructing users to select from a list of account features or tap to go back to where they came from close the current window.  The text should closely resemble wp_home_header_select_from_feature_options">Valitse seuraavista vaihtoehdoista tai peruuta napauttamalla kahdesti.</string>
+  <string name="wp_homepage_accessibility_additional_account_options" context="Accessibility heading informing users that the upcoming selections (Personalize, account settings, logout) are available, and distinguishes these options from the prior section that was related to selecting a patient chart.  The full workflow is announced as: select a patient to view or tap to cancel -- patient name 1 -- patient name 2... -- *this text* -- personalize -- account settings -- logout">Muut tilivalinnat</string>
+  <string name="wp_homepage_accessibility_view_all_menu_options" context="Accessibility label for the main menu button, indicating that tapping will show every navigation option available for the currently selected patient">Näytä kaikki valikkovaihtoehdot</string>
+  <string name="wp_homepage_accessibility_feed_overview_user_selected" context="Accessibility label when placing focus in a table containing notifications for the user.">Näytetään omat ilmoitukset</string>
+  <string name="wp_homepage_accessibility_feed_overview_proxy_selected" context="Accessibility label when placing focus in a table containing notifications for the user and %1$@ proxy subjects.">Näytetään omat ilmoitukset ja %1$@ muun ilmoitukset</string>
+  <string name="wp_homepage_accessibility_feed_overview_subject_selected" context="Accessibility label when placing focus in a table containing notifications for the selected proxy subject (%1$@) and %1$@ other patients (including the logged-in user).">Näytetään henkilön %1$@ ja %2$@ muun ilmoitukset</string>
+  <string name="wp_homepage_accessibility_feed_header_text_empty" context="Accessibility label for each a header section of the notifications table informing the user that the patient (named %1$@) associated with this heading has no notifications to follow that header.">Potilaalla/asiakkaalla %1$@ ei ole ilmoituksia</string>
+  <string name="wp_homepage_accessibility_feed_header_text_empty_self" context="Accessibility label for each a header section of the notifications table informing the user that they have no notifications to follow this header.">sinulla ei ole ilmoituksia.</string>
+  <string name="wp_homepage_accessibility_myc3_progress_arc" context="Accessibility text for the progress arc that shows the percentage of finished MyChart Care Companion tasks due today.">%1$@ prosenttia valmiina</string>
+  <plurals name="wp_homepage_accessibility_feed_header_text" context="Accessibility label for each header section of the notifications table informing the user that the patient (named %2$@) associated with this heading has %1$@ notifications in the rows that follow that header.">
+    <item quantity="one">%1$@ ilmoitusta potilaalle/asiakkaalle %2$@</item>
+    <item quantity="other">%1$@ ilmoitusta potilaalle/asiakkaalle %2$@</item>
+  </plurals>
+  <plurals name="wp_homepage_accessibility_feed_header_text_self" context="Accessibility label for the header section of the notifications table for users with no proxy subjects, informing the user they have %1$@ notifications in the rows that follow that header.">
+    <item quantity="one">%1$@ ilmoitus</item>
+    <item quantity="other">%1$@ ilmoitusta</item>
+  </plurals>
+  <string name="wp_homepage_accessibility_onboarding_skip" context="Accessibility Message giving the user a detailed explanation of the skip button in onboarding, which will dismiss onboarding and take the user to the homepage.">Ohita kotisivun johdanto ja siirry pääsivulle.</string>
+  <string name="wp_homepage_accessibility_onboarding_announcement" context="Accessibility Message alerting the user to the appearance of full-screen onboarding appearing to introduce the user to the new home page.">Heräte – perehdytys esittelee sinulle uuden aloitussivun.</string>
+  <string name="wp_homepage_accessibility_onboarding_page_control" context="Accessibility label telling the user what page on onboarding they are currently on. %1$@ is the current page index. $2$s is the total number of pages.">Sivu %1$@/%2$@.</string>
+  <string name="wp_homepage_accessibility_proxy_selection_currently_selected_self" context="Accessibility label telling the user that the patient who has accessibility focus is the currently viewed patient/chart, and that person is the user him/herself. %1$@ is the selected patient.">Tietuettasi käsitellään parhaillaan.</string>
+  <string name="wp_homepage_accessibility_proxy_selection_currently_selected_subject" context="Accessibility label telling the user that the proxy subject who has accessibility focus is the currently viewed patient/chart. %1$@ is the proxy subject's name">Henkilön %1$@ tietuetta käsitellään parhaillaan.</string>
+  <!-- Feed-->
+  <string name="wp_feed_after_visit_summary" context="The title for the avs feed item">Käyntiyhteenveto</string>
+  <string name="wp_switch_organizations_feature" context="Text for the switch organization button that takes user to the list of their selected organizations" length="30 characters">Vaihda organisaatiota</string>
+  <string name="wp_home_loading_text" context="This is the loading message for loading the users feed">Tietojasi valmistellaan</string>
+  <string name="wp_home_zero_state_title" context="This is the title message for the zero state card in the user feed">Ei uusia näytettäviä tietoja.</string>
+  <string name="wp_home_zero_state_message" context="This is the message for the zero state card in the user feed">Napauta suurennuslasia tutkiaksesi kaikkia MyChart-toimintoja.</string>
+  <string name="wp_home_feed_error_title" context="This is the error title if the feed can not be loaded">Tietojen lataaminen ei onnistu</string>
+  <string name="wp_home_feed_error_message" context="This is the error message if the feed can not be loaded">Yritä pian uudelleen.</string>
+  <string name="wp_home_feed_end_of_list" context="This is a message displayed at the end of the users feed list">Tässä kaikki tältä erää.</string>
+  <plurals name="wp_home_feed_h2g_error" context="Error message shown at the bottom of the screen when the feed was unable to load data from a happy together organization.  %1$@ is the org name that failed.">
+    <item quantity="one">Tietojen noutamisessa linkitetyltä tililtä (%1$@) on ongelmia.</item>
+    <item quantity="other">Tietojen noutamisessa linkitetyiltä tileiltä on ongelmia.</item>
+  </plurals>
+  <plurals name="wp_home_feed_h2g_error_title" context="Error message shown at the bottom of the screen when the feed was unable to load data from a happy together organization">
+    <item quantity="one">Tili, jolla on yhteysongelmia:</item>
+    <item quantity="other">Tilit, joilla on yhteysongelmia:</item>
+  </plurals>
+  <string name="wp_home_remember_my_choice" context="This is a message associated with a checkbox/switch that informs users that, if checked, MyChart will remember who they select and automatically make the same selection on subsequent logins.">Muista valinta</string>
+  <string name="wp_home_remember_my_choice_description" context="This is a description associated with the checkbox/switch that informs users that, if checked, MyChart will remember who they select and automatically make the same selection on subsequent logins. The description reminds users that they can change this selection later via Account Settings.">Voit muuttaa valintaa myöhemmin tilin asetuksissa.</string>
+  <string name="wp_home_select_patient_subheader" context="This is displayed below the header to select a patient or account to view.  This is a sub header explaining you can change later.  %1$@ is either 'Switch Patients' or 'Switch Account' based on your account type.">Voit vaihtaa valintaa koska tahansa napauttamalla %1$@ -painiketta näytön yläosassa.</string>
+  <string name="wp_home_choose_someone_to_begin" context="This is displayed when a user with proxy subjects logs in and immediately faced with a selection screen of patients/accounts to select from. It should be inviting, since it's the opening screen.">Aloita valitsemalla henkilö:</string>
+  <string name="wp_homepage_todo_summary_completed" context="Used on the To Do Summary card above the completion percentage">Valmiina</string>
+  <string name="wp_homepage_todo_changes_clinic_contacted" context="Used on the To Do Changes card for when the clinic was contacted due to an escalation">Toimipisteeseesi otettiin yhteyttä</string>
+  <string name="wp_homepage_todo_changes_pcp_contacted" context="Used on the To Do Changes card for when the primary care provider was contacted due to an escalation">Ammattihenkilöösi otettiin yhteyttä</string>
+  <string name="wp_home_feed_pregnancyhub_stopalert_msg" context="This text appears in an alert pop-up which appears when the user selects a button on the pregnancy progress update card which is intended for stopping updates. This is the body text of that alert dialogue.">Et enää saa raskauteen liittyviä päivityksiä aloitussivulle. Et myöskään saa enää ohjesisältöä raskauteen liittyen. Haluatko varmasti jatkaa?</string>
+  <string name="wp_home_feed_pregnancyhub_stopalert_msg_nocareplan" context="This text appears in an alert pop-up which appears when the user selects a button on the pregnancy progress update card which is intended for stopping updates. This is the body text of that alert dialogue.">Et enää saa raskauteen liittyviä päivityksiä aloitussivulle. Haluatko varmasti jatkaa?</string>
+  <string name="wp_home_feed_pregnancyhub_stopalert_confirm" context="This text appears in an alert pop-up which appears when the user selects a button on the pregnancy progress update card which is intended for stopping updates. This is the postive action button, which confirms the user's desire to cancel updates.">Kyllä, lopeta päivitykset </string>
+  <string name="wp_home_feed_pregnancyhub_stopalert_cancel" context="This text appears in an alert pop-up which appears when the user selects a button on the pregnancy progress update card which is intended for stopping updates. This is the cancel button text, which will just close out of the alert.">Peruuta</string>
+  <plurals name="wp_home_feed_todo_genpattask_label" context="Label for general/patient-created tasks for the summary feed card">
+    <item quantity="one">%1$@ yleinen tehtävä</item>
+    <item quantity="other">%1$@ yleistä tehtävää</item>
+  </plurals>
+  <plurals name="wp_home_feed_todo_medicationtask_label" context="Label for medication tasks for the summary feed card">
+    <item quantity="one">%1$@ lääkitystehtävä</item>
+    <item quantity="other">%1$@ lääkitystehtävää</item>
+  </plurals>
+  <plurals name="wp_home_feed_todo_questionnairetask_label" context="Label for questionnaire tasks for the summary feed card">
+    <item quantity="one">%1$@ kyselylomaketehtävä</item>
+    <item quantity="other">%1$@ kyselylomaketehtävää</item>
+  </plurals>
+  <plurals name="wp_home_feed_todo_educationtask_label" context="Label for education tasks for the summary feed card">
+    <item quantity="one">%1$@ ohjauksen ja neuvonnan tehtävä</item>
+    <item quantity="other">%1$@ ohjauksen ja neuvonnan tehtävää</item>
+  </plurals>
+  <plurals name="wp_home_feed_todo_flowsheettask_label" context="Label for health-tracking tasks for the summary feed card">
+    <item quantity="one">%1$@ terveysseurantatehtävä</item>
+    <item quantity="other">%1$@ terveysseurantatehtävää</item>
+  </plurals>
+  <plurals name="wp_home_feed_todo_appointmenttask_label" context="Label for appointment tasks for the summary feed card">
+    <item quantity="one">%1$@ ajanvaraustehtävä</item>
+    <item quantity="other">%1$@ ajanvaraustehtävää</item>
+  </plurals>
+  <!-- Onboarding -->
+  <string name="wp_home_onboarding_skip" context="Button label to dismiss onboarding">Ohita</string>
+  <string name="wp_home_onboarding_next" context="Button label to move to the next slide in the Onboarding workflow">Seuraava</string>
+  <string name="wp_home_onboarding_back" context="Button label to move to the previous slide in the Onboarding workflow">Palaa</string>
+  <string name="wp_home_onboarding_complete" context="Button label to complete the Onboarding workflow">Valmis</string>
+  <string name="wp_home_onboarding_welcome_title" context="This is the title of the onboarding welcome screen.">Sivulla on tehty uudistuksia</string>
+  <string name="wp_home_onboarding_welcome_description" context="This is the description text on the onboarding welcome screen.">Uuden yksinkertaisemman asettelun ansiosta tärkeät tiedot löytyvät nyt helpommin.</string>
+  <string name="wp_home_onboarding_menu_title" context="This is the title of the onboarding shortcuts and menu screen.  Shortcuts are buttons on the homepage that allow you to quickly go to activities and features.">Pikakuvakkeet ja valikko</string>
+  <string name="wp_home_onboarding_menu_description" context="This is the description text on the onboarding shortucts and menu screen.">Voit siirtyä useimmin käytettyihin toimintoihin sivun yläosan pikakuvakkeiden kautta. Kaikki toiminnot ovat käytettävissä valikon kautta.</string>
+  <string name="wp_home_onboarding_feed_title" context="This is the title of the onboarding health feed screen.">Oma syöte</string>
+  <string name="wp_home_onboarding_feed_description" context="This is the description text of the onboarding feed screen, when the user does not have access to proxy subjects.">Näet tärkeimmät herätteet ja toiminnot syötteessäsi. Herätteet opastavat sinua seuraaviin vaiheisiin.</string>
+  <string name="wp_home_onboarding_feed_mixed_description" context="This is the description text of the onboarding feed screen, when the user has access to proxy subjects.">Näet tärkeimmät itseäsi ja läheisiäsi koskevat herätteet ja toiminnot syötteessäsi. Herätteet opastavat sinua seuraaviin vaiheisiin.</string>
+  <string name="wp_home_onboarding_proxies_title" context="This is the title of the onboarding accounts screen.">Omat tiedot ja tilit</string>
+  <string name="wp_home_onboarding_proxies_description" context="This is the description text of the onboarding accounts screen, which is shown to the user when they have access to proxy subjects.">Aloitussivulla on sinua ja läheisiäsi koskevia tietoja. Jos tarvitset lisätietoja läheisestäsi, voit siirtyä hänen tililleen näytön yläosasta.</string>
+  <string name="wp_home_onboarding_how_to_video" context="This is the text of a button on the first onboarding screen, which the user can select to play an education video of the new homepage.">Katso video</string>
+  <!-- Shortcut Personalization -->
+  <string name="wp_shortcut_personalization_title_self" context="Title used for Shortcut Personalization activity when accessing yourself">Muuta omia pikanäppäimiä</string>
+  <string name="wp_shortcut_personalization_title_proxy" context="Title used for Shortcut Personalization activity when accessing a proxy subject. %1$@ is the proxy subject's nickname">Muuta henkilön %1$@ pikanäppäimiä</string>
+  <string name="wp_home_feed_unspecified_error" context="Critical error message when something went wrong with the app attempting to do what the user intended">Pyynnön käsittelyssä on ongelmia. Yritä myöhemmin uudelleen.</string>
+  <string name="wp_home_information_from" context="Title for happy together pop up about where your item feed card is coming from.">Tiedot lähteestä:</string>
+</resources>

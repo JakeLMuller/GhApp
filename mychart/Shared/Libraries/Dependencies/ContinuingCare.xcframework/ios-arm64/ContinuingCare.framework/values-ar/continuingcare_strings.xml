@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="wp_continuingcare_activity_title" context="Title for the Continuing Care activity">الرعاية المستمرة</string>
+  <string name="wp_continuingcare_tutorial_overview" context="Tutorial text introducing the continuing care activity to the patient. %%CONTINUINGCARE is replaced with the name of the activity.">تسمح لك ٪٪ CONTINUINGCARE بمراجعة مقدمي الرعاية الذين يقدمون الرعاية بعد الخروج من المستشفى واختيار مقدمي الرعاية المفضلين لديك.</string>
+  <string name="wp_continuingcare_tutorial_overview_proxy" context="Tutorial text introducing the continuing care activity to the patient proxy. %%CONTINUINGCARE is replaced with the name of the activity. %%PATNAME is replaced with the name of the patient">تسمح لك ٪٪ CONTINUINGCARE بمراجعة مقدمي الرعاية الذين يقدمون الرعاية بعد الخروج من المستشفى واختيار مقدمي الرعاية المفضلين لدى %%PATNAME.</string>
+  <string name="wp_continuingcare_tutorial_overview_2" context="Tutorial text explaining more about the workings of continuing care to the patient.">راجع خيارات الرعاية هذه وحدد تفضيلاتك. إذا واجهت مشكلة أثناء مراجعة هذه القائمة، فتواصل مع مدير حالتك.</string>
+  <string name="wp_continuingcare_tutorial_overview_2_proxy" context="Tutorial text explaining more about the workings of continuing care to the patient proxy. %%PATNAME is replaced with the name of the patient">راجع خيارات الرعاية هذه وحدد تفضيلات %%PATNAME. إذا واجهت مشكلة أثناء مراجعة هذه القائمة، فتواصل مع مدير حالة %%PATNAME.</string>
+</resources>

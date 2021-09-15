@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="wp_continuingcare_activity_title" context="Title for the Continuing Care activity">Langzeitpflege</string>
+  <string name="wp_continuingcare_tutorial_overview" context="Tutorial text introducing the continuing care activity to the patient. %%CONTINUINGCARE is replaced with the name of the activity.">Mit %%CONTINUINGCARE können Sie Leistungserbringer für die Pflege nach der Entlassung aufrufen und Ihre bevorzugten Leistungserbringer auswählen.</string>
+  <string name="wp_continuingcare_tutorial_overview_proxy" context="Tutorial text introducing the continuing care activity to the patient proxy. %%CONTINUINGCARE is replaced with the name of the activity. %%PATNAME is replaced with the name of the patient">Mit %%CONTINUINGCARE können Sie Leistungserbringer für die Pflege nach der Entlassung aufrufen und die bevorzugten Leistungserbringer für %%PATNAME auswählen.</string>
+  <string name="wp_continuingcare_tutorial_overview_2" context="Tutorial text explaining more about the workings of continuing care to the patient.">Bitte überprüfen Sie diese Pflege-Optionen und markieren Sie Ihre bevorzugten Optionen. Bei Problemen mit dieser Liste wenden Sie sich bitte an Ihren Fallmanager.</string>
+  <string name="wp_continuingcare_tutorial_overview_2_proxy" context="Tutorial text explaining more about the workings of continuing care to the patient proxy. %%PATNAME is replaced with the name of the patient">Bitte überprüfen Sie diese Pflege-Optionen und markieren Sie die bevorzugten Optionen von %%PATNAME. Bei Problemen mit dieser Liste wenden Sie sich bitte an den Fallmanager von %%PATNAME.</string>
+</resources>

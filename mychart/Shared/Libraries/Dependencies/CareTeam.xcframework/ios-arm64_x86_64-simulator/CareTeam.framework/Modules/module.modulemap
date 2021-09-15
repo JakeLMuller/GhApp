@@ -1,0 +1,11 @@
+framework module CareTeam {
+  umbrella header "CareTeam.h"
+
+  export *
+  module * { export * }
+}
+
+module CareTeam.Swift {
+    header "CareTeam-Swift.h"
+    requires objc
+}

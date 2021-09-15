@@ -1,0 +1,23 @@
+{
+    "tutorialId" : "CareTeamTutorial",
+    "openByDefault" : false,
+    "tutorialSteps" : [
+        {
+            "descriptionString" : "wp_care_team_tutorial_overview",
+            "descriptionStringProxy" : "wp_care_team_tutorial_overview_proxy",
+            "viewId" : "providers"
+            
+        },
+        {
+            "descriptionString" : "wp_care_team_tutorial_controls",
+            "viewId" : "providers"
+            
+        },
+        {
+            "descriptionString" : "wp_care_team_tutorial_details",
+            "descriptionStringProxy" : "wp_care_team_tutorial_details_proxy",
+            "viewId" : "providerOptions"
+            
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+framework module ShareEverywhere {
+  umbrella header "ShareEverywhere.h"
+
+  export *
+  module * { export * }
+}
+
+module ShareEverywhere.Swift {
+    header "ShareEverywhere-Swift.h"
+    requires objc
+}

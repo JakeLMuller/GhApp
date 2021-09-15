@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017-2020 Epic Systems Corporation
+  -->
+<resources>
+  <!-- Share Everywhere -->
+  <string name="wp_share_everywhere_title" context="Title for Share Everywhere springboard button, which launches the Share Everywhere activity and title for Share Everywhere activity.">Share Everywhere</string>
+  <string name="wp_share_everywhere_description_title" context="Title for the description of the Share Everywhere activity, which explains how the feature works to end users.">Jaa kertomuksesi</string>
+  <string name="wp_share_everywhere_description_text" context="Text for the description of the Share Everywhere activity, which explains how the feature works to end users. %1$@ is the brand name of the portal.">Myönnä kertakäyttöinen ja rajoitettu %1$@-portaalissa näkyvien sosiaali- ja terveystietojesi käyttöoikeus, joka voi sisältää tietoja seuraavista:</string>
+  <string name="wp_share_everywhere_medications_label" context="Label for medications, in the context of being available via Share Everywhere.">Lääkkeet</string>
+  <string name="wp_share_everywhere_health_issues_label" context="Label for health issues, in the context of being available via Share Everywhere.">Hoidon/palvelun tarpeet</string>
+  <string name="wp_share_everywhere_allergies_label" context="Label for allergies, in the context of being available via Share Everywhere.">Allergiat</string>
+  <string name="wp_share_everywhere_immunizations_label" context="Label for immunizations, in the context of being available via Share Everywhere.">Rokotukset</string>
+  <string name="wp_share_everywhere_write_note_label" context="Label for the ability to write a note to the patient's chart, in the context of being available via Share Everywhere.">Tietojasi käyttävä henkilö voi myös kirjoittaa merkinnän omatiimillesi.</string>
+  <string name="wp_share_everywhere_request_token_button_title" context="Title for button to request a share token for Share Everywhere.">Pyydä käyttöoikeuskoodia</string>
+  <string name="wp_share_everywhere_active_token_title" context="Title for Share Everywhere token card, which contains an active Share Token and instructions on how to use it.">Voit nyt jakaa tietosi!</string>
+  <string name="wp_share_everywhere_active_token_instructions" context="Instructions for using an active Share Token. %1$@ is the name of the person who's accessing the record. %2$@ is the website URL where the Token can be exchanged.">%1$@ voi nyt mennä osoitteeseen %2$@ ja syöttää alla näkyvän koodin tarkastellakseen tietojasi.</string>
+  <string name="wp_share_everywhere_dismiss_token_button_title" context="Title for button to dismiss a Share Token for Share Everywhere.">Hylkää käyttöoikeuskoodi</string>
+  <string name="wp_share_everywhere_token_expiration" context="Label indicating how much time remains until the active Share Token expires.">Koodi vanhentuu %1$@</string>
+  <string name="wp_share_everywhere_alert_title" context="Title for Share Everywhere request alert, which prompts the user for more info before requesting a new Share Token.">Kenelle kertomus jaetaan?</string>
+  <string name="wp_share_everywhere_alert_message" context="Message for Share Everywhere request alert, which prompts the user for more info before requesting a new Share Token.">Syötä kertomuksen käyttöoikeuden saavan henkilön nimi.</string>
+  <string name="wp_share_everywhere_alert_edittext_hint" context="Placeholder text for the name that the user must enter when requesting a new Share Token.">Nimi</string>
+  <string name="wp_share_everywhere_alert_button_request" context="Title for the button on the Share Everywhere request alert that completes the request for a new Share Token.">Pyydä</string>
+  <string name="wp_share_everywhere_alert_button_cancel" context="Title for the button on the Share Everywhere request alert that cancels the request.">Peruuta</string>
+</resources>

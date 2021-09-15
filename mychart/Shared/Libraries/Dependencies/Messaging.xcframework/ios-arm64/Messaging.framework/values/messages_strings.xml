@@ -1,0 +1,8 @@
+<!--
+  ~ (C) Copyright 2020-2021 Epic Systems Corporation
+  -->
+<resources>
+    <string name="wp_messages_component_title"
+        constraints="2 lines, 17 characters per line"
+        context="Default title for the Messages activity">Messages</string>
+</resources>

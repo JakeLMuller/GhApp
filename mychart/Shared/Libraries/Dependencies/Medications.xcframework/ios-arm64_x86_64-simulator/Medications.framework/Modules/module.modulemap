@@ -1,0 +1,11 @@
+framework module Medications {
+  umbrella header "Medications.h"
+
+  export *
+  module * { export * }
+}
+
+module Medications.Swift {
+    header "Medications-Swift.h"
+    requires objc
+}

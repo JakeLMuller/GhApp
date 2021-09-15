@@ -1,0 +1,43 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name InfectionControl
+import Foundation
+@_exported import InfectionControl
+import PECore
+import Swift
+@objc public protocol H2GOrgDisplayProtocol {
+  @objc func showH2GInformation(forOrganization: PECore.PEOrganizationInfoProtocol)
+}
+@_inheritsConvenienceInitializers @objc public class PEInfectionControlComponentAPI : ObjectiveC.NSObject, PECore.PEInfectionControlComponentAPIProtocol {
+  @objc public func hasAccessForCovidStatus(_ patientContext: PECore.PEPatientContext) -> PECore.PEComponentAccessResult
+  @objc public func hasAccessForLabDetails(_ patientContext: PECore.PEPatientContext) -> Swift.Bool
+  @objc public func getCovidStatusController(_ patientContext: PECore.PEPatientContext, viewControllerTitle: Swift.String?) -> UIKit.UIViewController?
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class CovidStatusViewModel : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class StatusCardButton : UIKit.UIButton {
+  @objc override dynamic public func awakeFromNib()
+  @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @objc get
+  }
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public enum CovidPDFDocumentStatus : Swift.String, Swift.Codable {
+  case DocumentNotGenerated
+  case GeneratingDocument
+  case DocumentGenerated
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension InfectionControl.CovidPDFDocumentStatus : Swift.Equatable {}
+extension InfectionControl.CovidPDFDocumentStatus : Swift.Hashable {}
+extension InfectionControl.CovidPDFDocumentStatus : Swift.RawRepresentable {}

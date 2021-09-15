@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2019-2020 Epic Systems Corporation
+  -->
+<resources>
+  <string name="wp_medications_activity_title" context="The title for the medications activity, displayed in the navigation bar at the top of the view">Läkemedel</string>
+  <string name="wp_medications_encounterspecific_medication_detail_label" context="Details label for an encounter specific medication. Not all parameters may be populated, especially the brand name. %1$@ - The medication dose, in digits, %2$@ - The dose units, %3$@ - The medication route. E.g. by mouth, %4$@ - The medication frequency. E.g. 3 times daily">%1$@ %2$@ %3$@ %4$@</string>
+  <string name="wp_medications_encounterspecific_linked_medication_or_label" context="Label shown above a linked medication group that has an OR relationship between the meds. See https://wiki.epic.com/main/Orders/Composer_%26_Validation/Linked_Orders">En av följande</string>
+  <string name="wp_medications_encounterspecific_linked_medication_and_label" context="Label shown above a linked medication group that has an AND relationship between the meds. See https://wiki.epic.com/main/Orders/Composer_%26_Validation/Linked_Orders">Alla från följande</string>
+  <string name="wp_medications_encounterspecific_prn_only_header_label" context="Label shown in the hospital medications activity in the section header for PRN medications, if there are no standard medications">om så behövs...</string>
+  <string name="wp_medications_encounterspecific_prn_header_label" context="Label shown in the hospital medications activity in the section header for PRN medications. There is a leading 'and' because this displays in the section header after standard medications. Not a part of a compound string.">och vid behov...</string>
+  <string name="wp_medications_filter_meds_label" context="Warning that appears in the medications activity, if some of the medications may have been filtered from the activity">Känsliga läkemedel visas inte här. Detta meddelande visas även om sådana inte finns i journalen.</string>
+  <string name="wp_medications_encounterspecific_no_meds_label" context="Label that displays in the hospital medications activity if there are no medications to show">Du har inga läkemedel i journalen.</string>
+  <string name="wp_medications_encounterspecific_no_meds_label_proxy" context="Label that displays in the hospital medications activity if there are no medications to show, if viewing as a proxy">%1$@ har ingen läkemedel i journalen.</string>
+  <string name="wp_medications_encounterspecific_administer_warning_label" context="Label that displays in the bottom banner of the hospital medications activity, warning the user not to self-administer medications">Ditt behandlingsteam kommer att administrera dessa läkemedel.</string>
+  <string name="wp_medications_encounterspecific_administer_warning_label_proxy" context="Label that displays in the bottom banner of the hospital medications activity, warning the user not to administer the proxy's medications">Behandlingsteamet för %1$@ kommer att administrera dessa läkemedel.</string>
+  <string name="wp_medications_encounterspecific_confidential_meds_some" context="Header that indicates that a medication is hidden from only some proxies">Dold för vissa familjemedlemmar och vänner</string>
+  <string name="wp_medications_encounterspecific_confidential_meds_all" context="Header that indicates that a medication is hidden from all proxies">Dold för familj och vänner</string>
+  <string name="wp_medications_encounterspecific_confidential_meds_dialog_header" context="Header for the list of proxies that the medications may be hidden from">Dold för</string>
+  <string name="wp_medications_encounterspecific_confidential_meds_hidden" context="Accessibility label that will be applied when a medication is hidden">Dold</string>
+</resources>

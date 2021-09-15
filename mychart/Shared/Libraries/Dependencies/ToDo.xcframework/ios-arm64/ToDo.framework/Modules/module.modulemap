@@ -1,0 +1,11 @@
+framework module ToDo {
+  umbrella header "ToDo.h"
+
+  export *
+  module * { export * }
+}
+
+module ToDo.Swift {
+    header "ToDo-Swift.h"
+    requires objc
+}

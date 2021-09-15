@@ -1,0 +1,153 @@
+<resources>
+    <!--
+      ~ Copyright Â© 2019-2021 Epic Systems Corporation
+      -->
+    <string name="wp_home_menu_pull_to_dismiss" context="This is a message that slowly fades in when swiping down on a scrolling menu indicating that if the user scrolls down far enough, the menu will disappear and reveal the prior screen">Pull to dismiss</string>
+    <string name="wp_home_menu_search_the_menu" context="This is a placeholder message in a search field (that disappears when entering the field) telling the user that the search can be used to filter down the list of menu options that are below the search box (as opposed to, say, searching everything about mychart)">Search the menu</string>
+    <string name="wp_home_menu_header_self" context="This is the header above the main mychart menu when the user has no proxy subjects">Your Menu</string>
+    <string name="wp_home_menu_header_subject" context="This is the header above the main mychart menu when the user has proxy subjects, and %1$@ is the name of the currently selected person (user or subject) for whom we are seeing the menu">%1$@\'s Menu</string>
+    <string name="wp_home_menu_cancel_menu" context="This is displayed next to the search bar to cancel the search or close the menu">Close</string>
+    <string name="wp_home_feed_button_reload" context="This is displayed on the error card's button in order to reload the feed">Reload</string>
+    <string name="wp_home_menu_search_no_results_found" context="This is displayed if the search has no results for menu">No results</string>
+    <string name="wp_home_menu" context="The button name for the menu">Menu</string>
+    
+    <string name="wp_home_header_logout" context="See STR_SPRING_POPDOWN_LOGOUT_TITLE; This is displayed as a button or table row indicating that tapping will log the user out and return to the login screen">Log Out</string>
+    <string name="wp_home_header_select_from_feature_options" context="This is displayed as a label above a table with rows of actionable menu options. These options can include Personalize, Settings, and Log out">Select from the following options:</string>
+    <string name="wp_home_header_select_an_account" context="This is displayed as a header label if the logged in user has no patient record, but does have access to patients as proxy subjects. The user's name/photo appears selectable alongside the other selectable proxy subject patients, so while we might otherwise typically say 'select a patient to view,' since the user herself isn't a patient, we use the word 'account' instead, referring to a mychart account">Select an account to view:</string>
+    <string name="wp_home_header_select_a_patient" context="This is displayed as a header label if the logged in user is a patient and has proxy subjects as well. The user's name/photo appears selectable alongside the other selectable proxy subject patients, and this label indicates the user should chose among them">Select a patient to view:</string>
+    <string name="wp_home_header_switch_accounts" length="about 25 characters" context="Similiar to wp_home_header_select_an_account, this is displayed as a header label if the logged if the logged in user has no patient record, but does have access to patients as proxy subjects. The user's name/photo appears selectable alongside the other selectable proxy subject patients in a miniature form factor, and this label indicates that if the user taps the photos, they will be given a screen where they may switch to a different account.">Switch Accounts</string>
+    <string name="wp_home_header_switch_patients" length="about 25 characters" context="Similiar to wp_home_header_select_a_patient, this is displayed as a header label if the logged in user is a patient and has proxy subjects as well. The user's name/photo appears selectable alongside the other selectable proxy subject patients in a miniature form factor, and this label indicates that if the user taps the photos, they will be given a screen where they may switch to a different patient.">Switch Patients</string>
+    
+    <!-- Accessibility-->
+    <string name="wp_feed_explore_more_page_count" context="This text is read aloud before the voice over user begins swiping through the cards showing various new mychart features. %1$@ is the number of cards that are in the carouesel">List of %1$@ items.</string>
+    <string name="wp_feed_organization_name_hint" context="This is after the contents of an alert to indicate the information is coming from another organization via happy together. %1$@ is the default accessibility string and %2$@ is the org name">%1$@.  This information is from %2$@.</string>
+    <string name="wp_home_header_switch_accounts_accessibility" context="This is the equivalent of wp_home_header_switch_accounts that is read aloud from screen readers instead.">Tap to switch accounts or to choose from other account options.</string>
+    <string name="wp_home_header_switch_patients_accessibility" context="This is the equivalent of wp_home_header_patients_accounts that is read aloud from screen readers instead. %1$@ will be either Switch Patients, Switch Persons, or similar action.">Tap to %1$@ or to choose from other account options.</string>
+    <string name="wp_homepage_accessibility_welcome" context="Accessibility Message after login.  Where %1$@ is the name of the user.  And %2$@ is the brand name.  Example brand names would be MyChart, MyHealth, Org Patient Portal.">Welcome %1$@.  Logged into %2$@</string>
+    <string name="wp_homepage_accessibility_menu_name" context="Accessibility Message when focusing on the menu as a whole.  Where %1$@ is the name of the user the menu is open for.">Menu for %1$@</string>
+    <string name="wp_homepage_accessibility_clear_search" context="Accessibility Message when focusing on the clear search button.">Clear search</string>
+    <string name="wp_homepage_accessibility_closed_menu" context="Accessibility Message after closing them menu pop up.">Menu closed</string>
+    <string name="wp_homepage_accessibility_menu_group" context="Accessibility Message when focusing on a menu sub header.">%1$@, heading</string>
+    <string name="wp_homepage_accessibility_viewing_chart" context="Accessibility Message when focusing on a image showing whose chart you are viewing.">Viewing chart for %1$@</string>
+    <string name="wp_homepage_accessibility_menu_opening" context="Accessibility Message while opening the menu pop up.">Opening menu</string>
+    <string name="wp_homepage_accessibility_viewing_chart_actionable" context="Accessibility Message when focusing on a image showing whose chart you are viewing.  Tapping the image will show account options.">Viewing chart for %1$@. Tap to select from account options.</string>
+    <string name="wp_homepage_accessibility_select_patient_or_cancel" context="Accessibility Message instructing users to select from a list of patients or tap to go back to where they came from close the current window.  The text should closely resemble wp_home_header_select_patient">Select a patient to view or double tap to cancel.</string>
+    <string name="wp_homepage_accessibility_select_account_or_cancel" context="Accessibility Message instructing users to select from a list of patients or tap to go back to where they came from close the current window.  The text should closely resemble wp_home_header_select_account">Select an account to view or double tap to cancel.</string>
+    <string name="wp_homepage_accessibility_select_option_or_cancel" context="Accessibility Message instructing users to select from a list of account features or tap to go back to where they came from close the current window.  The text should closely resemble wp_home_header_select_from_feature_options">Select from the following options or double tap to cancel.</string>
+    <string name="wp_homepage_accessibility_additional_account_options" context="Accessibility heading informing users that the upcoming selections (Personalize, account settings, logout) are available, and distinguishes these options from the prior section that was related to selecting a patient chart.  The full workflow is announced as: select a patient to view or tap to cancel -- patient name 1 -- patient name 2... -- *this text* -- personalize -- account settings -- logout">Additional account options</string>
+    <string name="wp_homepage_accessibility_view_all_menu_options" context="Accessibility label for the main menu button, indicating that tapping will show every navigation option available for the currently selected patient">View all menu options</string>
+    <string name="wp_homepage_accessibility_feed_overview_user_selected" context="Accessibility label when placing focus in a table containing notifications for the user.">Viewing your notifications</string>
+    <string name="wp_homepage_accessibility_feed_overview_proxy_selected" context="Accessibility label when placing focus in a table containing notifications for the user and %1$@ proxy subjects.">Viewing notifications for you and %1$@ others</string>
+    <string name="wp_homepage_accessibility_feed_overview_subject_selected" context="Accessibility label when placing focus in a table containing notifications for the selected proxy subject (%1$@) and %1$@ other patients (including the logged-in user).">Viewing notifications for %1$@ and %2$@ others</string>
+    <string name="wp_homepage_accessibility_feed_header_text_empty" context="Accessibility label for each a header section of the notifications table informing the user that the patient (named %1$@) associated with this heading has no notifications to follow that header.">%1$@ has no notifications</string>
+    <string name="wp_homepage_accessibility_feed_header_text_empty_self" context="Accessibility label for each a header section of the notifications table informing the user that they have no notifications to follow this header.">you have no notifications.</string>
+    <string name="wp_homepage_accessibility_myc3_progress_arc" context="Accessibility text for the progress arc that shows the percentage of finished MyChart Care Companion tasks due today.">%1$@ percent completed</string>
+    <plurals name="wp_homepage_accessibility_feed_header_text" context="Accessibility label for each header section of the notifications table informing the user that the patient (named %2$@) associated with this heading has %1$@ notifications in the rows that follow that header.">
+        <item quantity="one">There is %1$@ notification for %2$@</item>
+        <item quantity="other">There are %1$@ notifications for %2$@</item>
+    </plurals>
+    <plurals name="wp_homepage_accessibility_feed_header_text_self" context="Accessibility label for the header section of the notifications table for users with no proxy subjects, informing the user they have %1$@ notifications in the rows that follow that header.">
+        <item quantity="one">You have %1$@ notification</item>
+        <item quantity="other">You have %1$@ notifications</item>
+    </plurals>
+    <string name="wp_homepage_accessibility_onboarding_skip" context="Accessibility Message giving the user a detailed explanation of the skip button in onboarding, which will dismiss onboarding and take the user to the homepage.">Skip the introduction to the home page and continue to the main website</string>
+    <string name="wp_homepage_accessibility_onboarding_announcement" context="Accessibility Message alerting the user to the appearance of full-screen onboarding appearing to introduce the user to the new home page.">Alert, onboarding has appeared to introduce you to the new home page.</string>
+    <string name="wp_homepage_accessibility_onboarding_page_control" context="Accessibility label telling the user what page on onboarding they are currently on. %1$@ is the current page index. $2$s is the total number of pages.">Page %1$@ of %2$@.</string>
+    <string name="wp_homepage_accessibility_proxy_selection_currently_selected_self" context="Accessibility label telling the user that the patient who has accessibility focus is the currently viewed patient/chart, and that person is the user him/herself. %1$@ is the selected patient.">Currently accessing your record.</string>
+    <string name="wp_homepage_accessibility_proxy_selection_currently_selected_subject" context="Accessibility label telling the user that the proxy subject who has accessibility focus is the currently viewed patient/chart. %1$@ is the proxy subject's name">Currently accessing %1$@\'s record.</string>
+    
+    <!-- Feed-->
+    <string name="wp_feed_after_visit_summary" context="The title for the avs feed item">After Visit Summary</string>
+    <string name="wp_switch_organizations_feature" context="Text for the switch organization button that takes user to the list of their selected organizations" length="30 characters">Switch Organizations</string>
+    <string name="wp_home_loading_text" context="This is the loading message for loading the users feed">Getting your information ready</string>
+    <string name="wp_home_zero_state_title" context="This is the title message for the zero state card in the user feed">Nothing new to show.</string>
+    <string name="wp_home_zero_state_message" context="This is the message for the zero state card in the user feed">Tap the magnifying glass to explore all MyChart can do.</string>
+    <string name="wp_home_feed_error_title" context="This is the error title if the feed can not be loaded">Unable to load your information</string>
+    <string name="wp_home_feed_error_message" context="This is the error message if the feed can not be loaded">Please check back soon!</string>
+    <string name="wp_home_feed_end_of_list" context="This is a message displayed at the end of the users feed list">That\'s all for now!</string>
+    <plurals name="wp_home_feed_h2g_error" context="Error message shown at the bottom of the screen when the feed was unable to load data from a happy together organization.  %1$@ is the org name that failed.">
+        <item quantity="one">We\'re having issues getting data from your linked account, %1$@.</item>
+        <item quantity="other">We\'re having issues getting data from your linked accounts.</item>
+    </plurals>
+    <plurals name="wp_home_feed_h2g_error_title" context="Error message shown at the bottom of the screen when the feed was unable to load data from a happy together organization">
+        <item quantity="one">Account with connection issues:</item>
+        <item quantity="other">Accounts with connection issues:</item>
+    </plurals>
+    <string name="wp_home_remember_my_choice" context="This is a message associated with a checkbox/switch that informs users that, if checked, MyChart will remember who they select and automatically make the same selection on subsequent logins.">Remember my choice</string>
+    <string name="wp_home_remember_my_choice_description" context="This is a description associated with the checkbox/switch that informs users that, if checked, MyChart will remember who they select and automatically make the same selection on subsequent logins. The description reminds users that they can change this selection later via Account Settings.">You can change this later in Account Settings.</string>
+    <string name="wp_home_select_patient_subheader" context="This is displayed below the header to select a patient or account to view.  This is a sub header explaining you can change later.  %1$@ is either 'Switch Patients' or 'Switch Account' based on your account type.">You can switch at any time by tapping the %1$@ button at the top of the screen.</string>
+    <string name="wp_home_choose_someone_to_begin" context="This is displayed when a user with proxy subjects logs in and immediately faced with a selection screen of patients/accounts to select from. It should be inviting, since it's the opening screen.">Choose someone to begin:</string>
+    <string name="wp_homepage_todo_summary_completed" context="Used on the To Do Summary card above the completion percentage">Completed</string>
+    <string name="wp_homepage_todo_changes_clinic_contacted" context="Used on the To Do Changes card for when the clinic was contacted due to an escalation">Your clinic was contacted</string>
+    <string name="wp_homepage_todo_changes_pcp_contacted" context="Used on the To Do Changes card for when the primary care provider was contacted due to an escalation">Your care provider was contacted</string>
+    <string name="wp_home_feed_pregnancyhub_stopalert_msg" context="This text appears in an alert pop-up which appears when the user selects a button on the pregnancy progress update card which is intended for stopping updates. This is the body text of that alert dialogue.">You will stop getting pregnancy updates on your home page. You will also no longer receive educational content about this pregnancy. Are you sure you want to continue?</string>
+    <string name="wp_home_feed_pregnancyhub_stopalert_msg_nocareplan" context="This text appears in an alert pop-up which appears when the user selects a button on the pregnancy progress update card which is intended for stopping updates. This is the body text of that alert dialogue.">You will stop getting pregnancy updates on your home page. Are you sure you want to continue?</string>
+    <string name="wp_home_feed_pregnancyhub_stopalert_confirm" context="This text appears in an alert pop-up which appears when the user selects a button on the pregnancy progress update card which is intended for stopping updates. This is the postive action button, which confirms the user's desire to cancel updates.">Yes, Stop Updates </string>
+    <string name="wp_home_feed_pregnancyhub_stopalert_cancel" context="This text appears in an alert pop-up which appears when the user selects a button on the pregnancy progress update card which is intended for stopping updates. This is the cancel button text, which will just close out of the alert.">Cancel</string>
+    <plurals name="wp_home_feed_todo_genpattask_label" context="Label for general/patient-created tasks for the summary feed card">
+        <item quantity="one">%1$@ general task</item>
+        <item quantity="other">%1$@ general tasks</item>
+    </plurals>
+    <plurals name="wp_home_feed_todo_medicationtask_label" context="Label for medication tasks for the summary feed card">
+        <item quantity="one">%1$@ medication task</item>
+        <item quantity="other">%1$@ medication tasks</item>
+    </plurals>
+    <plurals name="wp_home_feed_todo_questionnairetask_label" context="Label for questionnaire tasks for the summary feed card">
+        <item quantity="one">%1$@ questionnaire task</item>
+        <item quantity="other">%1$@ questionnaire tasks</item>
+    </plurals>
+    <plurals name="wp_home_feed_todo_educationtask_label" context="Label for education tasks for the summary feed card">
+        <item quantity="one">%1$@ education task</item>
+        <item quantity="other">%1$@ education tasks</item>
+    </plurals>
+    <plurals name="wp_home_feed_todo_flowsheettask_label" context="Label for health-tracking tasks for the summary feed card">
+        <item quantity="one">%1$@ health-tracking task</item>
+        <item quantity="other">%1$@ health-tracking tasks</item>
+    </plurals>
+    <plurals name="wp_home_feed_todo_appointmenttask_label" context="Label for appointment tasks for the summary feed card">
+        <item quantity="one">%1$@ appointment task</item>
+        <item quantity="other">%1$@ appointment tasks</item>
+    </plurals>
+    
+    <!-- Onboarding -->
+    <string name="wp_home_onboarding_skip"
+        context="Button label to dismiss onboarding">Skip</string>
+    <string name="wp_home_onboarding_next"
+        context="Button label to move to the next slide in the Onboarding workflow">Next</string>
+    <string name="wp_home_onboarding_back"
+        context="Button label to move to the previous slide in the Onboarding workflow">Back</string>
+    <string name="wp_home_onboarding_complete"
+        context="Button label to complete the Onboarding workflow">Done</string>
+    <string name="wp_home_onboarding_welcome_title"
+        context="This is the title of the onboarding welcome screen.">We\'ve done some remodeling</string>
+    <string name="wp_home_onboarding_welcome_description"
+        context="This is the description text on the onboarding welcome screen.">With our new, simpler layout, it\'s now easier to find the information that\'s important to you.</string>
+    <string name="wp_home_onboarding_menu_title"
+        context="This is the title of the onboarding shortcuts and menu screen.  Shortcuts are buttons on the homepage that allow you to quickly go to activities and features.">Shortcuts and Menu</string>
+    <string name="wp_home_onboarding_menu_description"
+        context="This is the description text on the onboarding shortucts and menu screen.">You can get to the most commonly used activities through shortcuts at the top of the page. All activities are available from the menu.</string>
+    <string name="wp_home_onboarding_feed_title"
+        context="This is the title of the onboarding health feed screen.">Your Feed</string>
+    <string name="wp_home_onboarding_feed_description"
+        context="This is the description text of the onboarding feed screen, when the user does not have access to proxy subjects.">Your most important alerts and actions now appear on your feed. These alerts guide you to the next steps.</string>
+    <string name="wp_home_onboarding_feed_mixed_description"
+        context="This is the description text of the onboarding feed screen, when the user has access to proxy subjects.">The most important alerts and actions for you and the people you care for now appear on your feed. These alerts guide you to the next steps.</string>
+    <string name="wp_home_onboarding_proxies_title"
+        context="This is the title of the onboarding accounts screen.">You and Your Accounts</string>
+    <string name="wp_home_onboarding_proxies_description"
+        context="This is the description text of the onboarding accounts screen, which is shown to the user when they have access to proxy subjects.">You can find information for you and the people you care for on your home page. If you need to find more information for someone you care for, you can switch to their account from the top of the screen.</string>
+    <string name="wp_home_onboarding_how_to_video"
+        context="This is the text of a button on the first onboarding screen, which the user can select to play an education video of the new homepage.">Watch video</string>
+
+
+    <!-- Shortcut Personalization -->
+    <string name="wp_shortcut_personalization_title_self"
+        context="Title used for Shortcut Personalization activity when accessing yourself">Change Your Shortcuts</string>
+    <string name="wp_shortcut_personalization_title_proxy"
+        context="Title used for Shortcut Personalization activity when accessing a proxy subject. %1$@ is the proxy subject's nickname">Change %1$@\'s Shortcuts</string>
+
+    <string name="wp_home_feed_unspecified_error" context="Critical error message when something went wrong with the app attempting to do what the user intended">We\'re having issues processing your request. Please try again later.</string>
+    
+    <string name="wp_home_information_from" context="Title for happy together pop up about where your item feed card is coming from.">Information from:</string>
+    
+</resources>

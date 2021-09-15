@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017-2021 Epic Systems Corporation
+  -->
+<!--@formatter:off-->
+<resources>
+  <!-- Generic Strings -->
+  <string name="wp_generic_servererror" context="Alert appears when a server error makes completing a required webservice call impossible.">لقد حدث خطأ في الخادم. لطفاً حاول مرة أخرى.</string>
+  <string name="wp_generic_ok" context="Button used widely and generally. Closes a dialog when no action is possible" length="30 characters">موافق</string>
+  <string name="wp_generic_cancel" context="Button closes a dialog without taking any action. Can be found by attempting to cancel an appointment without canceling security if the department has a phone number">الغاء</string>
+  <string name="wp_loadingdialog_general" context="Appears in a variety of places on the app when information is being loaded" length="32 characters">جاري تحميل</string>
+  <string name="wp_generic_error" context="Error dialog title" length="30 characters">خطأ</string>
+  <string name="wp_generic_missingapplicationbrowser" context="used when MyChart wants to open a link to the browser but can't find a browser installed on the user's device">حاولنا فتح هذا الرابط، و لكن لم نتمكن من إيجاد تطبيق لفتحه.</string>
+  <string name="wp_generic_show_more" context="String used to indicate there is more content or text to be displayed">اعرض المزيد</string>
+  <string name="wp_generic_go_to_settings" context="Button used to jump to settings to enable permissions or to change settings">اذهب إلى الإعدادات</string>
+  <string name="wp_generic_save" context="Button used to save something">احفظ</string>
+  <string name="wp_generic_networkerror" context="Alert message when the app detects a lack of network connection while trying to complete a task">تأكد من أن لديك اتصال بالشبكة و حاول مرة أخرى.</string>
+  <string name="wp_generic_networkerrortitle" context="Alert title appears when the app detects a lack of network connection while trying to complete a task" length="20 characters">خطأ في الاتصال</string>
+  <string name="wp_generic_more_info" context="More information" length="20 characters">المزيد من المعلومات</string>
+  <!-- Web View Strings -->
+  <string name="wp_webview_not_supported" context="Alert appears when the user tries to launch a web view activity that is not supported on mobile">يرجى الذهاب للموقع الإلكتروني لعرض هذا النشاط.</string>
+  <!-- Date Strings -->
+  <string name="wp_today" context="Appears in a variety of places to indicate today">اليوم</string>
+  <string name="wp_tomorrow" context="Appears in a variety of places to indicate today">غداً</string>
+  <!-- H2G Refresh Stings -->
+  <string name="wp_community_organization_last_refresh_date" context="The previous/last date the user updated the organization's community link. %1$@ is the date of the last update.">تاريخ التعديل %1$@</string>
+  <string name="wp_community_organization_out_of_date_missing" context="Text displayed when a DXR organization is missing its access/refresh date.">تحديث المعلومات غير متوفر</string>
+  <string name="wp_community_organization_up_to_date" context="For organizations with live links (External MyChart/Fhir), we show the refresh date as 'Up-to-date'">حتى الآن</string>
+  <string name="wp_community_organization_out_of_date_warning" context="Text warning the user that some of their cached/DXR data may be out of date and need to be updated. %1$@ is the name of the data (e.g. allergies).">قد لا يكون %1$@ محدثًا لكل حساب مرتبط. اضغط هنا للتحديث.</string>
+  <string name="wp_community_organization_out_of_date_warning_testresult" context="Text warning the user that some of their cached/DXR data may be out of date and need to be updated. Used for test result only. %1$@ is the name of the data (e.g. allergies).">قد لا يكون %1$@ محدثًا لكل حساب مرتبط. اضغط هنا للتحديث %1$@.</string>
+  <string name="wp_community_organization_dxr_warning" context="Text warning users that some of their data may not be loaded. Tells user to visit their DXR organization's patient portal for the complete information. %1$@ is the name of the external organization">قد لا نتمكن من عرض جميع التفاصيل. اتصل بـ %1$@ أو قم بزيارة بوابة المرضى الخاصة بهم للمزيد من المعلومات.</string>
+  <string name="wp_community_data_is_updating" context="Appears in the Happy Together refresh banner when the patient has data is updating in the background.">يتم تحديث المعلومات الخاصة بك.</string>
+  <string name="wp_community_data_has_error" context="Appears in the Happy Together refresh banner when the patient has data failed updating.">فشل تحديث المعلومات الخاصة بك. انقر للحصول على التفاصيل.</string>
+  <!-- H2G Error Strings -->
+  <string name="wp_community_generic_connection_error" context="Text displayed in the H2G error popup which is shown when we fail to retrieve outside data from any of the organizations that the patient is connected to due to generic connection issues. %1$@ is the organization name.">غير قادر على تحميل المعلومات من %1$@ في هذا الوقت.</string>
+  <string name="wp_community_inactive_account_error" context="Text displayed in the H2G error popup which is shown when we fail to retrieve outside data from any of the organizations that the patient is connected to due to missing active MyChart account. %1$@ is the organization name.">يجب أن تحصل على حساب جديد هنا %1$@.</string>
+  <string name="wp_community_dismiss_error" context="Accessibility label for the X button used to dismiss the H2G error popup">احذف هذه الرسالة</string>
+  <string name="wp_community_tap_for_details_message" context="Tap for details message for h2g error banner.We seperate this from the original text because of accessibility issue.">انقر للحصول على التفاصيل.</string>
+  <!-- H2G Strings -->
+  <string name="wp_community_outside_organization_label" context="Accessibility text for the tappable CE icon">المنظمات الخارجية</string>
+  <!-- HTML Strings -->
+  <string name="wp_core_imagecouldnotberetrieved" context="Alert text when an image could not be loaded">لا يمكن تحميل الصورة</string>
+  <!-- MyChart Web View Strings -->
+  <string name="wp_core_mychartweb_opennewapp" context="message appears when a user clicks on a link in a webview activity that would lead to a new app. Param 1 is the link being opened.">هل ترغب بفتح هذا الرابط في تطبيق آخر ؟\n%1$@</string>
+  <string name="wp_core_mychartweb_opennewapp_yes" context="alert button that opens a link in an external app">استمر</string>
+  <string name="wp_core_mychartweb_opennewapp_no" context="alert button closes an alert without opening a link in an external app">ابقى هنا</string>
+  <string name="wp_core_mychartweb_noapp" context="message appears when a user clicks on a link in a webview activity that would lead to a new app and the app failed to load.">فشل تشغيل التطبيق الآخر.</string>
+  <string name="wp_core_mychartweb_download" context="message appears when a user clicks on a link in a webview activity that would download a file.">هل ترغب في تحميل هذا الملف على جهازك؟</string>
+  <string name="wp_core_mychartweb_download_yes" context="alert button that downloads a file">نعم</string>
+  <string name="wp_core_mychartweb_download_no" context="alert button closes an alert without downloading a file">لا</string>
+  <string name="wp_core_mychartweb_download_description" context="The description for a file downloaded">تحميل من %1$@</string>
+  <string name="wp_core_mychartweb_download_toast" context="Toast message after user started downloading a file from MyChart">تحميل الملف...</string>
+  <string name="wp_core_mychartweb_close" context="alt-text for the 'close' button in a MyChart Web-based workflow">إغلاق</string>
+  <string name="wp_mychart_feature_to_browser_title" context="A title shown to the user if the feature is not supported in the app">استخدم هذه الميزة خارج التطبيق</string>
+  <string name="wp_mychart_feature_to_browser_message" context="A message shown to tell the patient they can launch this feature outside the app">يجب تشغيل هذه الميزة خارج التطبيق. هل ترغب في الاستمرار؟</string>
+  <string name="wp_mychart_feature_to_browser_yes" context="Option to agree to launch a feature outside the application.  But only this time.">نعم، هذه المرة فقط</string>
+  <string name="wp_mychart_feature_to_browser_yes_always" context="Option to agree to launch a feature outside the application.  And to do this every time.">نعم، التشغيل خارج التطبيق دائماً</string>
+  <string name="wp_mychart_feature_to_browser_no" context="Option to not agree to launch outside the application and instead stay in the app">لا، ابقى هنا</string>
+  <string name="wp_mychart_custom_feature_external_launch_title" context="A title shown to the user when they are launching a feature that is about to take them out of the app">يتم تشغيلك خارج التطبيق.</string>
+  <string name="wp_mychart_custom_feature_external_launch_yes" context="Option to agree to launch a feature outside the application to open the browser.">نعم، استمر</string>
+  <string name="wp_mychart_custom_feature_external_launch_no" context="Option to not agree to launch outside the application to open the feature and instead stay in the app">لا، ابقى هنا</string>
+  <!-- Care Companion -->
+  <string name="wp_todo_education_question_subject" context="Subject text for a message sent to provider when patient has a question about an education task.%1$@ is the title of the education task">سؤال بخصوص \"%1$@\"</string>
+  <!-- File Chooser Strings -->
+  <string name="wp_core_filechooser_attachmenttitle" context="menu title for a dialog that allows the user to choose a file">اختر ملف</string>
+  <string name="wp_core_filechooser_takenewphoto" context="menu option that lets the user take a photo with the device camera">التقاط صورة جديدة</string>
+  <string name="wp_core_filechooser_choosephoto" context="menu option that lets the user choose an existing photo from the device">اختر صورة موجودة</string>
+  <string name="wp_core_filechooser_takenewvideo" context="menu option that lets the user take a video with the device camera">تسجيل فيديو جديد</string>
+  <string name="wp_core_filechooser_choosevideo" context="menu option that lets the user choose an existing video from the device">اختر فيديو موجود</string>
+  <string name="wp_core_filechooser_choosefile" context="menu option that lets the user choose an existing file from the device">اختر مستند موجود</string>
+  <string name="wp_core_filechooser_attachmenterror" context="Toast shown when there was an error uploading a document">تعذر التحميل في الوقت الحالي. الرجاء معاودة المحاولة في وقت لاحق.</string>
+  <!-- Permissions Strings -->
+  <string name="wp_core_permissions_error_title" context="The error title when the user rejects the proper permissions to do something in the app.">عفواً!</string>
+  <string name="wp_core_permissions_photo_take_error_message" context="The error message when the user rejects the proper permissions to take a photo.">لكي يتم التقاط صورة، فضلاً اسمح لهذا التطبيق بالوصول للكاميرا.</string>
+  <string name="wp_core_permissions_photo_select_error_message" context="The error message when the user rejects the proper permissions to access storage when selecting a photo.">لكي يتم اختيار صورة، فضلاً اسمح لهذا التطبيق بالتواصل مع وحدة التخزين.</string>
+  <string name="wp_core_permissions_video_take_error_message" context="The error message when the user rejects the proper permissions to take a video.">لكي يتم تسجيل فيديو، فضلاً اسمح لهذا التطبيق بالوصول للكاميرا و وحدة التخزين.</string>
+  <string name="wp_core_permissions_video_select_error_message" context="The error message when the user rejects the proper permissions to access storage when selecting a video.">لكي يتم اختيار فيديو، فضلاً اسمح لهذا التطبيق بالتواصل مع وحدة التخزين.</string>
+  <string name="wp_core_permissions_file_select_error_message" context="The error message when the user rejects the proper permissions to access storage when selecting a file.">لكي يتم اختيار مستند، فضلاً اسمح لهذا التطبيق بالتواصل مع وحدة التخزين.</string>
+  <string name="wp_core_permissions_set_permissions_button" context="The default yes button for requesting permissions.">تعيين أذونات</string>
+  <string name="wp_core_permissions_nevermind_button" context="The default no button for requesting permissions.">لا تهتم</string>
+  <!-- Unit Testing Strings -->
+  <string name="wp_test_string_with_params" context="This is a test string for unit testing.  Do not worry about translation.">%1$@\" و\"%2$@</string>
+  <plurals name="wp_test_string_with_plurals" context="This is a test string for unit testing.  Do not worry about translation.">
+    <item quantity="one">واحدة(%1$@, %2$@)</item>
+    <item quantity="other">أخرى(%1$@, %2$@)</item>
+  </plurals>
+  <!-- Inline Education Strings -->
+  <string name="wp_inline_education_view_diagnosis" context="Accessibility text for the Inline Education Infobutton">المزيد من المعلومات حول زر التشخيص.</string>
+  <string name="wp_inline_education_view_medication" context="Accessibility text for the Inline Education Infobutton">المزيد من المعلومات حول زر العلاج.</string>
+  <string name="wp_inline_education_view_test_result" context="Accessibility text for the Inline Education Infobutton">المزيد من المعلومات حول زر نتيجة الفحص.</string>
+  <string name="wp_inline_education_view_procedure" context="Accessibility text for the Inline Education Infobutton">المزيد من المعلومات حول زر العملية.</string>
+  <string name="wp_inline_education_view_allergy" context="Accessibility text for the Inline Education Infobutton">المزيد من المعلومات حول زر الحساسية.</string>
+  <string name="wp_inline_education_view_immunization" context="Accessibility text for the Inline Education Infobutton">المزيد من المعلومات حول زر التطعيم.</string>
+  <!-- Tutorials Strings -->
+  <string name="wp_core_tutorials_close" context="text for the button that a user will tap to exit tutorials">تم</string>
+  <string name="wp_core_tutorials_more_help" context="Text for a button in tutorials that is used to continue receiving tutorial info">اخبرني أكثر</string>
+  <string name="wp_core_tutorials_back" context="Text for a button in tutorials that is used to go back a step">رجوع</string>
+  <string name="wp_core_tutorials_forward" context="Text for a button in tutorials that is used to go foward a step">تقدم</string>
+  <string name="wp_core_tutorials_done_button_accessibility_label" context="Accessibility label for the 'done' button in a tutorial. This will be read by VoiceOver when the user reaches the button">تم</string>
+  <string name="wp_core_tutorials_done_button_accessibility_hint" context="Accessibility hint for the 'done' button in a tutorial. This explains what will happen when the button is tapped and will be read by VoiceOver after the accessibility label">يغلق البرنامج التعليمي</string>
+  <string name="wp_core_tutorials_next_button_accessibility_label" context="Accessibility label for the 'next' button in a tutorial. This will be read by VoiceOver when the user reaches the button">الصفحة التالية</string>
+  <string name="wp_core_tutorials_next_button_accessibility_hint" context="Accessibility hint for the 'next' button in a tutorial. This explains what will happen when the button is tapped and will be read by VoiceOver after the accessibility label">الاستمرار إلى صفحة البرنامج التعليمي التالية</string>
+  <string name="wp_core_tutorials_previous_button_accessibility_label" context="Accessibility label for the 'previous' button in a tutorial. This will be read by VoiceOver when the user reaches the button">الصفحة السابقة</string>
+  <string name="wp_core_tutorials_previous_button_accessibility_hint" context="Accessibility hint for the 'previous' button in a tutorial. This explains what will happen when the button is tapped and will be read by VoiceOver after the accessibility label">العودة إلى صفحة البرنامج التعليمي السابقة</string>
+  <string name="wp_core_tutorials_progress_accessibility_label" context="Accessibility label for the control that indicates the current page">صفحة %1$d من %2$d</string>
+  <!-- Camera Permission Strings -->
+  <string name="wp_core_camera_missing_permissions_title" context="Title for an alert that explains to the user that the application lacks sufficient permission to access the device's camera.">لا يمكن الوصول للكاميرا</string>
+  <string name="wp_core_camera_missing_permissions_message_ios" context="Alert message that hat explains to the user that the application lacks sufficient permission to access the device's camera. %1$@ is the application name (i.e. MyChart).">%1$@ ليس لديه الإذن للوصول إلى الكاميرا. لمنح %1$@ الإذن، يرجى السماح بالوصول للكاميرا في الإعدادات &gt; %1$@.</string>
+  <!-- Validation Strings -->
+  <string name="wp_core_validation_specialcharacters_title" context="Title for an alert that explains to the user that special characters cannot be entered as input.">الرموز الخاصة غير مسموح بها</string>
+  <string name="wp_core_validation_specialcharacters_message" context="Alert message that explains to the user that special characters cannot be entered as input.">لا يمكنك إدخال رموز خاصة هناـ بما في ذلك الأحرف من لغات معينة أو الرموز التعبيرية.</string>
+  <string name="wp_h2g_dismiss_content_description" context="Accessibility content description for a dismiss icon button">تجاهل</string>
+  <!-- PDF Download Strings -->
+  <string name="wp_pdf_download_title" context="Error title on pop up when the user can not view the PDF in the app.">غير قادر على عرض PDF في التطبيق</string>
+  <string name="wp_pdf_download_message" context="Error message on pop up when the user can not view the PDF in the app.  %1$@ is the MyChart brand name">هل ترغب في تنزيل ملف PDF لعرضه مع تطبيق خارجي؟ بمجرد تنزيل هذا الملف، لن يتم تأمينه بواسطة %1$@. قد تتمكن التطبيقات الأخرى الموجودة على جهازك من الوصول إلى هذا الملف.</string>
+  <string name="wp_pdf_yes_download" context="Button to download the file">نعم، تحميل</string>
+  <string name="wp_pdf_no_permission" context="User did not give permissions to download the file">تعذر تنزيل الملف. يتطلب إذن ملف.</string>
+  <string name="wp_pdf_download_success" context="The PDF was downloaded successfully">تم تحميل PDF</string>
+  <string name="wp_pdf_download_error" context="The PDF was not downloaded due to an error">خطأ في تحميل PDF</string>
+  <!-- How To Videos -->
+  <string name="wp_how_to_video_header" context="Title used on the header of How To video cards">شاهد لتتعلم</string>
+  <string name="wp_how_to_video_share_everywhere_title" context="Title of the How To video for Share Everywhere, which appears in a card on the Share Everywhere page">Share Everywhere</string>
+  <string name="wp_how_to_video_share_everywhere_description" context="Description of the How To video for Share Everywhere, which appears in a card on the Share Everywhere page">تعلم كيفية مشاركة سجلك الطبي مع مقدم رعاية ليس لديه حق الوصول بعد.</string>
+  <string name="wp_how_to_video_video_visit_title" context="Title of the How To video for Video Visits, which appears in a card in appointment details for a video visit">زيارة فيديو</string>
+  <string name="wp_how_to_video_video_visit_description" context="Description of the How To video for Video Visits, which appears in a card in appointment details for a video visit">تعلم كيفية إكمال تسجيل الوصول وبدء زيارة الفيديو.</string>
+  <string name="wp_how_to_video_thumbnail_accessibility" context="Description of the video thumbnail that will be read by screen readers">انقر لتشغيل الفيديو</string>
+  <string name="wp_how_to_see_more" context="Text for the button to expand the How To video card">شاهد المزيد</string>
+  <string name="wp_how_to_see_less" context="Text for the button to collapse the How To video card">عرض تفاصيل أقل</string>
+  <string name="wp_how_to_close" context="Text for the button to close the popup containing the How To video">اغلق</string>
+</resources>
+<!--@formatter:on-->

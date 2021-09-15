@@ -1,0 +1,353 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name HomePage
+import Foundation
+@_exported import HomePage
+import Swift
+@objc public class HPMyChartNowFeedItem : HomePage.HPFeedItem {
+  public var encounterReasonDisplayText: Swift.String
+  public var startDateDisplayText: Swift.String
+  public var endDateDisplayText: Swift.String
+  public var departmentDisplayText: Swift.String
+  public var whatsNewDisplayText: Swift.String
+  required public init(from decoder: Swift.Decoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers public class HomepageWebServiceAPI {
+  @available(watchOS 6, *)
+  @available(iOS, unavailable)
+  public class func getFeedForAppleWatch() -> PECore.WebService<HomePage.HPGetMixedItemFeedResponse>?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class HPMenuGroup : ObjectiveC.NSObject, Swift.Decodable {
+  @objc public var items: [HomePage.HPMenuItem]
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class HPZeroStateFeedItem : HomePage.HPFeedItem {
+  public init(zeroStateIconKey: Swift.String)
+  @objc override dynamic public init()
+  public var zeroStateIconKey: Swift.String
+  public var image: UIKit.UIImage? {
+    get
+    set
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class PEHomePageComponentAPI : ObjectiveC.NSObject, PECore.PEHomePageComponentAPIProtocol {
+  public static var sMenus: [Swift.String : [ObjectiveC.NSObject]]
+  @objc public static func getStaticMenus() -> [Swift.String : [ObjectiveC.NSObject]]
+  @objc public static func setStaticMenus(menus: [Swift.String : [ObjectiveC.NSObject]])
+  @objc public func hasAccessForHomePage(_ context: PECore.PEUserContext) -> PECore.PEComponentAccessResult
+  @objc public func getHomePageFeed(for context: PECore.PEUserContext) -> UIKit.UIViewController
+  @objc public func setHealthFeedContext(_ feed: UIKit.UIViewController, person: PECore.PEPersonProtocol)
+  @objc public func getHomePage(for context: PECore.PEUserContext, with overlay: PECore.HomepageOverlayType, presetPerson selectedPerson: PECore.PEPersonProtocol?) -> UIKit.UIViewController
+  @objc public func invalidateFeed()
+  @objc public func getPersonalizeShortcutsViewController(forUserContext userContext: PECore.PEUserContext, andPatientContext patientContext: PECore.PEPatientContext) -> UIKit.UIViewController
+  @objc public func hasAccessForPersonalizeShortcuts(_ context: PECore.PEUserContext) -> PECore.PEComponentAccessResult
+  @objc public func getPersonalizeShortcutsActivityTitle(_ userContext: PECore.PEUserContext, _ patientContext: PECore.PEPatientContext?) -> Swift.String
+  @objc public func notifyReloadMenu()
+  @objc public func setAppleWatchCardDismissmal(_ userContext: PECore.PEUserContext, _ isDismissed: Swift.Bool)
+  @objc public func preloadMenu(completion: @escaping ((Swift.Bool, PECore.PEError) -> Swift.Void))
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public class HPVisitDisplayDetails : ObjectiveC.NSObject, Swift.Decodable {
+  public var timeDisplayText: Swift.String?
+  public var monthDisplayText: Swift.String?
+  public var weekdayDisplayText: Swift.String?
+  public var dayDisplayText: Swift.String?
+  public var yearDisplayText: Swift.String?
+  public var year: Swift.Int? {
+    get
+  }
+  public var departmentDisplayText: Swift.String?
+  public var arrivalLocationDisplayText: Swift.String?
+  public var providerDisplayText: Swift.String?
+  public var date: Foundation.Date?
+  required public init(from decoder: Swift.Decoder) throws
+  public func shouldShowYear() -> Swift.Bool
+  public static func shouldShowYear(date: Foundation.Date?, forceYearDisplay: Swift.Bool = false) -> Swift.Bool
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public class HPAction : ObjectiveC.NSObject, Swift.Decodable {
+  @objc public enum UriType : Swift.Int {
+    case unknown = -1
+    case redirect = 0
+    case invisiblePost = 1
+    case softPost = 2
+    case hardPost = 3
+    case fdi = 4
+    case reload = 999
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public var uri: Swift.String?
+  @objc public var displayText: Swift.String?
+  @objc public var type: HomePage.HPAction.UriType
+  public init?(uri: Swift.String, displayText: Swift.String, type: HomePage.HPAction.UriType, iconKey: Swift.String? = nil, id: Swift.String? = nil)
+  required public init(from decoder: Swift.Decoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_hasMissingDesignatedInitializers public class HPUpcomingVisitFeedItem : HomePage.HPFeedItem {
+  public var csn: Swift.String
+  public var visitTypeDisplayText: Swift.String
+  public var visitDisplayDetails: HomePage.HPVisitDisplayDetails
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class HPFastPassFeedItem : HomePage.HPFeedItem {
+  @objc public var headerDisplayText: Swift.String?
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public class HPAnnouncementFeedItem : HomePage.HPFeedItem {
+  public var titleDisplayText: Swift.String?
+  public var bodyDisplayText: Swift.String?
+  required public init(from decoder: Swift.Decoder)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_hasMissingDesignatedInitializers public class HPAccountSummaryFeedItem : HomePage.HPFeedItem {
+  public var accountStatusDisplayText: Swift.String
+  public var amountDueDisplayText: Swift.String
+  public var billingSystemDisplayText: Swift.String?
+  public var guarantorDisplayText: Swift.String
+  public var newStatementDisplayText: Swift.String?
+  public var serviceAreaDisplayText: Swift.String
+  public var serviceAreaLogoUrl: Swift.String?
+  public var serviceAreaLogoIconKey: Swift.String?
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers public class HPGetMixedItemFeedResponse : Swift.Decodable {
+  public var subjects: [HomePage.HPSubject]
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers public class HPAbstractFeedItem : ObjectiveC.NSObject, Swift.Decodable {
+  @objc override dynamic public init()
+  required public init(from decoder: Swift.Decoder)
+  @objc deinit
+}
+extension Bundle {
+  public static var homePage: Foundation.Bundle {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers public class HPConversationFeedItem : HomePage.HPFeedItem {
+  public var subjectDisplayText: Swift.String
+  public var senderDisplayText: Swift.String
+  public var bodyPreviewDisplayText: Swift.String
+  public var dateSentDisplayText: Swift.String
+  public func senderIsMyChartUser() -> Swift.Bool
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension HPConversationFeedItem : PECore.ProviderImageDataSource {
+  public var providerId: Swift.String {
+    get
+  }
+  public var isProviderIdEncrypted: Swift.Bool {
+    get
+  }
+  public var hasImageOnBlob: Swift.Bool {
+    get
+  }
+  public var organization: PECore.PEOrganizationInfoProtocol {
+    get
+  }
+  @objc dynamic public var imageURL: Swift.String {
+    @objc get
+  }
+}
+@objc @_hasMissingDesignatedInitializers public class HPMediaFeedItem : HomePage.HPFeedItem {
+  public var mediaUrl: Swift.String?
+  public var mediaIconKey: Swift.String?
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc open class HPSubject : ObjectiveC.NSObject, Swift.Decodable {
+  open var person: PECore.PEPersonProtocol? {
+    get
+    set
+  }
+  public var feedItems: [HomePage.HPFeedItem]
+  public var zeroStateIconKey: Swift.String?
+  required public init(from decoder: Swift.Decoder) throws
+  required public init(accountId: Swift.String?, feedItems: [HomePage.HPFeedItem])
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc public class HPMainViewController : UIKit.UIViewController {
+  @objc public var shouldManageNavigationBarVisibility: Swift.Bool
+  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func prepare(for segue: UIKit.UIStoryboardSegue, sender: Any?)
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @objc override dynamic public func accessibilityPerformMagicTap() -> Swift.Bool
+  @objc override dynamic public func accessibilityScroll(_ direction: UIKit.UIAccessibilityScrollDirection) -> Swift.Bool
+  @objc override dynamic public func showNavigationBar(_ shouldShow: Swift.Bool)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension HPMainViewController : UIKit.UIPopoverPresentationControllerDelegate {
+  @objc dynamic public func adaptivePresentationStyle(for controller: UIKit.UIPresentationController, traitCollection: UIKit.UITraitCollection) -> UIKit.UIModalPresentationStyle
+  @objc dynamic public func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIKit.UIPopoverPresentationController) -> Swift.Bool
+}
+extension HPMainViewController : PECore.PEHostableComponentViewController {
+  @objc dynamic public func setComponentHost(_ componentHost: PECore.PEComponentHostProtocol)
+}
+@objc @_hasMissingDesignatedInitializers public class HPTestResultFeedItem : HomePage.HPFeedItem {
+  public var resultDetailsDisplayText: Swift.String
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension HPTestResultFeedItem : PECore.ProviderImageDataSource {
+  public var providerId: Swift.String {
+    get
+  }
+  public var isProviderIdEncrypted: Swift.Bool {
+    get
+  }
+  public var hasImageOnBlob: Swift.Bool {
+    get
+  }
+  public var organization: PECore.PEOrganizationInfoProtocol {
+    get
+  }
+  @objc dynamic public var imageURL: Swift.String {
+    @objc get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class HPFeedItem : HomePage.HPAbstractFeedItem {
+  @objc public var topicId: Swift.Int
+  @objc public var iconKey: Swift.String?
+  @objc public var subIconKey: Swift.String?
+  @objc public var displayText: Swift.String
+  @objc public var primaryAction: HomePage.HPAction?
+  @objc public var secondaryAction: HomePage.HPAction?
+  @objc public var tertiaryAction: HomePage.HPAction?
+  @objc public var defaultAction: HomePage.HPAction?
+  @objc public var shouldShowWatermark: Swift.Bool
+  @objc public var careEverywhereInfo: HomePage.HPFeedItem.HPCareEverywhereInfo?
+  @objc override dynamic public init()
+  @objc @_hasMissingDesignatedInitializers public class HPCareEverywhereInfo : HomePage.PEOrganizationInfoCopyFromPECoreUntilIOS13 {
+    @objc required dynamic public init()
+    @objc deinit
+    override public init(orgInfoProtocol: PECore.PEOrganizationInfoProtocol)
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @available(iOS, deprecated: 13.0)
+@objc public class PEOrganizationInfoCopyFromPECoreUntilIOS13 : ObjectiveC.NSObject, Swift.Decodable, PECore.PEOrganizationInfoProtocol, PECore.ImageDataSource {
+  @objc public var organizationId: Swift.String
+  @objc public var isExternal: Swift.Bool
+  @objc public var logoUrl: Swift.String
+  @objc public var organizationName: Swift.String
+  @objc public var linkStatus: Swift.Int
+  @objc public var organizationLinkType: PECore.ExternalOrganizationLinkType
+  @objc public var lastRefreshDate: Foundation.Date?
+  @objc public var imageURL: Swift.String
+  @objc override required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  public init(orgInfoProtocol: PECore.PEOrganizationInfoProtocol)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class HPMenuItem : ObjectiveC.NSObject, Swift.Decodable {
+  @objc public var launchUri: Swift.String
+  required public init(from decoder: Swift.Decoder) throws
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class HPFeedViewController : UIKit.UIViewController {
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @objc deinit
+  public func reloadSpacer()
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension HPFeedViewController : UIKit.UITableViewDelegate, UIKit.UITableViewDataSource {
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, viewForHeaderInSection section: Swift.Int) -> UIKit.UIView?
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForHeaderInSection section: Swift.Int) -> CoreGraphics.CGFloat
+  @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @objc dynamic public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+  @objc dynamic public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
+  public func scrollViewDidStopScrolling(_ scrollView: UIKit.UIScrollView)
+  @objc dynamic public func scrollViewDidEndScrollingAnimation(_ scrollView: UIKit.UIScrollView)
+}
+extension HPFeedViewController : PECore.H2GErrorBannerViewDelegate {
+  @objc dynamic public func didTapH2GBanner(popupComponent: PECore.PEH2GOrgPopupComponentAPIProtocol)
+  @objc dynamic public func didCloseH2GBanner()
+}
+extension HPImageDataSource : PECore.CacheableImageDataSource {
+}
+public class HPImageDataSource {
+  public static let relativeUrlPath: Swift.String
+  @objc public var imageURL: Swift.String {
+    get
+  }
+  public var assetType: HomePage.HPImageDataSource.AssetType {
+    get
+  }
+  required public init(imageURL: Swift.String)
+  public enum AssetType {
+    case local
+    case absoluteUrl
+    case relativeUrl
+    public static func == (a: HomePage.HPImageDataSource.AssetType, b: HomePage.HPImageDataSource.AssetType) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class HPMessageFeedItem : HomePage.HPFeedItem {
+  public var subjectDisplayText: Swift.String
+  public var bodyPreviewDisplayText: Swift.String
+  public var hasNoPreview: Swift.Bool
+  public var senderDisplayText: Swift.String
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension HPMessageFeedItem : PECore.ProviderImageDataSource {
+  public var providerId: Swift.String {
+    get
+  }
+  public var isProviderIdEncrypted: Swift.Bool {
+    get
+  }
+  public var hasImageOnBlob: Swift.Bool {
+    get
+  }
+  public var organization: PECore.PEOrganizationInfoProtocol {
+    get
+  }
+  @objc dynamic public var imageURL: Swift.String {
+    @objc get
+  }
+}
+extension HomePage.HPAction.UriType : Swift.Equatable {}
+extension HomePage.HPAction.UriType : Swift.Hashable {}
+extension HomePage.HPAction.UriType : Swift.RawRepresentable {}
+extension HomePage.HPImageDataSource.AssetType : Swift.Equatable {}
+extension HomePage.HPImageDataSource.AssetType : Swift.Hashable {}

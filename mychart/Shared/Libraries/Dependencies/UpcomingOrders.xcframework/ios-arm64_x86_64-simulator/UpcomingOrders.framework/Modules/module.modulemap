@@ -1,0 +1,11 @@
+framework module UpcomingOrders {
+  umbrella header "UpcomingOrders.h"
+
+  export *
+  module * { export * }
+}
+
+module UpcomingOrders.Swift {
+    header "UpcomingOrders-Swift.h"
+    requires objc
+}

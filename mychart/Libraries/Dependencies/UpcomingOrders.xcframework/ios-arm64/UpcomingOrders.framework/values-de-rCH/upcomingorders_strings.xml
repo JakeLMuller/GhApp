@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="wp_upcoming_orders_title" context="Title used for Upcoming Orders activity, where the user can view upcoming procedures and orders.">Bevorstehende Verordnungen</string>
+</resources>

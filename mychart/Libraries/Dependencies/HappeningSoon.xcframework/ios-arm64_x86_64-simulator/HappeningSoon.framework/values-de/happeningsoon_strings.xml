@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2018-2020 Epic Systems Corporation
+  -->
+<resources>
+  <!-- Event types -->
+  <string name="wp_happening_soon_medications" context="Used as the name for a medication administration event on a patient's schedule">Medikamente</string>
+  <!-- Labels for timeline sections -->
+  <string name="wp_happening_soon_section_name_yesterday" context="Used as a 'section' label for the portion patient's schedule that happened yesterday. Any translation over ~14 characters may be truncated">Gestern</string>
+  <string name="wp_happening_soon_section_name_earlier_today" context="Used as a 'section' label for the portion patient's schedule that happened earlier today. Any translation over ~14 characters may be truncated">Bisherige Ereignisse</string>
+  <string name="wp_happening_soon_section_name_later_today" context="Used as a 'section' label for the portion patient's schedule that will still happen today. Any translation over ~14 characters may be truncated">Bevorstehende Ereignisse</string>
+  <string name="wp_happening_soon_section_name_tomorrow" context="Used as a 'section' label for the portion patient's schedule that will happen tomorrow. Any translation over ~14 characters may be truncated">Morgen</string>
+  <!-- Strings for displaying event times -->
+  <string name="wp_happening_soon_time_exact" context="Displays for an event that starts at an exact time and has no available end time. %1$@ is the time the event starts, like '10:00 a.m.'">Um %1$@</string>
+  <string name="wp_happening_soon_time_nearby" context="Displays for an event that starts at an approximate time and has no available end time. %1$@ is the rough time the event starts, like '10 a.m.'">Gegen %1$@</string>
+  <string name="wp_happening_soon_time_morning" context="Used to describe when an event occurred, if it occurred or will occur in the morning and we're only allowed to share the time of day">Vormittags</string>
+  <string name="wp_happening_soon_time_afternoon" context="Used to describe when an event occurred, if it occurred or will occur in the afternoon and we're only allowed to share the time of day">Nachmittags</string>
+  <string name="wp_happening_soon_time_evening" context="Used to describe when an event occurred, if it occurred or will occur in the evening and we're only allowed to share the time of day">Abends</string>
+  <string name="wp_happening_soon_time_night" context="Used to describe when an event occurred, if it occurred or will occur at night and we're only allowed to share the time of day">Nachts</string>
+  <string name="wp_happening_soon_time_yesterday" context="Used to describe when an event occurred, if it occurred yesterday and we're only allowed to share the day">Gestern</string>
+  <string name="wp_happening_soon_time_today" context="Used to describe when an event occurred, if it occurred or will occur today and we're only allowed to share the day">Heute</string>
+  <string name="wp_happening_soon_time_tomorrow" context="Used to describe when an event occurred, if it will occur tomorrow and we're only allowed to share the day">Morgen</string>
+  <!-- Time span strings -->
+  <string name="wp_happening_soon_timespan_exact" context="Formats an event's start and end times when we want to show exactly when the event starts and ends. %1$@ is the event's exact start time, and %2$@ is the event's exact end time, both formatted like '10:15 AM'">%1$@ bis %2$@</string>
+  <plurals name="wp_happening_soon_timespan_nearby_hours" context="Formats an event's approximate start time and approximate duration, when the duration is expressed in hours. The plural key is the number of hours. %1$@ is the approximate start time (like '10 a.m.'), and %2$@ is the number of hours.">
+    <item quantity="one">Beginnt gegen %1$@ und wird etwa eine Stunde dauern.</item>
+    <item quantity="other">Beginnt gegen %1$@ und wird etwa %2$@ Stunden dauern.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_nearby_minutes" context="Formats an event's approximate start time and approximate duration, when the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the approximate start time (like '10 a.m.'), and %2$@ is the number of minutes.">
+    <item quantity="one">Beginnt gegen %1$@ und wird etwa eine Minute dauern.</item>
+    <item quantity="other">Beginnt gegen %1$@ und wird etwa %2$@ Minuten dauern.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_morning_hours" context="Formats an event's time of day and approximate duration, when the event takes place in the morning and the duration is expressed in hours. The plural key is the number of hours. %1$@ is the number of hours.">
+    <item quantity="one">Vormittags, etwa eine Stunde lang.</item>
+    <item quantity="other">Vormittags, etwa %1$@ Stunden lang.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_afternoon_hours" context="Formats an event's time of day and approximate duration, when the event takes place in the afternoon and the duration is expressed in hours. The plural key is the number of hours. %1$@ is the number of hours.">
+    <item quantity="one">Nachmittags, etwa eine Stunde lang.</item>
+    <item quantity="other">Nachmittags, etwa %1$@ Stunden lang.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_evening_hours" context="Formats an event's time of day and approximate duration, when the event takes place in the evening and the duration is expressed in hours. The plural key is the number of hours. %1$@ is the number of hours.">
+    <item quantity="one">Abends, etwa eine Stunde lang.</item>
+    <item quantity="other">Abends, etwa %1$@ Stunden lang.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_night_hours" context="Formats an event's time of day and approximate duration, when the event takes place at night and the duration is expressed in hours. The plural key is the number of hours. %1$@ is the number of hours.">
+    <item quantity="one">Nachts, etwa eine Stunde lang.</item>
+    <item quantity="other">Nachts, etwa %1$@ Stunden lang.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_morning_minutes" context="Formats an event's time of day and approximate duration, when the event takes place in the morning and the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the number of minutes.">
+    <item quantity="one">Vormittags, etwa eine Minute lang.</item>
+    <item quantity="other">Vormittags, etwa %1$@ Minuten lang.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_afternoon_minutes" context="Formats an event's time of day and approximate duration, when the event takes place in the afternoon and the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the number of minutes.">
+    <item quantity="one">Nachmittags, etwa eine Minute lang.</item>
+    <item quantity="other">Nachmittags, etwa %1$@ Minuten lang.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_evening_minutes" context="Formats an event's time of day and approximate duration, when the event takes place in the evening and the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the number of minutes.">
+    <item quantity="one">Abends, etwa eine Minute lang.</item>
+    <item quantity="other">Abends, etwa %1$@ Minuten lang.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_timeofday_night_minutes" context="Formats an event's time of day and approximate duration, when the event takes place at night and the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the number of minutes.">
+    <item quantity="one">Nachts, etwa eine Minute lang.</item>
+    <item quantity="other">Nachts, etwa %1$@ Minuten lang.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_durationonly_hours" context="Formats an event's approximate duration, when the duration is expressed in hours. The plural key is the number of hours. %1$@ is the number of hours.">
+    <item quantity="one">Etwa eine Stunde.</item>
+    <item quantity="other">Etwa %1$@ Stunden.</item>
+  </plurals>
+  <plurals name="wp_happening_soon_timespan_durationonly_minutes" context="Formats an event's approximate duration, when the duration is expressed in minutes. The plural key is the number of minutes. %1$@ is the number of minutes.">
+    <item quantity="one">Etwa eine Minute.</item>
+    <item quantity="other">Etwa %1$@ Minuten.</item>
+  </plurals>
+  <!-- Details view strings -->
+  <string name="wp_happening_soon_details_view_title" context="Title of the activity that displays when the user clicks on an event from the timeline.">Ereignisdetails</string>
+  <!-- Tasks -->
+  <string name="wp_happening_soon_task_details_documented_by" context="Label for the provider who documented this task. %1$@ will be replaced with the provider's name">Dokumentiert durch %1$@</string>
+  <string name="wp_happening_soon_task_details_completed" context="Status for a nursing task that has been completed. %1$@ is the time it was completed.">Abgeschlossen um %1$@</string>
+  <string name="wp_happening_soon_task_details_skipped" context="Status for a nursing task that has been skipped.">Übersprungen</string>
+  <string name="wp_happening_soon_task_details_canceled" context="Status for a nursing task that has been canceled.">Abgebrochen</string>
+  <string name="wp_happening_soon_task_details_frequency" context="Tells the user how often a task is repeated. %1$@ is the frequency (from the server), like 'once' or 'every 2 hours' or '4 times a day'. It works great in English as 'This Event occurs ___.', but you can switch it to 'Frequency: ___' in another language if the grammar doesn't work out.">Dieses Ereignis findet %1$@ statt.</string>
+  <!-- Appointments/surgeries -->
+  <string name="wp_happening_soon_appointment_details_procedures" context="Displayed above a list of procedures that make up an inpatient appointment or surgery">Was wird geschehen?</string>
+  <string name="wp_happening_soon_appointment_details_providers" context="Displayed above a list of providers who will be involved in an inpatient appointment or surgery">Mit wem?</string>
+  <string name="wp_happening_soon_appointment_details_instructions" context="Displayed above patient instructions for an inpatient appointment or surgery">Was sollte ich wissen?</string>
+  <!-- Medication administrations -->
+  <string name="wp_happening_soon_medications_ordered_by" context="Label for the provider that ordered this medication. %1$@ will be replaced with the provider's name">Verordnet durch %1$@</string>
+  <string name="wp_happening_soon_acc_medication_status" context="Accessibility label for the status of a medication. %1$@ will be replaced with the current status of a medication administration, like Due or Complete">Status: %1$@</string>
+  <string name="wp_happening_soon_medication_status_set_by" context="Accessibility label for the provider who set the current status of a medication. %1$@ will be replaced with the provider's name">Status eingestellt durch %1$@</string>
+  <string name="wp_happening_soon_medication_completed" context="Tells the user when a medication was given. %1$@ = the completing action. Could be 'given', 'new bag', 'restarted', etc. %2$@ = the time the med was given">%1$@ um %2$@</string>
+  <string name="wp_happening_soon_medication_completed_with_day" context="Tells the user when a medication was given, if it was given on a day that wasn't the day it was due. %1$@ = the completing action. Could be 'given', 'new bag', 'restarted', etc. %2$@ = the time the med was given. %3$@ = the day it was given. Could be 'today', 'tomorrow', '11/12/2018', etc.">%1$@ %3$@ um %2$@</string>
+  <string name="wp_happening_soon_medication_not_given_with_reason" context="Tells the user that a medication was not given. %1$@ = how the med was not given - 'Skipped', 'Held', etc. %2$@ = the reason the med was not given - 'Patient refused', 'Patient asleep', etc.">%1$@ (%2$@)</string>
+  <string name="wp_happening_soon_medications_linked_and" context="Labels a group of linked medications using the 'and' linkage type - i.e., all of them will be given together">ALLE der folgenden</string>
+  <string name="wp_happening_soon_medications_linked_or" context="Labels a group of linked medications using the 'or' linkage type - i.e., only one of them will be given">EINES der folgenden</string>
+  <string name="wp_happening_soon_medications_hidden_multi" context="Header that indicates that medications are hidden from only some proxies">Medikamente mit diesem Symbol sind nicht sichtbar für bestimmte Familienmitglieder und Freunde.</string>
+  <string name="wp_happening_soon_medications_hidden_all" context="Header that indicates that medications are hidden from all proxies">Medikamente mit diesem Symbol sind nicht sichtbar für alle Familienmitglieder und Freunde.</string>
+  <string name="wp_happening_soon_medications_hidden_header" context="Header for the list of proxies that the medications may be hidden from">Nicht sichtbar für</string>
+  <string name="wp_happening_soon_medications_hidden_accessibility_label" context="Appended to accessibility label for hidden medications">Nicht sichtbar</string>
+  <!-- Miscellaneous -->
+  <string name="wp_happening_soon_empty_schedule" context="Displayed to the user when there's nothing to display on the patient's schedule">Im Moment sind keine geplanten Ereignisse zur Anzeige vorhanden.</string>
+  <string name="wp_happening_soon_error_message" context="Displayed to the user when we fail at displaying the patient's schedule.">Beim Laden des Zeitplans ist ein Fehler aufgetreten.</string>
+</resources>

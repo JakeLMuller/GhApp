@@ -1,0 +1,4 @@
+<resources>
+    <string name="wp_preventivecare_activity_title"
+        context="Title for the Preventive Care activity">Preventive Care</string>
+</resources>

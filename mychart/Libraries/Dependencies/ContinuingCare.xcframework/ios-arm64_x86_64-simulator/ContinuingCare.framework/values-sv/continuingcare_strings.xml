@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="wp_continuingcare_activity_title" context="Title for the Continuing Care activity">Fortlöpande vård</string>
+  <string name="wp_continuingcare_tutorial_overview" context="Tutorial text introducing the continuing care activity to the patient. %%CONTINUINGCARE is replaced with the name of the activity.">%% CONTINUINGCARE låter dig granska värdgivare som erbjuder vård efter utskrivning och välja vårdgivarna som du föredrar.</string>
+  <string name="wp_continuingcare_tutorial_overview_proxy" context="Tutorial text introducing the continuing care activity to the patient proxy. %%CONTINUINGCARE is replaced with the name of the activity. %%PATNAME is replaced with the name of the patient">%% CONTINUINGCARE låter dig granska värdgivare som erbjuder vård efter utskrivning och välja vårdgivarna som %%PATNAME föredrar.</string>
+  <string name="wp_continuingcare_tutorial_overview_2" context="Tutorial text explaining more about the workings of continuing care to the patient.">Granska dessa vårdalternativ och markera dina preferenser. Om du stöter på problem när du granskar listan tar du kontakt med din patientkoordinator.</string>
+  <string name="wp_continuingcare_tutorial_overview_2_proxy" context="Tutorial text explaining more about the workings of continuing care to the patient proxy. %%PATNAME is replaced with the name of the patient">Granska dessa vårdalternativ och markera preferenser för %%PATNAME. Om du stöter på problem när du granskar listan tar du kontakt med patientkoordinatoren för %%PATNAME.</string>
+</resources>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2017-2020 Epic Systems Corporation
+  -->
+<resources>
+  <!-- Share Everywhere -->
+  <string name="wp_share_everywhere_title" context="Title for Share Everywhere springboard button, which launches the Share Everywhere activity and title for Share Everywhere activity.">Share Everywhere</string>
+  <string name="wp_share_everywhere_description_title" context="Title for the description of the Share Everywhere activity, which explains how the feature works to end users.">Del din patientjournal</string>
+  <string name="wp_share_everywhere_description_text" context="Text for the description of the Share Everywhere activity, which explains how the feature works to end users. %1$@ is the brand name of the portal.">Tildel midlertidig begrænset adgang til helbredsoplysningerne, du kan se på %1$@, og som kan omfatte:</string>
+  <string name="wp_share_everywhere_medications_label" context="Label for medications, in the context of being available via Share Everywhere.">Medicinering</string>
+  <string name="wp_share_everywhere_health_issues_label" context="Label for health issues, in the context of being available via Share Everywhere.">Helbredsproblemer</string>
+  <string name="wp_share_everywhere_allergies_label" context="Label for allergies, in the context of being available via Share Everywhere.">Allergier</string>
+  <string name="wp_share_everywhere_immunizations_label" context="Label for immunizations, in the context of being available via Share Everywhere.">Vaccinationer</string>
+  <string name="wp_share_everywhere_write_note_label" context="Label for the ability to write a note to the patient's chart, in the context of being available via Share Everywhere.">Personen, der tilgår din journal, er også i stand til at skrive et klinisk notat til dit sundhedsfaglige team.</string>
+  <string name="wp_share_everywhere_request_token_button_title" context="Title for button to request a share token for Share Everywhere.">Anmod om delekode</string>
+  <string name="wp_share_everywhere_active_token_title" context="Title for Share Everywhere token card, which contains an active Share Token and instructions on how to use it.">Du kan nu dele din journal!</string>
+  <string name="wp_share_everywhere_active_token_instructions" context="Instructions for using an active Share Token. %1$@ is the name of the person who's accessing the record. %2$@ is the website URL where the Token can be exchanged.">%1$@ kan nu besøge %2$@ og indtaste delekoden herunder for at se din journal.</string>
+  <string name="wp_share_everywhere_dismiss_token_button_title" context="Title for button to dismiss a Share Token for Share Everywhere.">Afslut delekode</string>
+  <string name="wp_share_everywhere_token_expiration" context="Label indicating how much time remains until the active Share Token expires.">Delekode udløber om %1$@</string>
+  <string name="wp_share_everywhere_alert_title" context="Title for Share Everywhere request alert, which prompts the user for more info before requesting a new Share Token.">Hvem tilgår din journal?</string>
+  <string name="wp_share_everywhere_alert_message" context="Message for Share Everywhere request alert, which prompts the user for more info before requesting a new Share Token.">Indtast navn på den person, der vil tilgå din patientjournal.</string>
+  <string name="wp_share_everywhere_alert_edittext_hint" context="Placeholder text for the name that the user must enter when requesting a new Share Token.">Navn</string>
+  <string name="wp_share_everywhere_alert_button_request" context="Title for the button on the Share Everywhere request alert that completes the request for a new Share Token.">Anmod</string>
+  <string name="wp_share_everywhere_alert_button_cancel" context="Title for the button on the Share Everywhere request alert that cancels the request.">Annuller</string>
+</resources>
